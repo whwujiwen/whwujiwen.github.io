@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#000" />
+    <title>
+        
+            这是title &middot; Blog Hugo Theme - Prav
+        
+    </title>
+
+    
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"
+        integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    
+    
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:300,300italic,700&display=swap" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:300&display=swap" rel="stylesheet">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="">
+    
+    <meta name="description" content="这是描述">
+    
+    <meta name="keywords" content="爱好,哈哈,活活,积极">
+    
+    <meta name="author" content="吴继文"></head>
+
+<body>
+        <div class="container">
+<div id="navbar" class="pure-menu pure-menu-open pure-menu-horizontal pure-menu-scrollable">
+    <a href="/" class="pure-menu-heading">
+         
+            Blog 
+         
+    </a>
+    <ul class="pure-menu-list">
+        <li class="pure-menu-item">
+            <a href="/posts" class="pure-menu-link">
+                <i class="fa fa-archive"></i>
+                文章
+            </a>
+        </li>
+        <li class="pure-menu-item">
+            <a href="/tags" class="pure-menu-link">
+                <i class="fas fa-comments"></i>
+                分类
+            </a>
+        </li>
+        <li class="pure-menu-item">
+            <a href="/about" class="pure-menu-link">
+                <i class="fas fa-smile"></i>
+                关于我
+            </a>
+        </li>
+    </ul>
+    <ul class="pure-menu-list pull-right">
+        
+        <li class="pure-menu-item">
+            <a href="https://www.baidu.com" title="Github" class="pure-menu-link">
+                <i class="fab fa-github"></i>
+                <span class="hide">Github</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="http://twitter.com/example" title="@pravin" class="pure-menu-link">
+                <i class="fab fa-twitter-square"></i>
+                <span class="hide">Twitter</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="http://uk.linkedin.com/in/example" title="Linked In" class="pure-menu-link">
+                <i class="fab fa-linkedin"></i>
+                <span class="hide">LinkedIn</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="https://www.medium.com/@example" title="Medium" class="pure-menu-link">
+                <i class="fab fa-medium"></i>
+                <span class="hide">Medium</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="https://www.facebook.com/example" title="Facebook" class="pure-menu-link">
+                <i class="fab fa-facebook"></i>
+                <span class="hide">Facebook</span>
+            </a>
+        </li>
+        
+        <li class="pure-menu-item">
+            <a href="/atom.xml" title="Atom Feed" class="pure-menu-link">
+                <i class="fas fa-rss-square"></i>
+                <span class="hide">RSS Feed</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="pure-u-1">
+    <div class="pad">
+    </div>
+</div>
+<div class="pure-g">
+
+
+<div id="content" class="pure-u-1 pure-u-md-3-4 pure-u-sm-1">
+    <div class="pad">
+
+<div class="date">
+    <time pubdate="2017-03-15">March 15, 2017</time>
+    <span class="author">by Pravin Paratey</span>
+</div>
+
+<article>
+    <h1><a href="http://whwujiwen.github.io/posts/mybatis-plus/">这是title</a></h1>
+    <div class="tags">
+        
+        
+        <a href="/tags/%E7%88%B1%E5%A5%BD" class="pure-button">爱好</a>
+        
+        
+        <a href="/tags/%E5%93%88%E5%93%88" class="pure-button">哈哈</a>
+        
+        
+        <a href="/tags/%E6%B4%BB%E6%B4%BB" class="pure-button">活活</a>
+        
+        
+        <a href="/tags/%E7%A7%AF%E6%9E%81" class="pure-button">积极</a>
+        
+    </div>
+    <h2 id="一mybatis-plus的简介">一、Mybatis-Plus的简介</h2>
+<p><a href="https://github.com/baomidou/mybatis-plus">MyBatis-Plus</a>（简称 MP）是一个 <a href="http://www.mybatis.org/mybatis-3/">MyBatis</a> 的增强工具，在 MyBatis 的基础上只做增强不做改变，为简化开发、提高效率而生。</p>
+<h3 id="特性">特性</h3>
+<ul>
+<li><strong>无侵入</strong>：只做增强不做改变，引入它不会对现有工程产生影响，如丝般顺滑</li>
+<li><strong>损耗小</strong>：启动即会自动注入基本 CURD，性能基本无损耗，直接面向对象操作</li>
+<li><strong>强大的 CRUD 操作</strong>：内置通用 Mapper、通用 Service，仅仅通过少量配置即可实现单表大部分 CRUD 操作，更有强大的条件构造器，满足各类使用需求</li>
+<li><strong>支持 Lambda 形式调用</strong>：通过 Lambda 表达式，方便的编写各类查询条件，无需再担心字段写错</li>
+<li><strong>支持主键自动生成</strong>：支持多达 4 种主键策略（内含分布式唯一 ID 生成器 - Sequence），可自由配置，完美解决主键问题</li>
+<li><strong>支持 ActiveRecord 模式</strong>：支持 ActiveRecord 形式调用，实体类只需继承 Model 类即可进行强大的 CRUD 操作</li>
+<li><strong>支持自定义全局通用操作</strong>：支持全局通用方法注入（ Write once, use anywhere ）</li>
+<li><strong>内置代码生成器</strong>：采用代码或者 Maven 插件可快速生成 Mapper 、 Model 、 Service 、 Controller 层代码，支持模板引擎，更有超多自定义配置等您来使用</li>
+<li><strong>内置分页插件</strong>：基于 MyBatis 物理分页，开发者无需关心具体操作，配置好插件之后，写分页等同于普通 List 查询</li>
+<li><strong>分页插件支持多种数据库</strong>：支持 MySQL、MariaDB、Oracle、DB2、H2、HSQL、SQLite、Postgre、SQLServer 等多种数据库</li>
+<li><strong>内置性能分析插件</strong>：可输出 Sql 语句以及其执行时间，建议开发测试时启用该功能，能快速揪出慢查询</li>
+<li><strong>内置全局拦截插件</strong>：提供全表 delete 、 update 操作智能分析阻断，也可自定义拦截规则，预防误操作</li>
+</ul>
+<h2 id="二快速开始">二、快速开始</h2>
+<p>1.在数据库中创建一张表格</p>
+<p><img src="Mybatis-plus.assets/image-20200507104014689.png" alt="image-20200507104014689"></p>
+<p>常见表脚本</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#8b008b;font-weight:bold">DROP</span> <span style="color:#8b008b;font-weight:bold">TABLE</span> <span style="color:#8b008b;font-weight:bold">IF</span> <span style="color:#8b008b;font-weight:bold">EXISTS</span> <span style="color:#8b008b;font-weight:bold">user</span>;
+
+<span style="color:#8b008b;font-weight:bold">CREATE</span> <span style="color:#8b008b;font-weight:bold">TABLE</span> <span style="color:#8b008b;font-weight:bold">user</span>
+(
+	id <span style="color:#658b00">BIGINT</span>(<span style="color:#b452cd">20</span>) <span style="color:#8b008b;font-weight:bold">NOT</span> <span style="color:#8b008b;font-weight:bold">NULL</span> <span style="color:#8b008b;font-weight:bold">COMMENT</span> <span style="color:#cd5555">&#39;主键ID&#39;</span>,
+	name <span style="color:#658b00">VARCHAR</span>(<span style="color:#b452cd">30</span>) <span style="color:#8b008b;font-weight:bold">NULL</span> <span style="color:#8b008b;font-weight:bold">DEFAULT</span> <span style="color:#8b008b;font-weight:bold">NULL</span> <span style="color:#8b008b;font-weight:bold">COMMENT</span> <span style="color:#cd5555">&#39;姓名&#39;</span>,
+	age <span style="color:#658b00">INT</span>(<span style="color:#b452cd">11</span>) <span style="color:#8b008b;font-weight:bold">NULL</span> <span style="color:#8b008b;font-weight:bold">DEFAULT</span> <span style="color:#8b008b;font-weight:bold">NULL</span> <span style="color:#8b008b;font-weight:bold">COMMENT</span> <span style="color:#cd5555">&#39;年龄&#39;</span>,
+	email <span style="color:#658b00">VARCHAR</span>(<span style="color:#b452cd">50</span>) <span style="color:#8b008b;font-weight:bold">NULL</span> <span style="color:#8b008b;font-weight:bold">DEFAULT</span> <span style="color:#8b008b;font-weight:bold">NULL</span> <span style="color:#8b008b;font-weight:bold">COMMENT</span> <span style="color:#cd5555">&#39;邮箱&#39;</span>,
+	<span style="color:#8b008b;font-weight:bold">PRIMARY</span> <span style="color:#8b008b;font-weight:bold">KEY</span> (id)
+);
+</code></pre></div><p>向表格中填充数据</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#8b008b;font-weight:bold">DELETE</span> <span style="color:#8b008b;font-weight:bold">FROM</span> <span style="color:#8b008b;font-weight:bold">user</span>;
+
+<span style="color:#8b008b;font-weight:bold">INSERT</span> <span style="color:#8b008b;font-weight:bold">INTO</span> <span style="color:#8b008b;font-weight:bold">user</span> (id, name, age, email) <span style="color:#8b008b;font-weight:bold">VALUES</span>
+(<span style="color:#b452cd">1</span>, <span style="color:#cd5555">&#39;Jone&#39;</span>, <span style="color:#b452cd">18</span>, <span style="color:#cd5555">&#39;test1@baomidou.com&#39;</span>),
+(<span style="color:#b452cd">2</span>, <span style="color:#cd5555">&#39;Jack&#39;</span>, <span style="color:#b452cd">20</span>, <span style="color:#cd5555">&#39;test2@baomidou.com&#39;</span>),
+(<span style="color:#b452cd">3</span>, <span style="color:#cd5555">&#39;Tom&#39;</span>, <span style="color:#b452cd">28</span>, <span style="color:#cd5555">&#39;test3@baomidou.com&#39;</span>),
+(<span style="color:#b452cd">4</span>, <span style="color:#cd5555">&#39;Sandy&#39;</span>, <span style="color:#b452cd">21</span>, <span style="color:#cd5555">&#39;test4@baomidou.com&#39;</span>),
+(<span style="color:#b452cd">5</span>, <span style="color:#cd5555">&#39;Billie&#39;</span>, <span style="color:#b452cd">24</span>, <span style="color:#cd5555">&#39;test5@baomidou.com&#39;</span>);
+</code></pre></div><h2 id="三初始化一个工程">三、初始化一个工程</h2>
+<h3 id="1创建一个空的-spring-boot-工程----spring-initializerhttpsstartspringio">1.创建一个空的 Spring Boot 工程&mdash; <a href="https://start.spring.io/">Spring Initializer</a></h3>
+<h3 id="2添加依赖">2.添加依赖</h3>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#8b008b;font-weight:bold">&lt;dependency&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>com.baomidou<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>mybatis-plus-boot-starter<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>3.3.1<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+<span style="color:#8b008b;font-weight:bold">&lt;/dependency&gt;</span>
+<span style="color:#8b008b;font-weight:bold">&lt;dependency&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>mysql<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>mysql-connector-java<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;/dependency&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;dependency&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>spring-boot-starter<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;/dependency&gt;</span>
+
+        <span style="color:#8b008b;font-weight:bold">&lt;dependency&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>org.projectlombok<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>lombok<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;optional&gt;</span>true<span style="color:#8b008b;font-weight:bold">&lt;/optional&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;/dependency&gt;</span>
+</code></pre></div><h3 id="3配置">3.配置</h3>
+<p>在 <code>application.yml</code> 配置文件中添加 H2 数据库的相关配置：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#8b008b;font-weight:bold">spring</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#8b008b;font-weight:bold">datasource</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#8b008b;font-weight:bold">driver-class-name</span>:<span style="color:#bbb"> </span>com.mysql.cj.jdbc.Driver<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#8b008b;font-weight:bold">url</span>:<span style="color:#bbb"> </span>jdbc:mysql://localhost:<span style="color:#b452cd">3306</span>/mybatis-plus?useUnicode=<span style="color:#8b008b;font-weight:bold">true</span><span style="color:#1e889b">&amp;characterEncoding=UTF-8&amp;useSSL=false&amp;serverTimezone=GMT%2B8</span><span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#8b008b;font-weight:bold">username</span>:<span style="color:#bbb"> </span>root<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#8b008b;font-weight:bold">password</span>:<span style="color:#bbb"> </span><span style="color:#b452cd">13733433427</span><span style="color:#bbb">
+</span></code></pre></div><p>在 Spring Boot 启动类中添加 <code>@MapperScan</code> 注解，扫描 Mapper 文件夹：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#707a7c">@SpringBootApplication</span>
+<span style="color:#707a7c">@MapperScan</span>(<span style="color:#cd5555">&#34;com.baomidou.mybatisplus.samples.quickstart.mapper&#34;</span>)
+<span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">Application</span> {
+
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">static</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">main</span>(String[] args) {
+        SpringApplication.<span style="color:#658b00">run</span>(QuickStartApplication.<span style="color:#658b00">class</span>, args);
+    }
+
+}
+</code></pre></div><h3 id="4编码">4.编码</h3>
+<p>编写实体类 <code>User.java</code>（此处使用了 <a href="https://www.projectlombok.org/">Lombok</a> 简化代码）</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#707a7c">@Data</span>
+<span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">User</span> {
+    <span style="color:#8b008b;font-weight:bold">private</span> Long id;
+    <span style="color:#8b008b;font-weight:bold">private</span> String name;
+    <span style="color:#8b008b;font-weight:bold">private</span> Integer age;
+    <span style="color:#8b008b;font-weight:bold">private</span> String email;
+}
+</code></pre></div><p>编写Mapper类 <code>UserMapper.java</code></p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">interface</span> <span style="color:#008b45;font-weight:bold">UserMapper</span> <span style="color:#8b008b;font-weight:bold">extends</span> BaseMapper&lt;User&gt; {
+
+}
+</code></pre></div><h3 id="5开始使用">5.开始使用</h3>
+<p>添加测试类，进行功能测试：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#707a7c">@RunWith</span>(SpringRunner.<span style="color:#658b00">class</span>)
+<span style="color:#707a7c">@SpringBootTest</span>
+<span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">SampleTest</span> {
+
+    <span style="color:#707a7c">@Autowired</span>
+    <span style="color:#8b008b;font-weight:bold">private</span> UserMapper userMapper;
+
+    <span style="color:#707a7c">@Test</span>
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">testSelect</span>() {
+        System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>((<span style="color:#cd5555">&#34;----- selectAll method test ------&#34;</span>));
+        List&lt;User&gt; userList = userMapper.<span style="color:#658b00">selectList</span>(<span style="color:#8b008b;font-weight:bold">null</span>);
+        Assert.<span style="color:#658b00">assertEquals</span>(5, userList.<span style="color:#658b00">size</span>());
+        userList.<span style="color:#658b00">forEach</span>(System.<span style="color:#658b00">out</span>::println);
+    }
+
+}
+</code></pre></div><h2 id="三分页插件">三、分页插件</h2>
+<p>引入插件</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#228b22">//Spring boot方式
+</span><span style="color:#228b22"></span><span style="color:#707a7c">@EnableTransactionManagement</span>
+<span style="color:#707a7c">@Configuration</span>
+<span style="color:#707a7c">@MapperScan</span>(<span style="color:#cd5555">&#34;com.baomidou.cloud.service.*.mapper*&#34;</span>)
+<span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">MybatisPlusConfig</span> {
+
+    <span style="color:#707a7c">@Bean</span>
+    <span style="color:#8b008b;font-weight:bold">public</span> PaginationInterceptor <span style="color:#008b45">paginationInterceptor</span>() {
+        PaginationInterceptor paginationInterceptor = <span style="color:#8b008b;font-weight:bold">new</span> PaginationInterceptor();
+        <span style="color:#228b22">// 设置请求的页面大于最大页后操作， true调回到首页，false 继续请求  默认false
+</span><span style="color:#228b22"></span>        <span style="color:#228b22">// paginationInterceptor.setOverflow(false);
+</span><span style="color:#228b22"></span>        <span style="color:#228b22">// 设置最大单页限制数量，默认 500 条，-1 不受限制
+</span><span style="color:#228b22"></span>        <span style="color:#228b22">// paginationInterceptor.setLimit(500);
+</span><span style="color:#228b22"></span>        <span style="color:#228b22">// 开启 count 的 join 优化,只针对部分 left join
+</span><span style="color:#228b22"></span>        paginationInterceptor.<span style="color:#658b00">setCountSqlParser</span>(<span style="color:#8b008b;font-weight:bold">new</span> JsqlParserCountOptimize(<span style="color:#8b008b;font-weight:bold">true</span>));
+        <span style="color:#8b008b;font-weight:bold">return</span> paginationInterceptor;
+    }
+}
+</code></pre></div><p>测试</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Page&lt;User&gt; userPage = userMapper.<span style="color:#658b00">selectPage</span>(<span style="color:#8b008b;font-weight:bold">new</span> Page&lt;&gt;(2, 3), <span style="color:#8b008b;font-weight:bold">null</span>);
+List&lt;User&gt; records = userPage.<span style="color:#658b00">getRecords</span>();
+<span style="color:#8b008b;font-weight:bold">for</span> (User record : records) {
+    System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(record);
+}
+</code></pre></div><h2 id="四自动填充功能">四、自动填充功能</h2>
+<p>添加字段</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#707a7c">@TableField</span>(fill = FieldFill.<span style="color:#658b00">INSERT</span>)
+<span style="color:#8b008b;font-weight:bold">private</span> Date createTime;
+<span style="color:#707a7c">@TableField</span>(fill = FieldFill.<span style="color:#658b00">INSERT_UPDATE</span>)
+<span style="color:#8b008b;font-weight:bold">private</span> Date updateTime;
+</code></pre></div><p>添加配置</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#707a7c">@Slf4j</span>
+<span style="color:#707a7c">@Component</span>
+<span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">MyMetaObjectHandler</span> <span style="color:#8b008b;font-weight:bold">implements</span> MetaObjectHandler {
+
+
+    <span style="color:#707a7c">@Override</span>
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">insertFill</span>(MetaObject metaObject) {
+        <span style="color:#8b008b;font-weight:bold">this</span>.<span style="color:#658b00">setFieldValByName</span>(<span style="color:#cd5555">&#34;createTime&#34;</span>,<span style="color:#8b008b;font-weight:bold">new</span> Date(),metaObject);
+        <span style="color:#8b008b;font-weight:bold">this</span>.<span style="color:#658b00">setFieldValByName</span>(<span style="color:#cd5555">&#34;updateTime&#34;</span>,<span style="color:#8b008b;font-weight:bold">new</span> Date(),metaObject);
+    }
+
+    <span style="color:#707a7c">@Override</span>
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">updateFill</span>(MetaObject metaObject) {
+        <span style="color:#8b008b;font-weight:bold">this</span>.<span style="color:#658b00">setFieldValByName</span>(<span style="color:#cd5555">&#34;updateTime&#34;</span>,<span style="color:#8b008b;font-weight:bold">new</span> Date(),metaObject);
+    }
+}
+</code></pre></div><h2 id="五乐观锁">五、乐观锁</h2>
+<p>添加字段</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#707a7c">@Version</span>
+<span style="color:#8b008b;font-weight:bold">private</span> Integer version;
+</code></pre></div><p>插件配置</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#707a7c">@Bean</span>
+<span style="color:#8b008b;font-weight:bold">public</span> OptimisticLockerInterceptor <span style="color:#008b45">optimisticLockerInterceptor</span>() {
+    <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#8b008b;font-weight:bold">new</span> OptimisticLockerInterceptor();
+}
+</code></pre></div><h2 id="六逻辑删除">六、逻辑删除</h2>
+<p>application.yml 加入配置(如果你的默认值和mp默认的一样,该配置可无):</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#8b008b;font-weight:bold">mybatis-plus</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#8b008b;font-weight:bold">global-config</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#8b008b;font-weight:bold">db-config</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#8b008b;font-weight:bold">logic-delete-field</span>:<span style="color:#bbb"> </span>flag<span style="color:#bbb">  </span><span style="color:#228b22">#全局逻辑删除字段值 3.3.0开始支持，详情看下面。</span><span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#8b008b;font-weight:bold">logic-delete-value</span>:<span style="color:#bbb"> </span><span style="color:#b452cd">1</span><span style="color:#bbb"> </span><span style="color:#228b22"># 逻辑已删除值(默认为 1)</span><span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#8b008b;font-weight:bold">logic-not-delete-value</span>:<span style="color:#bbb"> </span><span style="color:#b452cd">0</span><span style="color:#bbb"> </span><span style="color:#228b22"># 逻辑未删除值(默认为 0)</span><span style="color:#bbb">
+</span></code></pre></div><p>实体类字段上加上<code>@TableLogic</code>注解</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#707a7c">@TableLogic</span>
+<span style="color:#8b008b;font-weight:bold">private</span> Integer deleted;
+</code></pre></div>
+</article>
+    </div>
+</div>
+
+
+                
+<div id="sidebar" class="pure-u-1 pure-u-md-1-4 pure-u-sm-1">
+    <div class="pad">
+        <a name="about"></a>
+        <h3>关于我</h3>
+        <div style="text-align: center;">
+            <img src="/img/author.png" alt="吴继文" class="pure-img" />
+            <p><em>Something about me</em></p>
+        </div>
+
+        <h3>最近文章</h3>
+        <div class="pure-menu pure-menu-open">
+            <ul class="pure-menu-list">
+                
+                <li class="pure-menu-item">
+                    <a href="http://whwujiwen.github.io/posts/markdown-syntax/" class="pure-menu-link">Markdown基本语法<br>
+                        <small>这是Markdown的描述</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://whwujiwen.github.io/posts/test/" class="pure-menu-link">风很大客服回答后方可<br>
+                        <small>这是Markdown的描述</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://whwujiwen.github.io/posts/emoji-support/" class="pure-menu-link">这是title<br>
+                        <small>这是描述</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://whwujiwen.github.io/posts/mybatis-plus/" class="pure-menu-link">这是title<br>
+                        <small>这是描述</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://whwujiwen.github.io/posts/placeholder-text/" class="pure-menu-link">Placeholder Text<br>
+                        <small>Lorem Ipsum Dolor Si Amet</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://whwujiwen.github.io/posts/%E7%AE%80%E5%8D%95%E7%9A%84%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/" class="pure-menu-link">基于Vue的音乐播放器<br>
+                        <small>Lorem Ipsum Dolor Si Amet</small>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <h3>分类</h3>
+        <div style="text-align:center" class="tags">
+            
+            
+            <a href="/tags/%e7%88%b1%e5%a5%bd" class="pure-button"> 爱好
+                <small>(6)</small></a>
+            
+            
+            
+            <a href="/tags/7%e7%88%b1%e5%a5%bd" class="pure-button"> 7爱好
+                <small>(2)</small></a>
+            
+            
+            
+            <a href="/tags/%e5%93%88%e5%93%88" class="pure-button"> 哈哈
+                <small>(2)</small></a>
+            
+            
+            
+            <a href="/tags/%e6%b4%bb%e6%b4%bb" class="pure-button"> 活活
+                <small>(2)</small></a>
+            
+            
+            
+            <a href="/tags/%e7%88%b11%e5%a5%bd" class="pure-button"> 爱1好
+                <small>(2)</small></a>
+            
+            
+            
+            <a href="/tags/%e7%88%b13%e5%a5%bd" class="pure-button"> 爱3好
+                <small>(2)</small></a>
+            
+            
+            
+            <a href="/tags/%e7%88%b145%e5%a5%bd" class="pure-button"> 爱45好
+                <small>(2)</small></a>
+            
+            
+            
+            <a href="/tags/%e7%88%b15%e5%a5%bd" class="pure-button"> 爱5好
+                <small>(2)</small></a>
+            
+            
+            
+            <a href="/tags/%e7%88%b19%e5%a5%bd" class="pure-button"> 爱9好
+                <small>(2)</small></a>
+            
+            
+            
+            <a href="/tags/%e7%a7%af%e6%9e%81" class="pure-button"> 积极
+                <small>(2)</small></a>
+            
+            
+            
+            
+        </div>
+    </div> 
+</div> 
+
+                
+            </div>
+<div class="pure-g">
+	<footer class="pure-u-1 pure-u-md-1 pure-u-sm-1">
+		<p>This page and its contents are copyright &copy; 2020,
+			<a href="">吴继文</a>.</p>
+		<p><a href="https://github.com/pravin/hugo-theme-prav">Theme Prav</a> by <a href="https://cto.me.uk">Pravin
+				Paratey</a></p>
+	</footer>
+
+	<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
+		integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+		crossorigin="anonymous"></script>
+</div>
+</div></body>
+</html>

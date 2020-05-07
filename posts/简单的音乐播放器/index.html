@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#000" />
+    <title>
+        
+            基于Vue的音乐播放器 &middot; Blog Hugo Theme - Prav
+        
+    </title>
+
+    
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"
+        integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    
+    
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:300,300italic,700&display=swap" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:300&display=swap" rel="stylesheet">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="">
+    
+    <meta name="description" content="Lorem Ipsum Dolor Si Amet">
+    
+    <meta name="keywords" content="爱好">
+    
+    <meta name="author" content="吴继文"></head>
+
+<body>
+        <div class="container">
+<div id="navbar" class="pure-menu pure-menu-open pure-menu-horizontal pure-menu-scrollable">
+    <a href="/" class="pure-menu-heading">
+         
+            Blog 
+         
+    </a>
+    <ul class="pure-menu-list">
+        <li class="pure-menu-item">
+            <a href="/posts" class="pure-menu-link">
+                <i class="fa fa-archive"></i>
+                文章
+            </a>
+        </li>
+        <li class="pure-menu-item">
+            <a href="/tags" class="pure-menu-link">
+                <i class="fas fa-comments"></i>
+                分类
+            </a>
+        </li>
+        <li class="pure-menu-item">
+            <a href="/about" class="pure-menu-link">
+                <i class="fas fa-smile"></i>
+                关于我
+            </a>
+        </li>
+    </ul>
+    <ul class="pure-menu-list pull-right">
+        
+        <li class="pure-menu-item">
+            <a href="https://www.baidu.com" title="Github" class="pure-menu-link">
+                <i class="fab fa-github"></i>
+                <span class="hide">Github</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="http://twitter.com/example" title="@pravin" class="pure-menu-link">
+                <i class="fab fa-twitter-square"></i>
+                <span class="hide">Twitter</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="http://uk.linkedin.com/in/example" title="Linked In" class="pure-menu-link">
+                <i class="fab fa-linkedin"></i>
+                <span class="hide">LinkedIn</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="https://www.medium.com/@example" title="Medium" class="pure-menu-link">
+                <i class="fab fa-medium"></i>
+                <span class="hide">Medium</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="https://www.facebook.com/example" title="Facebook" class="pure-menu-link">
+                <i class="fab fa-facebook"></i>
+                <span class="hide">Facebook</span>
+            </a>
+        </li>
+        
+        <li class="pure-menu-item">
+            <a href="/atom.xml" title="Atom Feed" class="pure-menu-link">
+                <i class="fas fa-rss-square"></i>
+                <span class="hide">RSS Feed</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="pure-u-1">
+    <div class="pad">
+    </div>
+</div>
+<div class="pure-g">
+
+
+<div id="content" class="pure-u-1 pure-u-md-3-4 pure-u-sm-1">
+    <div class="pad">
+
+<div class="date">
+    <time pubdate="2016-05-18">May 18, 2016</time>
+    <span class="author">by Pravin Paratey</span>
+</div>
+
+<article>
+    <h1><a href="http://whwujiwen.github.io/posts/%E7%AE%80%E5%8D%95%E7%9A%84%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/">基于Vue的音乐播放器</a></h1>
+    <div class="tags">
+        
+        
+        <a href="/tags/%E7%88%B1%E5%A5%BD" class="pure-button">爱好</a>
+        
+    </div>
+    <p>一、主要的接口</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">https://autumnfish.cn/search?keywords=&#34;有多少爱可以重来&#34;		//根据关键字来获取歌曲列表
+</code></pre></div><div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">https://autumnfish.cn/song/url?id=152556					  //根据歌曲的id来获取歌曲的播放地址
+</code></pre></div><p>二 、完整的代码实现</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">&lt;template&gt;
+    &lt;div class=<span style="color:#cd5555">&#34;music&#34;</span>&gt;
+        &lt;el-header style=<span style="color:#cd5555">&#34;background: #545c64;border-radius: 10px&#34;</span>&gt;
+
+            &lt;el-menu
+                style=<span style="color:#cd5555">&#34;&#34;</span>
+                :<span style="color:#8b008b;font-weight:bold">default</span>-active=<span style="color:#cd5555">&#34;activeIndex2&#34;</span>
+                class=<span style="color:#cd5555">&#34;el-menu-demo&#34;</span>
+                mode=<span style="color:#cd5555">&#34;horizontal&#34;</span>
+                <span style="color:#707a7c">@select</span>=<span style="color:#cd5555">&#34;handleSelect&#34;</span>
+                background-color=<span style="color:#cd5555">&#34;#545c64&#34;</span>
+                text-color=<span style="color:#cd5555">&#34;#fff&#34;</span>
+                active-text-color=<span style="color:#cd5555">&#34;#ffd04b&#34;</span>&gt;
+                &lt;el-menu-item&gt;&lt;a style=<span style="color:#cd5555">&#34;font-size:x-large;font-family:Microsoft YaHei;color:#7AD038;padding-right:100px;&#34;</span>&gt;Bolg&lt;/a&gt;&lt;/el-menu-item&gt;
+                &lt;el-menu-item index=<span style="color:#cd5555">&#34;1&#34;</span>&gt;&lt;router-link tag=<span style="color:#cd5555">&#34;a&#34;</span> target=<span style="color:#cd5555">&#34;_blank&#34;</span> style=<span style="color:#cd5555">&#34;width: 100%;height: 100%&#34;</span> to=<span style="color:#cd5555">&#34;/index&#34;</span>&gt;首页&lt;/router-link&gt;&lt;/el-menu-item&gt;
+                &lt;el-menu-item&gt;&lt;el-divider direction=<span style="color:#cd5555">&#34;vertical&#34;</span>&gt;&lt;/el-divider&gt;&lt;/el-menu-item&gt;
+                &lt;el-menu-item index=<span style="color:#cd5555">&#34;2&#34;</span> &gt;&lt;router-link tag=<span style="color:#cd5555">&#34;a&#34;</span> target=<span style="color:#cd5555">&#34;_blank&#34;</span> style=<span style="color:#cd5555">&#34;width: 100%;height: 100%&#34;</span> to=<span style="color:#cd5555">&#34;/classify&#34;</span>&gt;分类&lt;/router-link&gt;&lt;/el-menu-item&gt;
+                &lt;el-menu-item&gt;&lt;el-divider direction=<span style="color:#cd5555">&#34;vertical&#34;</span>&gt;&lt;/el-divider&gt;&lt;/el-menu-item&gt;
+                &lt;el-menu-item index=<span style="color:#cd5555">&#34;3&#34;</span>&gt;&lt;router-link style=<span style="color:#cd5555">&#34;width: 100%;height: 100%&#34;</span> to=<span style="color:#cd5555">&#34;/music&#34;</span>&gt;音乐欣赏&lt;/router-link&gt;&lt;/el-menu-item&gt;
+                &lt;el-menu-item&gt;&lt;el-divider direction=<span style="color:#cd5555">&#34;vertical&#34;</span>&gt;&lt;/el-divider&gt;&lt;/el-menu-item&gt;
+                &lt;el-menu-item index=<span style="color:#cd5555">&#34;4&#34;</span>&gt;&lt;router-link tag=<span style="color:#cd5555">&#34;a&#34;</span> target=<span style="color:#cd5555">&#34;_blank&#34;</span> style=<span style="color:#cd5555">&#34;width: 100%;height: 100%&#34;</span> to=<span style="color:#cd5555">&#34;/about&#34;</span>&gt;关于我&lt;/router-link&gt;&lt;/el-menu-item&gt;
+                &lt;el-menu-item&gt;&lt;el-divider direction=<span style="color:#cd5555">&#34;vertical&#34;</span>&gt;&lt;/el-divider&gt;&lt;/el-menu-item&gt;
+                &lt;el-menu-item index=<span style="color:#cd5555">&#34;5&#34;</span>&gt;&lt;router-link tag=<span style="color:#cd5555">&#34;a&#34;</span> target=<span style="color:#cd5555">&#34;_blank&#34;</span> style=<span style="color:#cd5555">&#34;width: 100%;height: 100%&#34;</span> to=<span style="color:#cd5555">&#34;/login&#34;</span>&gt;后台管理&lt;/router-link&gt;&lt;/el-menu-item&gt;
+            &lt;/el-menu&gt;
+        &lt;/el-header&gt;
+
+        &lt;div style=<span style="color:#cd5555">&#34;padding:30px;max-width: 60%;margin:30px auto;border-radius:4px;box-shadow:0 2px 4px rgba(0,0,0,.12), 0 0 6px rgba(0,0,0,.04);&#34;</span>&gt;
+            &lt;div style=<span style="color:#cd5555">&#34;width: 100%;text-align: center&#34;</span>&gt;&lt;h1&gt;轻松一刻&lt;/h1&gt;&lt;/div&gt;
+            &lt;el-divider&gt;&lt;/el-divider&gt;
+
+            &lt;span style=<span style="color:#cd5555">&#34;color: #66B1FF&#34;</span>&gt;搜索:&lt;/span&gt;
+            &lt;el-input
+                style=<span style="color:#cd5555">&#34;margin-top:15px;&#34;</span>
+                placeholder=<span style="color:#cd5555">&#34;请输入关键字...&#34;</span>
+                v-model=<span style="color:#cd5555">&#34;input&#34;</span>&gt;
+            &lt;/el-input&gt;
+            &lt;div style=<span style="color:#cd5555">&#34;width:100%&#34;</span>&gt;
+                &lt;el-button type=<span style="color:#cd5555">&#34;primary&#34;</span> icon=<span style="color:#cd5555">&#34;el-icon-search&#34;</span> style=<span style="color:#cd5555">&#34;width: 100%;margin:15px auto;&#34;</span> <span style="color:#707a7c">@click</span>=<span style="color:#cd5555">&#34;search&#34;</span>&gt;搜索&lt;/el-button&gt;
+            &lt;/div&gt;
+            &lt;el-divider&gt;&lt;/el-divider&gt;
+
+            &lt;!--歌曲列表--&gt;
+            &lt;el-table
+                :data=<span style="color:#cd5555">&#34;musics&#34;</span>
+                style=<span style="color:#cd5555">&#34;width: 100%;font-size: larger&#34;</span>&gt;
+                &lt;el-table-column
+                    label=<span style="color:#cd5555">&#34;歌名&#34;</span>
+                    width=<span style="color:#cd5555">&#34;300&#34;</span>&gt;
+                    &lt;template slot-scope=<span style="color:#cd5555">&#34;scope&#34;</span>&gt;
+                        &lt;span style=<span style="color:#cd5555">&#34;margin-left: 10px&#34;</span>&gt;{{ scope.<span style="color:#658b00">row</span>.<span style="color:#658b00">name</span> }}&lt;/span&gt;
+                    &lt;/template&gt;
+                &lt;/el-table-column&gt;
+
+                &lt;el-table-column
+                    label=<span style="color:#cd5555">&#34;歌手&#34;</span>
+                    width=<span style="color:#cd5555">&#34;300&#34;</span>&gt;
+                    &lt;template slot-scope=<span style="color:#cd5555">&#34;scope&#34;</span>&gt;
+                        &lt;el-popover trigger=<span style="color:#cd5555">&#34;hover&#34;</span> placement=<span style="color:#cd5555">&#34;top&#34;</span>&gt;
+                            &lt;p&gt;歌名: {{ scope.<span style="color:#658b00">row</span>.<span style="color:#658b00">artists</span>[0].<span style="color:#658b00">name</span> }}&lt;/p&gt;
+                            &lt;div slot=<span style="color:#cd5555">&#34;reference&#34;</span> class=<span style="color:#cd5555">&#34;name-wrapper&#34;</span>&gt;
+                                &lt;el-tag size=<span style="color:#cd5555">&#34;medium&#34;</span>&gt;{{ scope.<span style="color:#658b00">row</span>.<span style="color:#658b00">artists</span>[0].<span style="color:#658b00">name</span> }}&lt;/el-tag&gt;
+                            &lt;/div&gt;
+                        &lt;/el-popover&gt;
+                    &lt;/template&gt;
+                &lt;/el-table-column&gt;
+                &lt;el-table-column
+                    label=<span style="color:#cd5555">&#34;歌名&#34;</span>
+                    width=<span style="color:#cd5555">&#34;300&#34;</span>&gt;
+                    &lt;template slot-scope=<span style="color:#cd5555">&#34;scope&#34;</span>&gt;
+                        &lt;span style=<span style="color:#cd5555">&#34;margin-left: 10px&#34;</span>&gt;&lt;span v-<span style="color:#8b008b;font-weight:bold">if</span>=<span style="color:#cd5555">&#34;current==scope.row.id&#34;</span>&gt;正在播放&lt;i class=<span style="color:#cd5555">&#34;el-icon-loading
+</span><span style="color:#cd5555">&#34;</span>&gt;&lt;/i&gt;&lt;/span&gt;&lt;/span&gt;
+                    &lt;/template&gt;
+                &lt;/el-table-column&gt;
+                &lt;el-table-column label=<span style="color:#cd5555">&#34;操作&#34;</span>&gt;
+                    &lt;template slot-scope=<span style="color:#cd5555">&#34;scope&#34;</span>&gt;
+                        &lt;el-button
+                            size=<span style="color:#cd5555">&#34;success&#34;</span>
+                            <span style="color:#707a7c">@click</span>=<span style="color:#cd5555">&#34;playMusic(scope.row.id)&#34;</span>&gt;播放&lt;/el-button&gt;
+                        &lt;el-button
+                            type=<span style="color:#cd5555">&#34;info&#34;</span>
+                            <span style="color:#707a7c">@click</span>=<span style="color:#cd5555">&#34;stopMusic(scope.row.id)&#34;</span>&gt;停止&lt;/el-button&gt;
+                    &lt;/template&gt;
+                &lt;/el-table-column&gt;
+            &lt;/el-table&gt;
+            &lt;footer class=<span style="color:#cd5555">&#34;footer&#34;</span> style=<span style="color:#cd5555">&#34;display: none&#34;</span>&gt;
+                &lt;audio :src=<span style="color:#cd5555">&#34;url&#34;</span> loop autoplay controls&gt;&lt;/audio&gt;
+            &lt;/footer&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+    export <span style="color:#8b008b;font-weight:bold">default</span> {
+        name: <span style="color:#cd5555">&#34;Music&#34;</span>,
+        data() {
+            <span style="color:#8b008b;font-weight:bold">return</span> {
+                current:<span style="color:#cd5555">&#34;0&#34;</span>,
+                input: <span style="color:#a61717;background-color:#e3d2d2">&#39;&#39;</span>,
+                musics:[],
+                url:<span style="color:#cd5555">&#34;&#34;</span>,
+                id:<span style="color:#cd5555">&#34;&#34;</span>
+            };
+        },
+        methods: {
+            stopMusic(id){
+                <span style="color:#8b008b;font-weight:bold">this</span>.<span style="color:#658b00">url</span>=<span style="color:#cd5555">&#34;&#34;</span>;
+                <span style="color:#8b008b;font-weight:bold">this</span>.<span style="color:#658b00">current</span>=<span style="color:#cd5555">&#34;&#34;</span>
+            },
+            search(){
+                let _this = <span style="color:#8b008b;font-weight:bold">this</span>
+                <span style="color:#8b008b;font-weight:bold">this</span>.<span style="color:#658b00">$http</span>.<span style="color:#658b00">get</span>(<span style="color:#cd5555">&#34;https://autumnfish.cn/search?keywords=&#34;</span>+_this.<span style="color:#658b00">input</span>).<span style="color:#658b00">then</span>((res)=&gt;{
+                    console.<span style="color:#658b00">log</span>(res.<span style="color:#658b00">data</span>.<span style="color:#658b00">result</span>.<span style="color:#658b00">songs</span>);
+                    _this.<span style="color:#658b00">musics</span> = res.<span style="color:#658b00">data</span>.<span style="color:#658b00">result</span>.<span style="color:#658b00">songs</span>
+                });
+            },
+            playMusic(id){
+                <span style="color:#8b008b;font-weight:bold">this</span>.<span style="color:#658b00">id</span> = id
+                <span style="color:#8b008b;font-weight:bold">this</span>.<span style="color:#658b00">current</span>=id
+                let _this = <span style="color:#8b008b;font-weight:bold">this</span>
+                <span style="color:#8b008b;font-weight:bold">this</span>.<span style="color:#658b00">$http</span>.<span style="color:#658b00">get</span>(<span style="color:#cd5555">&#34;https://autumnfish.cn/song/url?id=&#34;</span>+id).<span style="color:#658b00">then</span>((res)=&gt;{
+                    console.<span style="color:#658b00">log</span>(res.<span style="color:#658b00">data</span>.<span style="color:#658b00">data</span>[0].<span style="color:#658b00">url</span>);
+                    <span style="color:#8b008b;font-weight:bold">this</span>.<span style="color:#658b00">url</span> = res.<span style="color:#658b00">data</span>.<span style="color:#658b00">data</span>[0].<span style="color:#658b00">url</span>
+                });
+            }
+        }
+    }
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+    .<span style="color:#658b00">music</span>{
+        background-image:url(<span style="color:#a61717;background-color:#e3d2d2">&#39;</span>../assets/bg.<span style="color:#658b00">png</span><span style="color:#a61717;background-color:#e3d2d2">&#39;</span>);
+    }
+&lt;/style&gt;
+
+</code></pre></div>
+</article>
+    </div>
+</div>
+
+
+                
+<div id="sidebar" class="pure-u-1 pure-u-md-1-4 pure-u-sm-1">
+    <div class="pad">
+        <a name="about"></a>
+        <h3>关于我</h3>
+        <div style="text-align: center;">
+            <img src="/img/author.png" alt="吴继文" class="pure-img" />
+            <p><em>Something about me</em></p>
+        </div>
+
+        <h3>最近文章</h3>
+        <div class="pure-menu pure-menu-open">
+            <ul class="pure-menu-list">
+                
+                <li class="pure-menu-item">
+                    <a href="http://whwujiwen.github.io/posts/markdown-syntax/" class="pure-menu-link">Markdown基本语法<br>
+                        <small>这是Markdown的描述</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://whwujiwen.github.io/posts/test/" class="pure-menu-link">风很大客服回答后方可<br>
+                        <small>这是Markdown的描述</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://whwujiwen.github.io/posts/emoji-support/" class="pure-menu-link">这是title<br>
+                        <small>这是描述</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://whwujiwen.github.io/posts/mybatis-plus/" class="pure-menu-link">这是title<br>
+                        <small>这是描述</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://whwujiwen.github.io/posts/placeholder-text/" class="pure-menu-link">Placeholder Text<br>
+                        <small>Lorem Ipsum Dolor Si Amet</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="http://whwujiwen.github.io/posts/%E7%AE%80%E5%8D%95%E7%9A%84%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/" class="pure-menu-link">基于Vue的音乐播放器<br>
+                        <small>Lorem Ipsum Dolor Si Amet</small>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <h3>分类</h3>
+        <div style="text-align:center" class="tags">
+            
+            
+            <a href="/tags/%e7%88%b1%e5%a5%bd" class="pure-button"> 爱好
+                <small>(6)</small></a>
+            
+            
+            
+            <a href="/tags/7%e7%88%b1%e5%a5%bd" class="pure-button"> 7爱好
+                <small>(2)</small></a>
+            
+            
+            
+            <a href="/tags/%e5%93%88%e5%93%88" class="pure-button"> 哈哈
+                <small>(2)</small></a>
+            
+            
+            
+            <a href="/tags/%e6%b4%bb%e6%b4%bb" class="pure-button"> 活活
+                <small>(2)</small></a>
+            
+            
+            
+            <a href="/tags/%e7%88%b11%e5%a5%bd" class="pure-button"> 爱1好
+                <small>(2)</small></a>
+            
+            
+            
+            <a href="/tags/%e7%88%b13%e5%a5%bd" class="pure-button"> 爱3好
+                <small>(2)</small></a>
+            
+            
+            
+            <a href="/tags/%e7%88%b145%e5%a5%bd" class="pure-button"> 爱45好
+                <small>(2)</small></a>
+            
+            
+            
+            <a href="/tags/%e7%88%b15%e5%a5%bd" class="pure-button"> 爱5好
+                <small>(2)</small></a>
+            
+            
+            
+            <a href="/tags/%e7%88%b19%e5%a5%bd" class="pure-button"> 爱9好
+                <small>(2)</small></a>
+            
+            
+            
+            <a href="/tags/%e7%a7%af%e6%9e%81" class="pure-button"> 积极
+                <small>(2)</small></a>
+            
+            
+            
+            
+        </div>
+    </div> 
+</div> 
+
+                
+            </div>
+<div class="pure-g">
+	<footer class="pure-u-1 pure-u-md-1 pure-u-sm-1">
+		<p>This page and its contents are copyright &copy; 2020,
+			<a href="">吴继文</a>.</p>
+		<p><a href="https://github.com/pravin/hugo-theme-prav">Theme Prav</a> by <a href="https://cto.me.uk">Pravin
+				Paratey</a></p>
+	</footer>
+
+	<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
+		integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+		crossorigin="anonymous"></script>
+</div>
+</div></body>
+</html>
