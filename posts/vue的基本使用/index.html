@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#000" />
+    <title>
+        
+            Vue的基本使用 &middot; Blog Hugo Theme - Prav
+        
+    </title>
+
+    
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"
+        integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    
+    
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:300,300italic,700&display=swap" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:300&display=swap" rel="stylesheet">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="">
+    
+    <meta name="description" content="前端Vue的基本知识">
+    
+    <meta name="keywords" content="前端">
+    
+    <meta name="author" content="吴继文"></head>
+
+<body>
+        <div class="container">
+<div id="navbar" class="pure-menu pure-menu-open pure-menu-horizontal pure-menu-scrollable">
+    <a href="/" class="pure-menu-heading">
+         
+            Blog 
+         
+    </a>
+    <ul class="pure-menu-list">
+        <li class="pure-menu-item">
+            <a href="/posts" class="pure-menu-link">
+                <i class="fa fa-archive"></i>
+                文章
+            </a>
+        </li>
+        <li class="pure-menu-item">
+            <a href="/tags" class="pure-menu-link">
+                <i class="fas fa-comments"></i>
+                分类
+            </a>
+        </li>
+        <li class="pure-menu-item">
+            <a href="/about" class="pure-menu-link">
+                <i class="fas fa-smile"></i>
+                关于我
+            </a>
+        </li>
+    </ul>
+    <ul class="pure-menu-list pull-right">
+        
+        <li class="pure-menu-item">
+            <a href="https://www.baidu.com" title="Github" class="pure-menu-link">
+                <i class="fab fa-github"></i>
+                <span class="hide">Github</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="http://twitter.com/example" title="@pravin" class="pure-menu-link">
+                <i class="fab fa-twitter-square"></i>
+                <span class="hide">Twitter</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="http://uk.linkedin.com/in/example" title="Linked In" class="pure-menu-link">
+                <i class="fab fa-linkedin"></i>
+                <span class="hide">LinkedIn</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="https://www.medium.com/@example" title="Medium" class="pure-menu-link">
+                <i class="fab fa-medium"></i>
+                <span class="hide">Medium</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="https://www.facebook.com/example" title="Facebook" class="pure-menu-link">
+                <i class="fab fa-facebook"></i>
+                <span class="hide">Facebook</span>
+            </a>
+        </li>
+        
+        <li class="pure-menu-item">
+            <a href="/atom.xml" title="Atom Feed" class="pure-menu-link">
+                <i class="fas fa-rss-square"></i>
+                <span class="hide">RSS Feed</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="pure-u-1">
+    <div class="pad">
+    </div>
+</div>
+<div class="pure-g">
+
+
+<div id="content" class="pure-u-1 pure-u-md-3-4 pure-u-sm-1">
+    <div class="pad">
+
+<div class="date">
+    <time pubdate="0001-01-01">January 1, 0001</time>
+    <span class="author">学习笔记</span>
+</div>
+
+<article>
+    <h1><a href="https://example.com/posts/vue%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">Vue的基本使用</a></h1>
+    <div class="tags">
+        
+        
+        <a href="/tags/%E5%89%8D%E7%AB%AF" class="pure-button">前端</a>
+        
+    </div>
+    <h2 id="一node的安装">一、Node的安装</h2>
+<h3 id="1环境准备">1.环境准备</h3>
+<blockquote>
+<p>安装<a href="https://nodejs.org/zh-cn/">NodeJs</a></p>
+<p>配置环境变量</p>
+<p>查看是否安装成功   node -v</p>
+</blockquote>
+<h3 id="2更换镜像源">2.更换镜像源</h3>
+<blockquote>
+<p>设置npm的镜像源   npm config set registry <a href="https://registry.npm.taobao.org">https://registry.npm.taobao.org</a></p>
+<p>验证镜像源是否切换成功		npm config get registry</p>
+</blockquote>
+<h3 id="3配置npm下载的位置">3.配置npm下载的位置</h3>
+<blockquote>
+<p>npm config set cache &ldquo;D:\noderes\npm-cache&rdquo;</p>
+<p>npm config set prefix &ldquo;D:\noderes\npm_global&rdquo;</p>
+<p>查看		npm config ls</p>
+</blockquote>
+<h2 id="二安装脚手架">二、安装脚手架</h2>
+<h3 id="1安装">1.安装</h3>
+<blockquote>
+<p>npm install -g vue-cli</p>
+<p><code>卸载		</code></p>
+<p>npm uninstall -g @vue-cli		//卸载3.x版本的脚手架</p>
+<p>npm uninstall -g @vue-cli		//卸载2.x版本的脚手架</p>
+</blockquote>
+<h2 id="三创建第一个脚手架项目">三、创建第一个脚手架项目</h2>
+<blockquote>
+<p>vue init webpack my-project					//my-project为项目名称</p>
+</blockquote>
+<h2 id="四安装axios">四、安装axios</h2>
+<h3 id="1安装-1">1.安装</h3>
+<blockquote>
+<p>npm install axios &ndash;save-dev</p>
+</blockquote>
+<h3 id="2在mainjs中引入">2.在main.js中引入</h3>
+<blockquote>
+<pre><code>import axios from 'axios'			//引入
+Vue.prototype.$http = axios			//将axios改写为原型
+</code></pre></blockquote>
+<h3 id="3使用axios">3.使用axios</h3>
+<blockquote>
+<p>this.$http.get(&ldquo;url&rdquo;).then((res)=&gt;{})</p>
+</blockquote>
+<h2 id="五安装element-ui">五、安装Element-UI</h2>
+<blockquote>
+<p>npm install element-ui</p>
+<p>import ElementUI from &lsquo;element-ui&rsquo;;</p>
+<p>import &lsquo;element-ui/lib/theme-chalk/index.css&rsquo;;</p>
+<p>Vue.use(ElementUI);</p>
+</blockquote>
+<h2 id="六项目的打包部署">六、项目的打包部署</h2>
+<blockquote>
+<p>vue run build</p>
+</blockquote>
+<h2 id="七vueelement-ui实现轮番图">七、Vue+Element-UI实现轮番图</h2>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#8b008b;font-weight:bold">template</span>&gt;
+    &lt;<span style="color:#8b008b;font-weight:bold">el-row</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;warp&#34;</span>&gt;
+      &lt;<span style="color:#8b008b;font-weight:bold">el-col</span> <span style="color:#658b00">:span</span>=<span style="color:#cd5555">&#34;12&#34;</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;warp-breadcrum&#34;</span>&gt;
+        &lt;<span style="color:#8b008b;font-weight:bold">el-carousel</span> <span style="color:#658b00">:interval</span>=<span style="color:#cd5555">&#34;4000&#34;</span> <span style="color:#658b00">type</span>=<span style="color:#cd5555">&#34;card&#34;</span> <span style="color:#658b00">height</span>=<span style="color:#cd5555">&#34;400px&#34;</span>&gt;
+          &lt;<span style="color:#8b008b;font-weight:bold">el-carousel-item</span> <span style="color:#658b00">v-for</span>=<span style="color:#cd5555">&#34;item in imagesbox&#34;</span> <span style="color:#658b00">:key</span>=<span style="color:#cd5555">&#34;item.id&#34;</span>&gt;
+             &lt;<span style="color:#8b008b;font-weight:bold">img</span> <span style="color:#658b00">:src</span>=<span style="color:#cd5555">&#34;item.idView&#34;</span> <span style="color:#658b00">class</span>=<span style="color:#cd5555">&#34;image&#34;</span> <span style="color:#658b00">width</span>=<span style="color:#cd5555">&#34;100%&#34;</span> <span style="color:#658b00">height</span>=<span style="color:#cd5555">&#34;100%&#34;</span>&gt;
+          &lt;/<span style="color:#8b008b;font-weight:bold">el-carousel-item</span>&gt;
+        &lt;/<span style="color:#8b008b;font-weight:bold">el-carousel</span>&gt;
+      &lt;/<span style="color:#8b008b;font-weight:bold">el-col</span>&gt;
+    &lt;/<span style="color:#8b008b;font-weight:bold">el-row</span>&gt;
+&lt;/<span style="color:#8b008b;font-weight:bold">template</span>&gt;
+&lt;<span style="color:#8b008b;font-weight:bold">script</span>&gt;
+  <span style="color:#8b008b;font-weight:bold">export</span> <span style="color:#8b008b;font-weight:bold">default</span>{
+    data(){
+      <span style="color:#8b008b;font-weight:bold">return</span> {
+        imagesbox:[
+          {id:<span style="color:#b452cd">0</span>,idView:require(<span style="color:#cd5555">&#34;./assets/1.jpg&#34;</span>)},     
+          {id:<span style="color:#b452cd">1</span>,idView:require(<span style="color:#cd5555">&#34;./assets/2.jpg&#34;</span>)},
+          {id:<span style="color:#b452cd">2</span>,idView:require(<span style="color:#cd5555">&#34;./assets/3.jpg&#34;</span>)}
+          ]
+      }
+    },
+    methods: {
+
+    },
+    mounted() {
+    }
+  }
+&lt;/<span style="color:#8b008b;font-weight:bold">script</span>&gt;
+&lt;<span style="color:#8b008b;font-weight:bold">style</span>&gt;
+#<span style="color:#008b45;text-decoration:underline">app</span> {
+  <span style="color:#8b008b;font-weight:bold">font-family</span>: <span style="color:#cd5555">&#39;Avenir&#39;</span>, Helvetica, Arial, <span style="color:#8b008b;font-weight:bold">sans-serif</span>;
+  <span style="color:#8b008b;font-weight:bold">-webkit-</span>font-smoothing: antialiased;
+  <span style="color:#8b008b;font-weight:bold">-moz-</span>osx-font-smoothing: grayscale;
+  <span style="color:#8b008b;font-weight:bold">text-align</span>: <span style="color:#8b008b;font-weight:bold">center</span>;
+  <span style="color:#8b008b;font-weight:bold">color</span>: <span style="color:#b452cd">#2c3e50</span>;
+
+}
+&lt;/<span style="color:#8b008b;font-weight:bold">style</span>&gt;
+
+
+
+</code></pre></div>
+</article>
+    </div>
+</div>
+
+
+                
+<div id="sidebar" class="pure-u-1 pure-u-md-1-4 pure-u-sm-1">
+    <div class="pad">
+        <a name="about"></a>
+        <h3>关于我</h3>
+        <div style="text-align: center;">
+            <img src="/img/author.jpg" alt="吴继文" class="pure-img" />
+            <p><em>Handsome</em></p>
+        </div>
+
+        <h3>最近文章</h3>
+        <div class="pure-menu pure-menu-open">
+            <ul class="pure-menu-list">
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/mybatis-plus/" class="pure-menu-link">Mybatis-Plus<br>
+                        <small>MyBatis-Plus 的增强工具，在 MyBatis 的基础上只做增强不做改变，为简化开发、提高效率而生。</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/mongodb/" class="pure-menu-link">DBmong数据库<br>
+                        <small>NoSQL 是一项全新的数据库革命性运动，早期就有人提出，发展至2009年趋势越发高涨。NoSQL的拥护者们提倡运用非关系型的数据存储，相对于铺天盖地的关系型数据库运用，这一概念无疑是一种全新的思维的注入。</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/docker/" class="pure-menu-link">Docker容器技术<br>
+                        <small>这一种常用的容器技术，能简化项目的部署</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/go%E8%AF%AD%E8%A8%80/" class="pure-menu-link">Go语言技术知识<br>
+                        <small>主要介绍GO语言的基本语法</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/hexo&#43;github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6/" class="pure-menu-link">hexo&#43;github搭建个人博客<br>
+                        <small>介绍了个人博客搭建的完整步骤</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/idea%E7%9A%84%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="pure-menu-link">IDEA的基本使用<br>
+                        <small>主要介绍了IDEA的基本以用和一些常用的快捷键</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/java%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/" class="pure-menu-link">Java原生代码连接数据库<br>
+                        <small>介绍了在不使用框架的基础上连接MySQL</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/%E5%9F%BA%E4%BA%8Ejava%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="pure-menu-link">Java多线程基础知识<br>
+                        <small>一种提高程序运行效率的技术</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/java%E5%AE%9E%E7%8E%B0%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/" class="pure-menu-link">Java实现串口通信<br>
+                        <small>Java实现窗口通信</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/java%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" class="pure-menu-link">Java的基础知识<br>
+                        <small>介绍了Java的基础知识</small>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <h3>分类</h3>
+        <div style="text-align:center" class="tags">
+            
+            
+            <a href="/tags/%e6%a1%86%e6%9e%b6" class="pure-button"> 框架
+                <small>(6)</small></a>
+            
+            
+            
+            <a href="/tags/%e7%bc%96%e7%a8%8b" class="pure-button"> 编程
+                <small>(5)</small></a>
+            
+            
+            
+            <a href="/tags/%e5%85%b6%e5%ae%83" class="pure-button"> 其它
+                <small>(2)</small></a>
+            
+            
+            
+            <a href="/tags/%e6%95%b0%e6%8d%ae%e5%ba%93" class="pure-button"> 数据库
+                <small>(2)</small></a>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </div>
+    </div> 
+</div> 
+
+                
+            </div>
+<div class="pure-g">
+	<footer class="pure-u-1 pure-u-md-1 pure-u-sm-1">
+		<p>This page and its contents are copyright &copy; 2020,
+			<a href="">吴继文</a>.</p>
+		<p><a href="https://github.com/pravin/hugo-theme-prav">Theme Prav</a> by <a href="https://cto.me.uk">Pravin
+				Paratey</a></p>
+	</footer>
+
+	<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
+		integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+		crossorigin="anonymous"></script>
+</div>
+</div></body>
+</html>

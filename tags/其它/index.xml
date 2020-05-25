@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>其它 on Blog</title>
+    <link>https://example.com/tags/%E5%85%B6%E5%AE%83/</link>
+    <description>Recent content in 其它 on Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    
+	<atom:link href="https://example.com/tags/%E5%85%B6%E5%AE%83/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>hexo&#43;github搭建个人博客</title>
+      <link>https://example.com/posts/hexo&#43;github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/hexo&#43;github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6/</guid>
+      <description>安装前的准备 安装nodejs（下载之后一只下一步即可） 安装步骤：
+一.安装ncpm npm install -g cnpm --registry=https://registry.npm.taobao.org 测试是否安装成功：cnpm -v
+二.安装hexo cnpm install -g hexo-cli 测试是否安装成功：hexo -v
+三.新建一个空的文件夹(任意位置) 该文件夹用于存放博客的所有内容以及相关的配置。新建完成后并在DOS系统下面进入但该目录。
+四.初始化一个博客 hexo init 五.启动一个博客 hexo s 六.新建一篇文章 hexo n &amp;ldquo;我的第一篇博客文章&amp;rdquo; &amp;mdash;&amp;mdash;-会生成一个路径 执行完成后我们就可以进入到博文创建的目录并使用VIM进行编辑。(使用的时markdown语言)
+七.编辑完成后退回到根目录下面(就是之前创建的目录下面)。执行下面的指令： hexo clean hexo g hexo s 在浏览器中查看效果即可。
+八.网站部署到服务器上面 注册一个github账号，并新建一个仓库
+九.安装一个部署的插件 cnpm install --save hexo-deployer-git 注意：此处可能会有警告，可忽略。
+十.配置_config.yml文件 将最后一行的内容修改为：
+type: git repo: https://github.com/wujiwen-lang/wujiwen-lang.github.io branch: master 十一.查看部署的效果 执行下面指令进行部署：
+hexo d 直接浏览器中输入：wujiwen-lang.github.io即可。
+十二.更换主题 主题推荐：https://github.com/litten/hexo-theme-yilia下载主题的指令：```bashgit clone https://github.com/litten/hexo-theme-yilia.git themes/yilia```更改根目录下的配置文件:theme:landscape更改为theme: yilia 十三.</description>
+    </item>
+    
+    <item>
+      <title>基于Java的游戏外挂</title>
+      <link>https://example.com/posts/%E6%B8%B8%E6%88%8F%E5%A4%96%E6%8C%82%E7%9A%84%E5%BC%80%E5%8F%91/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/%E6%B8%B8%E6%88%8F%E5%A4%96%E6%8C%82%E7%9A%84%E5%BC%80%E5%8F%91/</guid>
+      <description>一、外挂分类 内存级外挂&amp;mdash;&amp;mdash;&amp;mdash;仅仅适用于单机游戏(通常使用C++语言别写，由于java时运行在JVM虚拟机上面的) 数据流级外挂&amp;mdash;&amp;mdash;-专门针对网络游戏，在客户端与服务器之间传输数据时进行拦截(非法的，会被封号) 脚本级外挂&amp;mdash;&amp;mdash;&amp;mdash;略色外挂（案件精灵、简单游）
+二、常用的API 使用的API大多数来自java.awt.Robot这个类
+void delay(int ms);//当前程序休眠若干秒 Color getPixelColor(int x,int y);//取得给定屏幕坐标像素位置的颜色值 void keyPress(int keycode);//按下某个按键 void keyRelease(int keycode);//释放某个按键 void mouseMove(int x,int y);//将鼠标移动到指定的屏幕位置，可用于程序的自动延时，测试等等。 void mousePress(int buttons);//指定鼠标按钮按下 void mouseRelease(int buttons);//用于鼠标按钮的抬起 void mouseWheel(int wheelAmt);//用于鼠标按钮的滚轮事件 三、模拟按键的操作 模拟一个人不停的按K键
+package com.mntc; import java.awt.*; import java.awt.event.KeyEvent; /* @author wujiwen @data 2019/9/4 - 18:43 */ public class Test { public static void main(String[] args) throws Exception { //创建一个机器人对象  Robot robot = new Robot(); //延时5秒钟  robot.delay(5000); while(true) { //指定产生0.</description>
+    </item>
+    
+  </channel>
+</rss>

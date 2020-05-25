@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#000" />
+    <title>
+        
+            IDEA的基本使用 &middot; Blog Hugo Theme - Prav
+        
+    </title>
+
+    
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"
+        integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    
+    
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:300,300italic,700&display=swap" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:300&display=swap" rel="stylesheet">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="">
+    
+    <meta name="description" content="主要介绍了IDEA的基本以用和一些常用的快捷键">
+    
+    <meta name="keywords" content="编程">
+    
+    <meta name="author" content="吴继文"></head>
+
+<body>
+        <div class="container">
+<div id="navbar" class="pure-menu pure-menu-open pure-menu-horizontal pure-menu-scrollable">
+    <a href="/" class="pure-menu-heading">
+         
+            Blog 
+         
+    </a>
+    <ul class="pure-menu-list">
+        <li class="pure-menu-item">
+            <a href="/posts" class="pure-menu-link">
+                <i class="fa fa-archive"></i>
+                文章
+            </a>
+        </li>
+        <li class="pure-menu-item">
+            <a href="/tags" class="pure-menu-link">
+                <i class="fas fa-comments"></i>
+                分类
+            </a>
+        </li>
+        <li class="pure-menu-item">
+            <a href="/about" class="pure-menu-link">
+                <i class="fas fa-smile"></i>
+                关于我
+            </a>
+        </li>
+    </ul>
+    <ul class="pure-menu-list pull-right">
+        
+        <li class="pure-menu-item">
+            <a href="https://www.baidu.com" title="Github" class="pure-menu-link">
+                <i class="fab fa-github"></i>
+                <span class="hide">Github</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="http://twitter.com/example" title="@pravin" class="pure-menu-link">
+                <i class="fab fa-twitter-square"></i>
+                <span class="hide">Twitter</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="http://uk.linkedin.com/in/example" title="Linked In" class="pure-menu-link">
+                <i class="fab fa-linkedin"></i>
+                <span class="hide">LinkedIn</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="https://www.medium.com/@example" title="Medium" class="pure-menu-link">
+                <i class="fab fa-medium"></i>
+                <span class="hide">Medium</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="https://www.facebook.com/example" title="Facebook" class="pure-menu-link">
+                <i class="fab fa-facebook"></i>
+                <span class="hide">Facebook</span>
+            </a>
+        </li>
+        
+        <li class="pure-menu-item">
+            <a href="/atom.xml" title="Atom Feed" class="pure-menu-link">
+                <i class="fas fa-rss-square"></i>
+                <span class="hide">RSS Feed</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="pure-u-1">
+    <div class="pad">
+    </div>
+</div>
+<div class="pure-g">
+
+
+<div id="content" class="pure-u-1 pure-u-md-3-4 pure-u-sm-1">
+    <div class="pad">
+
+<div class="date">
+    <time pubdate="0001-01-01">January 1, 0001</time>
+    <span class="author">学习笔记</span>
+</div>
+
+<article>
+    <h1><a href="https://example.com/posts/idea%E7%9A%84%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/">IDEA的基本使用</a></h1>
+    <div class="tags">
+        
+        
+        <a href="/tags/%E7%BC%96%E7%A8%8B" class="pure-button">编程</a>
+        
+    </div>
+    <h1 id="从-windows-过度到-mac-必备快捷键对照表">从 Windows 过度到 Mac 必备快捷键对照表</h1>
+<p>前提:已经手动的将配置文件导入。</p>
+<h2 id="mac-键盘符号说明">Mac 键盘符号说明</h2>
+<ul>
+<li><code>⌘</code> == <code>Command</code></li>
+<li><code>⇧</code> == <code>Shift</code></li>
+<li><code>⇪</code> == <code>Caps Lock</code></li>
+<li><code>⌥</code> == <code>Option</code></li>
+<li><code>⌃</code> == <code>Control</code></li>
+<li><code>↩</code> == <code>Return/Enter</code></li>
+<li><code>⌫</code> == <code>Delete</code></li>
+<li><code>⌦</code> == <code>向前删除键（Fn+Delete）</code></li>
+<li><code>↑</code> == <code>上箭头</code></li>
+<li><code>↓</code> == <code>下箭头</code></li>
+<li><code>←</code> == <code>左箭头</code></li>
+<li><code>→</code> == <code>右箭头</code></li>
+<li><code>⇞</code> == <code>Page Up（Fn+↑）</code></li>
+<li><code>⇟</code> == <code>Page Down（Fn+↓）</code></li>
+<li><code>Home</code> == <code>Fn + ←</code></li>
+<li><code>End</code> == <code>Fn + →</code></li>
+<li><code>⇥</code> == <code>右制表符（Tab键）</code></li>
+<li><code>⇤</code> == <code>左制表符（Shift+Tab）</code></li>
+<li><code>⎋</code> == <code>Escape (Esc)</code></li>
+<li><code>⏏</code> == <code>电源开关键</code></li>
+</ul>
+<h2 id="ctrl">Ctrl</h2>
+<table class='pure-table pure-table-striped'>
+<thead>
+<tr>
+<th align="left">Win 快捷键</th>
+<th align="left">Mac 快捷键</th>
+<th align="left">介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>F</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>F</kbd></td>
+<td align="left">在当前文件进行文本查找</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>R</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>R</kbd></td>
+<td align="left">在当前文件进行文本替换</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Z</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Z</kbd></td>
+<td align="left">撤销</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Y</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Delete</kbd></td>
+<td align="left">删除光标所在行 或 删除选中的行</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>D</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>D</kbd></td>
+<td align="left">复制光标所在行 或 复制选择内容，并把复制内容插入光标位置下面</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>W</kbd></td>
+<td align="left"><kbd>Option</kbd> + <kbd>方向键上</kbd></td>
+<td align="left">递进式选择代码块。可选中光标所在的单词或段落，连续按会在原有选中的基础上再扩展选中范围</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>E</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>E</kbd></td>
+<td align="left">显示最近打开的文件记录列表</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>N</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>O</kbd></td>
+<td align="left">根据输入的 <strong>类名</strong> 查找类文件</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>J</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>J</kbd></td>
+<td align="left">插入自定义动态代码模板</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>P</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>P</kbd></td>
+<td align="left">方法参数提示显示</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>U</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>U</kbd></td>
+<td align="left">前往当前光标所在的方法的父类的方法 / 接口定义</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>B</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>B</kbd></td>
+<td align="left">进入光标所在的方法/变量的接口或是定义处，等效于 <code>Ctrl + 左键单击</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>/</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>/</kbd></td>
+<td align="left">注释光标所在行代码，会根据当前不同文件类型使用不同的注释符号</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>F1</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>F1</kbd></td>
+<td align="left">在光标所在的错误代码处显示错误信息</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>F11</kbd></td>
+<td align="left"><kbd>Option</kbd> + <kbd>F3</kbd></td>
+<td align="left">选中文件 / 文件夹，使用助记符设定 / 取消书签</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>F12</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>F12</kbd></td>
+<td align="left">弹出当前文件结构层，可以在弹出的层上直接输入，进行筛选</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Space</kbd></td>
+<td align="left"><kbd>Control</kbd> + <kbd>Space</kbd></td>
+<td align="left">基础代码补全，默认在 Windows 系统上被输入法占用，需要进行修改，建议修改为 <code>Ctrl + 逗号</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Delete</kbd></td>
+<td align="left"><kbd>Option</kbd> + <kbd>Fn</kbd>+ Delete</td>
+<td align="left">删除光标后面的单词或是中文句</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>BackSpace</kbd></td>
+<td align="left"><kbd>Option</kbd> + <kbd>Delete</kbd></td>
+<td align="left">删除光标前面的单词或是中文句</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>1,2,3&hellip;9</kbd></td>
+<td align="left"><kbd>Control</kbd> + <kbd>1,2,3&hellip;9</kbd></td>
+<td align="left">定位到对应数值的书签位置</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>加号</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>加号</kbd></td>
+<td align="left">展开代码</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>减号</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>减号</kbd></td>
+<td align="left">折叠代码</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>左键单击</kbd></td>
+<td align="left"><kbd>Control</kbd> + <kbd>左键单击</kbd></td>
+<td align="left">在打开的文件标题上，弹出该文件路径</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>左方向键</kbd></td>
+<td align="left"><kbd>Option</kbd> + <kbd>左方向键</kbd></td>
+<td align="left">光标跳转到当前单词 / 中文句的左侧开头位置</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>右方向键</kbd></td>
+<td align="left"><kbd>Option</kbd> + <kbd>右方向键</kbd></td>
+<td align="left">光标跳转到当前单词 / 中文句的右侧开头位置</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>前方向键</kbd></td>
+<td align="left">预设中没有该快捷键</td>
+<td align="left">等效于鼠标滚轮向前效果</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>后方向键</kbd></td>
+<td align="left">预设中没有该快捷键</td>
+<td align="left">等效于鼠标滚轮向后效果</td>
+</tr>
+</tbody>
+</table>
+<h2 id="alt">Alt</h2>
+<table class='pure-table pure-table-striped'>
+<thead>
+<tr>
+<th align="left">Win 快捷键</th>
+<th align="left">Mac 快捷键</th>
+<th align="left">介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>`</kbd></td>
+<td align="left"><kbd>Control</kbd> + <kbd>V</kbd></td>
+<td align="left">显示版本控制常用操作菜单弹出层</td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>F1</kbd></td>
+<td align="left"><kbd>Option</kbd> + <kbd>F1</kbd></td>
+<td align="left">显示当前文件选择目标弹出层，弹出层中有很多目标可以进行选择</td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>F7</kbd></td>
+<td align="left"><kbd>Option</kbd> + <kbd>F7</kbd></td>
+<td align="left">查询所选对象/变量被引用</td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>Enter</kbd></td>
+<td align="left"><kbd>Option</kbd> + <kbd>Enter</kbd></td>
+<td align="left">IntelliJ IDEA 根据光标所在问题，提供快速修复选择，光标放在的位置不同提示的结果也不同</td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>Insert</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>N</kbd></td>
+<td align="left">代码自动生成，如生成对象的 set / get 方法，构造函数，toString() 等</td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>左方向键</kbd></td>
+<td align="left"><kbd>Control</kbd> + <kbd>左方向键</kbd></td>
+<td align="left">切换当前已打开的窗口中的子视图，比如Debug窗口中有Output、Debugger等子视图，用此快捷键就可以在子视图中切换</td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>右方向键</kbd></td>
+<td align="left"><kbd>Control</kbd> + <kbd>右方向键</kbd></td>
+<td align="left">切换当前已打开的窗口中的子视图，比如Debug窗口中有Output、Debugger等子视图，用此快捷键就可以在子视图中切换</td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>前方向键</kbd></td>
+<td align="left"><kbd>Control</kbd> + <kbd>前方向键</kbd></td>
+<td align="left">当前光标跳转到当前文件的前一个方法名位置</td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>后方向键</kbd></td>
+<td align="left"><kbd>Control</kbd> + <kbd>后方向键</kbd></td>
+<td align="left">当前光标跳转到当前文件的后一个方法名位置</td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>1,2,3&hellip;9</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>1,2,3&hellip;9</kbd></td>
+<td align="left">显示对应数值的选项卡，其中 1 是 Project 用得最多</td>
+</tr>
+</tbody>
+</table>
+<h2 id="shift">Shift</h2>
+<table class='pure-table pure-table-striped'>
+<thead>
+<tr>
+<th align="left">Win 快捷键</th>
+<th align="left">Mac 快捷键</th>
+<th align="left">介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><kbd>Shift</kbd> + <kbd>F11</kbd></td>
+<td align="left"><kbd>Command + F3</kbd></td>
+<td align="left">弹出书签显示层</td>
+</tr>
+<tr>
+<td align="left"><kbd>Shift</kbd> + <kbd>Tab</kbd></td>
+<td align="left"><kbd>Shift + Tab</kbd></td>
+<td align="left">取消缩进</td>
+</tr>
+<tr>
+<td align="left"><kbd>Shift</kbd> + <kbd>Enter</kbd></td>
+<td align="left"><kbd>Shift + Enter</kbd></td>
+<td align="left">开始新一行。光标所在行下空出一行，光标定位到新行位置</td>
+</tr>
+<tr>
+<td align="left"><kbd>Shift</kbd> + <kbd>左键单击</kbd></td>
+<td align="left"><kbd>Shift + 左键单击</kbd></td>
+<td align="left">在打开的文件名上按此快捷键，可以关闭当前打开文件</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ctrl--alt">Ctrl + Alt</h2>
+<table class='pure-table pure-table-striped'>
+<thead>
+<tr>
+<th align="left">Win 快捷键</th>
+<th align="left">Mac 快捷键</th>
+<th align="left">介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>L</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Option</kbd> + <kbd>L</kbd></td>
+<td align="left">格式化代码，可以对当前文件和整个包目录使用</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>O</kbd></td>
+<td align="left"><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>O</kbd></td>
+<td align="left">优化导入的类，可以对当前文件和整个包目录使用</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Option</kbd> + <kbd>T</kbd></td>
+<td align="left">对选中的代码弹出环绕选项弹出层</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>S</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>逗号</kbd></td>
+<td align="left">打开 IntelliJ IDEA 系统设置</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Enter</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Option</kbd> + <kbd>Enter</kbd></td>
+<td align="left">光标所在行上空出一行，光标定位到新行</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>左方向键</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Option</kbd> + <kbd>左方向键</kbd></td>
+<td align="left">退回到上一个操作的地方</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>右方向键</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Option</kbd> + <kbd>右方向键</kbd></td>
+<td align="left">前进到上一个操作的地方</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ctrl--shift">Ctrl + Shift</h2>
+<table class='pure-table pure-table-striped'>
+<thead>
+<tr>
+<th align="left">Win 快捷键</th>
+<th align="left">Mac 快捷键</th>
+<th align="left">介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd></td>
+<td align="left">根据输入内容查找整个项目 或 指定目录内文件</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd></td>
+<td align="left">根据输入内容替换对应内容，范围为整个项目 或 指定目录内文件</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>J</kbd></td>
+<td align="left"><kbd>Control</kbd> + <kbd>Shift</kbd> + <kbd>J</kbd></td>
+<td align="left">自动将下一行合并到当前行末尾</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd></td>
+<td align="left">取消撤销</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>W</kbd></td>
+<td align="left"><kbd>Option</kbd> + <kbd>方向键下</kbd></td>
+<td align="left">递进式取消选择代码块。可选中光标所在的单词或段落，连续按会在原有选中的基础上再扩展取消选中范围</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>N</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>O</kbd></td>
+<td align="left">通过文件名定位 / 打开文件 / 目录，打开目录需要在输入的内容后面多加一个正斜杠</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>U</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>U</kbd></td>
+<td align="left">对选中的代码进行大 / 小写轮流转换</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>T</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>T</kbd></td>
+<td align="left">对当前类生成单元测试类，如果已经存在的单元测试类则可以进行选择</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>C</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>C</kbd></td>
+<td align="left">复制当前文件磁盘路径到剪贴板</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd></td>
+<td align="left"><kbd>Control</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd></td>
+<td align="left">跳转到类型声明处</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>/</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Option</kbd> + <kbd>/</kbd></td>
+<td align="left">代码块注释</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>[</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>[</kbd></td>
+<td align="left">选中从光标所在位置到它的顶部中括号位置</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>]</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>]</kbd></td>
+<td align="left">选中从光标所在位置到它的底部中括号位置</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>加号</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>加号</kbd></td>
+<td align="left">展开所有代码</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>减号</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>减号</kbd></td>
+<td align="left">折叠所有代码</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F7</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>F7</kbd></td>
+<td align="left">高亮显示所有该选中文本，按Esc高亮消失</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F12</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>F12</kbd></td>
+<td align="left">编辑器最大化</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd></td>
+<td align="left">自动结束代码，行末自动添加分号</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Backspace</kbd></td>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Backspace</kbd></td>
+<td align="left">退回到上次修改的地方</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>1,2,3&hellip;9</kbd></td>
+<td align="left"><kbd>Control</kbd> + <kbd>Shift</kbd> + <kbd>1,2,3&hellip;9</kbd></td>
+<td align="left">快速添加指定数值的书签</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>左键单击</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>左键单击</kbd></td>
+<td align="left">把光标放在某个类变量上，按此快捷键可以直接定位到该类中</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>左方向键</kbd></td>
+<td align="left"><kbd>Option</kbd> + <kbd>Shift</kbd> + <kbd>左方向键</kbd></td>
+<td align="left">在代码文件上，光标跳转到当前单词 / 中文句的左侧开头位置，同时选中该单词 / 中文句</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>右方向键</kbd></td>
+<td align="left"><kbd>Option</kbd> + <kbd>Shift</kbd> + <kbd>右方向键</kbd></td>
+<td align="left">在代码文件上，光标跳转到当前单词 / 中文句的右侧开头位置，同时选中该单词 / 中文句</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>前方向键</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>前方向键</kbd></td>
+<td align="left">光标放在方法名上，将方法移动到上一个方法前面，调整方法排序</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>后方向键</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>后方向键</kbd></td>
+<td align="left">光标放在方法名上，将方法移动到下一个方法前面，调整方法排序</td>
+</tr>
+</tbody>
+</table>
+<h2 id="alt--shift">Alt + Shift</h2>
+<table class='pure-table pure-table-striped'>
+<thead>
+<tr>
+<th align="left">Win 快捷键</th>
+<th align="left">Mac 快捷键</th>
+<th align="left">介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>N</kbd></td>
+<td align="left"><kbd>Option</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd></td>
+<td align="left">选择 / 添加 task</td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>左键双击</kbd></td>
+<td align="left"><kbd>Option</kbd> + <kbd>Shift</kbd> + <kbd>左键双击</kbd></td>
+<td align="left">选择被双击的单词 / 中文句，按住不放，可以同时选择其他单词 / 中文句</td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>前方向键</kbd></td>
+<td align="left"><kbd>Option</kbd> + <kbd>Shift</kbd> + <kbd>前方向键</kbd></td>
+<td align="left">移动光标所在行向上移动</td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>后方向键</kbd></td>
+<td align="left"><kbd>Option</kbd> + <kbd>Shift</kbd> + <kbd>后方向键</kbd></td>
+<td align="left">移动光标所在行向下移动</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ctrl--shift--alt">Ctrl + Shift + Alt</h2>
+<table class='pure-table pure-table-striped'>
+<thead>
+<tr>
+<th align="left">Win 快捷键</th>
+<th align="left">Mac 快捷键</th>
+<th align="left">介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>V</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>Option</kbd> + <kbd>V</kbd></td>
+<td align="left">无格式黏贴</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>S</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>;</kbd></td>
+<td align="left">打开当前项目设置</td>
+</tr>
+</tbody>
+</table>
+<h2 id="其他">其他</h2>
+<table class='pure-table pure-table-striped'>
+<thead>
+<tr>
+<th align="left">Win 快捷键</th>
+<th align="left">Mac 快捷键</th>
+<th align="left">介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><kbd>F2</kbd></td>
+<td align="left"><kbd>F2</kbd></td>
+<td align="left">跳转到下一个高亮错误 或 警告位置</td>
+</tr>
+<tr>
+<td align="left"><kbd>F4</kbd></td>
+<td align="left"><kbd>F4</kbd></td>
+<td align="left">编辑源</td>
+</tr>
+<tr>
+<td align="left"><kbd>F11</kbd></td>
+<td align="left"><kbd>F3</kbd></td>
+<td align="left">添加书签</td>
+</tr>
+<tr>
+<td align="left"><kbd>F12</kbd></td>
+<td align="left"><kbd>F12</kbd></td>
+<td align="left">回到前一个工具窗口</td>
+</tr>
+<tr>
+<td align="left"><kbd>Tab</kbd></td>
+<td align="left"><kbd>Tab</kbd></td>
+<td align="left">缩进</td>
+</tr>
+<tr>
+<td align="left"><kbd>ESC</kbd></td>
+<td align="left"><kbd>ESC</kbd></td>
+<td align="left">从工具窗口进入代码文件窗口</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+    </div>
+</div>
+
+
+                
+<div id="sidebar" class="pure-u-1 pure-u-md-1-4 pure-u-sm-1">
+    <div class="pad">
+        <a name="about"></a>
+        <h3>关于我</h3>
+        <div style="text-align: center;">
+            <img src="/img/author.jpg" alt="吴继文" class="pure-img" />
+            <p><em>Handsome</em></p>
+        </div>
+
+        <h3>最近文章</h3>
+        <div class="pure-menu pure-menu-open">
+            <ul class="pure-menu-list">
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/mybatis-plus/" class="pure-menu-link">Mybatis-Plus<br>
+                        <small>MyBatis-Plus 的增强工具，在 MyBatis 的基础上只做增强不做改变，为简化开发、提高效率而生。</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/mongodb/" class="pure-menu-link">DBmong数据库<br>
+                        <small>NoSQL 是一项全新的数据库革命性运动，早期就有人提出，发展至2009年趋势越发高涨。NoSQL的拥护者们提倡运用非关系型的数据存储，相对于铺天盖地的关系型数据库运用，这一概念无疑是一种全新的思维的注入。</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/docker/" class="pure-menu-link">Docker容器技术<br>
+                        <small>这一种常用的容器技术，能简化项目的部署</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/go%E8%AF%AD%E8%A8%80/" class="pure-menu-link">Go语言技术知识<br>
+                        <small>主要介绍GO语言的基本语法</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/hexo&#43;github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6/" class="pure-menu-link">hexo&#43;github搭建个人博客<br>
+                        <small>介绍了个人博客搭建的完整步骤</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/idea%E7%9A%84%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="pure-menu-link">IDEA的基本使用<br>
+                        <small>主要介绍了IDEA的基本以用和一些常用的快捷键</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/java%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/" class="pure-menu-link">Java原生代码连接数据库<br>
+                        <small>介绍了在不使用框架的基础上连接MySQL</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/%E5%9F%BA%E4%BA%8Ejava%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="pure-menu-link">Java多线程基础知识<br>
+                        <small>一种提高程序运行效率的技术</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/java%E5%AE%9E%E7%8E%B0%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/" class="pure-menu-link">Java实现串口通信<br>
+                        <small>Java实现窗口通信</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/java%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" class="pure-menu-link">Java的基础知识<br>
+                        <small>介绍了Java的基础知识</small>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <h3>分类</h3>
+        <div style="text-align:center" class="tags">
+            
+            
+            <a href="/tags/%e6%a1%86%e6%9e%b6" class="pure-button"> 框架
+                <small>(6)</small></a>
+            
+            
+            
+            <a href="/tags/%e7%bc%96%e7%a8%8b" class="pure-button"> 编程
+                <small>(5)</small></a>
+            
+            
+            
+            <a href="/tags/%e5%85%b6%e5%ae%83" class="pure-button"> 其它
+                <small>(2)</small></a>
+            
+            
+            
+            <a href="/tags/%e6%95%b0%e6%8d%ae%e5%ba%93" class="pure-button"> 数据库
+                <small>(2)</small></a>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </div>
+    </div> 
+</div> 
+
+                
+            </div>
+<div class="pure-g">
+	<footer class="pure-u-1 pure-u-md-1 pure-u-sm-1">
+		<p>This page and its contents are copyright &copy; 2020,
+			<a href="">吴继文</a>.</p>
+		<p><a href="https://github.com/pravin/hugo-theme-prav">Theme Prav</a> by <a href="https://cto.me.uk">Pravin
+				Paratey</a></p>
+	</footer>
+
+	<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
+		integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+		crossorigin="anonymous"></script>
+</div>
+</div></body>
+</html>

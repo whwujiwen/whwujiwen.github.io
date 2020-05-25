@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#000" />
+    <title>
+        
+            SpringMVC的入门级教程 &middot; Blog Hugo Theme - Prav
+        
+    </title>
+
+    
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"
+        integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    
+    
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:300,300italic,700&display=swap" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:300&display=swap" rel="stylesheet">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="">
+    
+    <meta name="description" content="SpringMVC 是一种基于 Java 的实现 MVC 设计模型的请求驱动类型的轻量级 Web 框架，属于 SpringFrameWork 的后续产品，已经融合在 Spring Web Flow 里面。Spring 框架提供了构建Web 应用程序的全功能 MVC 模块。使用 Spring 可插入的 MVC 架构，从而在使用 Spring 进行 WEB 开发时，可以选择使用 Spring的 Spring MVC 框架或集成其他 MVC 开发框架，如 Struts1(现在一般不用)，Struts2 等。SpringMVC 已经成为目前最主流的 MVC 框架之一，并且随着 Spring3.0 的发布，全面超越 Struts2，成为最优秀的 MVC 框架。它通过一套注解，让一个简单的 Java 类成为处理请求的控制器，而无须实现任何接口。同时它还支持RESTful 编程风格的请求。">
+    
+    <meta name="keywords" content="框架">
+    
+    <meta name="author" content="吴继文"></head>
+
+<body>
+        <div class="container">
+<div id="navbar" class="pure-menu pure-menu-open pure-menu-horizontal pure-menu-scrollable">
+    <a href="/" class="pure-menu-heading">
+         
+            Blog 
+         
+    </a>
+    <ul class="pure-menu-list">
+        <li class="pure-menu-item">
+            <a href="/posts" class="pure-menu-link">
+                <i class="fa fa-archive"></i>
+                文章
+            </a>
+        </li>
+        <li class="pure-menu-item">
+            <a href="/tags" class="pure-menu-link">
+                <i class="fas fa-comments"></i>
+                分类
+            </a>
+        </li>
+        <li class="pure-menu-item">
+            <a href="/about" class="pure-menu-link">
+                <i class="fas fa-smile"></i>
+                关于我
+            </a>
+        </li>
+    </ul>
+    <ul class="pure-menu-list pull-right">
+        
+        <li class="pure-menu-item">
+            <a href="https://www.baidu.com" title="Github" class="pure-menu-link">
+                <i class="fab fa-github"></i>
+                <span class="hide">Github</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="http://twitter.com/example" title="@pravin" class="pure-menu-link">
+                <i class="fab fa-twitter-square"></i>
+                <span class="hide">Twitter</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="http://uk.linkedin.com/in/example" title="Linked In" class="pure-menu-link">
+                <i class="fab fa-linkedin"></i>
+                <span class="hide">LinkedIn</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="https://www.medium.com/@example" title="Medium" class="pure-menu-link">
+                <i class="fab fa-medium"></i>
+                <span class="hide">Medium</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="https://www.facebook.com/example" title="Facebook" class="pure-menu-link">
+                <i class="fab fa-facebook"></i>
+                <span class="hide">Facebook</span>
+            </a>
+        </li>
+        
+        <li class="pure-menu-item">
+            <a href="/atom.xml" title="Atom Feed" class="pure-menu-link">
+                <i class="fas fa-rss-square"></i>
+                <span class="hide">RSS Feed</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="pure-u-1">
+    <div class="pad">
+    </div>
+</div>
+<div class="pure-g">
+
+
+<div id="content" class="pure-u-1 pure-u-md-3-4 pure-u-sm-1">
+    <div class="pad">
+
+<div class="date">
+    <time pubdate="0001-01-01">January 1, 0001</time>
+    <span class="author">学习笔记</span>
+</div>
+
+<article>
+    <h1><a href="https://example.com/posts/springmvc%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">SpringMVC的入门级教程</a></h1>
+    <div class="tags">
+        
+        
+        <a href="/tags/%E6%A1%86%E6%9E%B6" class="pure-button">框架</a>
+        
+    </div>
+    <h2 id="一mvc的三层架构">一、MVC的三层架构</h2>
+<p>接下来我们就说说每层都负责哪些方面：
+<code>表现层</code>：
+也就是我们常说的web层。它负责接收客户端请求，向客户端响应结果，通常客户端使用http协议请求web 层，web 需要接收 http 请求，完成 http 响应。表现层包括展示层和控制层：控制层负责接收请求，展示层负责结果的展示。表现层依赖业务层，接收到客户端请求一般会调用业务层进行业务处理，并将处理结果响应给客户端。表现层的设计一般都使用 MVC 模型。（MVC 是表现层的设计模型，和其他层没有关系）
+<code>业务层</code>：
+也就是我们常说的 service 层。它负责业务逻辑处理，和我们开发项目的需求息息相关。web 层依赖业务层，但是业务层不依赖 web 层。业务层在业务处理时可能会依赖持久层，如果要对数据持久化需要保证事务一致性。（也就是我们说的，事务应该放到业务层来控制）
+<code>持久层</code>：
+也就是我们是常说的 dao 层。负责数据持久化，包括数据层即数据库和数据访问层，数据库是对数据进行持久化的载体，数据访问层是业务层和持久层交互的接口，业务层需要通过数据访问层将数据持久化到数据库中。通俗的讲，持久层就是和数据库交互，对数据库表进行曾删改查的。
+<img src="/assets/blogImg/springmvc1.png" alt="mvc"></p>
+<h2 id="二springmvc的简介">二、SpringMVC的简介</h2>
+<p>SpringMVC 是一种基于 Java 的实现 MVC 设计模型的请求驱动类型的轻量级 Web 框架，属于 SpringFrameWork 的后续产品，已经融合在 Spring Web Flow 里面。Spring 框架提供了构建Web 应用程序的全功能 MVC 模块。使用 Spring 可插入的 MVC 架构，从而在使用 Spring 进行 WEB 开发时，可以选择使用 Spring的 Spring MVC 框架或集成其他 MVC 开发框架，如 Struts1(现在一般不用)，Struts2 等。SpringMVC 已经成为目前最主流的 MVC 框架之一，并且随着 Spring3.0 的发布，全面超越 Struts2，成为最优秀的 MVC 框架。它通过一套注解，让一个简单的 Java 类成为处理请求的控制器，而无须实现任何接口。同时它还支持RESTful 编程风格的请求。</p>
+<h2 id="二springmvc在三层结构中的位置">二、SpringMVC在三层结构中的位置</h2>
+<p><img src="/assets/blogImg/springmvc2.png" alt="mvc2"></p>
+<h2 id="三springmvc和struts2的区别">三、SpringMVC和Struts2的区别</h2>
+<p><code>1、共同点</code>：
+它们都是表现层框架，都是基于 MVC 模型编写的。
+它们的底层都离不开原始 ServletAPI。
+它们处理请求的机制都是一个核心控制器。
+<code>2、区别</code>：
+Spring MVC 的入口是 Servlet, 而 Struts2 是 Filter
+Spring MVC 是基于方法设计的，而 Struts2 是基于类，Struts2 每次执行都会创建一个动作类。所以 Spring MVC 会稍微比 Struts2 快些。
+Spring MVC 使用更加简洁,同时还支持 JSR303, 处理 ajax 的请求更方便(JSR303 是一套 JavaBean 参数校验的标准，它定义了很多常用的校验注解，我们可以直接将这些注解加在我们 JavaBean 的属性上面，就可以在需要校验的时候进行校验了。)Struts2 的 OGNL 表达式使页面的开发效率相比 Spring MVC 更高些，但执行效率并没有比 JSTL 提升，尤其是 struts2 的表单标签，远没有 html 执行效率高。</p>
+<h2 id="四springmvc的入门案例">四、SpringMVC的入门案例</h2>
+<h3 id="入门案例之idea版本">入门案例之IDEA版本</h3>
+<p><code>1.启动服务器，加载一些配置文件</code></p>
+<blockquote>
+<p>DispatcherServlet对象创建(前端控制器，指挥控制作用)    <br>
+springmvc.xml被加载         <br>
+HelloContrller创建程对象</p>
+</blockquote>
+<p><code>2.发送请求，后台处理请求</code>
+<img src="/assets/blogImg/springmvc3.jpg" alt="mvc3"></p>
+<p><code>3、编码的具体流程</code>
+第一步：创建一个Maven工程
+第二部：补全目录结构</p>
+<blockquote>
+<p>java -&gt; make Directory as -&gt; Sources Root
+resources -&gt; make Directory as -&gt; Resource Root(并在该目录下new XML configuraton File -&gt; Spring Config)</p>
+</blockquote>
+<p>第三步：引入坐标依赖(在pom.xml)</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#1e889b">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+
+<span style="color:#8b008b;font-weight:bold">&lt;project</span> <span style="color:#658b00">xmlns=</span><span style="color:#cd5555">&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span style="color:#658b00">xmlns:xsi=</span><span style="color:#cd5555">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+  <span style="color:#658b00">xsi:schemaLocation=</span><span style="color:#cd5555">&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;modelVersion&gt;</span>4.0.0<span style="color:#8b008b;font-weight:bold">&lt;/modelVersion&gt;</span>
+
+  <span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>cn.itcast<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>springmvc_day01_01_start<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>1.0-SNAPSHOT<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;packaging&gt;</span>war<span style="color:#8b008b;font-weight:bold">&lt;/packaging&gt;</span>
+
+  <span style="color:#8b008b;font-weight:bold">&lt;name&gt;</span>springmvc_day01_01_start Maven Webapp<span style="color:#8b008b;font-weight:bold">&lt;/name&gt;</span>
+  <span style="color:#228b22">&lt;!-- FIXME change it to the project&#39;s website --&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;url&gt;</span>http://www.example.com<span style="color:#8b008b;font-weight:bold">&lt;/url&gt;</span>
+
+  <span style="color:#8b008b;font-weight:bold">&lt;properties&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;project.build.sourceEncoding&gt;</span>UTF-8<span style="color:#8b008b;font-weight:bold">&lt;/project.build.sourceEncoding&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;maven.compiler.source&gt;</span>1.8<span style="color:#8b008b;font-weight:bold">&lt;/maven.compiler.source&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;maven.compiler.target&gt;</span>1.8<span style="color:#8b008b;font-weight:bold">&lt;/maven.compiler.target&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;spring.version&gt;</span>5.0.2.RELEASE<span style="color:#8b008b;font-weight:bold">&lt;/spring.version&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;/properties&gt;</span>
+
+  <span style="color:#8b008b;font-weight:bold">&lt;dependencies&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;dependency&gt;</span>
+      <span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>org.springframework<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+      <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>spring-context<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+      <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>${spring.version}<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;/dependency&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;dependency&gt;</span>
+      <span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>org.springframework<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+      <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>spring-web<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+      <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>${spring.version}<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;/dependency&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;dependency&gt;</span>
+      <span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>org.springframework<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+      <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>spring-webmvc<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+      <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>${spring.version}<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;/dependency&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;dependency&gt;</span>
+      <span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>javax.servlet<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+      <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>servlet-api<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+      <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>2.5<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+      <span style="color:#8b008b;font-weight:bold">&lt;scope&gt;</span>provided<span style="color:#8b008b;font-weight:bold">&lt;/scope&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;/dependency&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;dependency&gt;</span>
+      <span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>javax.servlet.jsp<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+      <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>jsp-api<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+      <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>2.0<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+      <span style="color:#8b008b;font-weight:bold">&lt;scope&gt;</span>provided<span style="color:#8b008b;font-weight:bold">&lt;/scope&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;/dependency&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;/dependencies&gt;</span>
+
+  <span style="color:#8b008b;font-weight:bold">&lt;build&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;finalName&gt;</span>springmvc_day01_01_start<span style="color:#8b008b;font-weight:bold">&lt;/finalName&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;pluginManagement&gt;</span><span style="color:#228b22">&lt;!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) --&gt;</span>
+      <span style="color:#8b008b;font-weight:bold">&lt;plugins&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;plugin&gt;</span>
+          <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>maven-clean-plugin<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+          <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>3.1.0<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;/plugin&gt;</span>
+        <span style="color:#228b22">&lt;!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging --&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;plugin&gt;</span>
+          <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>maven-resources-plugin<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+          <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>3.0.2<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;/plugin&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;plugin&gt;</span>
+          <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>maven-compiler-plugin<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+          <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>3.8.0<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;/plugin&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;plugin&gt;</span>
+          <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>maven-surefire-plugin<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+          <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>2.22.1<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;/plugin&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;plugin&gt;</span>
+          <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>maven-war-plugin<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+          <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>3.2.2<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;/plugin&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;plugin&gt;</span>
+          <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>maven-install-plugin<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+          <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>2.5.2<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;/plugin&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;plugin&gt;</span>
+          <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>maven-deploy-plugin<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+          <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>2.8.2<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;/plugin&gt;</span>
+      <span style="color:#8b008b;font-weight:bold">&lt;/plugins&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;/pluginManagement&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;/build&gt;</span>
+<span style="color:#8b008b;font-weight:bold">&lt;/project&gt;</span>
+
+</code></pre></div><p>第四部：配置前端控制器（web.xml）&mdash;实质是servlet</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#1e889b">&lt;!DOCTYPE web-app PUBLIC
+</span><span style="color:#1e889b"> &#34;-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN&#34;
+</span><span style="color:#1e889b"> &#34;http://java.sun.com/dtd/web-app_2_3.dtd&#34; &gt;</span>
+
+<span style="color:#8b008b;font-weight:bold">&lt;web-app&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;display-name&gt;</span>Archetype Created Web Application<span style="color:#8b008b;font-weight:bold">&lt;/display-name&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;servlet&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;servlet-name&gt;</span>dispatcherServlet<span style="color:#8b008b;font-weight:bold">&lt;/servlet-name&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;servlet-class&gt;</span>org.springframework.web.servlet.DispatcherServlet<span style="color:#8b008b;font-weight:bold">&lt;/servlet-class&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;init-param&gt;</span>
+      <span style="color:#8b008b;font-weight:bold">&lt;param-name&gt;</span>contextConfigLocation<span style="color:#8b008b;font-weight:bold">&lt;/param-name&gt;</span>
+      <span style="color:#8b008b;font-weight:bold">&lt;param-value&gt;</span>classpath:springmvc.xml<span style="color:#8b008b;font-weight:bold">&lt;/param-value&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;/init-param&gt;</span>
+      <span style="color:#228b22">&lt;!--该标签使得我们第一次启动服务器时，servlet直接创建成为对象--&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;load-on-startup&gt;</span>1<span style="color:#8b008b;font-weight:bold">&lt;/load-on-startup&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;/servlet&gt;</span>
+
+  <span style="color:#8b008b;font-weight:bold">&lt;servlet-mapping&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;servlet-name&gt;</span>dispatcherServlet<span style="color:#8b008b;font-weight:bold">&lt;/servlet-name&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;url-pattern&gt;</span>/<span style="color:#8b008b;font-weight:bold">&lt;/url-pattern&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;/servlet-mapping&gt;</span>
+<span style="color:#8b008b;font-weight:bold">&lt;/web-app&gt;</span>
+</code></pre></div><p>第五步：配置springmvc框架（springmvc.xml）</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#1e889b">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span style="color:#8b008b;font-weight:bold">&lt;beans</span> <span style="color:#658b00">xmlns=</span><span style="color:#cd5555">&#34;http://www.springframework.org/schema/beans&#34;</span>
+       <span style="color:#658b00">xmlns:mvc=</span><span style="color:#cd5555">&#34;http://www.springframework.org/schema/mvc&#34;</span>
+       <span style="color:#658b00">xmlns:context=</span><span style="color:#cd5555">&#34;http://www.springframework.org/schema/context&#34;</span>
+       <span style="color:#658b00">xmlns:xsi=</span><span style="color:#cd5555">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+       <span style="color:#658b00">xsi:schemaLocation=</span><span style="color:#cd5555">&#34;
+</span><span style="color:#cd5555">        http://www.springframework.org/schema/beans
+</span><span style="color:#cd5555">        http://www.springframework.org/schema/beans/spring-beans.xsd
+</span><span style="color:#cd5555">        http://www.springframework.org/schema/mvc
+</span><span style="color:#cd5555">        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+</span><span style="color:#cd5555">        http://www.springframework.org/schema/context
+</span><span style="color:#cd5555">        http://www.springframework.org/schema/context/spring-context.xsd&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+    <span style="color:#228b22">&lt;!--开启注解扫描--&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;context:component-scan</span> <span style="color:#658b00">base-package=</span><span style="color:#cd5555">&#34;cn.itcast&#34;</span><span style="color:#8b008b;font-weight:bold">/&gt;</span>
+
+    <span style="color:#228b22">&lt;!--视图解析器对象--&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;bean</span> <span style="color:#658b00">id=</span><span style="color:#cd5555">&#34;internalResourceViewResolver&#34;</span> <span style="color:#658b00">class=</span><span style="color:#cd5555">&#34;org.springframework.web.servlet.view.InternalResourceViewResolver&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;property</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;prefix&#34;</span> <span style="color:#658b00">value=</span><span style="color:#cd5555">&#34;/WEB-INF/pages/&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;&lt;/property&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;property</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;suffix&#34;</span> <span style="color:#658b00">value=</span><span style="color:#cd5555">&#34;.jsp&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;&lt;/property&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;/bean&gt;</span>
+    <span style="color:#228b22">&lt;!--开启SpringMVC框架注解的支持--&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;mvc:annotation-driven</span> <span style="color:#8b008b;font-weight:bold">/&gt;</span>
+<span style="color:#8b008b;font-weight:bold">&lt;/beans&gt;</span>
+</code></pre></div><p>第六步：服务器部署
+Deployment -&gt; &ldquo;+&rdquo; -&gt; artifact(xxx.exploded)
+第七部：编写入门程序(index.jsp)</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">&lt;%--
+  Created by IntelliJ IDEA.
+  User: admin
+  Date: 2019/7/9
+  Time: 15:22
+  To change <span style="color:#8b008b;font-weight:bold">this</span> template use File | Settings | File Templates.
+--%&gt;
+&lt;%<span style="color:#a61717;background-color:#e3d2d2">@</span> page contentType=<span style="color:#cd5555">&#34;text/html;charset=UTF-8&#34;</span> language=<span style="color:#cd5555">&#34;java&#34;</span> %&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h3&gt;热门程序&lt;/h3&gt;
+    &lt;a href=<span style="color:#cd5555">&#34;hello&#34;</span>&gt;点我跳转&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><p>第七步：提供访问成功是返回的文件
+创建文件夹：WEB-INF -&gt;pages-&gt;success.jsp
+第八步：配置视图解析器
+配置视图解析器，能使核心控制器找到返回的JSP文件的具体位置。</p>
+<p><code>总结：</code>
+1.引入相关的依赖
+2.配置前端控制器
+3.配置springmvc框架</p>
+<h3 id="入门案例之eclipse版本">入门案例之Eclipse版本</h3>
+<p>目录结构：
+<img src="/assets/blogImg/spring2.jpg" alt="spring">
+HelloController.java:</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8b008b;font-weight:bold">package</span> <span style="color:#008b45;text-decoration:underline">com.test.controller</span>;
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">org.springframework.stereotype.Controller</span>;
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">org.springframework.web.bind.annotation.RequestMapping</span>;
+<span style="color:#707a7c">@Controller</span>
+<span style="color:#707a7c">@RequestMapping</span>(path=<span style="color:#cd5555">&#34;/test&#34;</span>)
+<span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">HelloController</span> {
+	<span style="color:#707a7c">@RequestMapping</span>(path=<span style="color:#cd5555">&#34;/hello&#34;</span>)
+	<span style="color:#8b008b;font-weight:bold">public</span> String <span style="color:#008b45">sayHello</span>() {
+		<span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#cd5555">&#34;success&#34;</span>;
+	}
+}
+</code></pre></div><p>springmvc.xml:</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#1e889b">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span style="color:#8b008b;font-weight:bold">&lt;beans</span> <span style="color:#658b00">xmlns=</span><span style="color:#cd5555">&#34;http://www.springframework.org/schema/beans&#34;</span>
+	<span style="color:#658b00">xmlns:xsi=</span><span style="color:#cd5555">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+	<span style="color:#658b00">xmlns:context=</span><span style="color:#cd5555">&#34;http://www.springframework.org/schema/context&#34;</span>
+	<span style="color:#658b00">xmlns:mvc=</span><span style="color:#cd5555">&#34;http://www.springframework.org/schema/mvc&#34;</span>
+	<span style="color:#658b00">xsi:schemaLocation=</span><span style="color:#cd5555">&#34;http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+</span><span style="color:#cd5555">		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+</span><span style="color:#cd5555">		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+	<span style="color:#228b22">&lt;!-- 开启注解扫描 --&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;context:component-scan</span> <span style="color:#658b00">base-package=</span><span style="color:#cd5555">&#34;com.test&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;&lt;/context:component-scan&gt;</span>
+	
+	<span style="color:#228b22">&lt;!-- 配置视图解析器 --&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;bean</span> <span style="color:#658b00">id=</span><span style="color:#cd5555">&#34;internalResourceView&#34;</span> <span style="color:#658b00">class=</span><span style="color:#cd5555">&#34;org.springframework.web.servlet.view.InternalResourceViewResolver&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;property</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;prefix&#34;</span> <span style="color:#658b00">value=</span><span style="color:#cd5555">&#34;/WEB-INF/pages/&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;&lt;/property&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;property</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;suffix&#34;</span> <span style="color:#658b00">value=</span><span style="color:#cd5555">&#34;.jsp&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;&lt;/property&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;/bean&gt;</span>
+	
+	<span style="color:#228b22">&lt;!-- 开启spring的注解支持 --&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;mvc:annotation-driven</span> <span style="color:#8b008b;font-weight:bold">/&gt;</span>
+<span style="color:#8b008b;font-weight:bold">&lt;/beans&gt;</span>
+</code></pre></div><p>success.jsp:</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&lt;%@ page <span style="color:#00688b">language</span>=<span style="color:#cd5555">&#34;java&#34;</span> <span style="color:#00688b">contentType</span>=<span style="color:#cd5555">&#34;text/html; charset=UTF-8&#34;</span>
+    <span style="color:#00688b">pageEncoding</span>=<span style="color:#cd5555">&#34;UTF-8&#34;</span>%&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta <span style="color:#00688b">charset</span>=<span style="color:#cd5555">&#34;UTF-8&#34;</span>&gt;
+    &lt;title&gt;Insert title here&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;入门成功&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><p>web.xml:</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#1e889b">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span style="color:#8b008b;font-weight:bold">&lt;web-app</span> <span style="color:#658b00">id=</span><span style="color:#cd5555">&#34;WebApp_ID&#34;</span> <span style="color:#658b00">version=</span><span style="color:#cd5555">&#34;2.5&#34;</span> <span style="color:#658b00">xmlns=</span><span style="color:#cd5555">&#34;http://java.sun.com/xml/ns/javaee&#34;</span> <span style="color:#658b00">xmlns:xsi=</span><span style="color:#cd5555">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span> <span style="color:#658b00">xsi:schemaLocation=</span><span style="color:#cd5555">&#34;http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+<span style="color:#228b22">&lt;!-- The front controller of this Spring Web application, responsible for handling all application requests --&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;servlet&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;servlet-name&gt;</span>dispatcherServlet<span style="color:#8b008b;font-weight:bold">&lt;/servlet-name&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;servlet-class&gt;</span>org.springframework.web.servlet.DispatcherServlet<span style="color:#8b008b;font-weight:bold">&lt;/servlet-class&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;init-param&gt;</span>
+			<span style="color:#8b008b;font-weight:bold">&lt;param-name&gt;</span>contextConfigLocation<span style="color:#8b008b;font-weight:bold">&lt;/param-name&gt;</span>
+			<span style="color:#8b008b;font-weight:bold">&lt;param-value&gt;</span>classpath:springmvc.xml<span style="color:#8b008b;font-weight:bold">&lt;/param-value&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;/init-param&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;load-on-startup&gt;</span>1<span style="color:#8b008b;font-weight:bold">&lt;/load-on-startup&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;/servlet&gt;</span>
+	<span style="color:#228b22">&lt;!-- Map all requests to the DispatcherServlet for handling --&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;servlet-mapping&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;servlet-name&gt;</span>dispatcherServlet<span style="color:#8b008b;font-weight:bold">&lt;/servlet-name&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;url-pattern&gt;</span>/<span style="color:#8b008b;font-weight:bold">&lt;/url-pattern&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;/servlet-mapping&gt;</span>
+<span style="color:#8b008b;font-weight:bold">&lt;/web-app&gt;</span>
+</code></pre></div><p>index.jsp:</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&lt;%@ page <span style="color:#00688b">language</span>=<span style="color:#cd5555">&#34;java&#34;</span> <span style="color:#00688b">contentType</span>=<span style="color:#cd5555">&#34;text/html; charset=UTF-8&#34;</span>
+    <span style="color:#00688b">pageEncoding</span>=<span style="color:#cd5555">&#34;UTF-8&#34;</span>%&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta <span style="color:#00688b">charset</span>=<span style="color:#cd5555">&#34;UTF-8&#34;</span>&gt;
+    &lt;title&gt;Insert title here&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;a <span style="color:#00688b">href</span>=<span style="color:#cd5555">&#34;test/hello&#34;</span>&gt;点我点我&lt;/a&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><p>pom.xml:</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#8b008b;font-weight:bold">&lt;project</span> <span style="color:#658b00">xmlns=</span><span style="color:#cd5555">&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span style="color:#658b00">xmlns:xsi=</span><span style="color:#cd5555">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span> <span style="color:#658b00">xsi:schemaLocation=</span><span style="color:#cd5555">&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;modelVersion&gt;</span>4.0.0<span style="color:#8b008b;font-weight:bold">&lt;/modelVersion&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>com.atmntc<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>springmvc<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>0.0.1-SNAPSHOT<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;packaging&gt;</span>war<span style="color:#8b008b;font-weight:bold">&lt;/packaging&gt;</span>
+  
+	 <span style="color:#8b008b;font-weight:bold">&lt;properties&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;project.build.sourceEncoding&gt;</span>UTF-8<span style="color:#8b008b;font-weight:bold">&lt;/project.build.sourceEncoding&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;maven.compiler.source&gt;</span>1.8<span style="color:#8b008b;font-weight:bold">&lt;/maven.compiler.source&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;maven.compiler.target&gt;</span>1.8<span style="color:#8b008b;font-weight:bold">&lt;/maven.compiler.target&gt;</span>
+		<span style="color:#228b22">&lt;!-- 版本锁定 --&gt;</span>
+		 <span style="color:#8b008b;font-weight:bold">&lt;spring.version&gt;</span>5.0.2.RELEASE<span style="color:#8b008b;font-weight:bold">&lt;/spring.version&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;/properties&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;dependencies&gt;</span>
+		<span style="color:#228b22">&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-context --&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;dependency&gt;</span>
+		    <span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>org.springframework<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+		    <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>spring-context<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+		    <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>5.0.2.RELEASE<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;/dependency&gt;</span>
+		 
+		 	<span style="color:#8b008b;font-weight:bold">&lt;dependency&gt;</span>
+		    <span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>org.springframework<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+		    <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>spring-web<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+		    <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>5.0.2.RELEASE<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;/dependency&gt;</span>
+		 
+		 <span style="color:#228b22">&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc --&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;dependency&gt;</span>
+		    <span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>org.springframework<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+		    <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>spring-webmvc<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+		    <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>5.0.2.RELEASE<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;/dependency&gt;</span>
+		 
+		 <span style="color:#228b22">&lt;!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api --&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;dependency&gt;</span>
+		    <span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>javax.servlet<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+		    <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>servlet-api<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+		    <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>2.5<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+		    <span style="color:#8b008b;font-weight:bold">&lt;scope&gt;</span>provided<span style="color:#8b008b;font-weight:bold">&lt;/scope&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;/dependency&gt;</span>
+		 
+		 <span style="color:#228b22">&lt;!-- https://mvnrepository.com/artifact/javax.servlet/jsp-api --&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;dependency&gt;</span>
+		    <span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>javax.servlet<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+		    <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>jsp-api<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+		    <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>2.0<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+		    <span style="color:#8b008b;font-weight:bold">&lt;scope&gt;</span>provided<span style="color:#8b008b;font-weight:bold">&lt;/scope&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;/dependency&gt;</span>
+	 <span style="color:#8b008b;font-weight:bold">&lt;/dependencies&gt;</span>
+<span style="color:#8b008b;font-weight:bold">&lt;/project&gt;</span>
+</code></pre></div><h2 id="五常用的注解">五、常用的注解</h2>
+<h3 id="1requestmapping注解">1.RequestMapping注解</h3>
+<blockquote>
+<p>a.作用：建立请求URL和处理请求方法之间的对应关系。
+b.位置：可以放在<code>方法</code>上面也可以放在<code>类</code>上面.
+c.例如:&quot;/user/hello&rdquo;:
+/user:表示请求的一级路径
+/hello:表示请求的二级路径
+d.RequestMapping上常用的属性
+path:指定请求的URL，他的作用和value一样。
+method:用于指定请求的方式。method={RequestMethos.POST}
+params:用于指定限制请求参数的条件。它支持简单的表达式。（params={&ldquo;accountName&rdquo;}:表示请求的参数必须有accountName;params={&ldquo;money!100&rdquo;}:表示请求参数中money不能是100）
+headers:用于指定限制请求参数的条件。
+注意：以上四个属性只要出现2个或者以上时，他们的关系是与的关系。</p>
+</blockquote>
+<h3 id="2requestparam注解">2.RequestParam注解</h3>
+<blockquote>
+<p>a.作用：把请求中指定名称的参数给控制器中的形参赋值
+b.RequestParam上常用的属性
+value:请求参数中的名称
+required:请求参数中必须提供此参数。默认值：true。如果不提供将报错。
+c.案例</p>
+</blockquote>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  /**
+  * 请求
+  * @return
+  */
+  @RequestMapping(<span style="color:#00688b">path</span>=<span style="color:#cd5555">&#34;/hello&#34;</span>)
+  public String sayHello(@RequestParam(<span style="color:#00688b">value</span>=<span style="color:#cd5555">&#34;username&#34;</span>,required=<span style="color:#658b00">false</span>)String name) {
+    System.out.println(<span style="color:#cd5555">&#34;aaaa&#34;</span>);
+    System.out.println(name);
+    <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#cd5555">&#34;success&#34;</span>;
+  }
+</code></pre></div><h3 id="3requedtbody注解">3.RequedtBody注解</h3>
+<blockquote>
+<p>a.作用：用于获取请求体的内容（注意get方法不可以）
+b.属性：
+required:是否有请求体，默认是是true</p>
+</blockquote>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  /**
+  * 接收请求
+  * @return
+  */
+  @RequestMapping(<span style="color:#00688b">path</span>=<span style="color:#cd5555">&#34;/hello&#34;</span>)
+  public String sayHello(@RequestBody String body) {
+    System.out.println(<span style="color:#cd5555">&#34;aaaa&#34;</span>);
+    System.out.println(body);
+    <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#cd5555">&#34;success&#34;</span>;
+  }
+</code></pre></div><h3 id="4pathvaribale注解">4.PathVaribale注解</h3>
+<blockquote>
+<p>a.作用：拥有绑定url中的占位符的。例如：url中有/delete/{id}，{id}就是占位符
+b.属性
+value：指定url中的占位符名称
+c. Restful风格的URL</p>
+<ol>
+<li>请求路径一样，可以根据不同的请求方式去执行后台的不同方法</li>
+<li>restful风格的URL优点:结构清晰、符合标准、易于理解、扩展方便</li>
+</ol>
+</blockquote>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">&lt;a href=<span style="color:#cd5555">&#34;user/hello/1&#34;</span>&gt;入门案例&lt;/a&gt;
+  <span style="color:#228b22">/**
+</span><span style="color:#228b22">  * 接收请求
+</span><span style="color:#228b22">  * @return
+</span><span style="color:#228b22">  */</span>
+  <span style="color:#707a7c">@RequestMapping</span>(path=<span style="color:#cd5555">&#34;/hello/{id}&#34;</span>)
+    <span style="color:#8b008b;font-weight:bold">public</span> String <span style="color:#008b45">sayHello</span>(<span style="color:#707a7c">@PathVariable</span>(value=<span style="color:#cd5555">&#34;id&#34;</span>) String id) {
+    System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(id);
+    <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#cd5555">&#34;success&#34;</span>;
+  }
+</code></pre></div><h3 id="5requestheader注解">5.RequestHeader注解</h3>
+<blockquote>
+<p>a.作用：用于获取请求消息头。
+b.属性：
+value:提供消息头名称
+required:是否必须有此消息
+注意：在开发中很少使用</p>
+</blockquote>
+<h3 id="6cookievalue注解">6.CookieValue注解</h3>
+<blockquote>
+<p>a.作用：用于指定cookie名称的值传入控制器方法参数
+b.属性：
+value:指定cookie的名称。
+required:是否必须有此值。</p>
+</blockquote>
+<h3 id="7-modelattribute注解">7. ModelAttribute注解</h3>
+<p>a. 作用</p>
+<blockquote>
+<ol>
+<li>出现在方法上：表示当前方法会在控制器方法执行前线执行。</li>
+<li>出现在参数上：获取指定的数据给参数赋值。
+b. 应用场景</li>
+<li>当提交表单数据不是完整的实体数据时，保证没有提交的字段使用数据库原来的数据。
+具体的代码</li>
+</ol>
+</blockquote>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#228b22">// 1.修饰的方法有返回值
+</span><span style="color:#228b22"></span><span style="color:#228b22">/**
+</span><span style="color:#228b22">* 作用在方法，先执行
+</span><span style="color:#228b22">* @param name
+</span><span style="color:#228b22">* @return
+</span><span style="color:#228b22">*/</span>
+<span style="color:#707a7c">@ModelAttribute</span>
+<span style="color:#8b008b;font-weight:bold">public</span> User <span style="color:#008b45">showUser</span>(String name) {
+  System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#34;showUser执行了...&#34;</span>);
+  <span style="color:#228b22">// 模拟从数据库中查询对象
+</span><span style="color:#228b22"></span>  User user = <span style="color:#8b008b;font-weight:bold">new</span> User();
+  user.<span style="color:#658b00">setName</span>(<span style="color:#cd5555">&#34;哈哈&#34;</span>);
+  user.<span style="color:#658b00">setPassword</span>(<span style="color:#cd5555">&#34;123&#34;</span>);
+  user.<span style="color:#658b00">setMoney</span>(100d);
+  <span style="color:#8b008b;font-weight:bold">return</span> user;
+}
+<span style="color:#228b22">/**
+</span><span style="color:#228b22">* 修改用户的方法
+</span><span style="color:#228b22">* @param cookieValue
+</span><span style="color:#228b22">* @return
+</span><span style="color:#228b22">*/</span>
+<span style="color:#707a7c">@RequestMapping</span>(path=<span style="color:#cd5555">&#34;/updateUser&#34;</span>)
+<span style="color:#8b008b;font-weight:bold">public</span> String <span style="color:#008b45">updateUser</span>(User user) {
+  System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(user);
+  <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#cd5555">&#34;success&#34;</span>;
+}
+
+<span style="color:#228b22">//2. 修饰的方法没有返回值
+</span><span style="color:#228b22"></span><span style="color:#228b22">/**
+</span><span style="color:#228b22">* 作用在方法，先执行
+</span><span style="color:#228b22">* @param name
+</span><span style="color:#228b22">* @return
+</span><span style="color:#228b22">*/</span>
+<span style="color:#707a7c">@ModelAttribute</span>
+<span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">showUser</span>(String name,Map&lt;String, User&gt; map) {
+  System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#34;showUser执行了...&#34;</span>);
+  <span style="color:#228b22">// 模拟从数据库中查询对象
+</span><span style="color:#228b22"></span>  User user = <span style="color:#8b008b;font-weight:bold">new</span> User();
+  user.<span style="color:#658b00">setName</span>(<span style="color:#cd5555">&#34;哈哈&#34;</span>);
+  user.<span style="color:#658b00">setPassword</span>(<span style="color:#cd5555">&#34;123&#34;</span>);
+  user.<span style="color:#658b00">setMoney</span>(100d);
+  map.<span style="color:#658b00">put</span>(<span style="color:#cd5555">&#34;abc&#34;</span>, user);
+}
+<span style="color:#228b22">/**
+</span><span style="color:#228b22">* 修改用户的方法
+</span><span style="color:#228b22">* @param cookieValue
+</span><span style="color:#228b22">* @return
+</span><span style="color:#228b22">*/</span>
+<span style="color:#707a7c">@RequestMapping</span>(path=<span style="color:#cd5555">&#34;/updateUser&#34;</span>)
+<span style="color:#8b008b;font-weight:bold">public</span> String <span style="color:#008b45">updateUser</span>(<span style="color:#707a7c">@ModelAttribute</span>(value=<span style="color:#cd5555">&#34;abc&#34;</span>) User user) {
+  System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(user);
+  <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#cd5555">&#34;success&#34;</span>;
+}
+</code></pre></div><h3 id="8sessionattributes注解">8.SessionAttributes注解</h3>
+<blockquote>
+<p>a.作用：用于多次执行控制器方法间的参数共享
+b.属性
+value:指定存入属性的名称。
+案例如下：</p>
+</blockquote>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#707a7c">@Controller</span>
+<span style="color:#707a7c">@RequestMapping</span>(path=<span style="color:#cd5555">&#34;/user&#34;</span>)
+<span style="color:#707a7c">@SessionAttributes</span>(value= {<span style="color:#cd5555">&#34;username&#34;</span>,<span style="color:#cd5555">&#34;password&#34;</span>,<span style="color:#cd5555">&#34;age&#34;</span>},types=
+{String.<span style="color:#658b00">class</span>,Integer.<span style="color:#658b00">class</span>}) <span style="color:#228b22">// 把数据存入到session域对象中
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">HelloController</span> {
+<span style="color:#228b22">/**
+</span><span style="color:#228b22">* 向session中存入值
+</span><span style="color:#228b22">* @return
+</span><span style="color:#228b22">*/</span>
+  <span style="color:#707a7c">@RequestMapping</span>(path=<span style="color:#cd5555">&#34;/save&#34;</span>)
+  <span style="color:#8b008b;font-weight:bold">public</span> String <span style="color:#008b45">save</span>(Model model) {
+    System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#34;向session域中保存数据&#34;</span>);
+    model.<span style="color:#658b00">addAttribute</span>(<span style="color:#cd5555">&#34;username&#34;</span>, <span style="color:#cd5555">&#34;root&#34;</span>);
+    model.<span style="color:#658b00">addAttribute</span>(<span style="color:#cd5555">&#34;password&#34;</span>, <span style="color:#cd5555">&#34;123&#34;</span>);
+    model.<span style="color:#658b00">addAttribute</span>(<span style="color:#cd5555">&#34;age&#34;</span>, 20);
+    <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#cd5555">&#34;success&#34;</span>;
+  }
+  <span style="color:#228b22">/**
+</span><span style="color:#228b22">  * 从session中获取值
+</span><span style="color:#228b22">  * @return
+</span><span style="color:#228b22">  */</span>
+  <span style="color:#707a7c">@RequestMapping</span>(path=<span style="color:#cd5555">&#34;/find&#34;</span>)
+  <span style="color:#8b008b;font-weight:bold">public</span> String <span style="color:#008b45">find</span>(ModelMap modelMap) {
+  String username = (String) modelMap.<span style="color:#658b00">get</span>(<span style="color:#cd5555">&#34;username&#34;</span>);
+  String password = (String) modelMap.<span style="color:#658b00">get</span>(<span style="color:#cd5555">&#34;password&#34;</span>);
+  Integer age = (Integer) modelMap.<span style="color:#658b00">get</span>(<span style="color:#cd5555">&#34;age&#34;</span>);
+  System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(username + <span style="color:#cd5555">&#34; : &#34;</span>+password +<span style="color:#cd5555">&#34; : &#34;</span>+age);
+  <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#cd5555">&#34;success&#34;</span>;
+  }
+  <span style="color:#228b22">/**
+</span><span style="color:#228b22">  * 清除值
+</span><span style="color:#228b22">  * @return
+</span><span style="color:#228b22">  */</span>
+  <span style="color:#707a7c">@RequestMapping</span>(path=<span style="color:#cd5555">&#34;/delete&#34;</span>)
+  <span style="color:#8b008b;font-weight:bold">public</span> String <span style="color:#008b45">delete</span>(SessionStatus status) {
+    status.<span style="color:#658b00">setComplete</span>();
+    <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#cd5555">&#34;success&#34;</span>;
+  }
+}
+</code></pre></div><h2 id="六请求参数的绑定">六、请求参数的绑定</h2>
+<h3 id="1-请求参数的绑定说明">1. 请求参数的绑定说明</h3>
+<ol>
+<li>绑定机制</li>
+</ol>
+<blockquote>
+<p>表单提交的数据都是k=v格式的 username=haha&amp;password=123
+SpringMVC的参数绑定过程是把表单提交的请求参数，作为控制器中方法的参数进行绑定的
+要求：提交表单的name和参数的名称是相同的</p>
+</blockquote>
+<ol start="2">
+<li>支持的数据类型</li>
+</ol>
+<blockquote>
+<p>基本数据类型和字符串类型
+实体类型（JavaBean）
+集合数据类型（List、map集合等）</p>
+</blockquote>
+<h3 id="2-基本数据类型和字符串类型">2. 基本数据类型和字符串类型</h3>
+<ol>
+<li>提交表单的name和参数的名称是相同的</li>
+<li>区分大小写</li>
+</ol>
+<h3 id="3-实体类型javabean">3. 实体类型（JavaBean）</h3>
+<ol>
+<li>提交表单的name和JavaBean中的属性名称需要一致</li>
+<li>如果一个JavaBean类中包含其他的引用类型，那么表单的name属性需要编写成：对象.属性 例如：
+address.name</li>
+</ol>
+<h3 id="4-给集合属性数据封装">4. 给集合属性数据封装</h3>
+<ol>
+<li>JSP页面编写方式：list[0].属性</li>
+</ol>
+<h3 id="5-请求参数中文乱码的解决">5. 请求参数中文乱码的解决</h3>
+<ol>
+<li>在web.xml中配置Spring提供的过滤器类</li>
+</ol>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#228b22">&lt;!-- 配置过滤器，解决中文乱码的问题 --&gt;</span>
+<span style="color:#8b008b;font-weight:bold">&lt;filter&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;filter-name&gt;</span>characterEncodingFilter<span style="color:#8b008b;font-weight:bold">&lt;/filter-name&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;filter-class&gt;</span>org.springframework.web.filter.CharacterEncodingFilter<span style="color:#8b008b;font-weight:bold">&lt;/filterclass&gt;</span>
+  <span style="color:#228b22">&lt;!-- 指定字符集 --&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;init-param&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;param-name&gt;</span>encoding<span style="color:#8b008b;font-weight:bold">&lt;/param-name&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;param-value&gt;</span>UTF-8<span style="color:#8b008b;font-weight:bold">&lt;/param-value&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;/init-param&gt;</span>
+<span style="color:#8b008b;font-weight:bold">&lt;/filter&gt;</span>
+<span style="color:#8b008b;font-weight:bold">&lt;filter-mapping&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;filter-name&gt;</span>characterEncodingFilter<span style="color:#8b008b;font-weight:bold">&lt;/filter-name&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;url-pattern&gt;</span>/*<span style="color:#8b008b;font-weight:bold">&lt;/url-pattern&gt;</span>
+<span style="color:#8b008b;font-weight:bold">&lt;/filter-mapping&gt;</span>
+</code></pre></div><h3 id="6自定义类型转换器">6、自定义类型转换器</h3>
+<ol>
+<li>表单提交的任何数据类型全部都是<code>字符串类型</code>，但是后台定义Integer类型，数据也可以封装上，说明Spring框架内部会默认进行数据类型转换。</li>
+<li>如果想自定义数据类型转换，可以实现Converter的接口
+步骤一:自定义类型转换器</li>
+</ol>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8b008b;font-weight:bold">package</span> <span style="color:#008b45;text-decoration:underline">cn.itcast.utils</span>;
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">java.text.DateFormat</span>;
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">java.text.SimpleDateFormat</span>;
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">java.util.Date</span>;
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">org.springframework.core.convert.converter.Converter</span>;
+<span style="color:#228b22">/**
+</span><span style="color:#228b22">* 把字符串转换成日期的转换器
+</span><span style="color:#228b22">* @author rt
+</span><span style="color:#228b22">*/</span>
+<span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">StringToDateConverter</span> <span style="color:#8b008b;font-weight:bold">implements</span> Converter&lt;String, Date&gt;{
+  <span style="color:#228b22">/**
+</span><span style="color:#228b22">  * 进行类型转换的方法
+</span><span style="color:#228b22">  * source
+</span><span style="color:#228b22">  */</span>
+  <span style="color:#8b008b;font-weight:bold">public</span> Date <span style="color:#008b45">convert</span>(String source) {
+  <span style="color:#228b22">// 判断
+</span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">if</span>(source == <span style="color:#8b008b;font-weight:bold">null</span>) {
+    <span style="color:#8b008b;font-weight:bold">throw</span> <span style="color:#8b008b;font-weight:bold">new</span> RuntimeException(<span style="color:#cd5555">&#34;参数不能为空&#34;</span>)
+    }
+    <span style="color:#8b008b;font-weight:bold">try</span> {
+      DateFormat df = <span style="color:#8b008b;font-weight:bold">new</span> SimpleDateFormat(<span style="color:#cd5555">&#34;yyyy-MM-dd&#34;</span>);
+      <span style="color:#228b22">// 解析字符串
+</span><span style="color:#228b22"></span>      Date date = df.<span style="color:#658b00">parse</span>(source);
+      <span style="color:#8b008b;font-weight:bold">return</span> date;
+    } <span style="color:#8b008b;font-weight:bold">catch</span> (Exception e) {
+      <span style="color:#8b008b;font-weight:bold">throw</span> <span style="color:#8b008b;font-weight:bold">new</span> RuntimeException(<span style="color:#cd5555">&#34;类型转换错误&#34;</span>);
+    }
+  }
+}
+</code></pre></div><p>步骤二：. 注册自定义类型转换器，在springmvc.xml配置文件中编写配置</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#228b22">&lt;!-- 注册自定义类型转换器 --&gt;</span>
+<span style="color:#8b008b;font-weight:bold">&lt;bean</span> <span style="color:#658b00">id=</span><span style="color:#cd5555">&#34;conversionService&#34;</span> <span style="color:#658b00">class=</span><span style="color:#cd5555">&#34;org.springframework.context.support.ConversionServiceFactoryBean&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;property</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;converters&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;set&gt;</span>
+      <span style="color:#8b008b;font-weight:bold">&lt;bean</span> <span style="color:#658b00">class=</span><span style="color:#cd5555">&#34;cn.itcast.utils.StringToDateConverter&#34;</span><span style="color:#8b008b;font-weight:bold">/&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;/set&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;/property&gt;</span>
+<span style="color:#8b008b;font-weight:bold">&lt;/bean&gt;</span>
+<span style="color:#228b22">&lt;!-- 开启Spring对MVC注解的支持 --&gt;</span>
+<span style="color:#8b008b;font-weight:bold">&lt;mvc:annotation-driven</span> <span style="color:#658b00">conversion-service=</span><span style="color:#cd5555">&#34;conversionService&#34;</span><span style="color:#8b008b;font-weight:bold">/&gt;</span>
+</code></pre></div><p>小知识点:在控制器中使用原生的ServletAPI对象,只需要在控制器的方法参数定义HttpServletRequest和HttpServletResponse对象</p>
+<h2 id="七响应数据和结果视图">七、响应数据和结果视图</h2>
+<h3 id="1返回值分类">1.返回值分类</h3>
+<p><code>字符串</code>
+HelloController.java:</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8b008b;font-weight:bold">package</span> <span style="color:#008b45;text-decoration:underline">com.atmntc.controller</span>;<span style="color:#228b22">/*
+</span><span style="color:#228b22"> @author wujiwen
+</span><span style="color:#228b22"> @data 2019/7/11 - 16:54   
+</span><span style="color:#228b22">*/</span>
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">com.atmntc.domain.Account</span>;
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">org.springframework.stereotype.Controller</span>;
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">org.springframework.ui.Model</span>;
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">org.springframework.web.bind.annotation.RequestMapping</span>;
+<span style="color:#707a7c">@Controller</span>
+<span style="color:#707a7c">@RequestMapping</span>(<span style="color:#cd5555">&#34;/user&#34;</span>)
+<span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">HelloController</span> {
+    <span style="color:#707a7c">@RequestMapping</span>(<span style="color:#cd5555">&#34;/testString&#34;</span>)
+    <span style="color:#8b008b;font-weight:bold">public</span> String <span style="color:#008b45">hello</span>(Model model){
+        System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#34;返回string测试&#34;</span>);
+        Account account = <span style="color:#8b008b;font-weight:bold">new</span> Account();
+        account.<span style="color:#658b00">setUsername</span>(<span style="color:#cd5555">&#34;吴继文&#34;</span>);
+        account.<span style="color:#658b00">setPassword</span>(<span style="color:#cd5555">&#34;13733433427&#34;</span>);
+        account.<span style="color:#658b00">setMoney</span>(1000d);
+        model.<span style="color:#658b00">addAttribute</span>(<span style="color:#cd5555">&#34;account&#34;</span>,account);
+        <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#cd5555">&#34;success&#34;</span>;
+    }
+}
+</code></pre></div><p>Account.java:</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8b008b;font-weight:bold">package</span> <span style="color:#008b45;text-decoration:underline">com.atmntc.domain</span>;<span style="color:#228b22">/*
+</span><span style="color:#228b22"> @author wujiwen
+</span><span style="color:#228b22"> @data 2019/7/11 - 18:13   
+</span><span style="color:#228b22">*/</span>
+
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">java.io.Serializable</span>;
+
+<span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">Account</span> <span style="color:#8b008b;font-weight:bold">implements</span> Serializable {
+    <span style="color:#8b008b;font-weight:bold">private</span> String username;
+    <span style="color:#8b008b;font-weight:bold">private</span> String password;
+    <span style="color:#8b008b;font-weight:bold">private</span> Double money;
+
+    <span style="color:#707a7c">@Override</span>
+    <span style="color:#8b008b;font-weight:bold">public</span> String <span style="color:#008b45">toString</span>() {
+        <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#cd5555">&#34;Account{&#34;</span> +
+                <span style="color:#cd5555">&#34;username=&#39;&#34;</span> + username + <span style="color:#cd5555">&#39;\&#39;&#39;</span> +
+                <span style="color:#cd5555">&#34;, password=&#39;&#34;</span> + password + <span style="color:#cd5555">&#39;\&#39;&#39;</span> +
+                <span style="color:#cd5555">&#34;, money=&#34;</span> + money +
+                <span style="color:#cd5555">&#39;}&#39;</span>;
+    }
+
+    <span style="color:#8b008b;font-weight:bold">public</span> String <span style="color:#008b45">getUsername</span>() {
+        <span style="color:#8b008b;font-weight:bold">return</span> username;
+    }
+
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">setUsername</span>(String username) {
+        <span style="color:#8b008b;font-weight:bold">this</span>.<span style="color:#658b00">username</span> = username;
+    }
+
+    <span style="color:#8b008b;font-weight:bold">public</span> String <span style="color:#008b45">getPassword</span>() {
+        <span style="color:#8b008b;font-weight:bold">return</span> password;
+    }
+
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">setPassword</span>(String password) {
+        <span style="color:#8b008b;font-weight:bold">this</span>.<span style="color:#658b00">password</span> = password;
+    }
+
+    <span style="color:#8b008b;font-weight:bold">public</span> Double <span style="color:#008b45">getMoney</span>() {
+        <span style="color:#8b008b;font-weight:bold">return</span> money;
+    }
+
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">setMoney</span>(Double money) {
+        <span style="color:#8b008b;font-weight:bold">this</span>.<span style="color:#658b00">money</span> = money;
+    }
+}
+</code></pre></div><p>success.jsp:</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">&lt;%--
+  Created by IntelliJ IDEA.
+  User: admin
+  Date: 2019/7/11
+  Time: 16:58
+  To change <span style="color:#8b008b;font-weight:bold">this</span> template use File | Settings | File Templates.
+--%&gt;
+&lt;%<span style="color:#a61717;background-color:#e3d2d2">@</span> page contentType=<span style="color:#cd5555">&#34;text/html;charset=UTF-8&#34;</span> language=<span style="color:#cd5555">&#34;java&#34;</span> isELIgnored=<span style="color:#cd5555">&#34;false&#34;</span> %&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    success&lt;br /&gt;
+    ${account.<span style="color:#658b00">username</span>} &lt;br /&gt;
+    ${account.<span style="color:#658b00">password</span>} &lt;br /&gt;
+    ${account.<span style="color:#658b00">money</span>} &lt;br /&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><p><code>空类型</code>
+案例：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    <span style="color:#707a7c">@RequestMapping</span>(<span style="color:#cd5555">&#34;/testVoid&#34;</span>)
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">testVoid</span>(HttpServletRequest request, HttpServletResponse response)<span style="color:#8b008b;font-weight:bold">throws</span> ServletException, IOException {
+        <span style="color:#228b22">//编写转发的程序(可以跳转到success.jsp页面)
+</span><span style="color:#228b22"></span>        <span style="color:#228b22">//request.getRequestDispatcher(&#34;/WEB-INF/pages/success.jsp&#34;).forward(request,response);
+</span><span style="color:#228b22"></span>
+        <span style="color:#228b22">//重定向
+</span><span style="color:#228b22"></span>        <span style="color:#228b22">//response.sendRedirect(request.getContextPath()+&#34;/index.jsp&#34;);
+</span><span style="color:#228b22"></span>
+        <span style="color:#228b22">//直接响应
+</span><span style="color:#228b22"></span>        response.<span style="color:#658b00">setCharacterEncoding</span>(<span style="color:#cd5555">&#34;UTF-8&#34;</span>);
+        response.<span style="color:#658b00">setContentType</span>(<span style="color:#cd5555">&#34;text/html;charset=UTF-8&#34;</span>);
+        response.<span style="color:#658b00">getWriter</span>().<span style="color:#658b00">print</span>(<span style="color:#cd5555">&#34;你好&#34;</span>);
+    }
+</code></pre></div><h3 id="2转发或者重定向">2.转发或者重定向</h3>
+<p>案例：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    <span style="color:#707a7c">@RequestMapping</span>(<span style="color:#cd5555">&#34;/testForwardOrRederect&#34;</span>)
+    <span style="color:#8b008b;font-weight:bold">public</span> String <span style="color:#008b45">testVoid</span>(){
+
+        <span style="color:#228b22">//return &#34;forward:/WEB-INF/pages/success.jsp&#34;;
+</span><span style="color:#228b22"></span>        <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#cd5555">&#34;redirect:index.jsp&#34;</span>;
+    }
+</code></pre></div><h3 id="3responsebody响应json数据">3.ResponseBody响应json数据</h3>
+<p>首先需要搭建异步的环境&mdash;&mdash;点击事件</p>
+<blockquote>
+<p>在webapp下的js文件夹中引入jQuery
+编写js代码</p>
+</blockquote>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">&lt;script src=<span style="color:#cd5555">&#34;js/jquery.min.js&#34;</span>&gt;&lt;/script&gt;
+    &lt;script&gt;
+
+        <span style="color:#008b45">$</span>(function(){
+            $(<span style="color:#cd5555">&#34;#btn&#34;</span>).<span style="color:#658b00">click</span>(function(){
+                alert(<span style="color:#cd5555">&#34;hello world&#34;</span>)
+            });
+        });
+
+
+    &lt;/script&gt;
+</code></pre></div><blockquote>
+<p>在springmvc.xml中设置对静态文件不拦截</p>
+</blockquote>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">    <span style="color:#228b22">&lt;!-- 提示前端控制器哪些静态的资源不拦截--&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;mvc:resources</span> <span style="color:#658b00">location=</span><span style="color:#cd5555">&#34;/js/&#34;</span> <span style="color:#658b00">mapping=</span><span style="color:#cd5555">&#34;/js/**&#34;</span> <span style="color:#8b008b;font-weight:bold">/&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;mvc:resources</span> <span style="color:#658b00">location=</span><span style="color:#cd5555">&#34;/images/&#34;</span> <span style="color:#658b00">mapping=</span><span style="color:#cd5555">&#34;/images/**&#34;</span> <span style="color:#8b008b;font-weight:bold">/&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;mvc:resources</span> <span style="color:#658b00">location=</span><span style="color:#cd5555">&#34;/css/&#34;</span> <span style="color:#658b00">mapping=</span><span style="color:#cd5555">&#34;/css/**&#34;</span> <span style="color:#8b008b;font-weight:bold">/&gt;</span>
+</code></pre></div>
+</article>
+    </div>
+</div>
+
+
+                
+<div id="sidebar" class="pure-u-1 pure-u-md-1-4 pure-u-sm-1">
+    <div class="pad">
+        <a name="about"></a>
+        <h3>关于我</h3>
+        <div style="text-align: center;">
+            <img src="/img/author.jpg" alt="吴继文" class="pure-img" />
+            <p><em>Handsome</em></p>
+        </div>
+
+        <h3>最近文章</h3>
+        <div class="pure-menu pure-menu-open">
+            <ul class="pure-menu-list">
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/mybatis-plus/" class="pure-menu-link">Mybatis-Plus<br>
+                        <small>MyBatis-Plus 的增强工具，在 MyBatis 的基础上只做增强不做改变，为简化开发、提高效率而生。</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/mongodb/" class="pure-menu-link">DBmong数据库<br>
+                        <small>NoSQL 是一项全新的数据库革命性运动，早期就有人提出，发展至2009年趋势越发高涨。NoSQL的拥护者们提倡运用非关系型的数据存储，相对于铺天盖地的关系型数据库运用，这一概念无疑是一种全新的思维的注入。</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/docker/" class="pure-menu-link">Docker容器技术<br>
+                        <small>这一种常用的容器技术，能简化项目的部署</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/go%E8%AF%AD%E8%A8%80/" class="pure-menu-link">Go语言技术知识<br>
+                        <small>主要介绍GO语言的基本语法</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/hexo&#43;github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6/" class="pure-menu-link">hexo&#43;github搭建个人博客<br>
+                        <small>介绍了个人博客搭建的完整步骤</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/idea%E7%9A%84%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="pure-menu-link">IDEA的基本使用<br>
+                        <small>主要介绍了IDEA的基本以用和一些常用的快捷键</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/java%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/" class="pure-menu-link">Java原生代码连接数据库<br>
+                        <small>介绍了在不使用框架的基础上连接MySQL</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/%E5%9F%BA%E4%BA%8Ejava%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="pure-menu-link">Java多线程基础知识<br>
+                        <small>一种提高程序运行效率的技术</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/java%E5%AE%9E%E7%8E%B0%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/" class="pure-menu-link">Java实现串口通信<br>
+                        <small>Java实现窗口通信</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/java%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" class="pure-menu-link">Java的基础知识<br>
+                        <small>介绍了Java的基础知识</small>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <h3>分类</h3>
+        <div style="text-align:center" class="tags">
+            
+            
+            <a href="/tags/%e6%a1%86%e6%9e%b6" class="pure-button"> 框架
+                <small>(6)</small></a>
+            
+            
+            
+            <a href="/tags/%e7%bc%96%e7%a8%8b" class="pure-button"> 编程
+                <small>(5)</small></a>
+            
+            
+            
+            <a href="/tags/%e5%85%b6%e5%ae%83" class="pure-button"> 其它
+                <small>(2)</small></a>
+            
+            
+            
+            <a href="/tags/%e6%95%b0%e6%8d%ae%e5%ba%93" class="pure-button"> 数据库
+                <small>(2)</small></a>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </div>
+    </div> 
+</div> 
+
+                
+            </div>
+<div class="pure-g">
+	<footer class="pure-u-1 pure-u-md-1 pure-u-sm-1">
+		<p>This page and its contents are copyright &copy; 2020,
+			<a href="">吴继文</a>.</p>
+		<p><a href="https://github.com/pravin/hugo-theme-prav">Theme Prav</a> by <a href="https://cto.me.uk">Pravin
+				Paratey</a></p>
+	</footer>
+
+	<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
+		integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+		crossorigin="anonymous"></script>
+</div>
+</div></body>
+</html>

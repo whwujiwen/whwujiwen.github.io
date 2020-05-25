@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>框架 on Blog</title>
+    <link>https://example.com/tags/%E6%A1%86%E6%9E%B6/</link>
+    <description>Recent content in 框架 on Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Wed, 15 Mar 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://example.com/tags/%E6%A1%86%E6%9E%B6/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mybatis-Plus</title>
+      <link>https://example.com/posts/mybatis-plus/</link>
+      <pubDate>Wed, 15 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/mybatis-plus/</guid>
+      <description>一、Mybatis-Plus的简介 MyBatis-Plus（简称 MP）是一个 MyBatis 的增强工具，在 MyBatis 的基础上只做增强不做改变，为简化开发、提高效率而生。
+特性  无侵入：只做增强不做改变，引入它不会对现有工程产生影响，如丝般顺滑 损耗小：启动即会自动注入基本 CURD，性能基本无损耗，直接面向对象操作 强大的 CRUD 操作：内置通用 Mapper、通用 Service，仅仅通过少量配置即可实现单表大部分 CRUD 操作，更有强大的条件构造器，满足各类使用需求 支持 Lambda 形式调用：通过 Lambda 表达式，方便的编写各类查询条件，无需再担心字段写错 支持主键自动生成：支持多达 4 种主键策略（内含分布式唯一 ID 生成器 - Sequence），可自由配置，完美解决主键问题 支持 ActiveRecord 模式：支持 ActiveRecord 形式调用，实体类只需继承 Model 类即可进行强大的 CRUD 操作 支持自定义全局通用操作：支持全局通用方法注入（ Write once, use anywhere ） 内置代码生成器：采用代码或者 Maven 插件可快速生成 Mapper 、 Model 、 Service 、 Controller 层代码，支持模板引擎，更有超多自定义配置等您来使用 内置分页插件：基于 MyBatis 物理分页，开发者无需关心具体操作，配置好插件之后，写分页等同于普通 List 查询 分页插件支持多种数据库：支持 MySQL、MariaDB、Oracle、DB2、H2、HSQL、SQLite、Postgre、SQLServer 等多种数据库 内置性能分析插件：可输出 Sql 语句以及其执行时间，建议开发测试时启用该功能，能快速揪出慢查询 内置全局拦截插件：提供全表 delete 、 update 操作智能分析阻断，也可自定义拦截规则，预防误操作  二、快速开始 1.</description>
+    </item>
+    
+    <item>
+      <title>Mybatis的基础知识</title>
+      <link>https://example.com/posts/mybatis%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/mybatis%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
+      <description>一、mybatis简介 MyBatis 是一款优秀的持久层框架，它支持定制化 SQL、存储过程以及高级映射。MyBatis 避免了几乎所有的 JDBC 代码和手动设置参数以及获取结果集。MyBatis 可以使用简单的 XML 或注解来配置和映射原生信息，将接口和 Java 的 POJOs(Plain Ordinary Java Object,普通的 Java对象)映射成数据库中的记录。 具体的步骤： 1.创建maven工程，并引入坐标 2.创建实体类和dao的接口 3.创建Mybatis的主配置文件（SqlMapConfig.xml） 4.创建映射文件（IUserDao.xml） 环境搭建的注意事项： 1.创建IUserDao.xml和IUserDao.java时名称是为了和之前所学的知识保持一致。在mybatis中他把持久层的操作接口名称和映射文件也叫做Mapper 2.在IDEA中创建目录时，他和包是不一样 包在创建时：com.itheima.dao他是三级结构 目录在创建时：com.itheima.dao是一级结构 3.mybatis的映射配置文件位置和dao层接口的包的结构相同 4.映射配置文件的mapper标签namespace属性的取值必须是dao接口的全限定类名 5.映射配置文件的操作配置，id属性的取值必须是dao接口的方法名 当我们遵从第三、第四、第五之后，我们在开发中就不需要再写dao接口的实现类。 IUserDao.java:
+二、mybatis的入门程序之hello world 目录结构如下:mybatis1.png package com.itheima.dao; /* @author wujiwen @data 2019/8/29 - 22:16 */ import com.itheima.domain.User; import java.util.List; public interface IUserDao { List&amp;lt;User&amp;gt; findAll(); } User.java
+package com.itheima.domain;/* @author wujiwen @data 2019/8/29 - 22:11 */ import java.io.Serializable; public class User implements Serializable { private int id; private String name; private int age; public Integer getId() { return id; } public void setId(Integer id) { this.</description>
+    </item>
+    
+    <item>
+      <title>SpringBoot</title>
+      <link>https://example.com/posts/springboot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/springboot/</guid>
+      <description>Spring Boot的相关简介 简化Spring应用开发，约定大于配置，去繁从简，just run就能创建一个独立的，产品级别的开发项目。
+ 1.快速创建独立运行的Spring项目以及主流框架的集成 2.使用嵌入式的servlet容器，应用无需打包成war包 3.starts自动依赖与版本控制 4.大量的自动配置，简化开发，也可修改默认值 5.无需配置XML，无代码生成，开箱即用 6.准生产环境的运行时应用监控 7.与云计算的天然集成
+一、 1、Spring Boot 简介  简化Spring应用开发，约定大于配置，去繁从简，just run就能创建一个独立的，产品级别的开发项目。 简化Spring应用开发的一个框架； 整个Spring技术栈的一个大整合； J2EE开发的一站式解决方案； 优点： 1.快速创建独立运行的Spring项目以及主流框架的集成 2.使用嵌入式的servlet容器，应用无需打包成war包 3.starts自动依赖与版本控制 4.大量的自动配置，简化开发，也可修改默认值 5.无需配置XML，无代码生成，开箱即用 6.准生产环境的运行时应用监控 7.与云计算的天然集成
+ 2、微服务 2014，martin fowler 微服务：架构风格（服务微化） 一个应用应该是一组小型服务；可以通过HTTP的方式进行互通； 单体应用：ALL IN ONE 微服务：每一个功能元素最终都是一个可独立替换和独立升级的软件单元； 详细参照微服务文档
+3、环境准备 http://www.gulixueyuan.com/ 谷粒学院
+环境约束
+–jdk1.8：Spring Boot 推荐jdk1.7及以上；java version &amp;ldquo;1.8.0_112&amp;rdquo;
+–maven3.x：maven 3.3以上版本；Apache Maven 3.3.9
+–IntelliJIDEA2017：IntelliJ IDEA 2017.2.2 x64、STS
+–SpringBoot 1.5.9.RELEASE：1.5.9；
+统一环境；
+1、MAVEN设置； 给maven 的settings.xml配置文件的profiles标签添加
+&amp;lt;profile&amp;gt; &amp;lt;id&amp;gt;jdk-1.8&amp;lt;/id&amp;gt; &amp;lt;activation&amp;gt; &amp;lt;activeByDefault&amp;gt;true&amp;lt;/activeByDefault&amp;gt; &amp;lt;jdk&amp;gt;1.8&amp;lt;/jdk&amp;gt; &amp;lt;/activation&amp;gt; &amp;lt;properties&amp;gt; &amp;lt;maven.</description>
+    </item>
+    
+    <item>
+      <title>SpringMVC的入门级教程</title>
+      <link>https://example.com/posts/springmvc%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/springmvc%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
+      <description>一、MVC的三层架构 接下来我们就说说每层都负责哪些方面： 表现层： 也就是我们常说的web层。它负责接收客户端请求，向客户端响应结果，通常客户端使用http协议请求web 层，web 需要接收 http 请求，完成 http 响应。表现层包括展示层和控制层：控制层负责接收请求，展示层负责结果的展示。表现层依赖业务层，接收到客户端请求一般会调用业务层进行业务处理，并将处理结果响应给客户端。表现层的设计一般都使用 MVC 模型。（MVC 是表现层的设计模型，和其他层没有关系） 业务层： 也就是我们常说的 service 层。它负责业务逻辑处理，和我们开发项目的需求息息相关。web 层依赖业务层，但是业务层不依赖 web 层。业务层在业务处理时可能会依赖持久层，如果要对数据持久化需要保证事务一致性。（也就是我们说的，事务应该放到业务层来控制） 持久层： 也就是我们是常说的 dao 层。负责数据持久化，包括数据层即数据库和数据访问层，数据库是对数据进行持久化的载体，数据访问层是业务层和持久层交互的接口，业务层需要通过数据访问层将数据持久化到数据库中。通俗的讲，持久层就是和数据库交互，对数据库表进行曾删改查的。 二、SpringMVC的简介 SpringMVC 是一种基于 Java 的实现 MVC 设计模型的请求驱动类型的轻量级 Web 框架，属于 SpringFrameWork 的后续产品，已经融合在 Spring Web Flow 里面。Spring 框架提供了构建Web 应用程序的全功能 MVC 模块。使用 Spring 可插入的 MVC 架构，从而在使用 Spring 进行 WEB 开发时，可以选择使用 Spring的 Spring MVC 框架或集成其他 MVC 开发框架，如 Struts1(现在一般不用)，Struts2 等。SpringMVC 已经成为目前最主流的 MVC 框架之一，并且随着 Spring3.0 的发布，全面超越 Struts2，成为最优秀的 MVC 框架。它通过一套注解，让一个简单的 Java 类成为处理请求的控制器，而无须实现任何接口。同时它还支持RESTful 编程风格的请求。</description>
+    </item>
+    
+    <item>
+      <title>Spring的基础知识</title>
+      <link>https://example.com/posts/spring%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/spring%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
+      <description>一、Spring框架的简介 Spring是一个开放源代码的设计层面框架，他解决的是业务逻辑层和其他各层的松耦合问题，因此它将面向接口的编程思想贯穿整个系统应用。Spring是于2003 年兴起的一个轻量级的Java 开发框架，由Rod Johnson创建。简单来说，Spring是一个分层的JavaSE/EE full-stack(一站式) 轻量级开源框架。
+二、spring框架入门之hello world 目录结构： Car.java:
+package com.test.maven.spring; public class Car { private String name; private int price; public String getName() { return name; } public void setName(String name) { this.name = name; } public int getPrice() { return price; } public void setPrice(int price) { this.price = price; } @Override public String toString() { return &amp;#34;Car [name=&amp;#34; + name + &amp;#34;, price=&amp;#34; + price + &amp;#34;]&amp;#34;; } } Main.</description>
+    </item>
+    
+    <item>
+      <title>SSM框架的整合</title>
+      <link>https://example.com/posts/ssm%E6%A1%86%E6%9E%B6%E7%9A%84%E6%95%B4%E5%90%88/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/ssm%E6%A1%86%E6%9E%B6%E7%9A%84%E6%95%B4%E5%90%88/</guid>
+      <description>一、什么是ssm框架 SSM（Spring+SpringMVC+MyBatis）框架集由Spring、MyBatis两个开源框架整合而成（SpringMVC是Spring中的部分内容）。常作为数据源较简单的web项目的框架。
+二、ssm框架整合之hello world 搭建的环境:eclipse+jdk1.8+maven 基本的步骤:
+ 1.创建maven工程 2.引入项目所需要的依赖 3.引入bootstrap前端框架 4.编写ssm整合的关键配置文件 5.使用逆向工程 程序的目录结构: 注意：使用逆向工程并不是所有的文件都是需要手动编写的 pom.xml:
+ &amp;lt;project xmlns=&amp;#34;http://maven.apache.org/POM/4.0.0&amp;#34; xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34; xsi:schemaLocation=&amp;#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&amp;#34;&amp;gt; &amp;lt;modelVersion&amp;gt;4.0.0&amp;lt;/modelVersion&amp;gt; &amp;lt;groupId&amp;gt;com.mntc.maven&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;ssm-test&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.0.1-SNAPSHOT&amp;lt;/version&amp;gt; &amp;lt;packaging&amp;gt;war&amp;lt;/packaging&amp;gt; &amp;lt;dependencies&amp;gt; &amp;lt;!-- 1.引入Springmvc、spring相关的依赖包 --&amp;gt; &amp;lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-webmvc&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.3.7.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;!-- 2.spring-jdbc --&amp;gt; &amp;lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-jdbc&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.3.7.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;!-- spring面向切面编程 --&amp;gt; &amp;lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-aspects --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-aspects&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.3.7.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;!-- Mybatis --&amp;gt; &amp;lt;!-- https://mvnrepository.com/artifact/org.mybatis/mybatis --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.mybatis&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;mybatis&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.4.2&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;!</description>
+    </item>
+    
+  </channel>
+</rss>

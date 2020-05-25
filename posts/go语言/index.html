@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#000" />
+    <title>
+        
+            Go语言技术知识 &middot; Blog Hugo Theme - Prav
+        
+    </title>
+
+    
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"
+        integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    
+    
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:300,300italic,700&display=swap" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:300&display=swap" rel="stylesheet">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="">
+    
+    <meta name="description" content="主要介绍GO语言的基本语法">
+    
+    <meta name="keywords" content="编程">
+    
+    <meta name="author" content="吴继文"></head>
+
+<body>
+        <div class="container">
+<div id="navbar" class="pure-menu pure-menu-open pure-menu-horizontal pure-menu-scrollable">
+    <a href="/" class="pure-menu-heading">
+         
+            Blog 
+         
+    </a>
+    <ul class="pure-menu-list">
+        <li class="pure-menu-item">
+            <a href="/posts" class="pure-menu-link">
+                <i class="fa fa-archive"></i>
+                文章
+            </a>
+        </li>
+        <li class="pure-menu-item">
+            <a href="/tags" class="pure-menu-link">
+                <i class="fas fa-comments"></i>
+                分类
+            </a>
+        </li>
+        <li class="pure-menu-item">
+            <a href="/about" class="pure-menu-link">
+                <i class="fas fa-smile"></i>
+                关于我
+            </a>
+        </li>
+    </ul>
+    <ul class="pure-menu-list pull-right">
+        
+        <li class="pure-menu-item">
+            <a href="https://www.baidu.com" title="Github" class="pure-menu-link">
+                <i class="fab fa-github"></i>
+                <span class="hide">Github</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="http://twitter.com/example" title="@pravin" class="pure-menu-link">
+                <i class="fab fa-twitter-square"></i>
+                <span class="hide">Twitter</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="http://uk.linkedin.com/in/example" title="Linked In" class="pure-menu-link">
+                <i class="fab fa-linkedin"></i>
+                <span class="hide">LinkedIn</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="https://www.medium.com/@example" title="Medium" class="pure-menu-link">
+                <i class="fab fa-medium"></i>
+                <span class="hide">Medium</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="https://www.facebook.com/example" title="Facebook" class="pure-menu-link">
+                <i class="fab fa-facebook"></i>
+                <span class="hide">Facebook</span>
+            </a>
+        </li>
+        
+        <li class="pure-menu-item">
+            <a href="/atom.xml" title="Atom Feed" class="pure-menu-link">
+                <i class="fas fa-rss-square"></i>
+                <span class="hide">RSS Feed</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="pure-u-1">
+    <div class="pad">
+    </div>
+</div>
+<div class="pure-g">
+
+
+<div id="content" class="pure-u-1 pure-u-md-3-4 pure-u-sm-1">
+    <div class="pad">
+
+<div class="date">
+    <time pubdate="0001-01-01">January 1, 0001</time>
+    <span class="author">学习笔记</span>
+</div>
+
+<article>
+    <h1><a href="https://example.com/posts/go%E8%AF%AD%E8%A8%80/">Go语言技术知识</a></h1>
+    <div class="tags">
+        
+        
+        <a href="/tags/%E7%BC%96%E7%A8%8B" class="pure-button">编程</a>
+        
+    </div>
+    <h2 id="一go语言的特点">一、go语言的特点</h2>
+<p>Go语言保证了既能达到静态编译语言的安全和性能，又能达到动态语言开发维护的高效。Go=C+pathy
+1.从C语言继承了很多理念，包括表达式语法、控制结构、基础数据类型、调用参数传值、指针等等，也保留了C语言的编译方式以及弱化了指针
+2.引入包的概念，用于组织程序结构，go语言的一个文件要归属一个包，而不能单独存在。
+3.垃圾回收机制，内存自动回收，不需要开发人员进行管理。
+4.天然并发（重要特点）</p>
+<blockquote>
+<p>从语言层面支持并发，实现简单。
+goroutime,轻量级线程，可以实现大并发处理，高效利用多核。
+基于CPS并发模型。
+吸收管道通信机制，形成go语言特有的管道channel，通过管道channel，可以实现不同的goroute之间的相互通信。
+函数返回多个值。</p>
+</blockquote>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">func getSumAndSub(n1 int,n2 int)(int,int){
+    sum := n1+n2 //注意后面不需要带分号
+    sub := n1-n2
+    <span style="color:#8b008b;font-weight:bold">return</span> sum,sub
+}
+</code></pre></div><blockquote>
+<p>新的创新，比如切片slice、延时执行defer等。</p>
+</blockquote>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#228b22">//开发一个hello world程序
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">package</span> main
+<span style="color:#8b008b;font-weight:bold">import</span> (
+	<span style="color:#cd5555">&#34;fmt&#34;</span>
+<span style="color:#228b22">//	&#34;strings&#34;
+</span><span style="color:#228b22">//	&#34;go_code/project01/cal&#34;
+</span><span style="color:#228b22">//	&#34;math/rand&#34;
+</span><span style="color:#228b22">//	&#34;time&#34;
+</span><span style="color:#228b22">//	&#34;errors&#34;
+</span><span style="color:#228b22"></span>	<span style="color:#cd5555">&#34;sort&#34;</span>
+)
+
+<span style="color:#228b22">/*
+</span><span style="color:#228b22">func cal(a float64,b float64,operator byte) float64 {
+</span><span style="color:#228b22">	var res float64
+</span><span style="color:#228b22">	switch operator {
+</span><span style="color:#228b22">		case &#39;+&#39;:
+</span><span style="color:#228b22">			res = a + b
+</span><span style="color:#228b22">		case &#39;-&#39;:
+</span><span style="color:#228b22">			res = a - b
+</span><span style="color:#228b22">		case &#39;*&#39;:
+</span><span style="color:#228b22">			res = a * b
+</span><span style="color:#228b22">		case &#39;/&#39;:
+</span><span style="color:#228b22">			res = a / b
+</span><span style="color:#228b22">		default:
+</span><span style="color:#228b22">			fmt.Println(&#34;操作符有误&#34;)
+</span><span style="color:#228b22">	}
+</span><span style="color:#228b22">	return res
+</span><span style="color:#228b22">}
+</span><span style="color:#228b22">*/</span>
+<span style="color:#228b22">/*
+</span><span style="color:#228b22">func AddUpper() func (int) int {
+</span><span style="color:#228b22">	var n int = 10 
+</span><span style="color:#228b22">	return func (x int) int {
+</span><span style="color:#228b22">		n=n+x
+</span><span style="color:#228b22">		return n
+</span><span style="color:#228b22">	}
+</span><span style="color:#228b22">}
+</span><span style="color:#228b22">
+</span><span style="color:#228b22">func readConf(name string) (err error) {
+</span><span style="color:#228b22">	if name == &#34;config.ini&#34; {
+</span><span style="color:#228b22">		return nil
+</span><span style="color:#228b22">	}else{
+</span><span style="color:#228b22">		return errors.New(&#34;读取配置文件错误&#34;)
+</span><span style="color:#228b22">	}
+</span><span style="color:#228b22">}
+</span><span style="color:#228b22">func test() {
+</span><span style="color:#228b22">	err := readConf(&#34;confsig.ini&#34;)
+</span><span style="color:#228b22">	if err != nil {
+</span><span style="color:#228b22">		panic(err)
+</span><span style="color:#228b22">	}
+</span><span style="color:#228b22">	fmt.Println(&#34;程序正常执行&#34;)
+</span><span style="color:#228b22">}
+</span><span style="color:#228b22">*/</span>
+<span style="color:#228b22">//二分法查找
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">Binary</span>(arr *[<span style="color:#b452cd">6</span>]<span style="color:#00688b;font-weight:bold">int</span>,leftIndex <span style="color:#00688b;font-weight:bold">int</span>,rightIndex <span style="color:#00688b;font-weight:bold">int</span>,findVal <span style="color:#00688b;font-weight:bold">int</span>){
+	<span style="color:#8b008b;font-weight:bold">if</span> leftIndex &gt; rightIndex {
+		fmt.<span style="color:#008b45">Println</span>(<span style="color:#cd5555">&#34;不存在&#34;</span>)
+		<span style="color:#8b008b;font-weight:bold">return</span>
+	}
+	middle:=(leftIndex + rightIndex)/<span style="color:#b452cd">2</span>
+	<span style="color:#8b008b;font-weight:bold">if</span> arr[middle]&gt;findVal {
+		rightIndex = middle-<span style="color:#b452cd">1</span>
+		<span style="color:#008b45">Binary</span>(arr,leftIndex,rightIndex,findVal)
+	} <span style="color:#8b008b;font-weight:bold">else</span> <span style="color:#8b008b;font-weight:bold">if</span> arr[middle]&lt;findVal {
+		leftIndex = middle+<span style="color:#b452cd">1</span>
+		<span style="color:#008b45">Binary</span>(arr,leftIndex,rightIndex,findVal)
+	} <span style="color:#8b008b;font-weight:bold">else</span> <span style="color:#8b008b;font-weight:bold">if</span> arr[middle] == findVal{
+		fmt.<span style="color:#008b45">Printf</span>(<span style="color:#cd5555">&#34;找到了...,下标为%d\n&#34;</span>,middle+<span style="color:#b452cd">1</span>)
+		<span style="color:#8b008b;font-weight:bold">return</span>
+	}
+}
+<span style="color:#8b008b;font-weight:bold">type</span> Cat <span style="color:#8b008b;font-weight:bold">struct</span> {
+	Name <span style="color:#00688b;font-weight:bold">string</span>
+	Age <span style="color:#00688b;font-weight:bold">int</span>
+	Color <span style="color:#00688b;font-weight:bold">string</span>
+}
+<span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">main</span>() {
+	<span style="color:#228b22">/*var d int8 = 97
+</span><span style="color:#228b22">	var weekMount int8 = d/7
+</span><span style="color:#228b22">	var weenDay int8 = d%7
+</span><span style="color:#228b22">	fmt.Printf(&#34;剩余%d个星期，零%d天\n&#34;,weekMount,weenDay)
+</span><span style="color:#228b22">
+</span><span style="color:#228b22">	var a int = 64
+</span><span style="color:#228b22">	var b int = 8
+</span><span style="color:#228b22">	a = a + b
+</span><span style="color:#228b22">	b = a - b
+</span><span style="color:#228b22">	a = a - b
+</span><span style="color:#228b22">	fmt.Printf(&#34;a=%d\n&#34;,a)
+</span><span style="color:#228b22">	fmt.Printf(&#34;b=%d\n&#34;,b)
+</span><span style="color:#228b22">	*/</span>
+	<span style="color:#228b22">/*
+</span><span style="color:#228b22">	//方式一
+</span><span style="color:#228b22">	var name string
+</span><span style="color:#228b22">	fmt.Println(&#34;请输入姓名&#34;)
+</span><span style="color:#228b22">	fmt.Scanln(&amp;name)
+</span><span style="color:#228b22">	fmt.Printf(&#34;输入的姓名为：%v&#34;,name)
+</span><span style="color:#228b22">	//方式二
+</span><span style="color:#228b22">	*/</span>
+
+<span style="color:#228b22">/*	var a int32 = 26
+</span><span style="color:#228b22">	var b int32 = 1
+</span><span style="color:#228b22">	if a+b&gt;50 {
+</span><span style="color:#228b22">		fmt.Println(&#34;hello world&#34;)
+</span><span style="color:#228b22">	}
+</span><span style="color:#228b22">	*/</span>
+<span style="color:#228b22">/*	var a float64 = 20
+</span><span style="color:#228b22">	var b float64 = 10
+</span><span style="color:#228b22">	if a &gt; 10.0 {
+</span><span style="color:#228b22">		if b &lt; 20 {
+</span><span style="color:#228b22">			fmt.Printf(&#34;%f&#34;,a+b)
+</span><span style="color:#228b22">		}
+</span><span style="color:#228b22">	}*/</span>
+	<span style="color:#228b22">/*
+</span><span style="color:#228b22">	var temp int8 = 5
+</span><span style="color:#228b22">	switch temp{
+</span><span style="color:#228b22">	case 1,2,3:
+</span><span style="color:#228b22">		fmt.Println(&#34;1-3&#34;)
+</span><span style="color:#228b22">	case 4,5,6:
+</span><span style="color:#228b22">		fmt.Println(&#34;4-6&#34;)
+</span><span style="color:#228b22">	case 7,8,9:
+</span><span style="color:#228b22">		fmt.Println(&#34;7-9&#34;)
+</span><span style="color:#228b22">	default:
+</span><span style="color:#228b22">		fmt.Println(&#34;错误&#34;)
+</span><span style="color:#228b22">	}
+</span><span style="color:#228b22">	*/</span>
+	<span style="color:#228b22">/*
+</span><span style="color:#228b22">	var temp byte
+</span><span style="color:#228b22">	fmt.Println(&#34;请输入一个字符:&#34;)
+</span><span style="color:#228b22">	fmt.Scanf(&#34;%c&#34;,&amp;temp)
+</span><span style="color:#228b22">	switch temp {
+</span><span style="color:#228b22">	case &#39;a&#39;:
+</span><span style="color:#228b22">		fmt.Println(&#34;A&#34;)
+</span><span style="color:#228b22">	case &#39;b&#39;:
+</span><span style="color:#228b22">		fmt.Println(&#34;B&#34;)
+</span><span style="color:#228b22">	case &#39;c&#39;:
+</span><span style="color:#228b22">		fmt.Println(&#34;C&#34;)
+</span><span style="color:#228b22">	case &#39;d&#39;:
+</span><span style="color:#228b22">		fmt.Println(&#34;D&#34;)
+</span><span style="color:#228b22">	case &#39;e&#39;:
+</span><span style="color:#228b22">		fmt.Println(&#34;E&#34;)
+</span><span style="color:#228b22">	default:
+</span><span style="color:#228b22">		fmt.Println(&#34;other&#34;)
+</span><span style="color:#228b22">	}
+</span><span style="color:#228b22">	*/</span>
+	<span style="color:#228b22">//将基本的数据类型转换为字符串
+</span><span style="color:#228b22"></span>	<span style="color:#228b22">/*var a int8 = 32;
+</span><span style="color:#228b22">	var str string;
+</span><span style="color:#228b22">	str = fmt.Sprintf(&#34;%d&#34;,a)
+</span><span style="color:#228b22">	fmt.Printf(&#34;%q&#34;,str)
+</span><span style="color:#228b22">	*/</span>
+	<span style="color:#228b22">/*for i:=1;i&lt;=100;i++ {
+</span><span style="color:#228b22">		if i%9==0 {
+</span><span style="color:#228b22">			fmt.Println(i)
+</span><span style="color:#228b22">		}
+</span><span style="color:#228b22">	}*/</span>
+	<span style="color:#228b22">/*
+</span><span style="color:#228b22">	for i:=0;i&lt;10;i++ {
+</span><span style="color:#228b22">		for j:=i;j&lt;10;j++ {
+</span><span style="color:#228b22">			if i+j==6 {
+</span><span style="color:#228b22">				fmt.Printf(&#34;%d + %d = %d\n&#34;,i,j,i+j)
+</span><span style="color:#228b22">			}
+</span><span style="color:#228b22">		}
+</span><span style="color:#228b22">	}
+</span><span style="color:#228b22">	*/</span>
+	<span style="color:#228b22">//金字塔三角形
+</span><span style="color:#228b22"></span>	<span style="color:#228b22">/*
+</span><span style="color:#228b22">	var totalLevel int = 9;
+</span><span style="color:#228b22">	for i:=1;i&lt;=totalLevel;i++ {
+</span><span style="color:#228b22">		for k:=1;k&lt;=totalLevel-i;k++ {
+</span><span style="color:#228b22">			fmt.Print(&#34; &#34;)
+</span><span style="color:#228b22">		}
+</span><span style="color:#228b22">		for j:=1;j&lt;=2*i-1;j++ {
+</span><span style="color:#228b22">			if j==1||j==(2*i-1)||i==totalLevel {
+</span><span style="color:#228b22">				fmt.Print(&#34;*&#34;)
+</span><span style="color:#228b22">			}else{
+</span><span style="color:#228b22">				fmt.Print(&#34; &#34;)
+</span><span style="color:#228b22">			}
+</span><span style="color:#228b22">		}
+</span><span style="color:#228b22">		fmt.Println()
+</span><span style="color:#228b22">	}
+</span><span style="color:#228b22">	*/</span>
+	<span style="color:#228b22">//九九乘法表
+</span><span style="color:#228b22"></span>	<span style="color:#228b22">/*
+</span><span style="color:#228b22">	for i:=1;i&lt;=9;i++ {
+</span><span style="color:#228b22">		for j:=1;j&lt;=i;j++ {
+</span><span style="color:#228b22">			fmt.Printf(&#34;%d * %d = %d\t&#34;,i,j,i*j)
+</span><span style="color:#228b22">		}
+</span><span style="color:#228b22">		fmt.Println()
+</span><span style="color:#228b22">	}
+</span><span style="color:#228b22">	*/</span>
+	<span style="color:#228b22">//生成一个随机数
+</span><span style="color:#228b22"></span>	<span style="color:#228b22">/*rand.Seed(time.Now().Unix())
+</span><span style="color:#228b22">	n:=rand.Intn(100)+1
+</span><span style="color:#228b22">	fmt.Println(n)
+</span><span style="color:#228b22">	*/</span>
+	<span style="color:#228b22">//不同的生成0-100随机数，当生成的随机数为99时，停止循环
+</span><span style="color:#228b22"></span>	
+	<span style="color:#228b22">/*var count int = 0
+</span><span style="color:#228b22">	for {
+</span><span style="color:#228b22">		rand.Seed(time.Now().UnixNano())
+</span><span style="color:#228b22">		n:=rand.Intn(100)+1
+</span><span style="color:#228b22">		fmt.Println(n)
+</span><span style="color:#228b22">		count++
+</span><span style="color:#228b22">		if n==99 {
+</span><span style="color:#228b22">			break
+</span><span style="color:#228b22">		}
+</span><span style="color:#228b22">	}
+</span><span style="color:#228b22">	fmt.Printf(&#34;总共产生的随机数：%d&#34;,count)
+</span><span style="color:#228b22">	*/</span>
+	<span style="color:#228b22">//登陆，提示还有几次机会
+</span><span style="color:#228b22"></span>	<span style="color:#228b22">/*
+</span><span style="color:#228b22">	var userName string
+</span><span style="color:#228b22">	var password string
+</span><span style="color:#228b22">	var count int8 = 3
+</span><span style="color:#228b22">	for {
+</span><span style="color:#228b22">		fmt.Println(&#34;请输入用户名:&#34;)
+</span><span style="color:#228b22">		fmt.Scanln(&amp;userName)
+</span><span style="color:#228b22">		fmt.Println(&#34;请输入密码:&#34;)
+</span><span style="color:#228b22">		fmt.Scanln(&amp;password)
+</span><span style="color:#228b22">		if userName == &#34;wujiwen&#34; || password == &#34;13733433427&#34; {
+</span><span style="color:#228b22">			fmt.Println(&#34;登陆成功&#34;)
+</span><span style="color:#228b22">			break
+</span><span style="color:#228b22">		}else{
+</span><span style="color:#228b22">			count--
+</span><span style="color:#228b22">			if count==0 {
+</span><span style="color:#228b22">				fmt.Println(&#34;您的机会使用完毕，禁止登陆!&#34;)
+</span><span style="color:#228b22">				break
+</span><span style="color:#228b22">			}else{
+</span><span style="color:#228b22">				fmt.Printf(&#34;您还有%d次机会\n&#34;,count)
+</span><span style="color:#228b22">			}
+</span><span style="color:#228b22">		}
+</span><span style="color:#228b22">	}
+</span><span style="color:#228b22">	*/</span>
+	<span style="color:#228b22">//函数的使用
+</span><span style="color:#228b22"></span>	<span style="color:#228b22">/*
+</span><span style="color:#228b22">	res := abc.Cal(12,6,&#39;-&#39;)
+</span><span style="color:#228b22">	fmt.Printf(&#34;%f\n&#34;,res)
+</span><span style="color:#228b22">	abc.Show()
+</span><span style="color:#228b22">	*/</span>
+	<span style="color:#228b22">/*
+</span><span style="color:#228b22">	var a int = (-5)&gt;&gt;2
+</span><span style="color:#228b22">	fmt.Printf(&#34;%d&#34;,a)
+</span><span style="color:#228b22">	*/</span>
+	
+	<span style="color:#228b22">/*
+</span><span style="color:#228b22">		f := AddUpper()
+</span><span style="color:#228b22">		fmt.Println(f(1))
+</span><span style="color:#228b22">		fmt.Println(f(11))
+</span><span style="color:#228b22">		fmt.Println(&#34;-----------------------------------------------------------------&#34;)
+</span><span style="color:#228b22">		var str string = &#34;dfdalkfd中国&#34;
+</span><span style="color:#228b22">		fmt.Println(len(str))
+</span><span style="color:#228b22">		fmt.Println(&#34;-----------------------------------------------------------------&#34;)
+</span><span style="color:#228b22">		b := strings.Contains(&#34;seafood&#34;,&#34;fo1o&#34;)
+</span><span style="color:#228b22">		fmt.Printf(&#34;b=%v\n&#34;,b)
+</span><span style="color:#228b22">		fmt.Println(&#34;-----------------------------------------------------------------&#34;)
+</span><span style="color:#228b22">		index:=strings.LastIndex(&#34;go golang&#34;,&#34;go&#34;)
+</span><span style="color:#228b22">		fmt.Printf(&#34;b=%v\n&#34;,index)
+</span><span style="color:#228b22">		*/</span>
+		<span style="color:#228b22">//fmt.Println(&#34;-----------------------------------------------------------------&#34;)
+</span><span style="color:#228b22"></span>		<span style="color:#228b22">//str2:= &#34;go golang&#34;
+</span><span style="color:#228b22"></span>		<span style="color:#228b22">//str3:= strings.Replace(str2,&#34;go&#34;,&#34;吴继文&#34;,-1)
+</span><span style="color:#228b22"></span>		<span style="color:#228b22">//fmt.Printf(&#34;str3=%v str2=%v\n&#34;,str3,str2)
+</span><span style="color:#228b22"></span>		<span style="color:#228b22">/*
+</span><span style="color:#228b22">		fmt.Println(&#34;-----------------------------------------------------------------&#34;)
+</span><span style="color:#228b22">		strArr := strings.Split(&#34;hello,world,ok&#34;,&#34;,&#34;)
+</span><span style="color:#228b22">		for i:=0;i&lt;len(strArr);i++ {
+</span><span style="color:#228b22">			fmt.Printf(&#34;str[%v]=%v\n&#34;,i,strArr[i])
+</span><span style="color:#228b22">		}
+</span><span style="color:#228b22">		now:=time.Now()
+</span><span style="color:#228b22">		fmt.Printf(&#34;now=%v,now=%T\n&#34;,now,now)
+</span><span style="color:#228b22">		fmt.Printf(&#34;年:%v\n&#34;,now.Year())        //年
+</span><span style="color:#228b22">		fmt.Printf(&#34;月:%v\n&#34;,int(now.Month()))      //月
+</span><span style="color:#228b22">		fmt.Printf(&#34;日:%v\n&#34;,now.Day())         //日
+</span><span style="color:#228b22">		fmt.Printf(&#34;时:%v\n&#34;,now.Hour())        //时
+</span><span style="color:#228b22">		fmt.Printf(&#34;分:%v\n&#34;,now.Minute())      //分
+</span><span style="color:#228b22">		fmt.Printf(&#34;秒:%v\n&#34;,now.Second())      //秒
+</span><span style="color:#228b22">
+</span><span style="color:#228b22">		fmt.Println(&#34;格式化时间：&#34;)
+</span><span style="color:#228b22">		fmt.Printf(&#34;%v-%v-%v %v:%v:%v&#34;,now.Year(),int(now.Month()),now.Day(),now.Hour(),now.Minute(),now.Second())
+</span><span style="color:#228b22">		*/</span>
+		<span style="color:#228b22">//test()
+</span><span style="color:#228b22"></span>		<span style="color:#228b22">/*
+</span><span style="color:#228b22">		//冒泡法排序
+</span><span style="color:#228b22">		fmt.Println(&#34;---------------------------------------------------------------------------------------------------&#34;)
+</span><span style="color:#228b22">		var a [5]int = [5]int{24,69,80,57,13}
+</span><span style="color:#228b22">	
+</span><span style="color:#228b22">		var temp int
+</span><span style="color:#228b22">		for i:=0;i&lt;len(a)-1;i++ {
+</span><span style="color:#228b22">			for j:=0;j&lt;len(a)-i-1;j++ {
+</span><span style="color:#228b22">				if a[j]&gt;a[j+1] {
+</span><span style="color:#228b22">					temp = a[j]
+</span><span style="color:#228b22">					a[j] = a[j+1]
+</span><span style="color:#228b22">					a[j+1] = temp;
+</span><span style="color:#228b22">					//fmt.Println(&#34;1&#34;)
+</span><span style="color:#228b22">				}
+</span><span style="color:#228b22">			}
+</span><span style="color:#228b22">		}
+</span><span style="color:#228b22">		fmt.Println(&#34;a=&#34;,a)
+</span><span style="color:#228b22">		*/</span>
+		<span style="color:#228b22">//二分法进行数据的吵着
+</span><span style="color:#228b22"></span>		<span style="color:#8b008b;font-weight:bold">var</span> b [<span style="color:#b452cd">6</span>]<span style="color:#00688b;font-weight:bold">int</span> = [<span style="color:#b452cd">6</span>]<span style="color:#00688b;font-weight:bold">int</span>{<span style="color:#b452cd">1</span>,<span style="color:#b452cd">8</span>,<span style="color:#b452cd">10</span>,<span style="color:#b452cd">89</span>,<span style="color:#b452cd">1000</span>,<span style="color:#b452cd">1234</span>}
+		<span style="color:#008b45">Binary</span>(&amp;b,<span style="color:#b452cd">0</span>,<span style="color:#658b00">len</span>(b)-<span style="color:#b452cd">1</span>,<span style="color:#b452cd">8</span>)
+		fmt.<span style="color:#008b45">Println</span>(<span style="color:#cd5555">&#34;---------------------------------------------------------------------------------------------------&#34;</span>)
+		<span style="color:#8b008b;font-weight:bold">var</span> arr[<span style="color:#b452cd">4</span>][<span style="color:#b452cd">6</span>]<span style="color:#00688b;font-weight:bold">int</span>
+		arr[<span style="color:#b452cd">1</span>][<span style="color:#b452cd">2</span>] = <span style="color:#b452cd">1</span>
+		arr[<span style="color:#b452cd">2</span>][<span style="color:#b452cd">1</span>] = <span style="color:#b452cd">2</span>
+		arr[<span style="color:#b452cd">2</span>][<span style="color:#b452cd">3</span>] = <span style="color:#b452cd">3</span>
+		<span style="color:#8b008b;font-weight:bold">for</span> i:=<span style="color:#b452cd">0</span>;i&lt;<span style="color:#b452cd">4</span>;i++ {
+			<span style="color:#8b008b;font-weight:bold">for</span> j:=<span style="color:#b452cd">0</span>;j&lt;<span style="color:#b452cd">6</span>;j++ {
+				fmt.<span style="color:#008b45">Print</span>(arr[i][j],<span style="color:#cd5555">&#34; &#34;</span>)
+			}
+			fmt.<span style="color:#008b45">Println</span>()
+		}
+
+		<span style="color:#228b22">//map的创建
+</span><span style="color:#228b22"></span>		fmt.<span style="color:#008b45">Println</span>(<span style="color:#cd5555">&#34;----------------------------------------------方式一--------------------------------------------------&#34;</span>)
+		<span style="color:#8b008b;font-weight:bold">var</span> a <span style="color:#8b008b;font-weight:bold">map</span>[<span style="color:#00688b;font-weight:bold">string</span>]<span style="color:#00688b;font-weight:bold">string</span> 
+		a = <span style="color:#658b00">make</span>(<span style="color:#8b008b;font-weight:bold">map</span>[<span style="color:#00688b;font-weight:bold">string</span>]<span style="color:#00688b;font-weight:bold">string</span>,<span style="color:#b452cd">10</span>)
+		a[<span style="color:#cd5555">&#34;no1&#34;</span>]=<span style="color:#cd5555">&#34;宋江&#34;</span>
+		a[<span style="color:#cd5555">&#34;no2&#34;</span>]=<span style="color:#cd5555">&#34;武松&#34;</span>
+		fmt.<span style="color:#008b45">Println</span>(a)
+		fmt.<span style="color:#008b45">Println</span>(<span style="color:#cd5555">&#34;----------------------------------------------方式二--------------------------------------------------&#34;</span>)
+		<span style="color:#8b008b;font-weight:bold">var</span> cities = <span style="color:#658b00">make</span>(<span style="color:#8b008b;font-weight:bold">map</span>[<span style="color:#00688b;font-weight:bold">string</span>]<span style="color:#00688b;font-weight:bold">string</span>,<span style="color:#b452cd">10</span>)
+		cities[<span style="color:#cd5555">&#34;no1&#34;</span>] = <span style="color:#cd5555">&#34;武汉&#34;</span>
+		cities[<span style="color:#cd5555">&#34;no2&#34;</span>] = <span style="color:#cd5555">&#34;北京&#34;</span>
+		cities[<span style="color:#cd5555">&#34;no3&#34;</span>] = <span style="color:#cd5555">&#34;上海&#34;</span>
+		fmt.<span style="color:#008b45">Println</span>(cities)
+		fmt.<span style="color:#008b45">Println</span>(<span style="color:#cd5555">&#34;----------------------------------------------方式三--------------------------------------------------&#34;</span>)
+		<span style="color:#8b008b;font-weight:bold">var</span> flower <span style="color:#8b008b;font-weight:bold">map</span>[<span style="color:#00688b;font-weight:bold">string</span>]<span style="color:#00688b;font-weight:bold">string</span> = <span style="color:#8b008b;font-weight:bold">map</span>[<span style="color:#00688b;font-weight:bold">string</span>]<span style="color:#00688b;font-weight:bold">string</span>{<span style="color:#cd5555">&#34;no1&#34;</span>:<span style="color:#cd5555">&#34;荷花&#34;</span>,<span style="color:#cd5555">&#34;no2&#34;</span>:<span style="color:#cd5555">&#34;桃花&#34;</span>,<span style="color:#cd5555">&#34;no3&#34;</span>:<span style="color:#cd5555">&#34;杏花&#34;</span>}
+		fmt.<span style="color:#008b45">Println</span>(flower)
+		fmt.<span style="color:#008b45">Println</span>(<span style="color:#cd5555">&#34;----------------------------------------------map案例--------------------------------------------------&#34;</span>)
+		<span style="color:#8b008b;font-weight:bold">var</span> monsters []<span style="color:#8b008b;font-weight:bold">map</span>[<span style="color:#00688b;font-weight:bold">string</span>]<span style="color:#00688b;font-weight:bold">string</span> 
+		monsters = <span style="color:#658b00">make</span>([]<span style="color:#8b008b;font-weight:bold">map</span>[<span style="color:#00688b;font-weight:bold">string</span>]<span style="color:#00688b;font-weight:bold">string</span>,<span style="color:#b452cd">2</span>)
+		<span style="color:#8b008b;font-weight:bold">if</span> monsters[<span style="color:#b452cd">0</span>] == <span style="color:#8b008b;font-weight:bold">nil</span> {
+			monsters[<span style="color:#b452cd">0</span>] = <span style="color:#658b00">make</span>(<span style="color:#8b008b;font-weight:bold">map</span>[<span style="color:#00688b;font-weight:bold">string</span>]<span style="color:#00688b;font-weight:bold">string</span> , <span style="color:#b452cd">2</span>)
+			monsters[<span style="color:#b452cd">0</span>][<span style="color:#cd5555">&#34;name&#34;</span>] = <span style="color:#cd5555">&#34;张三&#34;</span>
+			monsters[<span style="color:#b452cd">0</span>][<span style="color:#cd5555">&#34;age&#34;</span>] = <span style="color:#cd5555">&#34;600&#34;</span>
+		}
+		<span style="color:#8b008b;font-weight:bold">var</span> newMonster <span style="color:#8b008b;font-weight:bold">map</span>[<span style="color:#00688b;font-weight:bold">string</span>]<span style="color:#00688b;font-weight:bold">string</span> = <span style="color:#8b008b;font-weight:bold">map</span>[<span style="color:#00688b;font-weight:bold">string</span>]<span style="color:#00688b;font-weight:bold">string</span>{
+			<span style="color:#cd5555">&#34;name&#34;</span>:<span style="color:#cd5555">&#34;李四&#34;</span>,
+			<span style="color:#cd5555">&#34;age&#34;</span>:<span style="color:#cd5555">&#34;500&#34;</span>,
+		}
+		monsters = <span style="color:#658b00">append</span>(monsters , newMonster)
+		fmt.<span style="color:#008b45">Println</span>(monsters)
+
+		fmt.<span style="color:#008b45">Println</span>(<span style="color:#cd5555">&#34;----------------------------------------------map排序（按照key）--------------------------------------------------&#34;</span>)
+		map1 := <span style="color:#658b00">make</span>(<span style="color:#8b008b;font-weight:bold">map</span>[<span style="color:#00688b;font-weight:bold">int</span>]<span style="color:#00688b;font-weight:bold">int</span>,<span style="color:#b452cd">10</span>)
+		map1[<span style="color:#b452cd">10</span>] = <span style="color:#b452cd">15</span>
+		map1[<span style="color:#b452cd">1</span>] = <span style="color:#b452cd">12</span>
+		map1[<span style="color:#b452cd">4</span>] = <span style="color:#b452cd">65</span>
+		map1[<span style="color:#b452cd">8</span>] = <span style="color:#b452cd">37</span>
+		map1[<span style="color:#b452cd">2</span>] = <span style="color:#b452cd">33</span>
+		fmt.<span style="color:#008b45">Println</span>(map1)
+		<span style="color:#8b008b;font-weight:bold">var</span> keys []<span style="color:#00688b;font-weight:bold">int</span>
+		<span style="color:#8b008b;font-weight:bold">for</span> k,_:=<span style="color:#8b008b;font-weight:bold">range</span> map1 {
+			keys = <span style="color:#658b00">append</span>(keys,k)
+		}
+		sort.<span style="color:#008b45">Ints</span>(keys)
+		fmt.<span style="color:#008b45">Println</span>(keys)
+
+		<span style="color:#8b008b;font-weight:bold">for</span> _,v := <span style="color:#8b008b;font-weight:bold">range</span> keys {
+			fmt.<span style="color:#008b45">Printf</span>(<span style="color:#cd5555">&#34;map1[%v]:%v\n&#34;</span>,v,map1[v])
+		}
+
+		fmt.<span style="color:#008b45">Println</span>(<span style="color:#cd5555">&#34;----------------------------------------------结构体的创建--------------------------------------------------&#34;</span>)
+		<span style="color:#8b008b;font-weight:bold">var</span> cat1 Cat
+		cat1.Name = <span style="color:#cd5555">&#34;小花&#34;</span>
+		cat1.Age = <span style="color:#b452cd">15</span>
+		cat1.Color = <span style="color:#cd5555">&#34;white&#34;</span>
+		fmt.<span style="color:#008b45">Println</span>(cat1)
+
+		cat2:=Cat{<span style="color:#cd5555">&#34;白白&#34;</span>,<span style="color:#b452cd">12</span>,<span style="color:#cd5555">&#34;绿色&#34;</span>}
+		fmt.<span style="color:#008b45">Println</span>(cat2)
+	}
+	
+</code></pre></div>
+</article>
+    </div>
+</div>
+
+
+                
+<div id="sidebar" class="pure-u-1 pure-u-md-1-4 pure-u-sm-1">
+    <div class="pad">
+        <a name="about"></a>
+        <h3>关于我</h3>
+        <div style="text-align: center;">
+            <img src="/img/author.jpg" alt="吴继文" class="pure-img" />
+            <p><em>Handsome</em></p>
+        </div>
+
+        <h3>最近文章</h3>
+        <div class="pure-menu pure-menu-open">
+            <ul class="pure-menu-list">
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/mybatis-plus/" class="pure-menu-link">Mybatis-Plus<br>
+                        <small>MyBatis-Plus 的增强工具，在 MyBatis 的基础上只做增强不做改变，为简化开发、提高效率而生。</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/mongodb/" class="pure-menu-link">DBmong数据库<br>
+                        <small>NoSQL 是一项全新的数据库革命性运动，早期就有人提出，发展至2009年趋势越发高涨。NoSQL的拥护者们提倡运用非关系型的数据存储，相对于铺天盖地的关系型数据库运用，这一概念无疑是一种全新的思维的注入。</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/docker/" class="pure-menu-link">Docker容器技术<br>
+                        <small>这一种常用的容器技术，能简化项目的部署</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/go%E8%AF%AD%E8%A8%80/" class="pure-menu-link">Go语言技术知识<br>
+                        <small>主要介绍GO语言的基本语法</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/hexo&#43;github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6/" class="pure-menu-link">hexo&#43;github搭建个人博客<br>
+                        <small>介绍了个人博客搭建的完整步骤</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/idea%E7%9A%84%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="pure-menu-link">IDEA的基本使用<br>
+                        <small>主要介绍了IDEA的基本以用和一些常用的快捷键</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/java%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/" class="pure-menu-link">Java原生代码连接数据库<br>
+                        <small>介绍了在不使用框架的基础上连接MySQL</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/%E5%9F%BA%E4%BA%8Ejava%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="pure-menu-link">Java多线程基础知识<br>
+                        <small>一种提高程序运行效率的技术</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/java%E5%AE%9E%E7%8E%B0%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/" class="pure-menu-link">Java实现串口通信<br>
+                        <small>Java实现窗口通信</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/java%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" class="pure-menu-link">Java的基础知识<br>
+                        <small>介绍了Java的基础知识</small>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <h3>分类</h3>
+        <div style="text-align:center" class="tags">
+            
+            
+            <a href="/tags/%e6%a1%86%e6%9e%b6" class="pure-button"> 框架
+                <small>(6)</small></a>
+            
+            
+            
+            <a href="/tags/%e7%bc%96%e7%a8%8b" class="pure-button"> 编程
+                <small>(5)</small></a>
+            
+            
+            
+            <a href="/tags/%e5%85%b6%e5%ae%83" class="pure-button"> 其它
+                <small>(2)</small></a>
+            
+            
+            
+            <a href="/tags/%e6%95%b0%e6%8d%ae%e5%ba%93" class="pure-button"> 数据库
+                <small>(2)</small></a>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </div>
+    </div> 
+</div> 
+
+                
+            </div>
+<div class="pure-g">
+	<footer class="pure-u-1 pure-u-md-1 pure-u-sm-1">
+		<p>This page and its contents are copyright &copy; 2020,
+			<a href="">吴继文</a>.</p>
+		<p><a href="https://github.com/pravin/hugo-theme-prav">Theme Prav</a> by <a href="https://cto.me.uk">Pravin
+				Paratey</a></p>
+	</footer>
+
+	<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
+		integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+		crossorigin="anonymous"></script>
+</div>
+</div></body>
+</html>

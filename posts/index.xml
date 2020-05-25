@@ -2,71 +2,311 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Blog</title>
-    <link>http://whwujiwen.github.io/posts/</link>
+    <link>https://example.com/posts/</link>
     <description>Recent content in Posts on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 15 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Mar 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://whwujiwen.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://example.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Markdown基本语法</title>
-      <link>http://whwujiwen.github.io/posts/markdown-syntax/</link>
-      <pubDate>Sat, 15 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://whwujiwen.github.io/posts/markdown-syntax/</guid>
-      <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
-    </item>
     
     <item>
-      <title>风很大客服回答后方可</title>
-      <link>http://whwujiwen.github.io/posts/test/</link>
-      <pubDate>Sat, 15 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://whwujiwen.github.io/posts/test/</guid>
-      <description>This is a two column theme with a navbar at the top and a sidebar to the right. The navbar contains links to major pages and links to social networks. The sidebar contains an about section, a section with the last 10 posts and finally a section which lists tags used across your site. Beautiful tables and images through purecss. </description>
-    </item>
-    
-    <item>
-      <title>这是title</title>
-      <link>http://whwujiwen.github.io/posts/emoji-support/</link>
+      <title>Mybatis-Plus</title>
+      <link>https://example.com/posts/mybatis-plus/</link>
       <pubDate>Wed, 15 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://whwujiwen.github.io/posts/emoji-support/</guid>
-      <description>&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>这是title</title>
-      <link>http://whwujiwen.github.io/posts/mybatis-plus/</link>
-      <pubDate>Wed, 15 Mar 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://whwujiwen.github.io/posts/mybatis-plus/</guid>
+      <guid>https://example.com/posts/mybatis-plus/</guid>
       <description>一、Mybatis-Plus的简介 MyBatis-Plus（简称 MP）是一个 MyBatis 的增强工具，在 MyBatis 的基础上只做增强不做改变，为简化开发、提高效率而生。
 特性  无侵入：只做增强不做改变，引入它不会对现有工程产生影响，如丝般顺滑 损耗小：启动即会自动注入基本 CURD，性能基本无损耗，直接面向对象操作 强大的 CRUD 操作：内置通用 Mapper、通用 Service，仅仅通过少量配置即可实现单表大部分 CRUD 操作，更有强大的条件构造器，满足各类使用需求 支持 Lambda 形式调用：通过 Lambda 表达式，方便的编写各类查询条件，无需再担心字段写错 支持主键自动生成：支持多达 4 种主键策略（内含分布式唯一 ID 生成器 - Sequence），可自由配置，完美解决主键问题 支持 ActiveRecord 模式：支持 ActiveRecord 形式调用，实体类只需继承 Model 类即可进行强大的 CRUD 操作 支持自定义全局通用操作：支持全局通用方法注入（ Write once, use anywhere ） 内置代码生成器：采用代码或者 Maven 插件可快速生成 Mapper 、 Model 、 Service 、 Controller 层代码，支持模板引擎，更有超多自定义配置等您来使用 内置分页插件：基于 MyBatis 物理分页，开发者无需关心具体操作，配置好插件之后，写分页等同于普通 List 查询 分页插件支持多种数据库：支持 MySQL、MariaDB、Oracle、DB2、H2、HSQL、SQLite、Postgre、SQLServer 等多种数据库 内置性能分析插件：可输出 Sql 语句以及其执行时间，建议开发测试时启用该功能，能快速揪出慢查询 内置全局拦截插件：提供全表 delete 、 update 操作智能分析阻断，也可自定义拦截规则，预防误操作  二、快速开始 1.</description>
     </item>
     
     <item>
-      <title>Placeholder Text</title>
-      <link>http://whwujiwen.github.io/posts/placeholder-text/</link>
-      <pubDate>Wed, 18 May 2016 00:00:00 +0000</pubDate>
+      <title>DBmong数据库</title>
+      <link>https://example.com/posts/mongodb/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://whwujiwen.github.io/posts/placeholder-text/</guid>
-      <description>&lt;p&gt;Lorem est tota propiore conpellat pectoribus de
-pectora summo.&lt;/p&gt;</description>
+      <guid>https://example.com/posts/mongodb/</guid>
+      <description>MongoDB基础知识 一、简介 NoSQL(NoSQL = Not Only SQL )，意即&amp;quot;不仅仅是SQL&amp;rdquo;。
+在现代的计算系统上每天网络上都会产生庞大的数据量。
+这些数据有很大一部分是由关系数据库管理系统（RDBMS）来处理。 1970年 E.F.Codd&amp;rsquo;s提出的关系模型的论文 &amp;ldquo;A relational model of data for large shared data banks&amp;rdquo;，这使得数据建模和应用程序编程更加简单。
+通过应用实践证明，关系模型是非常适合于客户服务器编程，远远超出预期的利益，今天它是结构化数据存储在网络和商务应用的主导技术。
+NoSQL 是一项全新的数据库革命性运动，早期就有人提出，发展至2009年趋势越发高涨。NoSQL的拥护者们提倡运用非关系型的数据存储，相对于铺天盖地的关系型数据库运用，这一概念无疑是一种全新的思维的注入。
+二、MongoDB的安装 1.下载 下载地址：https://www.mongodb.com/download-center/community
+2.安装 3.配置环境变量 注意：红色方框中的内容为安装位置下的bin目录
+4.创建指定的目录  在C盘下创建data目录 在data中创建db目录  5.启动服务器  在CMD窗口中输入mongod
+ 6.客户端连接服务器  在CMD窗口中输入mongo
+ 三、数据库的CRUD操作 1.向数据库中插入操作 insert:db.student.insert({name:&amp;ldquo;zhangsan&amp;rdquo;,age:18})
+insertOne：插入一个文本对象
+insertMany:插入多个文本对象
+2.从数据库中查询操作 find()：查询所有
+ dn.student.find();
+ 条件查询
+ db.student.find({name:&amp;ldquo;吴继文&amp;rdquo;})
+ 3.修改文档 db.collection.update(查询条件，修改条件)；
+ 案例：db.student.update({name:&amp;ldquo;吴继文&amp;rdquo;},{$set:{age:13}})
+ 4.删除  删除多个符合条件的文档 ：db.collsction.remove()
+删除符合条件的一个文档：db.collsction.deleteOne()
+删除符合条件的多个文档：db.collsction.deleteMany()
+ </description>
     </item>
     
     <item>
-      <title>基于Vue的音乐播放器</title>
-      <link>http://whwujiwen.github.io/posts/%E7%AE%80%E5%8D%95%E7%9A%84%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/</link>
-      <pubDate>Wed, 18 May 2016 00:00:00 +0000</pubDate>
+      <title>Docker容器技术</title>
+      <link>https://example.com/posts/docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://whwujiwen.github.io/posts/%E7%AE%80%E5%8D%95%E7%9A%84%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/</guid>
-      <description>一、主要的接口
-https://autumnfish.cn/search?keywords=&amp;#34;有多少爱可以重来&amp;#34;	//根据关键字来获取歌曲列表 https://autumnfish.cn/song/url?id=152556	//根据歌曲的id来获取歌曲的播放地址 二 、完整的代码实现
-&amp;lt;template&amp;gt; &amp;lt;div class=&amp;#34;music&amp;#34;&amp;gt; &amp;lt;el-header style=&amp;#34;background: #545c64;border-radius: 10px&amp;#34;&amp;gt; &amp;lt;el-menu style=&amp;#34;&amp;#34; :default-active=&amp;#34;activeIndex2&amp;#34; class=&amp;#34;el-menu-demo&amp;#34; mode=&amp;#34;horizontal&amp;#34; @select=&amp;#34;handleSelect&amp;#34; background-color=&amp;#34;#545c64&amp;#34; text-color=&amp;#34;#fff&amp;#34; active-text-color=&amp;#34;#ffd04b&amp;#34;&amp;gt; &amp;lt;el-menu-item&amp;gt;&amp;lt;a style=&amp;#34;font-size:x-large;font-family:Microsoft YaHei;color:#7AD038;padding-right:100px;&amp;#34;&amp;gt;Bolg&amp;lt;/a&amp;gt;&amp;lt;/el-menu-item&amp;gt; &amp;lt;el-menu-item index=&amp;#34;1&amp;#34;&amp;gt;&amp;lt;router-link tag=&amp;#34;a&amp;#34; target=&amp;#34;_blank&amp;#34; style=&amp;#34;width: 100%;height: 100%&amp;#34; to=&amp;#34;/index&amp;#34;&amp;gt;首页&amp;lt;/router-link&amp;gt;&amp;lt;/el-menu-item&amp;gt; &amp;lt;el-menu-item&amp;gt;&amp;lt;el-divider direction=&amp;#34;vertical&amp;#34;&amp;gt;&amp;lt;/el-divider&amp;gt;&amp;lt;/el-menu-item&amp;gt; &amp;lt;el-menu-item index=&amp;#34;2&amp;#34; &amp;gt;&amp;lt;router-link tag=&amp;#34;a&amp;#34; target=&amp;#34;_blank&amp;#34; style=&amp;#34;width: 100%;height: 100%&amp;#34; to=&amp;#34;/classify&amp;#34;&amp;gt;分类&amp;lt;/router-link&amp;gt;&amp;lt;/el-menu-item&amp;gt; &amp;lt;el-menu-item&amp;gt;&amp;lt;el-divider direction=&amp;#34;vertical&amp;#34;&amp;gt;&amp;lt;/el-divider&amp;gt;&amp;lt;/el-menu-item&amp;gt; &amp;lt;el-menu-item index=&amp;#34;3&amp;#34;&amp;gt;&amp;lt;router-link style=&amp;#34;width: 100%;height: 100%&amp;#34; to=&amp;#34;/music&amp;#34;&amp;gt;音乐欣赏&amp;lt;/router-link&amp;gt;&amp;lt;/el-menu-item&amp;gt; &amp;lt;el-menu-item&amp;gt;&amp;lt;el-divider direction=&amp;#34;vertical&amp;#34;&amp;gt;&amp;lt;/el-divider&amp;gt;&amp;lt;/el-menu-item&amp;gt; &amp;lt;el-menu-item index=&amp;#34;4&amp;#34;&amp;gt;&amp;lt;router-link tag=&amp;#34;a&amp;#34; target=&amp;#34;_blank&amp;#34; style=&amp;#34;width: 100%;height: 100%&amp;#34; to=&amp;#34;/about&amp;#34;&amp;gt;关于我&amp;lt;/router-link&amp;gt;&amp;lt;/el-menu-item&amp;gt; &amp;lt;el-menu-item&amp;gt;&amp;lt;el-divider direction=&amp;#34;vertical&amp;#34;&amp;gt;&amp;lt;/el-divider&amp;gt;&amp;lt;/el-menu-item&amp;gt; &amp;lt;el-menu-item index=&amp;#34;5&amp;#34;&amp;gt;&amp;lt;router-link tag=&amp;#34;a&amp;#34; target=&amp;#34;_blank&amp;#34; style=&amp;#34;width: 100%;height: 100%&amp;#34; to=&amp;#34;/login&amp;#34;&amp;gt;后台管理&amp;lt;/router-link&amp;gt;&amp;lt;/el-menu-item&amp;gt; &amp;lt;/el-menu&amp;gt; &amp;lt;/el-header&amp;gt; &amp;lt;div style=&amp;#34;padding:30px;max-width: 60%;margin:30px auto;border-radius:4px;box-shadow:0 2px 4px rgba(0,0,0,.</description>
+      <guid>https://example.com/posts/docker/</guid>
+      <description>##前提知识 1.熟悉Linux命令和相关的知识背景 2.建议学习：maven和git相关的知识（http://www.atguigu.com/download.shtml#linux） java的理念的是：一次编译到处运行； Docker的理念是：一次构建处处运行。
+一.Docker是什么？ Docker解决了开发者与运维人员之间的矛盾。以前是向运维人员提交代码，现在是向运维人员提交镜像（代码+代码运行的环境）。 &amp;mdash;开发自运维 Docker是基于go语言实现的云开源项目。 Docker解决了运行环境和配置问题的软件容器，方便做持续集成并有助于整体发布的容器虚拟化技术。 Docker的三要素：仓库、镜像、容器。
+二、虚拟机与DOcker的区别 1、虚拟机（Virtual machine）就是带环境安装的一种解决方案。 它可以在一种操作系统里面运行另外的一种操作系统，比如windows系统里面运行Linux系统。系统程序对此毫无感知，因为虚拟机看上去跟真实的系统一摸一样，二对于底层来说，虚拟机就是一个普通的文件，不需要九删除，对其他部分毫无影响。这类虚拟机完美的运行了另外的一套系统，能都使应用程序，操作系统，硬件三者之间的逻辑不变。 虚拟机的特点： a.占用资源多 b.冗余步骤多 c.启动慢 2、Linux容器不是模拟一个完成的操作系统，而是对进程进行隔离。有了容器，就可以将软件所运行的所有资源打包到一个隔离的容器中。容器与虚拟机不同，不需要捆绑一整套操作系统，只需要软件所需要的库资源和设置。系统因此变得高效轻量并保证部署在任何的环境中的软件都能时钟如一的运行。 不同之处： 传统的虚拟技术虚拟出的是一整套硬件后，在其上运行一个完整的操作系统，在该系统上在运行所需要的进程。 而容器内的应用程序直接运行于宿主机的内核，容器内没有自己的内核，而且没有进行硬件的虚拟。因此容器要比虚拟机更加的轻便。 每个容器之间相互隔离，每个容器都有自己的文件系统，容器之间的进程不会相互影响，能区分计算机资源。 其实，Docker就是一个告诉浓缩版的Linux操作系统。
+三、docker的简介 容器(image)&amp;mdash;&amp;ndash;就是模板（类似于java的类）。 容器（container）&amp;mdash;&amp;ndash;就是一个实力（类似于java中实例）。 Docker镜像就是一个只读模板。镜像可以用来创建Docker容器，一个镜像就可以创建很多容器。 Docker利用容器独立运行一个或者一组应用。容器使用镜像创建的运行实例。 它可以被启动、开始、停止、删除。每个让其都是相互隔离的，保证安全的平台。 容器可以看作是一个简易版的Linux环境和运行在其中的应用程序。容器的定义几乎和镜像一模一样，也是一堆层的统一视角，唯一不同的是容器的上面是一层可读可写的。 仓库是存放镜像文件的场所。最大的仓库（https://docker.com/）;国内公开的仓库包括：阿里云、网易云等
+四、Docker的安装 1.centenOS的安装 a.安装的docker的依赖库:
+yum install -y epel-release b.正式的安装Docker
+yum install -y docker-io c.安装配置文件:/etc/sysconfig/docker d.启动Docker
+service docker start e.检测是否安装成功：
+docker version 2.基于ubuntu18.04的安装 a.从Ubuntu的仓库直接下载安装： 安装比较简单，这种安装的Docker不是最新版本，不过对于学习够用了，依次执行下面命令进行安装。
+sudo apt install docker.io sudo systemctl start docker sudo systemctl enable docker 检查是否安装成功。docker -v b.</description>
+    </item>
+    
+    <item>
+      <title>Go语言技术知识</title>
+      <link>https://example.com/posts/go%E8%AF%AD%E8%A8%80/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/go%E8%AF%AD%E8%A8%80/</guid>
+      <description>一、go语言的特点 Go语言保证了既能达到静态编译语言的安全和性能，又能达到动态语言开发维护的高效。Go=C+pathy 1.从C语言继承了很多理念，包括表达式语法、控制结构、基础数据类型、调用参数传值、指针等等，也保留了C语言的编译方式以及弱化了指针 2.引入包的概念，用于组织程序结构，go语言的一个文件要归属一个包，而不能单独存在。 3.垃圾回收机制，内存自动回收，不需要开发人员进行管理。 4.天然并发（重要特点）
+ 从语言层面支持并发，实现简单。 goroutime,轻量级线程，可以实现大并发处理，高效利用多核。 基于CPS并发模型。 吸收管道通信机制，形成go语言特有的管道channel，通过管道channel，可以实现不同的goroute之间的相互通信。 函数返回多个值。
+ func getSumAndSub(n1 int,n2 int)(int,int){ sum := n1+n2 //注意后面不需要带分号 sub := n1-n2 return sum,sub }  新的创新，比如切片slice、延时执行defer等。
+ //开发一个hello world程序 package main import ( &amp;#34;fmt&amp;#34; //	&amp;#34;strings&amp;#34; //	&amp;#34;go_code/project01/cal&amp;#34; //	&amp;#34;math/rand&amp;#34; //	&amp;#34;time&amp;#34; //	&amp;#34;errors&amp;#34; 	&amp;#34;sort&amp;#34; ) /* func cal(a float64,b float64,operator byte) float64 { var res float64 switch operator { case &amp;#39;+&amp;#39;: res = a + b case &amp;#39;-&amp;#39;: res = a - b case &amp;#39;*&amp;#39;: res = a * b case &amp;#39;/&amp;#39;: res = a / b default: fmt.</description>
+    </item>
+    
+    <item>
+      <title>hexo&#43;github搭建个人博客</title>
+      <link>https://example.com/posts/hexo&#43;github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/hexo&#43;github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6/</guid>
+      <description>安装前的准备 安装nodejs（下载之后一只下一步即可） 安装步骤：
+一.安装ncpm npm install -g cnpm --registry=https://registry.npm.taobao.org 测试是否安装成功：cnpm -v
+二.安装hexo cnpm install -g hexo-cli 测试是否安装成功：hexo -v
+三.新建一个空的文件夹(任意位置) 该文件夹用于存放博客的所有内容以及相关的配置。新建完成后并在DOS系统下面进入但该目录。
+四.初始化一个博客 hexo init 五.启动一个博客 hexo s 六.新建一篇文章 hexo n &amp;ldquo;我的第一篇博客文章&amp;rdquo; &amp;mdash;&amp;mdash;-会生成一个路径 执行完成后我们就可以进入到博文创建的目录并使用VIM进行编辑。(使用的时markdown语言)
+七.编辑完成后退回到根目录下面(就是之前创建的目录下面)。执行下面的指令： hexo clean hexo g hexo s 在浏览器中查看效果即可。
+八.网站部署到服务器上面 注册一个github账号，并新建一个仓库
+九.安装一个部署的插件 cnpm install --save hexo-deployer-git 注意：此处可能会有警告，可忽略。
+十.配置_config.yml文件 将最后一行的内容修改为：
+type: git repo: https://github.com/wujiwen-lang/wujiwen-lang.github.io branch: master 十一.查看部署的效果 执行下面指令进行部署：
+hexo d 直接浏览器中输入：wujiwen-lang.github.io即可。
+十二.更换主题 主题推荐：https://github.com/litten/hexo-theme-yilia下载主题的指令：```bashgit clone https://github.com/litten/hexo-theme-yilia.git themes/yilia```更改根目录下的配置文件:theme:landscape更改为theme: yilia 十三.</description>
+    </item>
+    
+    <item>
+      <title>IDEA的基本使用</title>
+      <link>https://example.com/posts/idea%E7%9A%84%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/idea%E7%9A%84%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
+      <description>从 Windows 过度到 Mac 必备快捷键对照表 前提:已经手动的将配置文件导入。
+Mac 键盘符号说明  ⌘ == Command ⇧ == Shift ⇪ == Caps Lock ⌥ == Option ⌃ == Control ↩ == Return/Enter ⌫ == Delete ⌦ == 向前删除键（Fn+Delete） ↑ == 上箭头 ↓ == 下箭头 ← == 左箭头 → == 右箭头 ⇞ == Page Up（Fn+↑） ⇟ == Page Down（Fn+↓） Home == Fn + ← End == Fn + → ⇥ == 右制表符（Tab键） ⇤ == 左制表符（Shift+Tab） ⎋ == Escape (Esc) ⏏ == 电源开关键  Ctrl    Win 快捷键 Mac 快捷键 介绍     Ctrl + F Command + F 在当前文件进行文本查找   Ctrl + R Command + R 在当前文件进行文本替换   Ctrl + Z Command + Z 撤销   Ctrl + Y Command + Delete 删除光标所在行 或 删除选中的行   Ctrl + D Command + D 复制光标所在行 或 复制选择内容，并把复制内容插入光标位置下面   Ctrl + W Option + 方向键上 递进式选择代码块。可选中光标所在的单词或段落，连续按会在原有选中的基础上再扩展选中范围   Ctrl + E Command + E 显示最近打开的文件记录列表   Ctrl + N Command + O 根据输入的 类名 查找类文件   Ctrl + J Command + J 插入自定义动态代码模板   Ctrl + P Command + P 方法参数提示显示   Ctrl + U Command + U 前往当前光标所在的方法的父类的方法 / 接口定义   Ctrl + B Command + B 进入光标所在的方法/变量的接口或是定义处，等效于 Ctrl + 左键单击   Ctrl + / Command + / 注释光标所在行代码，会根据当前不同文件类型使用不同的注释符号   Ctrl + F1 Command + F1 在光标所在的错误代码处显示错误信息   Ctrl + F11 Option + F3 选中文件 / 文件夹，使用助记符设定 / 取消书签   Ctrl + F12 Command + F12 弹出当前文件结构层，可以在弹出的层上直接输入，进行筛选   Ctrl + Space Control + Space 基础代码补全，默认在 Windows 系统上被输入法占用，需要进行修改，建议修改为 Ctrl + 逗号   Ctrl + Delete Option + Fn+ Delete 删除光标后面的单词或是中文句   Ctrl + BackSpace Option + Delete 删除光标前面的单词或是中文句   Ctrl + 1,2,3&amp;hellip;9 Control + 1,2,3&amp;hellip;9 定位到对应数值的书签位置   Ctrl + 加号 Command + 加号 展开代码   Ctrl + 减号 Command + 减号 折叠代码   Ctrl + 左键单击 Control + 左键单击 在打开的文件标题上，弹出该文件路径   Ctrl + 左方向键 Option + 左方向键 光标跳转到当前单词 / 中文句的左侧开头位置   Ctrl + 右方向键 Option + 右方向键 光标跳转到当前单词 / 中文句的右侧开头位置   Ctrl + 前方向键 预设中没有该快捷键 等效于鼠标滚轮向前效果   Ctrl + 后方向键 预设中没有该快捷键 等效于鼠标滚轮向后效果    Alt    Win 快捷键 Mac 快捷键 介绍     Alt + ` Control + V 显示版本控制常用操作菜单弹出层   Alt + F1 Option + F1 显示当前文件选择目标弹出层，弹出层中有很多目标可以进行选择   Alt + F7 Option + F7 查询所选对象/变量被引用   Alt + Enter Option + Enter IntelliJ IDEA 根据光标所在问题，提供快速修复选择，光标放在的位置不同提示的结果也不同   Alt + Insert Command + N 代码自动生成，如生成对象的 set / get 方法，构造函数，toString() 等   Alt + 左方向键 Control + 左方向键 切换当前已打开的窗口中的子视图，比如Debug窗口中有Output、Debugger等子视图，用此快捷键就可以在子视图中切换   Alt + 右方向键 Control + 右方向键 切换当前已打开的窗口中的子视图，比如Debug窗口中有Output、Debugger等子视图，用此快捷键就可以在子视图中切换   Alt + 前方向键 Control + 前方向键 当前光标跳转到当前文件的前一个方法名位置   Alt + 后方向键 Control + 后方向键 当前光标跳转到当前文件的后一个方法名位置   Alt + 1,2,3&amp;hellip;9 Command + 1,2,3&amp;hellip;9 显示对应数值的选项卡，其中 1 是 Project 用得最多    Shift    Win 快捷键 Mac 快捷键 介绍     Shift + F11 Command + F3 弹出书签显示层   Shift + Tab Shift + Tab 取消缩进   Shift + Enter Shift + Enter 开始新一行。光标所在行下空出一行，光标定位到新行位置   Shift + 左键单击 Shift + 左键单击 在打开的文件名上按此快捷键，可以关闭当前打开文件    Ctrl + Alt    Win 快捷键 Mac 快捷键 介绍     Ctrl + Alt + L Command + Option + L 格式化代码，可以对当前文件和整个包目录使用   Ctrl + Alt + O Control + Option + O 优化导入的类，可以对当前文件和整个包目录使用   Ctrl + Alt + T Command + Option + T 对选中的代码弹出环绕选项弹出层   Ctrl + Alt + S Command + 逗号 打开 IntelliJ IDEA 系统设置   Ctrl + Alt + Enter Command + Option + Enter 光标所在行上空出一行，光标定位到新行   Ctrl + Alt + 左方向键 Command + Option + 左方向键 退回到上一个操作的地方   Ctrl + Alt + 右方向键 Command + Option + 右方向键 前进到上一个操作的地方    Ctrl + Shift    Win 快捷键 Mac 快捷键 介绍     Ctrl + Shift + F Command + Shift + F 根据输入内容查找整个项目 或 指定目录内文件   Ctrl + Shift + R Command + Shift + R 根据输入内容替换对应内容，范围为整个项目 或 指定目录内文件   Ctrl + Shift + J Control + Shift + J 自动将下一行合并到当前行末尾   Ctrl + Shift + Z Command + Shift + Z 取消撤销   Ctrl + Shift + W Option + 方向键下 递进式取消选择代码块。可选中光标所在的单词或段落，连续按会在原有选中的基础上再扩展取消选中范围   Ctrl + Shift + N Command + Shift + O 通过文件名定位 / 打开文件 / 目录，打开目录需要在输入的内容后面多加一个正斜杠   Ctrl + Shift + U Command + Shift + U 对选中的代码进行大 / 小写轮流转换   Ctrl + Shift + T Command + Shift + T 对当前类生成单元测试类，如果已经存在的单元测试类则可以进行选择   Ctrl + Shift + C Command + Shift + C 复制当前文件磁盘路径到剪贴板   Ctrl + Shift + B Control + Shift + B 跳转到类型声明处   Ctrl + Shift + / Command + Option + / 代码块注释   Ctrl + Shift + [ Command + Shift + [ 选中从光标所在位置到它的顶部中括号位置   Ctrl + Shift + ] Command + Shift + ] 选中从光标所在位置到它的底部中括号位置   Ctrl + Shift + 加号 Command + Shift + 加号 展开所有代码   Ctrl + Shift + 减号 Command + Shift + 减号 折叠所有代码   Ctrl + Shift + F7 Command + Shift + F7 高亮显示所有该选中文本，按Esc高亮消失   Ctrl + Shift + F12 Command + Shift + F12 编辑器最大化   Ctrl + Shift + Enter Command + Shift + Enter 自动结束代码，行末自动添加分号   Ctrl + Shift + Backspace Ctrl + Shift + Backspace 退回到上次修改的地方   Ctrl + Shift + 1,2,3&amp;hellip;9 Control + Shift + 1,2,3&amp;hellip;9 快速添加指定数值的书签   Ctrl + Shift + 左键单击 Command + Shift + 左键单击 把光标放在某个类变量上，按此快捷键可以直接定位到该类中   Ctrl + Shift + 左方向键 Option + Shift + 左方向键 在代码文件上，光标跳转到当前单词 / 中文句的左侧开头位置，同时选中该单词 / 中文句   Ctrl + Shift + 右方向键 Option + Shift + 右方向键 在代码文件上，光标跳转到当前单词 / 中文句的右侧开头位置，同时选中该单词 / 中文句   Ctrl + Shift + 前方向键 Command + Shift + 前方向键 光标放在方法名上，将方法移动到上一个方法前面，调整方法排序   Ctrl + Shift + 后方向键 Command + Shift + 后方向键 光标放在方法名上，将方法移动到下一个方法前面，调整方法排序    Alt + Shift    Win 快捷键 Mac 快捷键 介绍     Alt + Shift + N Option + Shift + B 选择 / 添加 task   Alt + Shift + 左键双击 Option + Shift + 左键双击 选择被双击的单词 / 中文句，按住不放，可以同时选择其他单词 / 中文句   Alt + Shift + 前方向键 Option + Shift + 前方向键 移动光标所在行向上移动   Alt + Shift + 后方向键 Option + Shift + 后方向键 移动光标所在行向下移动    Ctrl + Shift + Alt    Win 快捷键 Mac 快捷键 介绍     Ctrl + Shift + Alt + V Command + Shift + Option + V 无格式黏贴   Ctrl + Shift + Alt + S Command + ; 打开当前项目设置    其他    Win 快捷键 Mac 快捷键 介绍     F2 F2 跳转到下一个高亮错误 或 警告位置   F4 F4 编辑源   F11 F3 添加书签   F12 F12 回到前一个工具窗口   Tab Tab 缩进   ESC ESC 从工具窗口进入代码文件窗口    </description>
+    </item>
+    
+    <item>
+      <title>Java原生代码连接数据库</title>
+      <link>https://example.com/posts/java%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/java%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
+      <description>在java中连接数据库 环境:Eclipse 完成代码如下:
+package com.mntc.maven; import java.sql.Connection; import java.sql.DriverManager; import java.sql.PreparedStatement; import java.sql.ResultSet; import java.sql.SQLException; import java.sql.Statement; public class DatabaseHandle { private static final String driver = &amp;#34;com.mysql.cj.jdbc.Driver&amp;#34;; // 数据库驱动 	// 连接数据库的URL地址(指定IP地址，端口，数据库的名称) 	private static final String url = &amp;#34;jdbc:mysql://localhost:3306/test?serverTimezone=UTC&amp;#34;; private static final String username = &amp;#34;root&amp;#34;;// 数据库的用户名 	private static final String password = &amp;#34;13733433427&amp;#34;;// 数据库的密码 	private static Connection conn = null; // 静态代码块负责加载驱动 	static { try { Class.</description>
+    </item>
+    
+    <item>
+      <title>Java多线程基础知识</title>
+      <link>https://example.com/posts/%E5%9F%BA%E4%BA%8Ejava%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/%E5%9F%BA%E4%BA%8Ejava%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B/</guid>
+      <description>一、进程与线程  进程：一个程序运行所占用的各种资源的描述。 线程：一个进程中任务执行任务的具体单元。 一个进程可以包含多个线程，若一个进程中没有线程，那么表示该进程已经执行完毕。进程可以实现多个任务的并发执行(时间片)。 存在的弊端：多进程无法实现资源的共享。
+ 二、进程的生命周期 在程序的开发过程中，将一个进程被实例化完成，到这个线程使用结束，并销毁的过程，称为进程的生命周期。
+三、线程的状态 新生态(New):一个线程被实例化完成(在执行start之前的状态)，但是没有任何操作。 就绪态(rReady):一个线程已经被开启，并且已经开始争抢CPU时间片 运行态(run):线程已经抢到时间片，开始执行业务逻辑了。 阻塞态(Interrupt):线程运行的过程中，受到某些外界因素的影响，放弃得到的CPU时间片，并不在参与争夺CPU时间片。(挂起状态) 死亡态(Dead):想成被销毁。 线程的生命周期： 四、线程的开辟方式 1.继承Thread，做一个线程子类(自定义线程类)
+package com.mntc.thread; public class MyThread { public static void main(String[] args) { ThreadCreat tc = new ThreadCreat(); tc.start(); for(int i=0;i&amp;lt;10;i++) { System.out.println(&amp;#34;主线程中逻辑:&amp;#34;+i); } } } class ThreadCreat extends Thread{ public void run() { for(int i=0;i&amp;lt;10;i++) { System.out.println(&amp;#34;子线程中逻辑:&amp;#34;+i); } } } 2.通过继承Runnable接口
+Runnable r1 =()-&amp;gt;{ for(int i=0;i&amp;lt;10;i++) { System.out.println(&amp;#34;Runnable线程中逻辑:&amp;#34;+i); } }; Thread t1 = new Thread(r1); t1.</description>
+    </item>
+    
+    <item>
+      <title>Java实现串口通信</title>
+      <link>https://example.com/posts/java%E5%AE%9E%E7%8E%B0%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/java%E5%AE%9E%E7%8E%B0%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/</guid>
+      <description>一、串口通信原理 1.串口通信指串口按位（bit）发送和接收字节。尽管比按字节（byte）的并行通信慢，但是串口可以在使用一根线发送数据的同时用另一根线接收数据。 2.串口是计算机上一种非常通用的设备通信协议（不要与通用串行总线Universal SerialBus或者USB混淆） 3.典型地，串口用于ASCII码字符的传输。通信使用3根线完成：（1）地线，（2）发送，（3）接收。由于串口通信是异步的，端口能够在一根线上发送数据同时在另一根线上接收数据。其他线用于握手，但是不是必须的。串口通信最重要的参数是比特率、数据位、停止位和奇偶校验。对于两个进行通信的端口，这些参数必须匹配 4.RS-232（ANSI/EIA-232标准）是IBM-PC及其兼容机上的串行连接标准、RS-422（EIA RS-422-AStandard）是Apple的Macintosh计算机的串口连接标准。RS-485（EIA-485标准）是RS-422的改进。
+二、安装虚拟串口（方便测试） 由于笔记本或台式机上基本上都没有成对的串口提供给我们调试使用，我们就需要下载虚拟串口软件来实现串口调试。 1.下载虚拟串口软件http://pan.baidu.com/s/1hqhGDbI（这里提供的还是比较好用）。下载安装完成后先不要急着运行，把压缩包中的vspdctl.dll文件复制到安装目录下如：我的目录为–&amp;gt;D:\SoftWareInstall\Virtual Serial Port Driver 7.2 替换原有文件即可成功激活 2.打开软件添加虚拟串口，一般都是成对添加的（添加COM3、COM4） 3.打开串口调试助手，互相发送数据进行测试。
+三、java程序代码编写 开发的环境：IDEA+jdk1.8+maven 由于使用maven来管理工程，所以我们不需要手动的去现在相应的jar包，只需要引入相关的依赖即可。但是需要手动添加所需要的依赖库到指定的位置。 注意：还需要将解压后的rxtxParallel.dll和rxtxSerial.dll两个文件放在%JAVA_HOME%/jre/bin目录下,这样该包才能被正常的加载和调用。(下载的位置：http://pan.baidu.com/s/1o6zLmTc) 目录的结构： 注意：不包括opencv下的内容 pom.xml:
+&amp;lt;!-- https://mvnrepository.com/artifact/org.bidib.jbidib.org.qbang.rxtx/rxtxcomm --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.bidib.jbidib.org.qbang.rxtx&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;rxtxcomm&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.2&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; ContinueRead.java
+package com.mntc.comm;/* @author wujiwen @data 2019/9/1 - 22:25 */ import java.io.*; import java.util.*; import java.util.concurrent.BlockingQueue; import java.util.concurrent.LinkedBlockingQueue; import gnu.io.*; public class ContinueRead extends Thread implements SerialPortEventListener { // SerialPortEventListener  // 监听器,我的理解是独立开辟一个线程监听串口数据  static CommPortIdentifier portId; // 串口通信管理类  static Enumeration&amp;lt;?</description>
+    </item>
+    
+    <item>
+      <title>Java的基础知识</title>
+      <link>https://example.com/posts/java%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/java%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/</guid>
+      <description>一、JAVA的四大特征 1.抽象 父类为子类提供一些属性和行为，子类根据业务需求实现具体的行为。 抽象类使用abstract进行修饰，子类要实现所有的父类抽象方法否则子类也是抽象类。 2.封装 把对象的属性和行为（方法）结合为一个独立的整体，并尽可能隐藏对象的内部实现细节； 在java中，对于对象的内部属性一般用private来实现隐藏，并通过set和get方法对外提供访问接口。 3.继承 子类继承父类的属性和行为，并能根据自己的需求扩展出新的属性和行为，提高了代码的可复用性。 Java的继承通过extends关键字来实现，实现继承的类被称为子类，被继承的类称为父类(有的也称其为基类、超类)，父类和子类的关系，是一种一般和特殊的关系；子类扩展父类，将可以获得父类的全部属性和方法。 overide： 当子父类中出现相同方法时，会先运行子类中的方法。 重写的特点：方法名一样，访问修饰符权限不小于父类，返回类型一致，参数列表一致。 4.多态 不修改程序代码就可以改变程序运行时所绑定的具体代码，让程序可以选择多个运行状态； 具体的实现方式就是：接口实现，继承父类进行方法重写，同一个类中进行方法重载。 封装和继承都是为Java语言的多态提供了支撑；多态存在的三个必要条件： a.要有继承； b. 要有重写； c. 父类引用指向子类对象
+二、JAVA中的不定参 vodi speak(int age,String...hobbies){ for(String hobby:hobbies){ //在此处可以遍历hobbies  } } 三、方法的重载 1.普通方法的重载 方法名一样，但参数不一样，这就是重载(overload)。所谓的参数不一样，主要有两点：第一是参数的个数不一样，第二是参数的类型不一样。只要这两方面有其中的一方面不一样就可以构成方法的重载了。 package cn.galc.test;
+public class TestOverLoad { void max(int a, int b) { System.out.println(a &amp;gt; b ? a : b); } /* * int max(int a, int b) { * return a &amp;gt; b ? a : b; * } */ void max(float a, float b) { System.</description>
+    </item>
+    
+    <item>
+      <title>Maven的基本使用</title>
+      <link>https://example.com/posts/maven/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/maven/</guid>
+      <description>一、目前技术存在问题 1.一个项目就是一个工程。 2.项目中所需要的jar包必须手动赋值粘贴到自己工程中 3.jar包需要提前准备好或者到官网去下载。 4.一个jar包依赖的其他jar包需要我们自己手动下载添加 为了解决上述的问题：提出了一项新技术。那就是Maven,借助Maven我们可以以一种规范的方式下载jar包，因为所有的jar包已经按照统一的规范存放在Maven的中央仓库中。
+二、什么是Maven 1.Maven是一款服务于Java平台的自动构建工具。 所谓的&amp;quot;构建&amp;quot;就是以&amp;quot;java文件&amp;rdquo;、&amp;ldquo;框架配置文件&amp;rdquo;、&amp;ldquo;jsp&amp;rdquo;、&amp;ldquo;HEML&amp;quot;等资源为原材料，去生产一个可以运行的项目。（编译+部署+搭建） 2.构建的各个环节。 a.清理：将以前编译得到的旧的class字节码文件删除为下一次编译做准备。 b.将java源程序编译成class字节码文件 c.测试:自动测试，自动调用jutil程序 d.报告：测试程序执行的结果 e.打包：动态web工程打包成war包、java工程打包成java包 f.安装：Maven特定的概念&amp;mdash;&amp;mdash;将打包的内容赋值到&amp;quot;仓库&amp;quot;中的指定位置 g.部署：将动态的web工程生成war包，赋值带servlet容器下指定的目录，使其可以运行。
+三、Maven的安装 安装步骤： 1.先将压缩包解压到安装陌路下面 2.配置环境变量 变量名：M2_HOME 变量值：D:\maven\apache-maven-3.6.1-bin\apache-maven-3.6.1 3.在PATH后面追加路径：D:\tomcat\apache-tomcat-8.5.42-windows-x64\apache-tomcat-8.5.42\bin 或者 %M2_HOME%\bin 4.检测是否安装成功 在DOS系统下输入：mvn -v 注意：听说将“变量名”改成“MAVEN_HOME”时会出现一些问题，本人没有尝试过哦
+使用maven技术遇到的一些问题： 1.在依赖其他的maven工程师时，如果依赖的jre包显示为文件夹，是由于你的被依赖的maven工程没有关闭
+四、手动创建一个Maven工程 1.创建约定的目录的目录结构 根目录：工程名 src目录：源码 pom.xml文件：Maven核心配置文件 main目录：存放主程序 test目录：存放测试程序 java目录：存放测试程序 resources目录：存放框架或者其他配置文件 2.为什么要使用约定的目录结构 Maven要自动构建我们这个项目，以编译为例，Maven想要自动编译那么必须通知java源件的位置 3.我的第一个Maven工程 第一步：手动新建目录结构 第二部：在pom.xml中添加依赖关系
+&amp;lt;?xml version=&amp;#34;1.0&amp;#34; ?&amp;gt; &amp;lt;project xmlns=&amp;#34;http://maven.apache.org/POM/4.0.0&amp;#34; xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34;xsi:schemaLocation=&amp;#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&amp;#34;&amp;gt; &amp;lt;modelVersion&amp;gt;4.0.0&amp;lt;/modelVersion&amp;gt; &amp;lt;groupId&amp;gt;com.atguigu.maven&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;Hello&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.0.1-SNAPSHOT&amp;lt;/version&amp;gt; &amp;lt;name&amp;gt;Hello&amp;lt;/name&amp;gt; &amp;lt;dependencies&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;junit&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;junit&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.0&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;/dependencies&amp;gt;	&amp;lt;/project&amp;gt;	五、常用的指令 指定maven相关的指令，必须先进入到pom.xml所在目录中。 相关的指令：</description>
+    </item>
+    
+    <item>
+      <title>Mybatis的基础知识</title>
+      <link>https://example.com/posts/mybatis%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/mybatis%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
+      <description>一、mybatis简介 MyBatis 是一款优秀的持久层框架，它支持定制化 SQL、存储过程以及高级映射。MyBatis 避免了几乎所有的 JDBC 代码和手动设置参数以及获取结果集。MyBatis 可以使用简单的 XML 或注解来配置和映射原生信息，将接口和 Java 的 POJOs(Plain Ordinary Java Object,普通的 Java对象)映射成数据库中的记录。 具体的步骤： 1.创建maven工程，并引入坐标 2.创建实体类和dao的接口 3.创建Mybatis的主配置文件（SqlMapConfig.xml） 4.创建映射文件（IUserDao.xml） 环境搭建的注意事项： 1.创建IUserDao.xml和IUserDao.java时名称是为了和之前所学的知识保持一致。在mybatis中他把持久层的操作接口名称和映射文件也叫做Mapper 2.在IDEA中创建目录时，他和包是不一样 包在创建时：com.itheima.dao他是三级结构 目录在创建时：com.itheima.dao是一级结构 3.mybatis的映射配置文件位置和dao层接口的包的结构相同 4.映射配置文件的mapper标签namespace属性的取值必须是dao接口的全限定类名 5.映射配置文件的操作配置，id属性的取值必须是dao接口的方法名 当我们遵从第三、第四、第五之后，我们在开发中就不需要再写dao接口的实现类。 IUserDao.java:
+二、mybatis的入门程序之hello world 目录结构如下:mybatis1.png package com.itheima.dao; /* @author wujiwen @data 2019/8/29 - 22:16 */ import com.itheima.domain.User; import java.util.List; public interface IUserDao { List&amp;lt;User&amp;gt; findAll(); } User.java
+package com.itheima.domain;/* @author wujiwen @data 2019/8/29 - 22:11 */ import java.io.Serializable; public class User implements Serializable { private int id; private String name; private int age; public Integer getId() { return id; } public void setId(Integer id) { this.</description>
+    </item>
+    
+    <item>
+      <title>RPC的简单应用</title>
+      <link>https://example.com/posts/rpc%E7%9A%84%E7%AE%80%E5%8D%95%E5%BA%94%E7%94%A8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/rpc%E7%9A%84%E7%AE%80%E5%8D%95%E5%BA%94%E7%94%A8/</guid>
+      <description>一、RPC简介 RPC就是远程过程调用（Remote Procedure Call） 通俗的说就是在客户端电脑上面调用服务器端的类。 二、RPC之hello world 目录结构如下： Client.java:
+package remote.procedure.call.client; import java.io.ObjectInputStream; import java.io.ObjectOutputStream; import java.lang.reflect.InvocationHandler; import java.lang.reflect.Method; import java.lang.reflect.Proxy; import java.net.InetSocketAddress; import java.net.Socket; public class Client { //获取代表服务器端接口的动态代理对象（HelloService） 	//serverInterface:请求的接口 	//addr:服务器的IP和端口号 	//返回的是动态代理对象 	@SuppressWarnings(&amp;#34;unchecked&amp;#34;) public static &amp;lt;T&amp;gt; T getRemoteProxyObj(Class serviceInterface,InetSocketAddress addr) { //newProxyInstance三个参数的意义： 	//loader:类加载器 	//interfaces：需要代理的对象具备哪些功能------接口 	return (T)Proxy.newProxyInstance(serviceInterface.getClassLoader(), new Class&amp;lt;?&amp;gt;[] {serviceInterface}, new InvocationHandler() { //proxy需要代理的对象 	//需要代理对象的那个方法 	//args是代理方法需要传入的参数 	public Object invoke(Object proxy,Method method,Object[] args) throws Throwable{ //客户端向服务器端返送请求，请求某个具体的接口 	ObjectOutputStream output = null; ObjectInputStream input = null; Socket socket = new Socket(); try { //socketAddress包含了IP地址和端口号 	socket.</description>
+    </item>
+    
+    <item>
+      <title>SpringBoot</title>
+      <link>https://example.com/posts/springboot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/springboot/</guid>
+      <description>Spring Boot的相关简介 简化Spring应用开发，约定大于配置，去繁从简，just run就能创建一个独立的，产品级别的开发项目。
+ 1.快速创建独立运行的Spring项目以及主流框架的集成 2.使用嵌入式的servlet容器，应用无需打包成war包 3.starts自动依赖与版本控制 4.大量的自动配置，简化开发，也可修改默认值 5.无需配置XML，无代码生成，开箱即用 6.准生产环境的运行时应用监控 7.与云计算的天然集成
+一、 1、Spring Boot 简介  简化Spring应用开发，约定大于配置，去繁从简，just run就能创建一个独立的，产品级别的开发项目。 简化Spring应用开发的一个框架； 整个Spring技术栈的一个大整合； J2EE开发的一站式解决方案； 优点： 1.快速创建独立运行的Spring项目以及主流框架的集成 2.使用嵌入式的servlet容器，应用无需打包成war包 3.starts自动依赖与版本控制 4.大量的自动配置，简化开发，也可修改默认值 5.无需配置XML，无代码生成，开箱即用 6.准生产环境的运行时应用监控 7.与云计算的天然集成
+ 2、微服务 2014，martin fowler 微服务：架构风格（服务微化） 一个应用应该是一组小型服务；可以通过HTTP的方式进行互通； 单体应用：ALL IN ONE 微服务：每一个功能元素最终都是一个可独立替换和独立升级的软件单元； 详细参照微服务文档
+3、环境准备 http://www.gulixueyuan.com/ 谷粒学院
+环境约束
+–jdk1.8：Spring Boot 推荐jdk1.7及以上；java version &amp;ldquo;1.8.0_112&amp;rdquo;
+–maven3.x：maven 3.3以上版本；Apache Maven 3.3.9
+–IntelliJIDEA2017：IntelliJ IDEA 2017.2.2 x64、STS
+–SpringBoot 1.5.9.RELEASE：1.5.9；
+统一环境；
+1、MAVEN设置； 给maven 的settings.xml配置文件的profiles标签添加
+&amp;lt;profile&amp;gt; &amp;lt;id&amp;gt;jdk-1.8&amp;lt;/id&amp;gt; &amp;lt;activation&amp;gt; &amp;lt;activeByDefault&amp;gt;true&amp;lt;/activeByDefault&amp;gt; &amp;lt;jdk&amp;gt;1.8&amp;lt;/jdk&amp;gt; &amp;lt;/activation&amp;gt; &amp;lt;properties&amp;gt; &amp;lt;maven.</description>
+    </item>
+    
+    <item>
+      <title>SpringBoot</title>
+      <link>https://example.com/posts/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B9%8Bactivemq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B9%8Bactivemq/</guid>
+      <description>一、什么是消息中间件 消息中间件利用高效可靠的消息传递机制进行平台无关的数据交流，并基于数据通信来进行分布式系统的集成。通过提供消息传递和消息排队模型，它可以在分布式环境下扩展进程间的通信。
+二、消息中间件之hello world 目录结构： 1.queue JmsConsumer.java：
+package com.atguigu.activemq.queue; import java.io.IOException; import javax.jms.Connection; import javax.jms.JMSException; import javax.jms.Message; import javax.jms.MessageConsumer; import javax.jms.MessageListener; import javax.jms.Queue; import javax.jms.Session; import javax.jms.TextMessage; import org.apache.activemq.ActiveMQConnectionFactory; public class JmsConsumer { public static final String ACTIVEMQ_URL = &amp;#34;tcp://192.168.0.103:61616&amp;#34;; public static final String QUEUE_NAME = &amp;#34;queue01&amp;#34;; public static void main(String[] args) throws JMSException, IOException { // TODO Auto-generated method stub  System.out.println(&amp;#34;hello mq&amp;#34;); //1.创建连接工厂  ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory(ACTIVEMQ_URL); //2.</description>
+    </item>
+    
+    <item>
+      <title>SpringMVC的入门级教程</title>
+      <link>https://example.com/posts/springmvc%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/springmvc%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
+      <description>一、MVC的三层架构 接下来我们就说说每层都负责哪些方面： 表现层： 也就是我们常说的web层。它负责接收客户端请求，向客户端响应结果，通常客户端使用http协议请求web 层，web 需要接收 http 请求，完成 http 响应。表现层包括展示层和控制层：控制层负责接收请求，展示层负责结果的展示。表现层依赖业务层，接收到客户端请求一般会调用业务层进行业务处理，并将处理结果响应给客户端。表现层的设计一般都使用 MVC 模型。（MVC 是表现层的设计模型，和其他层没有关系） 业务层： 也就是我们常说的 service 层。它负责业务逻辑处理，和我们开发项目的需求息息相关。web 层依赖业务层，但是业务层不依赖 web 层。业务层在业务处理时可能会依赖持久层，如果要对数据持久化需要保证事务一致性。（也就是我们说的，事务应该放到业务层来控制） 持久层： 也就是我们是常说的 dao 层。负责数据持久化，包括数据层即数据库和数据访问层，数据库是对数据进行持久化的载体，数据访问层是业务层和持久层交互的接口，业务层需要通过数据访问层将数据持久化到数据库中。通俗的讲，持久层就是和数据库交互，对数据库表进行曾删改查的。 二、SpringMVC的简介 SpringMVC 是一种基于 Java 的实现 MVC 设计模型的请求驱动类型的轻量级 Web 框架，属于 SpringFrameWork 的后续产品，已经融合在 Spring Web Flow 里面。Spring 框架提供了构建Web 应用程序的全功能 MVC 模块。使用 Spring 可插入的 MVC 架构，从而在使用 Spring 进行 WEB 开发时，可以选择使用 Spring的 Spring MVC 框架或集成其他 MVC 开发框架，如 Struts1(现在一般不用)，Struts2 等。SpringMVC 已经成为目前最主流的 MVC 框架之一，并且随着 Spring3.0 的发布，全面超越 Struts2，成为最优秀的 MVC 框架。它通过一套注解，让一个简单的 Java 类成为处理请求的控制器，而无须实现任何接口。同时它还支持RESTful 编程风格的请求。</description>
+    </item>
+    
+    <item>
+      <title>Spring的基础知识</title>
+      <link>https://example.com/posts/spring%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/spring%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
+      <description>一、Spring框架的简介 Spring是一个开放源代码的设计层面框架，他解决的是业务逻辑层和其他各层的松耦合问题，因此它将面向接口的编程思想贯穿整个系统应用。Spring是于2003 年兴起的一个轻量级的Java 开发框架，由Rod Johnson创建。简单来说，Spring是一个分层的JavaSE/EE full-stack(一站式) 轻量级开源框架。
+二、spring框架入门之hello world 目录结构： Car.java:
+package com.test.maven.spring; public class Car { private String name; private int price; public String getName() { return name; } public void setName(String name) { this.name = name; } public int getPrice() { return price; } public void setPrice(int price) { this.price = price; } @Override public String toString() { return &amp;#34;Car [name=&amp;#34; + name + &amp;#34;, price=&amp;#34; + price + &amp;#34;]&amp;#34;; } } Main.</description>
+    </item>
+    
+    <item>
+      <title>SSM框架的整合</title>
+      <link>https://example.com/posts/ssm%E6%A1%86%E6%9E%B6%E7%9A%84%E6%95%B4%E5%90%88/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/ssm%E6%A1%86%E6%9E%B6%E7%9A%84%E6%95%B4%E5%90%88/</guid>
+      <description>一、什么是ssm框架 SSM（Spring+SpringMVC+MyBatis）框架集由Spring、MyBatis两个开源框架整合而成（SpringMVC是Spring中的部分内容）。常作为数据源较简单的web项目的框架。
+二、ssm框架整合之hello world 搭建的环境:eclipse+jdk1.8+maven 基本的步骤:
+ 1.创建maven工程 2.引入项目所需要的依赖 3.引入bootstrap前端框架 4.编写ssm整合的关键配置文件 5.使用逆向工程 程序的目录结构: 注意：使用逆向工程并不是所有的文件都是需要手动编写的 pom.xml:
+ &amp;lt;project xmlns=&amp;#34;http://maven.apache.org/POM/4.0.0&amp;#34; xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34; xsi:schemaLocation=&amp;#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&amp;#34;&amp;gt; &amp;lt;modelVersion&amp;gt;4.0.0&amp;lt;/modelVersion&amp;gt; &amp;lt;groupId&amp;gt;com.mntc.maven&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;ssm-test&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.0.1-SNAPSHOT&amp;lt;/version&amp;gt; &amp;lt;packaging&amp;gt;war&amp;lt;/packaging&amp;gt; &amp;lt;dependencies&amp;gt; &amp;lt;!-- 1.引入Springmvc、spring相关的依赖包 --&amp;gt; &amp;lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-webmvc&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.3.7.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;!-- 2.spring-jdbc --&amp;gt; &amp;lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-jdbc&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.3.7.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;!-- spring面向切面编程 --&amp;gt; &amp;lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-aspects --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-aspects&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.3.7.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;!-- Mybatis --&amp;gt; &amp;lt;!-- https://mvnrepository.com/artifact/org.mybatis/mybatis --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.mybatis&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;mybatis&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.4.2&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;!</description>
+    </item>
+    
+    <item>
+      <title>Vue的基本使用</title>
+      <link>https://example.com/posts/vue%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/vue%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</guid>
+      <description>一、Node的安装 1.环境准备  安装NodeJs
+配置环境变量
+查看是否安装成功 node -v
+ 2.更换镜像源  设置npm的镜像源 npm config set registry https://registry.npm.taobao.org
+验证镜像源是否切换成功	npm config get registry
+ 3.配置npm下载的位置  npm config set cache &amp;ldquo;D:\noderes\npm-cache&amp;rdquo;
+npm config set prefix &amp;ldquo;D:\noderes\npm_global&amp;rdquo;
+查看	npm config ls
+ 二、安装脚手架 1.安装  npm install -g vue-cli
+卸载	
+npm uninstall -g @vue-cli	//卸载3.x版本的脚手架
+npm uninstall -g @vue-cli	//卸载2.x版本的脚手架
+ 三、创建第一个脚手架项目  vue init webpack my-project	//my-project为项目名称
+ 四、安装axios 1.安装  npm install axios &amp;ndash;save-dev</description>
+    </item>
+    
+    <item>
+      <title>在线教育</title>
+      <link>https://example.com/posts/%E5%9C%A8%E7%BA%BF%E6%95%99%E8%82%B2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/%E5%9C%A8%E7%BA%BF%E6%95%99%E8%82%B2/</guid>
+      <description>一、创建父工程 1.使用SpringBoot初始化项目 2.修改pom文件 &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;lt;project xmlns=&amp;quot;http://maven.apache.org/POM/4.0.0&amp;quot; xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot;xsi:schemaLocation=&amp;quot;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&amp;quot;&amp;gt;&amp;lt;modelVersion&amp;gt;4.0.0&amp;lt;/modelVersion&amp;gt;&amp;lt;parent&amp;gt;&amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;&amp;lt;artifactId&amp;gt;spring-boot-starter-parent&amp;lt;/artifactId&amp;gt;&amp;lt;version&amp;gt;2.2.7.RELEASE&amp;lt;/version&amp;gt;&amp;lt;relativePath/&amp;gt; &amp;lt;!-- lookup parent from repository --&amp;gt;&amp;lt;/parent&amp;gt;&amp;lt;groupId&amp;gt;com.mntc&amp;lt;/groupId&amp;gt;&amp;lt;artifactId&amp;gt;guli-demo&amp;lt;/artifactId&amp;gt;&amp;lt;packaging&amp;gt;pom&amp;lt;/packaging&amp;gt;&amp;lt;version&amp;gt;0.0.1-SNAPSHOT&amp;lt;/version&amp;gt;&amp;lt;name&amp;gt;guli-demo&amp;lt;/name&amp;gt;&amp;lt;description&amp;gt;这是父工程&amp;lt;/description&amp;gt;&amp;lt;properties&amp;gt;&amp;lt;java.version&amp;gt;1.8&amp;lt;/java.version&amp;gt;&amp;lt;guli.version&amp;gt;0.0.1-SNAPSHOT&amp;lt;/guli.version&amp;gt;&amp;lt;mybatis-plus.version&amp;gt;3.0.5&amp;lt;/mybatis-plus.version&amp;gt;&amp;lt;velocity.version&amp;gt;2.0&amp;lt;/velocity.version&amp;gt;&amp;lt;swagger.version&amp;gt;2.7.0&amp;lt;/swagger.version&amp;gt;&amp;lt;aliyun.oss.version&amp;gt;2.8.3&amp;lt;/aliyun.oss.version&amp;gt;&amp;lt;jodatime.version&amp;gt;2.10.1&amp;lt;/jodatime.version&amp;gt;&amp;lt;poi.version&amp;gt;3.17&amp;lt;/poi.version&amp;gt;&amp;lt;commons-fileupload.version&amp;gt;1.3.1&amp;lt;/commons-fileupload.version&amp;gt;&amp;lt;commons-io.version&amp;gt;2.6&amp;lt;/commons-io.version&amp;gt;&amp;lt;httpclient.version&amp;gt;4.5.1&amp;lt;/httpclient.version&amp;gt;&amp;lt;jwt.version&amp;gt;0.7.0&amp;lt;/jwt.version&amp;gt;&amp;lt;aliyun-java-sdk-core.version&amp;gt;4.3.3&amp;lt;/aliyun-java-sdk-core.version&amp;gt;&amp;lt;aliyun-sdk-oss.version&amp;gt;3.1.0&amp;lt;/aliyun-sdk-oss.version&amp;gt;&amp;lt;aliyun-java-sdk-vod.version&amp;gt;2.15.2&amp;lt;/aliyun-java-sdk-vod.version&amp;gt;&amp;lt;aliyun-java-vod-upload.version&amp;gt;1.4.11&amp;lt;/aliyun-java-vod-upload.version&amp;gt;&amp;lt;aliyun-sdk-vod-upload.version&amp;gt;1.4.11&amp;lt;/aliyun-sdk-vod-upload.version&amp;gt;&amp;lt;fastjson.version&amp;gt;1.2.28&amp;lt;/fastjson.version&amp;gt;&amp;lt;gson.version&amp;gt;2.8.2&amp;lt;/gson.version&amp;gt;&amp;lt;json.version&amp;gt;20170516&amp;lt;/json.version&amp;gt;&amp;lt;commons-dbutils.version&amp;gt;1.7&amp;lt;/commons-dbutils.version&amp;gt;&amp;lt;canal.client.version&amp;gt;1.1.0&amp;lt;/canal.client.version&amp;gt;&amp;lt;docker.image.prefix&amp;gt;zx&amp;lt;/docker.image.prefix&amp;gt;&amp;lt;cloud-alibaba.version&amp;gt;0.2.2.RELEASE&amp;lt;/cloud-alibaba.version&amp;gt;&amp;lt;/properties&amp;gt;&amp;lt;dependencyManagement&amp;gt;&amp;lt;dependencies&amp;gt;&amp;lt;!--Spring Cloud--&amp;gt;&amp;lt;dependency&amp;gt;&amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&amp;lt;artifactId&amp;gt;spring-cloud-dependencies&amp;lt;/artifactId&amp;gt;&amp;lt;version&amp;gt;Hoxton.RELEASE&amp;lt;/version&amp;gt;&amp;lt;type&amp;gt;pom&amp;lt;/type&amp;gt;&amp;lt;scope&amp;gt;import&amp;lt;/scope&amp;gt;&amp;lt;/dependency&amp;gt;&amp;lt;dependency&amp;gt;&amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&amp;lt;artifactId&amp;gt;spring-cloud-alibaba-dependencies&amp;lt;/artifactId&amp;gt;&amp;lt;version&amp;gt;${cloud-alibaba.</description>
+    </item>
+    
+    <item>
+      <title>基于Java的游戏外挂</title>
+      <link>https://example.com/posts/%E6%B8%B8%E6%88%8F%E5%A4%96%E6%8C%82%E7%9A%84%E5%BC%80%E5%8F%91/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/%E6%B8%B8%E6%88%8F%E5%A4%96%E6%8C%82%E7%9A%84%E5%BC%80%E5%8F%91/</guid>
+      <description>一、外挂分类 内存级外挂&amp;mdash;&amp;mdash;&amp;mdash;仅仅适用于单机游戏(通常使用C++语言别写，由于java时运行在JVM虚拟机上面的) 数据流级外挂&amp;mdash;&amp;mdash;-专门针对网络游戏，在客户端与服务器之间传输数据时进行拦截(非法的，会被封号) 脚本级外挂&amp;mdash;&amp;mdash;&amp;mdash;略色外挂（案件精灵、简单游）
+二、常用的API 使用的API大多数来自java.awt.Robot这个类
+void delay(int ms);//当前程序休眠若干秒 Color getPixelColor(int x,int y);//取得给定屏幕坐标像素位置的颜色值 void keyPress(int keycode);//按下某个按键 void keyRelease(int keycode);//释放某个按键 void mouseMove(int x,int y);//将鼠标移动到指定的屏幕位置，可用于程序的自动延时，测试等等。 void mousePress(int buttons);//指定鼠标按钮按下 void mouseRelease(int buttons);//用于鼠标按钮的抬起 void mouseWheel(int wheelAmt);//用于鼠标按钮的滚轮事件 三、模拟按键的操作 模拟一个人不停的按K键
+package com.mntc; import java.awt.*; import java.awt.event.KeyEvent; /* @author wujiwen @data 2019/9/4 - 18:43 */ public class Test { public static void main(String[] args) throws Exception { //创建一个机器人对象  Robot robot = new Robot(); //延时5秒钟  robot.delay(5000); while(true) { //指定产生0.</description>
+    </item>
+    
+    <item>
+      <title>常用的CMD指令</title>
+      <link>https://example.com/posts/%E5%B8%B8%E7%94%A8%E7%9A%84cmd%E6%8C%87%E4%BB%A4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/%E5%B8%B8%E7%94%A8%E7%9A%84cmd%E6%8C%87%E4%BB%A4/</guid>
+      <description>一、打开相应的应用程序 shutdown 关机； mspaint 打开画图工具； clac 打开计算器工具； osk 打开虚拟键盘工具； notepad 打开记事本工具； regedit 注册表界面； taskmgr 任务管理器界面，里面有程序进程； services.msc 打开服务界面； control.exe 打开控制面板界面； appwiz.cpl 打开添加删除程序项界面； ipconfig 获取IP配置详情； winver 检查windows版本信息； dxdiag 可以看到系统信息、显卡声卡信息； msconfig 再这里可以关闭随机启动的后台程序； lusrmgr.msc 管理计算机用户； cleanmgr 清理磁盘； devmgmt.msc 设备管理器； diskmgmt.msc 磁盘管理器； compmgmt.msc 计算机管理； dvdplay DVD播放器； odbcad32 ODBC数据源管理器； 二、文件类的CMD命令 c: 切换到C盘，其他盘类似 cd 目录名，如cd test，进入test目录 cd / 返回根目录 cd .. 返回上一层目录 cd.&amp;gt; 文件名，如cd.&amp;gt;js.js 创建一个js.js空文件 md 目录名，如md test，建立一个test目录 mkdir 目录名，如mkdir test，建立一个test目录，功能同上 type 文件名，如type index.html，显示文本文件的内容 tree 以树形结果显示出目录 dir 列出目录中的所有文件 三、操作命令 cls 清屏 exit 退出当前程序 ctrl+c 使用ctrl+c快捷键中止当前命令 help 列出所有支持的指令以及说明 Help+命令 说明命令所有的用法，如help+REN列出重命令的详细用法 四、网络连接 Ping +ip地址 判断主机和该ip网络是否联通 netstat -ano 可以获取端口对应程序的运行PID，通过PID在任务管理器可以找到占用该接口的运行程序</description>
     </item>
     
   </channel>

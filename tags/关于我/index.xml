@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>关于我 on Blog</title>
-    <link>http://whwujiwen.github.io/tags/%E5%85%B3%E4%BA%8E%E6%88%91/</link>
+    <link>https://example.com/tags/%E5%85%B3%E4%BA%8E%E6%88%91/</link>
     <description>Recent content in 关于我 on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <lastBuildDate>Tue, 31 Dec 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://whwujiwen.github.io/tags/%E5%85%B3%E4%BA%8E%E6%88%91/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://example.com/tags/%E5%85%B3%E4%BA%8E%E6%88%91/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>博主个人信息</title>
-      <link>http://whwujiwen.github.io/about/</link>
+      <link>https://example.com/about/</link>
       <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://whwujiwen.github.io/about/</guid>
+      <guid>https://example.com/about/</guid>
       <description>History 这是about页面
 This theme began it&amp;rsquo;s life in early 2013, as the theme for my blog &amp;ldquo;Thoughts on Engineering and Management&amp;quot;. Back then it was generated using nanoc. In 2018, I moved to hugo because of it&amp;rsquo;s ability to hot-reload the website while I was working. Nanoc forced me to rebuild the site which took roughly 10-20 seconds, which quickly became a deal breaker.
 Principles I have always believed in using as little computing resources as possible.</description>

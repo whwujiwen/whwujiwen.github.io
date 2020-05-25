@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数据库 on Blog</title>
+    <link>https://example.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+    <description>Recent content in 数据库 on Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    
+	<atom:link href="https://example.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>DBmong数据库</title>
+      <link>https://example.com/posts/mongodb/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/mongodb/</guid>
+      <description>MongoDB基础知识 一、简介 NoSQL(NoSQL = Not Only SQL )，意即&amp;quot;不仅仅是SQL&amp;rdquo;。
+在现代的计算系统上每天网络上都会产生庞大的数据量。
+这些数据有很大一部分是由关系数据库管理系统（RDBMS）来处理。 1970年 E.F.Codd&amp;rsquo;s提出的关系模型的论文 &amp;ldquo;A relational model of data for large shared data banks&amp;rdquo;，这使得数据建模和应用程序编程更加简单。
+通过应用实践证明，关系模型是非常适合于客户服务器编程，远远超出预期的利益，今天它是结构化数据存储在网络和商务应用的主导技术。
+NoSQL 是一项全新的数据库革命性运动，早期就有人提出，发展至2009年趋势越发高涨。NoSQL的拥护者们提倡运用非关系型的数据存储，相对于铺天盖地的关系型数据库运用，这一概念无疑是一种全新的思维的注入。
+二、MongoDB的安装 1.下载 下载地址：https://www.mongodb.com/download-center/community
+2.安装 3.配置环境变量 注意：红色方框中的内容为安装位置下的bin目录
+4.创建指定的目录  在C盘下创建data目录 在data中创建db目录  5.启动服务器  在CMD窗口中输入mongod
+ 6.客户端连接服务器  在CMD窗口中输入mongo
+ 三、数据库的CRUD操作 1.向数据库中插入操作 insert:db.student.insert({name:&amp;ldquo;zhangsan&amp;rdquo;,age:18})
+insertOne：插入一个文本对象
+insertMany:插入多个文本对象
+2.从数据库中查询操作 find()：查询所有
+ dn.student.find();
+ 条件查询
+ db.student.find({name:&amp;ldquo;吴继文&amp;rdquo;})
+ 3.修改文档 db.collection.update(查询条件，修改条件)；
+ 案例：db.student.update({name:&amp;ldquo;吴继文&amp;rdquo;},{$set:{age:13}})
+ 4.删除  删除多个符合条件的文档 ：db.collsction.remove()
+删除符合条件的一个文档：db.collsction.deleteOne()
+删除符合条件的多个文档：db.collsction.deleteMany()
+ </description>
+    </item>
+    
+    <item>
+      <title>Java原生代码连接数据库</title>
+      <link>https://example.com/posts/java%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/java%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
+      <description>在java中连接数据库 环境:Eclipse 完成代码如下:
+package com.mntc.maven; import java.sql.Connection; import java.sql.DriverManager; import java.sql.PreparedStatement; import java.sql.ResultSet; import java.sql.SQLException; import java.sql.Statement; public class DatabaseHandle { private static final String driver = &amp;#34;com.mysql.cj.jdbc.Driver&amp;#34;; // 数据库驱动 	// 连接数据库的URL地址(指定IP地址，端口，数据库的名称) 	private static final String url = &amp;#34;jdbc:mysql://localhost:3306/test?serverTimezone=UTC&amp;#34;; private static final String username = &amp;#34;root&amp;#34;;// 数据库的用户名 	private static final String password = &amp;#34;13733433427&amp;#34;;// 数据库的密码 	private static Connection conn = null; // 静态代码块负责加载驱动 	static { try { Class.</description>
+    </item>
+    
+  </channel>
+</rss>

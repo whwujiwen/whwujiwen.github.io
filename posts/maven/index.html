@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#000" />
+    <title>
+        
+            Maven的基本使用 &middot; Blog Hugo Theme - Prav
+        
+    </title>
+
+    
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"
+        integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    
+    
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:300,300italic,700&display=swap" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:300&display=swap" rel="stylesheet">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="">
+    
+    <meta name="description" content="介绍了Maven的基本使用，具体包含安装、配置。">
+    
+    <meta name="keywords" content="编程">
+    
+    <meta name="author" content="吴继文"></head>
+
+<body>
+        <div class="container">
+<div id="navbar" class="pure-menu pure-menu-open pure-menu-horizontal pure-menu-scrollable">
+    <a href="/" class="pure-menu-heading">
+         
+            Blog 
+         
+    </a>
+    <ul class="pure-menu-list">
+        <li class="pure-menu-item">
+            <a href="/posts" class="pure-menu-link">
+                <i class="fa fa-archive"></i>
+                文章
+            </a>
+        </li>
+        <li class="pure-menu-item">
+            <a href="/tags" class="pure-menu-link">
+                <i class="fas fa-comments"></i>
+                分类
+            </a>
+        </li>
+        <li class="pure-menu-item">
+            <a href="/about" class="pure-menu-link">
+                <i class="fas fa-smile"></i>
+                关于我
+            </a>
+        </li>
+    </ul>
+    <ul class="pure-menu-list pull-right">
+        
+        <li class="pure-menu-item">
+            <a href="https://www.baidu.com" title="Github" class="pure-menu-link">
+                <i class="fab fa-github"></i>
+                <span class="hide">Github</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="http://twitter.com/example" title="@pravin" class="pure-menu-link">
+                <i class="fab fa-twitter-square"></i>
+                <span class="hide">Twitter</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="http://uk.linkedin.com/in/example" title="Linked In" class="pure-menu-link">
+                <i class="fab fa-linkedin"></i>
+                <span class="hide">LinkedIn</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="https://www.medium.com/@example" title="Medium" class="pure-menu-link">
+                <i class="fab fa-medium"></i>
+                <span class="hide">Medium</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="https://www.facebook.com/example" title="Facebook" class="pure-menu-link">
+                <i class="fab fa-facebook"></i>
+                <span class="hide">Facebook</span>
+            </a>
+        </li>
+        
+        <li class="pure-menu-item">
+            <a href="/atom.xml" title="Atom Feed" class="pure-menu-link">
+                <i class="fas fa-rss-square"></i>
+                <span class="hide">RSS Feed</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="pure-u-1">
+    <div class="pad">
+    </div>
+</div>
+<div class="pure-g">
+
+
+<div id="content" class="pure-u-1 pure-u-md-3-4 pure-u-sm-1">
+    <div class="pad">
+
+<div class="date">
+    <time pubdate="0001-01-01">January 1, 0001</time>
+    <span class="author">学习笔记</span>
+</div>
+
+<article>
+    <h1><a href="https://example.com/posts/maven/">Maven的基本使用</a></h1>
+    <div class="tags">
+        
+        
+        <a href="/tags/%E7%BC%96%E7%A8%8B" class="pure-button">编程</a>
+        
+    </div>
+    <h2 id="一目前技术存在问题">一、目前技术存在问题</h2>
+<p>1.一个项目就是一个工程。
+2.项目中所需要的jar包必须手动赋值粘贴到自己工程中
+3.jar包需要提前准备好或者到官网去下载。
+4.一个jar包依赖的其他jar包需要我们自己手动下载添加
+为了解决上述的问题：提出了一项新技术。那就是Maven,借助Maven我们可以以一种规范的方式下载jar包，因为所有的jar包已经按照统一的规范存放在Maven的中央仓库中。</p>
+<h2 id="二什么是maven">二、什么是Maven</h2>
+<p>1.Maven是一款服务于Java平台的自动构建工具。
+所谓的&quot;构建&quot;就是以&quot;java文件&rdquo;、&ldquo;框架配置文件&rdquo;、&ldquo;jsp&rdquo;、&ldquo;HEML&quot;等资源为原材料，去生产一个可以运行的项目。（编译+部署+搭建）
+2.构建的各个环节。
+a.清理：将以前编译得到的旧的class字节码文件删除为下一次编译做准备。
+b.将java源程序编译成class字节码文件
+c.测试:自动测试，自动调用jutil程序
+d.报告：测试程序执行的结果
+e.打包：动态web工程打包成war包、java工程打包成java包
+f.安装：Maven特定的概念&mdash;&mdash;将打包的内容赋值到&quot;仓库&quot;中的指定位置
+g.部署：将动态的web工程生成war包，赋值带servlet容器下指定的目录，使其可以运行。</p>
+<h2 id="三maven的安装">三、Maven的安装</h2>
+<p>安装步骤：
+1.先将压缩包解压到安装陌路下面
+2.配置环境变量
+变量名：M2_HOME
+变量值：D:\maven\apache-maven-3.6.1-bin\apache-maven-3.6.1
+3.在PATH后面追加路径：D:\tomcat\apache-tomcat-8.5.42-windows-x64\apache-tomcat-8.5.42\bin 或者 %M2_HOME%\bin
+4.检测是否安装成功
+在DOS系统下输入：mvn -v
+注意：听说将“变量名”改成“MAVEN_HOME”时会出现一些问题，本人没有尝试过哦</p>
+<p>使用maven技术遇到的一些问题：
+1.在依赖其他的maven工程师时，如果依赖的jre包显示为文件夹，是由于你的被依赖的maven工程没有关闭</p>
+<h2 id="四手动创建一个maven工程">四、手动创建一个Maven工程</h2>
+<p>1.创建约定的目录的目录结构
+根目录：工程名
+src目录：源码
+pom.xml文件：Maven核心配置文件
+main目录：存放主程序
+test目录：存放测试程序
+java目录：存放测试程序
+resources目录：存放框架或者其他配置文件
+2.为什么要使用约定的目录结构
+Maven要自动构建我们这个项目，以编译为例，Maven想要自动编译那么必须通知java源件的位置
+3.我的第一个Maven工程
+第一步：手动新建目录结构
+<img src="/assets/blogImg/maven4.3.jpg" alt="2">
+第二部：在pom.xml中添加依赖关系</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#1e889b">&lt;?xml version=&#34;1.0&#34; ?&gt;</span>
+<span style="color:#8b008b;font-weight:bold">&lt;project</span> <span style="color:#658b00">xmlns=</span><span style="color:#cd5555">&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span style="color:#658b00">xmlns:xsi=</span><span style="color:#cd5555">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span><span style="color:#658b00">xsi:schemaLocation=</span><span style="color:#cd5555">&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+	 <span style="color:#8b008b;font-weight:bold">&lt;modelVersion&gt;</span>4.0.0<span style="color:#8b008b;font-weight:bold">&lt;/modelVersion&gt;</span>
+	 
+	 <span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>com.atguigu.maven<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+	 <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>Hello<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+	 <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>0.0.1-SNAPSHOT<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+	 
+	 <span style="color:#8b008b;font-weight:bold">&lt;name&gt;</span>Hello<span style="color:#8b008b;font-weight:bold">&lt;/name&gt;</span>
+	 
+	 <span style="color:#8b008b;font-weight:bold">&lt;dependencies&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;dependency&gt;</span>
+			<span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>junit<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+			<span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>junit<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+			<span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>4.0<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+			<span style="color:#8b008b;font-weight:bold">&lt;scope&gt;</span>test<span style="color:#8b008b;font-weight:bold">&lt;/scope&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;/dependency&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;/dependencies&gt;</span>	
+<span style="color:#8b008b;font-weight:bold">&lt;/project&gt;</span>	
+</code></pre></div><h2 id="五常用的指令">五、常用的指令</h2>
+<p>指定maven相关的指令，必须先进入到pom.xml所在目录中。
+相关的指令：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">mvn clean                <span style="color:#228b22">//清理
+</span><span style="color:#228b22"></span>mvn compile             <span style="color:#228b22">//编译主程序
+</span><span style="color:#228b22"></span>mvn test-compile        <span style="color:#228b22">//编译测试程序
+</span><span style="color:#228b22"></span>mvn test                <span style="color:#228b22">//执行测试程序
+</span><span style="color:#228b22"></span>mvn <span style="color:#8b008b;font-weight:bold">package</span>             <span style="color:#a61717;background-color:#e3d2d2">//</span><span style="color:#008b45;text-decoration:underline">打包</span>
+mvn install             <span style="color:#228b22">//安装（将生成的jar包村东仓库）
+</span><span style="color:#228b22"></span>mvn site                <span style="color:#228b22">//生成站点
+</span></code></pre></div><h2 id="六联网的问题">六、联网的问题</h2>
+<p>1.Maven的核心程序仅仅定义了生命周期，但是具体的工作必须由插件来完成。而插件本身并不包括Maven的核心程序。
+2.当执行Mavne命令需要使用到某些插件时，Maven核心程序首先到本地的仓库中进行查找
+3.本地仓库的位置[系统中当前用户的家目录.m2\reposity]
+4.Mavan核心程序如果再本地找不到所需要的文件，他就会自动自动联网下载
+5.修改本地仓库的位置:
+a.找到Mavne的解压目录\conf\setting.xml
+b.在settings中找到localRepository标签
+c.将标签从注释中取出来
+d.标签中包裹的路径就是指定仓库的目标</p>
+
+</article>
+    </div>
+</div>
+
+
+                
+<div id="sidebar" class="pure-u-1 pure-u-md-1-4 pure-u-sm-1">
+    <div class="pad">
+        <a name="about"></a>
+        <h3>关于我</h3>
+        <div style="text-align: center;">
+            <img src="/img/author.jpg" alt="吴继文" class="pure-img" />
+            <p><em>Handsome</em></p>
+        </div>
+
+        <h3>最近文章</h3>
+        <div class="pure-menu pure-menu-open">
+            <ul class="pure-menu-list">
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/mybatis-plus/" class="pure-menu-link">Mybatis-Plus<br>
+                        <small>MyBatis-Plus 的增强工具，在 MyBatis 的基础上只做增强不做改变，为简化开发、提高效率而生。</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/mongodb/" class="pure-menu-link">DBmong数据库<br>
+                        <small>NoSQL 是一项全新的数据库革命性运动，早期就有人提出，发展至2009年趋势越发高涨。NoSQL的拥护者们提倡运用非关系型的数据存储，相对于铺天盖地的关系型数据库运用，这一概念无疑是一种全新的思维的注入。</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/docker/" class="pure-menu-link">Docker容器技术<br>
+                        <small>这一种常用的容器技术，能简化项目的部署</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/go%E8%AF%AD%E8%A8%80/" class="pure-menu-link">Go语言技术知识<br>
+                        <small>主要介绍GO语言的基本语法</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/hexo&#43;github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6/" class="pure-menu-link">hexo&#43;github搭建个人博客<br>
+                        <small>介绍了个人博客搭建的完整步骤</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/idea%E7%9A%84%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="pure-menu-link">IDEA的基本使用<br>
+                        <small>主要介绍了IDEA的基本以用和一些常用的快捷键</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/java%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/" class="pure-menu-link">Java原生代码连接数据库<br>
+                        <small>介绍了在不使用框架的基础上连接MySQL</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/%E5%9F%BA%E4%BA%8Ejava%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="pure-menu-link">Java多线程基础知识<br>
+                        <small>一种提高程序运行效率的技术</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/java%E5%AE%9E%E7%8E%B0%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/" class="pure-menu-link">Java实现串口通信<br>
+                        <small>Java实现窗口通信</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/java%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" class="pure-menu-link">Java的基础知识<br>
+                        <small>介绍了Java的基础知识</small>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <h3>分类</h3>
+        <div style="text-align:center" class="tags">
+            
+            
+            <a href="/tags/%e6%a1%86%e6%9e%b6" class="pure-button"> 框架
+                <small>(6)</small></a>
+            
+            
+            
+            <a href="/tags/%e7%bc%96%e7%a8%8b" class="pure-button"> 编程
+                <small>(5)</small></a>
+            
+            
+            
+            <a href="/tags/%e5%85%b6%e5%ae%83" class="pure-button"> 其它
+                <small>(2)</small></a>
+            
+            
+            
+            <a href="/tags/%e6%95%b0%e6%8d%ae%e5%ba%93" class="pure-button"> 数据库
+                <small>(2)</small></a>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </div>
+    </div> 
+</div> 
+
+                
+            </div>
+<div class="pure-g">
+	<footer class="pure-u-1 pure-u-md-1 pure-u-sm-1">
+		<p>This page and its contents are copyright &copy; 2020,
+			<a href="">吴继文</a>.</p>
+		<p><a href="https://github.com/pravin/hugo-theme-prav">Theme Prav</a> by <a href="https://cto.me.uk">Pravin
+				Paratey</a></p>
+	</footer>
+
+	<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
+		integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+		crossorigin="anonymous"></script>
+</div>
+</div></body>
+</html>

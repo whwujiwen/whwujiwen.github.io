@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>分布式 on Blog</title>
+    <link>https://example.com/tags/%E5%88%86%E5%B8%83%E5%BC%8F/</link>
+    <description>Recent content in 分布式 on Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    
+	<atom:link href="https://example.com/tags/%E5%88%86%E5%B8%83%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SpringBoot</title>
+      <link>https://example.com/posts/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B9%8Bactivemq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B9%8Bactivemq/</guid>
+      <description>一、什么是消息中间件 消息中间件利用高效可靠的消息传递机制进行平台无关的数据交流，并基于数据通信来进行分布式系统的集成。通过提供消息传递和消息排队模型，它可以在分布式环境下扩展进程间的通信。
+二、消息中间件之hello world 目录结构： 1.queue JmsConsumer.java：
+package com.atguigu.activemq.queue; import java.io.IOException; import javax.jms.Connection; import javax.jms.JMSException; import javax.jms.Message; import javax.jms.MessageConsumer; import javax.jms.MessageListener; import javax.jms.Queue; import javax.jms.Session; import javax.jms.TextMessage; import org.apache.activemq.ActiveMQConnectionFactory; public class JmsConsumer { public static final String ACTIVEMQ_URL = &amp;#34;tcp://192.168.0.103:61616&amp;#34;; public static final String QUEUE_NAME = &amp;#34;queue01&amp;#34;; public static void main(String[] args) throws JMSException, IOException { // TODO Auto-generated method stub  System.out.println(&amp;#34;hello mq&amp;#34;); //1.创建连接工厂  ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory(ACTIVEMQ_URL); //2.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>编程 on Blog</title>
+    <link>https://example.com/tags/%E7%BC%96%E7%A8%8B/</link>
+    <description>Recent content in 编程 on Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    
+	<atom:link href="https://example.com/tags/%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Go语言技术知识</title>
+      <link>https://example.com/posts/go%E8%AF%AD%E8%A8%80/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/go%E8%AF%AD%E8%A8%80/</guid>
+      <description>一、go语言的特点 Go语言保证了既能达到静态编译语言的安全和性能，又能达到动态语言开发维护的高效。Go=C+pathy 1.从C语言继承了很多理念，包括表达式语法、控制结构、基础数据类型、调用参数传值、指针等等，也保留了C语言的编译方式以及弱化了指针 2.引入包的概念，用于组织程序结构，go语言的一个文件要归属一个包，而不能单独存在。 3.垃圾回收机制，内存自动回收，不需要开发人员进行管理。 4.天然并发（重要特点）
+ 从语言层面支持并发，实现简单。 goroutime,轻量级线程，可以实现大并发处理，高效利用多核。 基于CPS并发模型。 吸收管道通信机制，形成go语言特有的管道channel，通过管道channel，可以实现不同的goroute之间的相互通信。 函数返回多个值。
+ func getSumAndSub(n1 int,n2 int)(int,int){ sum := n1+n2 //注意后面不需要带分号 sub := n1-n2 return sum,sub }  新的创新，比如切片slice、延时执行defer等。
+ //开发一个hello world程序 package main import ( &amp;#34;fmt&amp;#34; //	&amp;#34;strings&amp;#34; //	&amp;#34;go_code/project01/cal&amp;#34; //	&amp;#34;math/rand&amp;#34; //	&amp;#34;time&amp;#34; //	&amp;#34;errors&amp;#34; 	&amp;#34;sort&amp;#34; ) /* func cal(a float64,b float64,operator byte) float64 { var res float64 switch operator { case &amp;#39;+&amp;#39;: res = a + b case &amp;#39;-&amp;#39;: res = a - b case &amp;#39;*&amp;#39;: res = a * b case &amp;#39;/&amp;#39;: res = a / b default: fmt.</description>
+    </item>
+    
+    <item>
+      <title>IDEA的基本使用</title>
+      <link>https://example.com/posts/idea%E7%9A%84%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/idea%E7%9A%84%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
+      <description>从 Windows 过度到 Mac 必备快捷键对照表 前提:已经手动的将配置文件导入。
+Mac 键盘符号说明  ⌘ == Command ⇧ == Shift ⇪ == Caps Lock ⌥ == Option ⌃ == Control ↩ == Return/Enter ⌫ == Delete ⌦ == 向前删除键（Fn+Delete） ↑ == 上箭头 ↓ == 下箭头 ← == 左箭头 → == 右箭头 ⇞ == Page Up（Fn+↑） ⇟ == Page Down（Fn+↓） Home == Fn + ← End == Fn + → ⇥ == 右制表符（Tab键） ⇤ == 左制表符（Shift+Tab） ⎋ == Escape (Esc) ⏏ == 电源开关键  Ctrl    Win 快捷键 Mac 快捷键 介绍     Ctrl + F Command + F 在当前文件进行文本查找   Ctrl + R Command + R 在当前文件进行文本替换   Ctrl + Z Command + Z 撤销   Ctrl + Y Command + Delete 删除光标所在行 或 删除选中的行   Ctrl + D Command + D 复制光标所在行 或 复制选择内容，并把复制内容插入光标位置下面   Ctrl + W Option + 方向键上 递进式选择代码块。可选中光标所在的单词或段落，连续按会在原有选中的基础上再扩展选中范围   Ctrl + E Command + E 显示最近打开的文件记录列表   Ctrl + N Command + O 根据输入的 类名 查找类文件   Ctrl + J Command + J 插入自定义动态代码模板   Ctrl + P Command + P 方法参数提示显示   Ctrl + U Command + U 前往当前光标所在的方法的父类的方法 / 接口定义   Ctrl + B Command + B 进入光标所在的方法/变量的接口或是定义处，等效于 Ctrl + 左键单击   Ctrl + / Command + / 注释光标所在行代码，会根据当前不同文件类型使用不同的注释符号   Ctrl + F1 Command + F1 在光标所在的错误代码处显示错误信息   Ctrl + F11 Option + F3 选中文件 / 文件夹，使用助记符设定 / 取消书签   Ctrl + F12 Command + F12 弹出当前文件结构层，可以在弹出的层上直接输入，进行筛选   Ctrl + Space Control + Space 基础代码补全，默认在 Windows 系统上被输入法占用，需要进行修改，建议修改为 Ctrl + 逗号   Ctrl + Delete Option + Fn+ Delete 删除光标后面的单词或是中文句   Ctrl + BackSpace Option + Delete 删除光标前面的单词或是中文句   Ctrl + 1,2,3&amp;hellip;9 Control + 1,2,3&amp;hellip;9 定位到对应数值的书签位置   Ctrl + 加号 Command + 加号 展开代码   Ctrl + 减号 Command + 减号 折叠代码   Ctrl + 左键单击 Control + 左键单击 在打开的文件标题上，弹出该文件路径   Ctrl + 左方向键 Option + 左方向键 光标跳转到当前单词 / 中文句的左侧开头位置   Ctrl + 右方向键 Option + 右方向键 光标跳转到当前单词 / 中文句的右侧开头位置   Ctrl + 前方向键 预设中没有该快捷键 等效于鼠标滚轮向前效果   Ctrl + 后方向键 预设中没有该快捷键 等效于鼠标滚轮向后效果    Alt    Win 快捷键 Mac 快捷键 介绍     Alt + ` Control + V 显示版本控制常用操作菜单弹出层   Alt + F1 Option + F1 显示当前文件选择目标弹出层，弹出层中有很多目标可以进行选择   Alt + F7 Option + F7 查询所选对象/变量被引用   Alt + Enter Option + Enter IntelliJ IDEA 根据光标所在问题，提供快速修复选择，光标放在的位置不同提示的结果也不同   Alt + Insert Command + N 代码自动生成，如生成对象的 set / get 方法，构造函数，toString() 等   Alt + 左方向键 Control + 左方向键 切换当前已打开的窗口中的子视图，比如Debug窗口中有Output、Debugger等子视图，用此快捷键就可以在子视图中切换   Alt + 右方向键 Control + 右方向键 切换当前已打开的窗口中的子视图，比如Debug窗口中有Output、Debugger等子视图，用此快捷键就可以在子视图中切换   Alt + 前方向键 Control + 前方向键 当前光标跳转到当前文件的前一个方法名位置   Alt + 后方向键 Control + 后方向键 当前光标跳转到当前文件的后一个方法名位置   Alt + 1,2,3&amp;hellip;9 Command + 1,2,3&amp;hellip;9 显示对应数值的选项卡，其中 1 是 Project 用得最多    Shift    Win 快捷键 Mac 快捷键 介绍     Shift + F11 Command + F3 弹出书签显示层   Shift + Tab Shift + Tab 取消缩进   Shift + Enter Shift + Enter 开始新一行。光标所在行下空出一行，光标定位到新行位置   Shift + 左键单击 Shift + 左键单击 在打开的文件名上按此快捷键，可以关闭当前打开文件    Ctrl + Alt    Win 快捷键 Mac 快捷键 介绍     Ctrl + Alt + L Command + Option + L 格式化代码，可以对当前文件和整个包目录使用   Ctrl + Alt + O Control + Option + O 优化导入的类，可以对当前文件和整个包目录使用   Ctrl + Alt + T Command + Option + T 对选中的代码弹出环绕选项弹出层   Ctrl + Alt + S Command + 逗号 打开 IntelliJ IDEA 系统设置   Ctrl + Alt + Enter Command + Option + Enter 光标所在行上空出一行，光标定位到新行   Ctrl + Alt + 左方向键 Command + Option + 左方向键 退回到上一个操作的地方   Ctrl + Alt + 右方向键 Command + Option + 右方向键 前进到上一个操作的地方    Ctrl + Shift    Win 快捷键 Mac 快捷键 介绍     Ctrl + Shift + F Command + Shift + F 根据输入内容查找整个项目 或 指定目录内文件   Ctrl + Shift + R Command + Shift + R 根据输入内容替换对应内容，范围为整个项目 或 指定目录内文件   Ctrl + Shift + J Control + Shift + J 自动将下一行合并到当前行末尾   Ctrl + Shift + Z Command + Shift + Z 取消撤销   Ctrl + Shift + W Option + 方向键下 递进式取消选择代码块。可选中光标所在的单词或段落，连续按会在原有选中的基础上再扩展取消选中范围   Ctrl + Shift + N Command + Shift + O 通过文件名定位 / 打开文件 / 目录，打开目录需要在输入的内容后面多加一个正斜杠   Ctrl + Shift + U Command + Shift + U 对选中的代码进行大 / 小写轮流转换   Ctrl + Shift + T Command + Shift + T 对当前类生成单元测试类，如果已经存在的单元测试类则可以进行选择   Ctrl + Shift + C Command + Shift + C 复制当前文件磁盘路径到剪贴板   Ctrl + Shift + B Control + Shift + B 跳转到类型声明处   Ctrl + Shift + / Command + Option + / 代码块注释   Ctrl + Shift + [ Command + Shift + [ 选中从光标所在位置到它的顶部中括号位置   Ctrl + Shift + ] Command + Shift + ] 选中从光标所在位置到它的底部中括号位置   Ctrl + Shift + 加号 Command + Shift + 加号 展开所有代码   Ctrl + Shift + 减号 Command + Shift + 减号 折叠所有代码   Ctrl + Shift + F7 Command + Shift + F7 高亮显示所有该选中文本，按Esc高亮消失   Ctrl + Shift + F12 Command + Shift + F12 编辑器最大化   Ctrl + Shift + Enter Command + Shift + Enter 自动结束代码，行末自动添加分号   Ctrl + Shift + Backspace Ctrl + Shift + Backspace 退回到上次修改的地方   Ctrl + Shift + 1,2,3&amp;hellip;9 Control + Shift + 1,2,3&amp;hellip;9 快速添加指定数值的书签   Ctrl + Shift + 左键单击 Command + Shift + 左键单击 把光标放在某个类变量上，按此快捷键可以直接定位到该类中   Ctrl + Shift + 左方向键 Option + Shift + 左方向键 在代码文件上，光标跳转到当前单词 / 中文句的左侧开头位置，同时选中该单词 / 中文句   Ctrl + Shift + 右方向键 Option + Shift + 右方向键 在代码文件上，光标跳转到当前单词 / 中文句的右侧开头位置，同时选中该单词 / 中文句   Ctrl + Shift + 前方向键 Command + Shift + 前方向键 光标放在方法名上，将方法移动到上一个方法前面，调整方法排序   Ctrl + Shift + 后方向键 Command + Shift + 后方向键 光标放在方法名上，将方法移动到下一个方法前面，调整方法排序    Alt + Shift    Win 快捷键 Mac 快捷键 介绍     Alt + Shift + N Option + Shift + B 选择 / 添加 task   Alt + Shift + 左键双击 Option + Shift + 左键双击 选择被双击的单词 / 中文句，按住不放，可以同时选择其他单词 / 中文句   Alt + Shift + 前方向键 Option + Shift + 前方向键 移动光标所在行向上移动   Alt + Shift + 后方向键 Option + Shift + 后方向键 移动光标所在行向下移动    Ctrl + Shift + Alt    Win 快捷键 Mac 快捷键 介绍     Ctrl + Shift + Alt + V Command + Shift + Option + V 无格式黏贴   Ctrl + Shift + Alt + S Command + ; 打开当前项目设置    其他    Win 快捷键 Mac 快捷键 介绍     F2 F2 跳转到下一个高亮错误 或 警告位置   F4 F4 编辑源   F11 F3 添加书签   F12 F12 回到前一个工具窗口   Tab Tab 缩进   ESC ESC 从工具窗口进入代码文件窗口    </description>
+    </item>
+    
+    <item>
+      <title>Java多线程基础知识</title>
+      <link>https://example.com/posts/%E5%9F%BA%E4%BA%8Ejava%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/%E5%9F%BA%E4%BA%8Ejava%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B/</guid>
+      <description>一、进程与线程  进程：一个程序运行所占用的各种资源的描述。 线程：一个进程中任务执行任务的具体单元。 一个进程可以包含多个线程，若一个进程中没有线程，那么表示该进程已经执行完毕。进程可以实现多个任务的并发执行(时间片)。 存在的弊端：多进程无法实现资源的共享。
+ 二、进程的生命周期 在程序的开发过程中，将一个进程被实例化完成，到这个线程使用结束，并销毁的过程，称为进程的生命周期。
+三、线程的状态 新生态(New):一个线程被实例化完成(在执行start之前的状态)，但是没有任何操作。 就绪态(rReady):一个线程已经被开启，并且已经开始争抢CPU时间片 运行态(run):线程已经抢到时间片，开始执行业务逻辑了。 阻塞态(Interrupt):线程运行的过程中，受到某些外界因素的影响，放弃得到的CPU时间片，并不在参与争夺CPU时间片。(挂起状态) 死亡态(Dead):想成被销毁。 线程的生命周期： 四、线程的开辟方式 1.继承Thread，做一个线程子类(自定义线程类)
+package com.mntc.thread; public class MyThread { public static void main(String[] args) { ThreadCreat tc = new ThreadCreat(); tc.start(); for(int i=0;i&amp;lt;10;i++) { System.out.println(&amp;#34;主线程中逻辑:&amp;#34;+i); } } } class ThreadCreat extends Thread{ public void run() { for(int i=0;i&amp;lt;10;i++) { System.out.println(&amp;#34;子线程中逻辑:&amp;#34;+i); } } } 2.通过继承Runnable接口
+Runnable r1 =()-&amp;gt;{ for(int i=0;i&amp;lt;10;i++) { System.out.println(&amp;#34;Runnable线程中逻辑:&amp;#34;+i); } }; Thread t1 = new Thread(r1); t1.</description>
+    </item>
+    
+    <item>
+      <title>Java的基础知识</title>
+      <link>https://example.com/posts/java%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/java%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/</guid>
+      <description>一、JAVA的四大特征 1.抽象 父类为子类提供一些属性和行为，子类根据业务需求实现具体的行为。 抽象类使用abstract进行修饰，子类要实现所有的父类抽象方法否则子类也是抽象类。 2.封装 把对象的属性和行为（方法）结合为一个独立的整体，并尽可能隐藏对象的内部实现细节； 在java中，对于对象的内部属性一般用private来实现隐藏，并通过set和get方法对外提供访问接口。 3.继承 子类继承父类的属性和行为，并能根据自己的需求扩展出新的属性和行为，提高了代码的可复用性。 Java的继承通过extends关键字来实现，实现继承的类被称为子类，被继承的类称为父类(有的也称其为基类、超类)，父类和子类的关系，是一种一般和特殊的关系；子类扩展父类，将可以获得父类的全部属性和方法。 overide： 当子父类中出现相同方法时，会先运行子类中的方法。 重写的特点：方法名一样，访问修饰符权限不小于父类，返回类型一致，参数列表一致。 4.多态 不修改程序代码就可以改变程序运行时所绑定的具体代码，让程序可以选择多个运行状态； 具体的实现方式就是：接口实现，继承父类进行方法重写，同一个类中进行方法重载。 封装和继承都是为Java语言的多态提供了支撑；多态存在的三个必要条件： a.要有继承； b. 要有重写； c. 父类引用指向子类对象
+二、JAVA中的不定参 vodi speak(int age,String...hobbies){ for(String hobby:hobbies){ //在此处可以遍历hobbies  } } 三、方法的重载 1.普通方法的重载 方法名一样，但参数不一样，这就是重载(overload)。所谓的参数不一样，主要有两点：第一是参数的个数不一样，第二是参数的类型不一样。只要这两方面有其中的一方面不一样就可以构成方法的重载了。 package cn.galc.test;
+public class TestOverLoad { void max(int a, int b) { System.out.println(a &amp;gt; b ? a : b); } /* * int max(int a, int b) { * return a &amp;gt; b ? a : b; * } */ void max(float a, float b) { System.</description>
+    </item>
+    
+    <item>
+      <title>Maven的基本使用</title>
+      <link>https://example.com/posts/maven/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/maven/</guid>
+      <description>一、目前技术存在问题 1.一个项目就是一个工程。 2.项目中所需要的jar包必须手动赋值粘贴到自己工程中 3.jar包需要提前准备好或者到官网去下载。 4.一个jar包依赖的其他jar包需要我们自己手动下载添加 为了解决上述的问题：提出了一项新技术。那就是Maven,借助Maven我们可以以一种规范的方式下载jar包，因为所有的jar包已经按照统一的规范存放在Maven的中央仓库中。
+二、什么是Maven 1.Maven是一款服务于Java平台的自动构建工具。 所谓的&amp;quot;构建&amp;quot;就是以&amp;quot;java文件&amp;rdquo;、&amp;ldquo;框架配置文件&amp;rdquo;、&amp;ldquo;jsp&amp;rdquo;、&amp;ldquo;HEML&amp;quot;等资源为原材料，去生产一个可以运行的项目。（编译+部署+搭建） 2.构建的各个环节。 a.清理：将以前编译得到的旧的class字节码文件删除为下一次编译做准备。 b.将java源程序编译成class字节码文件 c.测试:自动测试，自动调用jutil程序 d.报告：测试程序执行的结果 e.打包：动态web工程打包成war包、java工程打包成java包 f.安装：Maven特定的概念&amp;mdash;&amp;mdash;将打包的内容赋值到&amp;quot;仓库&amp;quot;中的指定位置 g.部署：将动态的web工程生成war包，赋值带servlet容器下指定的目录，使其可以运行。
+三、Maven的安装 安装步骤： 1.先将压缩包解压到安装陌路下面 2.配置环境变量 变量名：M2_HOME 变量值：D:\maven\apache-maven-3.6.1-bin\apache-maven-3.6.1 3.在PATH后面追加路径：D:\tomcat\apache-tomcat-8.5.42-windows-x64\apache-tomcat-8.5.42\bin 或者 %M2_HOME%\bin 4.检测是否安装成功 在DOS系统下输入：mvn -v 注意：听说将“变量名”改成“MAVEN_HOME”时会出现一些问题，本人没有尝试过哦
+使用maven技术遇到的一些问题： 1.在依赖其他的maven工程师时，如果依赖的jre包显示为文件夹，是由于你的被依赖的maven工程没有关闭
+四、手动创建一个Maven工程 1.创建约定的目录的目录结构 根目录：工程名 src目录：源码 pom.xml文件：Maven核心配置文件 main目录：存放主程序 test目录：存放测试程序 java目录：存放测试程序 resources目录：存放框架或者其他配置文件 2.为什么要使用约定的目录结构 Maven要自动构建我们这个项目，以编译为例，Maven想要自动编译那么必须通知java源件的位置 3.我的第一个Maven工程 第一步：手动新建目录结构 第二部：在pom.xml中添加依赖关系
+&amp;lt;?xml version=&amp;#34;1.0&amp;#34; ?&amp;gt; &amp;lt;project xmlns=&amp;#34;http://maven.apache.org/POM/4.0.0&amp;#34; xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34;xsi:schemaLocation=&amp;#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&amp;#34;&amp;gt; &amp;lt;modelVersion&amp;gt;4.0.0&amp;lt;/modelVersion&amp;gt; &amp;lt;groupId&amp;gt;com.atguigu.maven&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;Hello&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.0.1-SNAPSHOT&amp;lt;/version&amp;gt; &amp;lt;name&amp;gt;Hello&amp;lt;/name&amp;gt; &amp;lt;dependencies&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;junit&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;junit&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.0&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;/dependencies&amp;gt;	&amp;lt;/project&amp;gt;	五、常用的指令 指定maven相关的指令，必须先进入到pom.xml所在目录中。 相关的指令：</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#000" />
+    <title>
+        
+            Mybatis的基础知识 &middot; Blog Hugo Theme - Prav
+        
+    </title>
+
+    
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"
+        integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    
+    
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:300,300italic,700&display=swap" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:300&display=swap" rel="stylesheet">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="">
+    
+    <meta name="description" content="介绍了Mybatis的一个简单的案例">
+    
+    <meta name="keywords" content="框架">
+    
+    <meta name="author" content="吴继文"></head>
+
+<body>
+        <div class="container">
+<div id="navbar" class="pure-menu pure-menu-open pure-menu-horizontal pure-menu-scrollable">
+    <a href="/" class="pure-menu-heading">
+         
+            Blog 
+         
+    </a>
+    <ul class="pure-menu-list">
+        <li class="pure-menu-item">
+            <a href="/posts" class="pure-menu-link">
+                <i class="fa fa-archive"></i>
+                文章
+            </a>
+        </li>
+        <li class="pure-menu-item">
+            <a href="/tags" class="pure-menu-link">
+                <i class="fas fa-comments"></i>
+                分类
+            </a>
+        </li>
+        <li class="pure-menu-item">
+            <a href="/about" class="pure-menu-link">
+                <i class="fas fa-smile"></i>
+                关于我
+            </a>
+        </li>
+    </ul>
+    <ul class="pure-menu-list pull-right">
+        
+        <li class="pure-menu-item">
+            <a href="https://www.baidu.com" title="Github" class="pure-menu-link">
+                <i class="fab fa-github"></i>
+                <span class="hide">Github</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="http://twitter.com/example" title="@pravin" class="pure-menu-link">
+                <i class="fab fa-twitter-square"></i>
+                <span class="hide">Twitter</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="http://uk.linkedin.com/in/example" title="Linked In" class="pure-menu-link">
+                <i class="fab fa-linkedin"></i>
+                <span class="hide">LinkedIn</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="https://www.medium.com/@example" title="Medium" class="pure-menu-link">
+                <i class="fab fa-medium"></i>
+                <span class="hide">Medium</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="https://www.facebook.com/example" title="Facebook" class="pure-menu-link">
+                <i class="fab fa-facebook"></i>
+                <span class="hide">Facebook</span>
+            </a>
+        </li>
+        
+        <li class="pure-menu-item">
+            <a href="/atom.xml" title="Atom Feed" class="pure-menu-link">
+                <i class="fas fa-rss-square"></i>
+                <span class="hide">RSS Feed</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="pure-u-1">
+    <div class="pad">
+    </div>
+</div>
+<div class="pure-g">
+
+
+<div id="content" class="pure-u-1 pure-u-md-3-4 pure-u-sm-1">
+    <div class="pad">
+
+<div class="date">
+    <time pubdate="0001-01-01">January 1, 0001</time>
+    <span class="author">学习笔记</span>
+</div>
+
+<article>
+    <h1><a href="https://example.com/posts/mybatis%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">Mybatis的基础知识</a></h1>
+    <div class="tags">
+        
+        
+        <a href="/tags/%E6%A1%86%E6%9E%B6" class="pure-button">框架</a>
+        
+    </div>
+    <h2 id="一mybatis简介">一、mybatis简介</h2>
+<p>MyBatis 是一款优秀的持久层框架，它支持定制化 SQL、存储过程以及高级映射。MyBatis 避免了几乎所有的 JDBC 代码和手动设置参数以及获取结果集。MyBatis 可以使用简单的 XML 或注解来配置和映射原生信息，将接口和 Java 的 POJOs(Plain Ordinary Java Object,普通的 Java对象)映射成数据库中的记录。
+具体的步骤：
+1.创建maven工程，并引入坐标
+2.创建实体类和dao的接口
+3.创建Mybatis的主配置文件（SqlMapConfig.xml）
+4.创建映射文件（IUserDao.xml）
+环境搭建的注意事项：
+1.创建IUserDao.xml和IUserDao.java时名称是为了和之前所学的知识保持一致。在mybatis中他把持久层的操作接口名称和映射文件也叫做Mapper
+2.在IDEA中创建目录时，他和包是不一样
+包在创建时：com.itheima.dao他是三级结构
+目录在创建时：com.itheima.dao是一级结构
+3.mybatis的映射配置文件位置和dao层接口的包的结构相同
+4.映射配置文件的mapper标签namespace属性的取值必须是dao接口的全限定类名
+5.映射配置文件的操作配置，id属性的取值必须是dao接口的方法名
+当我们遵从第三、第四、第五之后，我们在开发中就不需要再写dao接口的实现类。
+IUserDao.java:</p>
+<h2 id="二mybatis的入门程序之hello-world">二、mybatis的入门程序之hello world</h2>
+<p>目录结构如下:mybatis1.png
+<img src="/assets/blogImg/mybatis1.png" alt="mybatis"></p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8b008b;font-weight:bold">package</span> <span style="color:#008b45;text-decoration:underline">com.itheima.dao</span>;
+<span style="color:#228b22">/*
+</span><span style="color:#228b22"> @author wujiwen
+</span><span style="color:#228b22"> @data 2019/8/29 - 22:16   
+</span><span style="color:#228b22">*/</span>
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">com.itheima.domain.User</span>;
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">java.util.List</span>;
+<span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">interface</span> <span style="color:#008b45;font-weight:bold">IUserDao</span> {
+    List&lt;User&gt; <span style="color:#008b45">findAll</span>();
+}
+</code></pre></div><p>User.java</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8b008b;font-weight:bold">package</span> <span style="color:#008b45;text-decoration:underline">com.itheima.domain</span>;<span style="color:#228b22">/*
+</span><span style="color:#228b22"> @author wujiwen
+</span><span style="color:#228b22"> @data 2019/8/29 - 22:11   
+</span><span style="color:#228b22">*/</span>
+
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">java.io.Serializable</span>;
+
+<span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">User</span> <span style="color:#8b008b;font-weight:bold">implements</span> Serializable {
+    <span style="color:#8b008b;font-weight:bold">private</span> <span style="color:#00688b;font-weight:bold">int</span> id;
+    <span style="color:#8b008b;font-weight:bold">private</span> String name;
+    <span style="color:#8b008b;font-weight:bold">private</span> <span style="color:#00688b;font-weight:bold">int</span> age;
+
+    <span style="color:#8b008b;font-weight:bold">public</span> Integer <span style="color:#008b45">getId</span>() {
+        <span style="color:#8b008b;font-weight:bold">return</span> id;
+    }
+
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">setId</span>(Integer id) {
+        <span style="color:#8b008b;font-weight:bold">this</span>.<span style="color:#658b00">id</span> = id;
+    }
+
+    <span style="color:#8b008b;font-weight:bold">public</span> String <span style="color:#008b45">getName</span>() {
+        <span style="color:#8b008b;font-weight:bold">return</span> name;
+    }
+
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">setName</span>(String name) {
+        <span style="color:#8b008b;font-weight:bold">this</span>.<span style="color:#658b00">name</span> = name;
+    }
+
+    <span style="color:#8b008b;font-weight:bold">public</span> Integer <span style="color:#008b45">getAge</span>() {
+        <span style="color:#8b008b;font-weight:bold">return</span> age;
+    }
+
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">setAge</span>(Integer age) {
+        <span style="color:#8b008b;font-weight:bold">this</span>.<span style="color:#658b00">age</span> = age;
+    }
+
+    <span style="color:#707a7c">@Override</span>
+    <span style="color:#8b008b;font-weight:bold">public</span> String <span style="color:#008b45">toString</span>() {
+        <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#cd5555">&#34;User{&#34;</span> +
+                <span style="color:#cd5555">&#34;id=&#34;</span> + id +
+                <span style="color:#cd5555">&#34;, name=&#39;&#34;</span> + name + <span style="color:#cd5555">&#39;\&#39;&#39;</span> +
+                <span style="color:#cd5555">&#34;, age=&#34;</span> + age +
+                <span style="color:#cd5555">&#39;}&#39;</span>;
+    }
+}
+</code></pre></div><p>IUserDao.xml</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#1e889b">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; ?&gt;</span>
+<span style="color:#1e889b">&lt;!DOCTYPE mapper
+</span><span style="color:#1e889b">        PUBLIC &#34;-//mybatis.org//DTD Mapper 3.0//EN&#34;
+</span><span style="color:#1e889b">        &#34;http://mybatis.org/dtd/mybatis-3-mapper.dtd&#34;&gt;</span>
+<span style="color:#8b008b;font-weight:bold">&lt;mapper</span> <span style="color:#658b00">namespace=</span><span style="color:#cd5555">&#34;com.itheima.dao.IUserDao&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+    <span style="color:#228b22">&lt;!--配置查询所有--&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;select</span> <span style="color:#658b00">id=</span><span style="color:#cd5555">&#34;findAll&#34;</span> <span style="color:#658b00">resultType=</span><span style="color:#cd5555">&#34;com.itheima.domain.User&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+    select * from users
+  <span style="color:#8b008b;font-weight:bold">&lt;/select&gt;</span>
+<span style="color:#8b008b;font-weight:bold">&lt;/mapper&gt;</span>
+</code></pre></div><p>log4j.properties</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#228b22">##logger是进行记录的主要类，appender是记录的方式,layout是记录的格式</span>
+
+<span style="color:#228b22">#Logger - 日志写出器，供程序员输出日志信息</span>
+<span style="color:#228b22">#Appender - 日志目的地，把格式化好的日志信息输出到指定的地方去</span>
+<span style="color:#228b22">#ConsoleAppender - 目的地为控制台的Appender</span>
+<span style="color:#228b22">#FileAppender - 目的地为文件的Appender</span>
+<span style="color:#228b22">#RollingFileAppender - 目的地为大小受限的文件的Appender</span>
+<span style="color:#228b22">#Layout - 日志格式化器，用来把程序员的logging request格式化成字符串</span>
+<span style="color:#228b22">#PatternLayout - 用指定的pattern格式化logging request的Layou</span>
+
+<span style="color:#228b22">#Log4j提供的appender有以下几种：</span>
+<span style="color:#228b22">#　　org.apache.log4j.ConsoleAppender（控制台），</span>
+<span style="color:#228b22">#　　org.apache.log4j.FileAppender（文件），</span>
+<span style="color:#228b22">#　　org.apache.log4j.DailyRollingFileAppender（每天产生一个日志文件），</span>
+<span style="color:#228b22">#　　org.apache.log4j.RollingFileAppender（文件大小到达指定尺寸的时候产生一个新的文件），</span>
+<span style="color:#228b22">#　　org.apache.log4j.WriterAppender（将日志信息以流格式发送到任意指定的地方）</span>
+
+<span style="color:#228b22">#Log4j提供的layout有以下几种：</span>
+<span style="color:#228b22">#　　org.apache.log4j.HTMLLayout（以HTML表格形式布局），</span>
+<span style="color:#228b22">#　　org.apache.log4j.PatternLayout（可以灵活地指定布局模式），</span>
+<span style="color:#228b22">#　　org.apache.log4j.SimpleLayout（包含日志信息的级别和信息字符串），</span>
+<span style="color:#228b22">#　　org.apache.log4j.TTCCLayout（包含日志产生的时间、线程、类别等等信息）</span>
+
+<span style="color:#228b22">#Log4J采用类似C语言中的printf函数的打印格式格式化日志信息，打印参数如下</span>
+<span style="color:#228b22">#    %m 输出代码中指定的消息</span>
+<span style="color:#228b22">#    %M 输出日志发生的方法名</span>
+<span style="color:#228b22">#　　%p 输出优先级，即DEBUG，INFO，WARN，ERROR，FATAL</span>
+<span style="color:#228b22">#　　%r 输出自应用启动到输出该log信息耗费的毫秒数</span>
+<span style="color:#228b22">#　　%c 输出所属的类目，通常就是所在类的全名</span>
+<span style="color:#228b22">#　　%t 输出产生该日志事件的线程名</span>
+<span style="color:#228b22">#　　%n 输出一个回车换行符，Windows平台为“rn”，Unix平台为“n”</span>
+<span style="color:#228b22">#　　%d 输出日志时间点的日期或时间，默认格式为ISO8601，也可以在其后指定格式，比如：%d{yyyy MMM dd HH:mm:ss,SSS}，输出类似：2002年10月18日 22：10：28，921</span>
+<span style="color:#228b22">#　　%l 输出日志事件的发生位置，包括类目名、发生的线程，以及在代码中的行数。举例：Testlog4.main(TestLog4.java:10)</span>
+<span style="color:#228b22">#    %L 输出日志发生的位置</span>
+<span style="color:#228b22">#     %F 输出类名</span>
+
+
+<span style="color:#228b22">#####################################################################</span>
+<span style="color:#228b22">#设置级别和目的地 -- 把日志等级为debug的日志信息输出到stdout和SYS,QUERY这三个目的地</span>
+log4j.rootLogger=debug,STDOUT
+<span style="color:#228b22"># stdout:目的地 -- 打印到屏幕</span>
+<span style="color:#228b22">## org.apache.log4j.ConsoleAppender:控制台</span>
+log4j.appender.STDOUT=org.apache.log4j.ConsoleAppender
+<span style="color:#228b22">## org.apache.log4j.PatternLayout:灵活地指定布局模式</span>
+log4j.appender.STDOUT.layout=org.apache.log4j.PatternLayout
+<span style="color:#228b22">## 上一句设置了PatternLayout灵活指定格式，则要指定打印参数 [%-5p][%d{HH:mm:ss}][%c-%M] %m%n   [%-5p][%d{HH:mm:ss}][%l] %m%n</span>
+log4j.appender.STDOUT.layout.ConversionPattern=[%-5p][%d{yyyy-MM-dd HH:mm:ss sss}][%t][%c-%M][%L](%F:%L) - %m%n
+
+
+<span style="color:#228b22"># QUERY:目的地 -- 输出到文件(限定每个文件大小)</span>
+<span style="color:#228b22">## 凡是 info、warn、error、fatal 级别的数据都会在这里执行输出到 query.log 日志文件中</span>
+<span style="color:#228b22">##log4j.logger.QUERY=INFO,QUERY</span>
+log4j.logger.QUERY=INFO
+<span style="color:#228b22">##输出到文件(这里默认为追加方式)，使用org.apache.log4j.FileAppender：日志会在一个文件中追加</span>
+log4j.appender.QUERY=org.apache.log4j.RollingFileAppender
+<span style="color:#228b22">##设置文件输出路径;html:log/query.html</span>
+log4j.appender.QUERY.File=log/query.log
+<span style="color:#228b22">##设置文件输出样式;html格式： org.apache.log4j.HTMLLayout</span>
+log4j.appender.QUERY.layout=org.apache.log4j.PatternLayout
+<span style="color:#228b22">## 上一句设置了PatternLayout灵活指定格式，则要指定打印参数 [%-5p][%d{HH:mm:ss}][%l] %m%n</span>
+log4j.appender.QUERY.layout.ConversionPattern=[%-5p][%d{yyyy-MM-dd HH:mm:ss}][%c-%M] %m%n
+<span style="color:#228b22">## 指定文件的最大 大小</span>
+log4j.appender.QUERY.MaxFileSize=2048KB
+<span style="color:#228b22">## 可被备份的日志数</span>
+log4j.appender.QUERY.MaxBackupIndex=<span style="color:#b452cd">100</span>
+
+
+<span style="color:#228b22"># SYS:目的地 -- 输出到文件(每天产生一个文件)</span>
+<span style="color:#228b22">## 凡是 error、fatal 级别的数据都会在这里执行输出到 sys.log 日志文件中</span>
+<span style="color:#228b22">#log4j.logger.SYS=error,SYS</span>
+log4j.logger.SYS=error
+<span style="color:#228b22">## org.apache.log4j.RollingFileAppender:每天产生一个日志文件</span>
+<span style="color:#228b22">#使用org.apache.log4j.FileAppender：日志会在一个文件中追加</span>
+log4j.appender.SYS=org.apache.log4j.DailyRollingFileAppender
+<span style="color:#228b22">##设置文件输出路径 ${user.home}/log/sys.log</span>
+log4j.appender.SYS.File=log/sys.log
+<span style="color:#228b22">## org.apache.log4j.PatternLayout:灵活地指定布局模式</span>
+log4j.appender.SYS.layout=org.apache.log4j.PatternLayout
+<span style="color:#228b22">## 上一句设置了PatternLayout灵活指定格式，则要指定打印参数 [%-5p][%d{HH:mm:ss}][%l] %m%n</span>
+log4j.appender.SYS.layout.ConversionPattern=[%-5p][%d{HH:mm:ss}][%C-%M] %m%n
+
+<span style="color:#228b22">#设置特定包的级别</span>
+<span style="color:#228b22">##com.swh.weixin包下的日志内容显示级别为debug,和目的地</span>
+<span style="color:#228b22">## 把com.swh.weixin.util包下日志等级为debug的信息输出到pack 目的地</span>
+<span style="color:#228b22">#log4j.logger.com.swh.weixin.util=debug,pack</span>
+<span style="color:#228b22">##输出到文件(这里默认为追加方式)，使用org.apache.log4j.FileAppender：日志会在一个文件中追加</span>
+log4j.appender.pack=org.apache.log4j.RollingFileAppender
+<span style="color:#228b22">##设置文件输出路径  或者 ${user.home}/log/pack.log</span>
+log4j.appender.pack.File=log/pack.log
+<span style="color:#228b22">##设置文件输出样式</span>
+log4j.appender.pack.layout=org.apache.log4j.PatternLayout
+<span style="color:#228b22">## 上一句设置了PatternLayout灵活指定格式，则要指定打印参数 [%-5p][%d{HH:mm:ss}][%l] %m%n</span>
+log4j.appender.pack.layout.ConversionPattern=[%-5p][%d{yyyy MM dd HH:mm:ss}][%c-%M] %m%n
+<span style="color:#228b22">## 指定文件的最大 大小</span>
+log4j.appender.pack.MaxFileSize=1024KB
+<span style="color:#228b22">#日志最大备份数目</span>
+log4j.appender.pack.MaxBackupIndex=<span style="color:#b452cd">100</span>
+
+<span style="color:#228b22">########################################################################</span>
+<span style="color:#228b22">##设置级别和目的地</span>
+<span style="color:#228b22">#log4j.rootLogger=debug,appender1,appender2</span>
+<span style="color:#228b22">##只设置特定包的级别和目的地</span>
+<span style="color:#228b22">#log4j.logger.com.coderdream=debug,appender1</span>
+<span style="color:#228b22">#log4j.logger.com.coderdream.Dao=info,appender1,appender2</span>
+
+<span style="color:#228b22">##输出到控制台</span>
+<span style="color:#228b22">#log4j.appender.appender1=org.apache.log4j.ConsoleAppender</span>
+<span style="color:#228b22">##设置输出样式</span>
+<span style="color:#228b22">#log4j.appender.appender1.layout=org.apache.log4j.PatternLayout</span>
+<span style="color:#228b22">##自定义样式</span>
+<span style="color:#228b22">## %r 时间 0</span>
+<span style="color:#228b22">## %t 方法名 main</span>
+<span style="color:#228b22">## %p 优先级 DEBUG/INFO/ERROR</span>
+<span style="color:#228b22">## %c 所属类的全名(包括包名)</span>
+<span style="color:#228b22">## %l 发生的位置，在某个类的某行</span>
+<span style="color:#228b22">## %m 输出代码中指定的讯息，如log(message)中的message</span>
+<span style="color:#228b22">## %n 输出一个换行符号</span>
+<span style="color:#228b22">#log4j.appender.appender1.layout.ConversionPattern=[%d{yy/MM/dd HH:mm:ss:SSS}][%C-%M] %m%n</span>
+
+<span style="color:#228b22">##输出到文件(这里默认为追加方式)</span>
+<span style="color:#228b22">#log4j.appender.appender2=org.apache.log4j.FileAppender</span>
+<span style="color:#228b22">##设置文件输出路径</span>
+<span style="color:#228b22">##【1】文本文件</span>
+<span style="color:#228b22">#log4j.appender.appender2.File=c:/Log4JCRM_Dao.log</span>
+<span style="color:#228b22">##设置文件输出样式</span>
+<span style="color:#228b22">#log4j.appender.appender2.layout=org.apache.log4j.PatternLayout</span>
+<span style="color:#228b22">#log4j.appender.appender2.layout.ConversionPattern=[%d{HH:mm:ss:SSS}][%C-%M] -%m%n</span>
+
+
+<span style="color:#228b22">##把日志文件写入数据库</span>
+<span style="color:#228b22">##########################日志输出到远程数据库########################################</span>
+<span style="color:#228b22">##把日志文件写入数据库</span>
+<span style="color:#228b22">##记录的日志级别</span>
+log4j.logger.db=info
+<span style="color:#228b22">##日志输出到数据库</span>
+log4j.appender.db = org.apache.log4j.jdbc.JDBCAppender
+<span style="color:#228b22">##缓存</span>
+log4j.appender.db.BufferSize = <span style="color:#b452cd">0</span>
+<span style="color:#228b22">##数据库驱动</span>
+log4j.appender.db.Driver = com.mysql.jdbc.Driver
+<span style="color:#228b22">##数据url地址 ，本地可简写：jdbc:mysql:///test</span>
+log4j.appender.db.URL = jdbc:mysql://localhost:3306/swh_hibernate4?useUnicode=true&amp;<span style="color:#00688b">characterEncoding</span>=utf8
+<span style="color:#228b22">##数据库用户名</span>
+log4j.appender.db.User = root
+<span style="color:#228b22">##数据库密码</span>
+log4j.appender.db.Password = root
+<span style="color:#228b22">##日志布局模式</span>
+log4j.appender.db.layout = org.apache.log4j.PatternLayout
+<span style="color:#228b22">##日志插入数据库中，t_logs 表字段可自定义</span>
+log4j.appender.db.layout.ConversionPattern = INSERT INTO t_logs(createDate, thread, priority, category,&lt;br /&gt;
+methodName, message) values(<span style="color:#cd5555">&#39;%d&#39;</span>, <span style="color:#cd5555">&#39;%t&#39;</span>, <span style="color:#cd5555">&#39;%-5p&#39;</span>, <span style="color:#cd5555">&#39;%c&#39;</span>,<span style="color:#cd5555">&#39;%M&#39;</span>, <span style="color:#cd5555">&#39;[%l]-%m&#39;</span>)
+</code></pre></div><p>SqlMapConfig.xml:</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#1e889b">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; ?&gt;</span>
+<span style="color:#1e889b">&lt;!DOCTYPE configuration
+</span><span style="color:#1e889b">        PUBLIC &#34;-//mybatis.org//DTD Config 3.0//EN&#34;
+</span><span style="color:#1e889b">        &#34;http://mybatis.org/dtd/mybatis-3-config.dtd&#34;&gt;</span>
+<span style="color:#228b22">&lt;!--mybatis的主配置文件--&gt;</span>
+<span style="color:#8b008b;font-weight:bold">&lt;configuration&gt;</span>
+    <span style="color:#228b22">&lt;!--配置环境--&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;environments</span> <span style="color:#658b00">default=</span><span style="color:#cd5555">&#34;mysql&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+        <span style="color:#228b22">&lt;!--配置mysql的环境 --&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;environment</span> <span style="color:#658b00">id=</span><span style="color:#cd5555">&#34;mysql&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+            <span style="color:#228b22">&lt;!--配置事务的类型--&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;transactionManager</span> <span style="color:#658b00">type=</span><span style="color:#cd5555">&#34;JDBC&#34;</span><span style="color:#8b008b;font-weight:bold">/&gt;</span>
+            <span style="color:#228b22">&lt;!--配置数据源--&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;dataSource</span> <span style="color:#658b00">type=</span><span style="color:#cd5555">&#34;POOLED&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+                <span style="color:#228b22">&lt;!--配置连接数据库的驱动--&gt;</span>
+                <span style="color:#8b008b;font-weight:bold">&lt;property</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;driver&#34;</span> <span style="color:#658b00">value=</span><span style="color:#cd5555">&#34;com.mysql.cj.jdbc.Driver&#34;</span><span style="color:#8b008b;font-weight:bold">/&gt;</span>
+                <span style="color:#228b22">&lt;!--配置连接数据库的URL--&gt;</span>
+                <span style="color:#8b008b;font-weight:bold">&lt;property</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;url&#34;</span> <span style="color:#658b00">value=</span><span style="color:#cd5555">&#34;jdbc:mysql://127.0.0.1:3306/mybatis?useSSL=false&#34;</span><span style="color:#8b008b;font-weight:bold">/&gt;</span>
+                <span style="color:#228b22">&lt;!--配置连接数据库的用户名--&gt;</span>
+                <span style="color:#8b008b;font-weight:bold">&lt;property</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;username&#34;</span> <span style="color:#658b00">value=</span><span style="color:#cd5555">&#34;root&#34;</span><span style="color:#8b008b;font-weight:bold">/&gt;</span>
+                <span style="color:#228b22">&lt;!--配置连接数据库的用户名密码--&gt;</span>
+                <span style="color:#8b008b;font-weight:bold">&lt;property</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;password&#34;</span> <span style="color:#658b00">value=</span><span style="color:#cd5555">&#34;13733433427&#34;</span><span style="color:#8b008b;font-weight:bold">/&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;/dataSource&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;/environment&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;/environments&gt;</span>
+    <span style="color:#228b22">&lt;!--指定映射配置文件的位置，映射配置文件指的是每个dao独立的配置文件--&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;mappers&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;mapper</span> <span style="color:#658b00">resource=</span><span style="color:#cd5555">&#34;com/itheima/dao/IUserDao.xml&#34;</span><span style="color:#8b008b;font-weight:bold">/&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;/mappers&gt;</span>
+<span style="color:#8b008b;font-weight:bold">&lt;/configuration&gt;</span>
+</code></pre></div><p>MybatisTest.java:</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8b008b;font-weight:bold">package</span> <span style="color:#008b45;text-decoration:underline">com.itheima.test</span>;<span style="color:#228b22">/*
+</span><span style="color:#228b22"> @author wujiwen
+</span><span style="color:#228b22"> @data 2019/8/29 - 22:48   
+</span><span style="color:#228b22">*/</span>
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">java.io.InputStream</span>;
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">java.util.List</span>;
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">com.itheima.dao.IUserDao</span>;
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">com.itheima.domain.User</span>;
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">org.apache.ibatis.io.Resources</span>;
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">org.apache.ibatis.session.SqlSession</span>;
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">org.apache.ibatis.session.SqlSessionFactory</span>;
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">org.apache.ibatis.session.SqlSessionFactoryBuilder</span>;
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">org.junit.Test</span>;
+<span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">MybatisTest</span> {
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">static</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">main</span>(String[] args) <span style="color:#8b008b;font-weight:bold">throws</span> Exception{
+        <span style="color:#228b22">//读取配置文件
+</span><span style="color:#228b22"></span>        InputStream inputStream = Resources.<span style="color:#658b00">getResourceAsStream</span>(<span style="color:#cd5555">&#34;SqlMapConfig.xml&#34;</span>);
+        <span style="color:#228b22">//配置SqlSessionFactory工厂
+</span><span style="color:#228b22"></span>        SqlSessionFactoryBuilder builder = <span style="color:#8b008b;font-weight:bold">new</span> SqlSessionFactoryBuilder();
+        SqlSessionFactory factory = builder.<span style="color:#658b00">build</span>(inputStream);
+        <span style="color:#228b22">//使用工厂生产SqlSession对象
+</span><span style="color:#228b22"></span>        SqlSession sqlSession = factory.<span style="color:#658b00">openSession</span>();
+        <span style="color:#228b22">//使用S起来Session创建Dao接口的代理对象
+</span><span style="color:#228b22"></span>        IUserDao userDao = sqlSession.<span style="color:#658b00">getMapper</span>(IUserDao.<span style="color:#658b00">class</span>);
+        <span style="color:#228b22">//使用代理对象执行方法
+</span><span style="color:#228b22"></span>        List&lt;User&gt; users = userDao.<span style="color:#658b00">findAll</span>();
+        <span style="color:#8b008b;font-weight:bold">for</span>(User user:users){
+            System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(user);
+        }
+        <span style="color:#228b22">//释放资源
+</span><span style="color:#228b22"></span>        sqlSession.<span style="color:#658b00">close</span>();
+        inputStream.<span style="color:#658b00">close</span>();
+    }
+}
+</code></pre></div><p>pom.xml:</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#1e889b">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span style="color:#8b008b;font-weight:bold">&lt;project</span> <span style="color:#658b00">xmlns=</span><span style="color:#cd5555">&#34;http://maven.apache.org/POM/4.0.0&#34;</span>
+         <span style="color:#658b00">xmlns:xsi=</span><span style="color:#cd5555">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+         <span style="color:#658b00">xsi:schemaLocation=</span><span style="color:#cd5555">&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;modelVersion&gt;</span>4.0.0<span style="color:#8b008b;font-weight:bold">&lt;/modelVersion&gt;</span>
+
+    <span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>com.itheima<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>day01_eesy_01mybatis<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>1.0-SNAPSHOT<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;packaging&gt;</span>jar<span style="color:#8b008b;font-weight:bold">&lt;/packaging&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;dependencies&gt;</span>
+        <span style="color:#228b22">&lt;!-- https://mvnrepository.com/artifact/org.mybatis/mybatis --&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;dependency&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>org.mybatis<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>mybatis<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>3.4.5<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;/dependency&gt;</span>
+        <span style="color:#228b22">&lt;!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java --&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;dependency&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>mysql<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>mysql-connector-java<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>8.0.11<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;/dependency&gt;</span>
+        <span style="color:#228b22">&lt;!-- https://mvnrepository.com/artifact/log4j/log4j --&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;dependency&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>log4j<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>log4j<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>1.2.12<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;/dependency&gt;</span>
+        <span style="color:#228b22">&lt;!-- https://mvnrepository.com/artifact/junit/junit --&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;dependency&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>junit<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>junit<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>4.10<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;scope&gt;</span>test<span style="color:#8b008b;font-weight:bold">&lt;/scope&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;/dependency&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;/dependencies&gt;</span>
+<span style="color:#8b008b;font-weight:bold">&lt;/project&gt;</span>
+</code></pre></div><h2 id="三遇到的错误以及解决的办法">三、遇到的错误以及解决的办法</h2>
+<p>问题一：
+WARN: Establishing SSL connection without server‘s identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn‘t set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to ‘false‘. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+警告：不建议建立SSL连接而不需要服务器的身份验证。根据MySQL 5.5.45 +、5.626+和5.7.6+的要求，如果没有设置显式选项，默认情况下必须建立SSL连接。对于不使用SSL的现有应用程序，ValuyServer证书属性设置为“false”。您需要通过设置USESL= false来显式禁用SSL，或者设置USELS=真，并为服务器证书验证提供信任存储。</p>
+<p>解决办法：
+public static final String DBURL=&quot;jdbc:mysql://localhost:3306/yang?verifyServerCertificate=false&amp;useSSL=false&rdquo;;
+在连接mysql的url上加上参数:   verifyServerCertificate=false&amp;useSSL=false</p>
+<p>问题二：
+mysql运行报The server time zone value &lsquo;ÖÐ¹ú±ê×¼Ê±¼ä&rsquo; is unrecognized or represents more than one time zone的的错误</p>
+<p>解决办法： 
+在数据库系统上运行：set global time_zone='+8:00&rsquo;;</p>
+
+</article>
+    </div>
+</div>
+
+
+                
+<div id="sidebar" class="pure-u-1 pure-u-md-1-4 pure-u-sm-1">
+    <div class="pad">
+        <a name="about"></a>
+        <h3>关于我</h3>
+        <div style="text-align: center;">
+            <img src="/img/author.jpg" alt="吴继文" class="pure-img" />
+            <p><em>Handsome</em></p>
+        </div>
+
+        <h3>最近文章</h3>
+        <div class="pure-menu pure-menu-open">
+            <ul class="pure-menu-list">
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/mybatis-plus/" class="pure-menu-link">Mybatis-Plus<br>
+                        <small>MyBatis-Plus 的增强工具，在 MyBatis 的基础上只做增强不做改变，为简化开发、提高效率而生。</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/mongodb/" class="pure-menu-link">DBmong数据库<br>
+                        <small>NoSQL 是一项全新的数据库革命性运动，早期就有人提出，发展至2009年趋势越发高涨。NoSQL的拥护者们提倡运用非关系型的数据存储，相对于铺天盖地的关系型数据库运用，这一概念无疑是一种全新的思维的注入。</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/docker/" class="pure-menu-link">Docker容器技术<br>
+                        <small>这一种常用的容器技术，能简化项目的部署</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/go%E8%AF%AD%E8%A8%80/" class="pure-menu-link">Go语言技术知识<br>
+                        <small>主要介绍GO语言的基本语法</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/hexo&#43;github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6/" class="pure-menu-link">hexo&#43;github搭建个人博客<br>
+                        <small>介绍了个人博客搭建的完整步骤</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/idea%E7%9A%84%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="pure-menu-link">IDEA的基本使用<br>
+                        <small>主要介绍了IDEA的基本以用和一些常用的快捷键</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/java%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/" class="pure-menu-link">Java原生代码连接数据库<br>
+                        <small>介绍了在不使用框架的基础上连接MySQL</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/%E5%9F%BA%E4%BA%8Ejava%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="pure-menu-link">Java多线程基础知识<br>
+                        <small>一种提高程序运行效率的技术</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/java%E5%AE%9E%E7%8E%B0%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/" class="pure-menu-link">Java实现串口通信<br>
+                        <small>Java实现窗口通信</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/java%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" class="pure-menu-link">Java的基础知识<br>
+                        <small>介绍了Java的基础知识</small>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <h3>分类</h3>
+        <div style="text-align:center" class="tags">
+            
+            
+            <a href="/tags/%e6%a1%86%e6%9e%b6" class="pure-button"> 框架
+                <small>(6)</small></a>
+            
+            
+            
+            <a href="/tags/%e7%bc%96%e7%a8%8b" class="pure-button"> 编程
+                <small>(5)</small></a>
+            
+            
+            
+            <a href="/tags/%e5%85%b6%e5%ae%83" class="pure-button"> 其它
+                <small>(2)</small></a>
+            
+            
+            
+            <a href="/tags/%e6%95%b0%e6%8d%ae%e5%ba%93" class="pure-button"> 数据库
+                <small>(2)</small></a>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </div>
+    </div> 
+</div> 
+
+                
+            </div>
+<div class="pure-g">
+	<footer class="pure-u-1 pure-u-md-1 pure-u-sm-1">
+		<p>This page and its contents are copyright &copy; 2020,
+			<a href="">吴继文</a>.</p>
+		<p><a href="https://github.com/pravin/hugo-theme-prav">Theme Prav</a> by <a href="https://cto.me.uk">Pravin
+				Paratey</a></p>
+	</footer>
+
+	<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
+		integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+		crossorigin="anonymous"></script>
+</div>
+</div></body>
+</html>

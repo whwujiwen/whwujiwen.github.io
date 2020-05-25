@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RPC on Blog</title>
+    <link>https://example.com/tags/rpc/</link>
+    <description>Recent content in RPC on Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    
+	<atom:link href="https://example.com/tags/rpc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>RPC的简单应用</title>
+      <link>https://example.com/posts/rpc%E7%9A%84%E7%AE%80%E5%8D%95%E5%BA%94%E7%94%A8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/rpc%E7%9A%84%E7%AE%80%E5%8D%95%E5%BA%94%E7%94%A8/</guid>
+      <description>一、RPC简介 RPC就是远程过程调用（Remote Procedure Call） 通俗的说就是在客户端电脑上面调用服务器端的类。 二、RPC之hello world 目录结构如下： Client.java:
+package remote.procedure.call.client; import java.io.ObjectInputStream; import java.io.ObjectOutputStream; import java.lang.reflect.InvocationHandler; import java.lang.reflect.Method; import java.lang.reflect.Proxy; import java.net.InetSocketAddress; import java.net.Socket; public class Client { //获取代表服务器端接口的动态代理对象（HelloService） 	//serverInterface:请求的接口 	//addr:服务器的IP和端口号 	//返回的是动态代理对象 	@SuppressWarnings(&amp;#34;unchecked&amp;#34;) public static &amp;lt;T&amp;gt; T getRemoteProxyObj(Class serviceInterface,InetSocketAddress addr) { //newProxyInstance三个参数的意义： 	//loader:类加载器 	//interfaces：需要代理的对象具备哪些功能------接口 	return (T)Proxy.newProxyInstance(serviceInterface.getClassLoader(), new Class&amp;lt;?&amp;gt;[] {serviceInterface}, new InvocationHandler() { //proxy需要代理的对象 	//需要代理对象的那个方法 	//args是代理方法需要传入的参数 	public Object invoke(Object proxy,Method method,Object[] args) throws Throwable{ //客户端向服务器端返送请求，请求某个具体的接口 	ObjectOutputStream output = null; ObjectInputStream input = null; Socket socket = new Socket(); try { //socketAddress包含了IP地址和端口号 	socket.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#000" />
+    <title>
+        
+            Java的基础知识 &middot; Blog Hugo Theme - Prav
+        
+    </title>
+
+    
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"
+        integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    
+    
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:300,300italic,700&display=swap" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:300&display=swap" rel="stylesheet">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="">
+    
+    <meta name="description" content="介绍了Java的基础知识">
+    
+    <meta name="keywords" content="编程">
+    
+    <meta name="author" content="吴继文"></head>
+
+<body>
+        <div class="container">
+<div id="navbar" class="pure-menu pure-menu-open pure-menu-horizontal pure-menu-scrollable">
+    <a href="/" class="pure-menu-heading">
+         
+            Blog 
+         
+    </a>
+    <ul class="pure-menu-list">
+        <li class="pure-menu-item">
+            <a href="/posts" class="pure-menu-link">
+                <i class="fa fa-archive"></i>
+                文章
+            </a>
+        </li>
+        <li class="pure-menu-item">
+            <a href="/tags" class="pure-menu-link">
+                <i class="fas fa-comments"></i>
+                分类
+            </a>
+        </li>
+        <li class="pure-menu-item">
+            <a href="/about" class="pure-menu-link">
+                <i class="fas fa-smile"></i>
+                关于我
+            </a>
+        </li>
+    </ul>
+    <ul class="pure-menu-list pull-right">
+        
+        <li class="pure-menu-item">
+            <a href="https://www.baidu.com" title="Github" class="pure-menu-link">
+                <i class="fab fa-github"></i>
+                <span class="hide">Github</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="http://twitter.com/example" title="@pravin" class="pure-menu-link">
+                <i class="fab fa-twitter-square"></i>
+                <span class="hide">Twitter</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="http://uk.linkedin.com/in/example" title="Linked In" class="pure-menu-link">
+                <i class="fab fa-linkedin"></i>
+                <span class="hide">LinkedIn</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="https://www.medium.com/@example" title="Medium" class="pure-menu-link">
+                <i class="fab fa-medium"></i>
+                <span class="hide">Medium</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="https://www.facebook.com/example" title="Facebook" class="pure-menu-link">
+                <i class="fab fa-facebook"></i>
+                <span class="hide">Facebook</span>
+            </a>
+        </li>
+        
+        <li class="pure-menu-item">
+            <a href="/atom.xml" title="Atom Feed" class="pure-menu-link">
+                <i class="fas fa-rss-square"></i>
+                <span class="hide">RSS Feed</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="pure-u-1">
+    <div class="pad">
+    </div>
+</div>
+<div class="pure-g">
+
+
+<div id="content" class="pure-u-1 pure-u-md-3-4 pure-u-sm-1">
+    <div class="pad">
+
+<div class="date">
+    <time pubdate="0001-01-01">January 1, 0001</time>
+    <span class="author">学习笔记</span>
+</div>
+
+<article>
+    <h1><a href="https://example.com/posts/java%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/">Java的基础知识</a></h1>
+    <div class="tags">
+        
+        
+        <a href="/tags/%E7%BC%96%E7%A8%8B" class="pure-button">编程</a>
+        
+    </div>
+    <h2 id="一java的四大特征">一、JAVA的四大特征</h2>
+<p><strong>1.抽象</strong>
+父类为子类提供一些属性和行为，子类根据业务需求实现具体的行为。
+抽象类使用abstract进行修饰，子类要实现所有的父类抽象方法否则子类也是抽象类。
+<strong>2.封装</strong>
+把对象的属性和行为（方法）结合为一个独立的整体，并尽可能隐藏对象的内部实现细节；
+在java中，对于对象的内部属性一般用private来实现隐藏，并通过set和get方法对外提供访问接口。
+<strong>3.继承</strong>
+子类继承父类的属性和行为，并能根据自己的需求扩展出新的属性和行为，提高了代码的可复用性。
+Java的继承通过extends关键字来实现，实现继承的类被称为子类，被继承的类称为父类(有的也称其为基类、超类)，父类和子类的关系，是一种一般和特殊的关系；子类扩展父类，将可以获得父类的全部属性和方法。
+overide：
+当子父类中出现相同方法时，会先运行子类中的方法。
+重写的特点：方法名一样，访问修饰符权限不小于父类，返回类型一致，参数列表一致。
+<strong>4.多态</strong>
+不修改程序代码就可以改变程序运行时所绑定的具体代码，让程序可以选择多个运行状态；
+具体的实现方式就是：接口实现，继承父类进行方法重写，同一个类中进行方法重载。
+封装和继承都是为Java语言的多态提供了支撑；多态存在的三个必要条件：
+a.要有继承；
+b. 要有重写；
+c. 父类引用指向子类对象</p>
+<h2 id="二java中的不定参">二、JAVA中的不定参</h2>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"> vodi <span style="color:#008b45">speak</span>(<span style="color:#00688b;font-weight:bold">int</span> age,String...<span style="color:#658b00">hobbies</span>){
+    <span style="color:#8b008b;font-weight:bold">for</span>(String hobby:hobbies){
+       <span style="color:#228b22">//在此处可以遍历hobbies
+</span><span style="color:#228b22"></span>    }
+ }
+</code></pre></div><h2 id="三方法的重载">三、方法的重载</h2>
+<p><strong>1.普通方法的重载</strong>
+方法名一样，但参数不一样，这就是重载(overload)。所谓的参数不一样，主要有两点：第一是<code>参数的个数不一样</code>，第二是<code>参数的类型不一样</code>。只要这两方面有其中的一方面不一样就可以构成方法的重载了。
+package cn.galc.test;</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">TestOverLoad</span> {
+ 
+   <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">max</span>(<span style="color:#00688b;font-weight:bold">int</span> a, <span style="color:#00688b;font-weight:bold">int</span> b) {
+         System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(a &gt; b ? a : b);
+     }
+ 
+     <span style="color:#228b22">/*
+</span><span style="color:#228b22">      * int max(int a, int b) { 
+</span><span style="color:#228b22">      *         return a &gt; b ? a : b; 
+</span><span style="color:#228b22">      * }
+</span><span style="color:#228b22">     */</span>
+ 
+     <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">max</span>(<span style="color:#00688b;font-weight:bold">float</span> a, <span style="color:#00688b;font-weight:bold">float</span> b) {
+         System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(a &gt; b ? a : b);
+     }
+ }
+</code></pre></div><p>这里有void修饰符的两个max方法名字相同，但它们的参数类型不一样，所以可以构成重载。而int  max(int a , int b)方法与void  max(int a, int b)方法是不构成重载的，现在它们是重名的两个方法，在一个类中声明两个重名的方法是不允许的，编译会出错。方法名一样，参数类型一样，只有返回值不一样，这个不构成重载，因为方法可以这么调用，调用一个方法时可以不使用的它返回值，所以当调用这两个方法时，把整型的数传进去，由于两个方法都是一样的名字，一样的参数类型，所以编译器无法区分到底要调用的是哪一个方法。构成重载深层次的原因：只要这两个方法编译器能区分开来，在调用的时候知道要调用的是哪一个，不会产生混淆，这两个方法就构成重载。
+<strong>2.构造方法的重载</strong>
+与普通方法一样，构造方法也可以重载</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8b008b;font-weight:bold">package</span> <span style="color:#008b45;text-decoration:underline">cn.galc.test</span>;
+
+<span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">Person</span> {
+
+    <span style="color:#00688b;font-weight:bold">int</span> id;
+    <span style="color:#00688b;font-weight:bold">int</span> age;
+    
+    <span style="color:#228b22">/**
+</span><span style="color:#228b22">     * 构造方法
+</span><span style="color:#228b22">     */</span>
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#008b45">Person</span>() {
+        id=0;
+        age=20;
+    }
+    
+    <span style="color:#228b22">/**
+</span><span style="color:#228b22">     * 构造方法重载一
+</span><span style="color:#228b22">     * @param i
+</span><span style="color:#228b22">     */</span>
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#008b45">Person</span>(<span style="color:#00688b;font-weight:bold">int</span> i) {
+        id=i;
+        age=20;
+    }
+    
+    <span style="color:#228b22">/**
+</span><span style="color:#228b22">     * 构造方法重载二
+</span><span style="color:#228b22">     * @param i
+</span><span style="color:#228b22">     * @param j
+</span><span style="color:#228b22">     */</span>
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#008b45">Person</span>(<span style="color:#00688b;font-weight:bold">int</span> i,<span style="color:#00688b;font-weight:bold">int</span> j) {
+        id=i;
+        age=j;
+    }
+}
+
+</code></pre></div><h2 id="四代码块">四、代码块</h2>
+<h3 id="1普通代码块意义不大">1.普通代码块（意义不大）</h3>
+<p>就是将一段普通的程序用{代码块};</p>
+<h3 id="2构造块">2.构造块</h3>
+<p>对构造方法的补充，若早多个构造方法中包含相同的操作，此时我们可以使用构造块。
+<code>注意：构造块再构造函数之前执行，即先执行构造块，再执行构造函数</code></p>
+<h3 id="3静态构造块">3.静态构造块</h3>
+<p>静态构造块在实例化多个对象时，仅仅执行一次。<code>并且是最先指向的。</code></p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">Study_static</span> {
+	<span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">static</span> <span style="color:#00688b;font-weight:bold">char</span> text = <span style="color:#cd5555">&#39;a&#39;</span>;  <span style="color:#228b22">//静态对象
+</span><span style="color:#228b22"></span>	
+	<span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#008b45">Study_static</span>(){         <span style="color:#228b22">//构造函数
+</span><span style="color:#228b22"></span>		System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#39;c&#39;</span>);
+	}
+	
+	{                              <span style="color:#228b22">//构造块
+</span><span style="color:#228b22"></span>		System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#39;b&#39;</span>);
+	}
+	
+	<span style="color:#8b008b;font-weight:bold">static</span>{                         <span style="color:#228b22">//静态块
+</span><span style="color:#228b22"></span>		System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(text);
+	}
+	<span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">static</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">main</span>(String[] args){
+		Study_static a = <span style="color:#8b008b;font-weight:bold">new</span> Study_static();
+		
+	}
+</code></pre></div><h2 id="五字符串的创建">五、字符串的创建</h2>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"> String name1 = <span style="color:#cd5555">&#34;zhangsan&#34;</span>;            <span style="color:#228b22">//直接赋值
+</span><span style="color:#228b22"></span> String name2 = <span style="color:#8b008b;font-weight:bold">new</span> String(<span style="color:#cd5555">&#34;lisi&#34;</span>);    <span style="color:#228b22">//创建一个对象
+</span><span style="color:#228b22"></span> String name3 = name2;                 <span style="color:#228b22">//引用的传递
+</span></code></pre></div><p>两种实例化方式的区别：
+1.直接赋值方式：创建的对象存放在哦字符串对象池中，当我们再次创建时，就不会重新开辟新的空间，而是直接指向这个对象。
+2.new对象方式：每次创建都是不同的对象。
+其中name2和name3是指向同一个对象的。
+name1 == name2   =&gt;false
+name1 == name3   =&gt;false
+name2 == name3   =&gt;true
+name1.equals(name2)   =&gt;true
+name1.equals(name3)   =&gt;true
+name2.equals(name3)   =&gt;true
+注意:&ldquo;==&rdquo;：比较的是<code>引用</code>;equals比较的是<code>具体存放的内容</code>。</p>
+<h2 id="六final关键字与static关键字">六、final关键字与static关键字</h2>
+<h3 id="fianl关键字">fianl关键字</h3>
+<p>1.使用final声明类不能被继承
+2.使用final声明的方法不能被重写
+3.使用fianl声明的变量不能被修改，即我们所说的常量</p>
+<h3 id="static关键字">static关键字</h3>
+<p>stitic方法属于类本身，其调用方法如下</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    类名.静态方法名  或者 对象.静态方法名
+</code></pre></div><p>普通方法的调用:</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">对象.普通方法名
+</code></pre></div><h2 id="七对象的转型">七、对象的转型</h2>
+<h3 id="1向上转型">1.向上转型</h3>
+<p>向上转型就是将子类对象转换为父类对象。&mdash;&mdash;是安全的</p>
+<h3 id="2向下转型">2.向下转型</h3>
+<p>向下转型就是将父类对象转换为子类对象。&mdash;&ndash;是不安全的
+<em><strong>对象转型实例一:</strong></em></p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8b008b;font-weight:bold">package</span> <span style="color:#008b45;text-decoration:underline">javastudy.summary</span>;
+<span style="color:#228b22">/**
+</span><span style="color:#228b22"> * 父类Animal
+</span><span style="color:#228b22"> * @author gacl
+</span><span style="color:#228b22"> *
+</span><span style="color:#228b22"> */</span>
+<span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">Animal</span> {
+
+    <span style="color:#8b008b;font-weight:bold">public</span> String name;
+
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#008b45">Animal</span>(String name) {
+        <span style="color:#8b008b;font-weight:bold">this</span>.<span style="color:#658b00">name</span> = name;
+    }
+}
+
+<span style="color:#228b22">/**
+</span><span style="color:#228b22"> * 子类Cat继承Animal
+</span><span style="color:#228b22"> * @author gacl
+</span><span style="color:#228b22"> *
+</span><span style="color:#228b22"> */</span>
+<span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">Cat</span> <span style="color:#8b008b;font-weight:bold">extends</span> Animal {
+
+    <span style="color:#228b22">/**
+</span><span style="color:#228b22">     * Cat添加自己独有的属性
+</span><span style="color:#228b22">     */</span>
+    <span style="color:#8b008b;font-weight:bold">public</span> String eyeColor;
+
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#008b45">Cat</span>(String n, String c) {
+        <span style="color:#8b008b;font-weight:bold">super</span>(n);<span style="color:#228b22">//调用父类Animal的构造方法
+</span><span style="color:#228b22"></span>        <span style="color:#8b008b;font-weight:bold">this</span>.<span style="color:#658b00">eyeColor</span> = c;
+    }
+}
+
+<span style="color:#228b22">/**
+</span><span style="color:#228b22"> * 子类Dog继承Animal
+</span><span style="color:#228b22"> * @author gacl
+</span><span style="color:#228b22"> *
+</span><span style="color:#228b22"> */</span>
+<span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">Dog</span> <span style="color:#8b008b;font-weight:bold">extends</span> Animal {
+    <span style="color:#228b22">/**
+</span><span style="color:#228b22">     * Dog类添加自己特有的属性
+</span><span style="color:#228b22">     */</span>
+    <span style="color:#8b008b;font-weight:bold">public</span> String furColor;
+
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#008b45">Dog</span>(String n, String c) {
+        <span style="color:#8b008b;font-weight:bold">super</span>(n);<span style="color:#228b22">//调用父类Animal的构造方法
+</span><span style="color:#228b22"></span>        <span style="color:#8b008b;font-weight:bold">this</span>.<span style="color:#658b00">furColor</span> = c;
+    }
+
+}
+<span style="color:#228b22">/**
+</span><span style="color:#228b22"> * 下面是这三个类的测试程序
+</span><span style="color:#228b22"> * @author gacl
+</span><span style="color:#228b22"> *
+</span><span style="color:#228b22"> */</span>
+<span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">TestClassCast</span> {
+
+    <span style="color:#228b22">/**
+</span><span style="color:#228b22">     * @param args
+</span><span style="color:#228b22">     */</span>
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">static</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">main</span>(String[] args) {
+
+        Animal a = <span style="color:#8b008b;font-weight:bold">new</span> Animal(<span style="color:#cd5555">&#34;name&#34;</span>);
+        Cat c = <span style="color:#8b008b;font-weight:bold">new</span> Cat(<span style="color:#cd5555">&#34;catname&#34;</span>,<span style="color:#cd5555">&#34;blue&#34;</span>);
+        Dog d = <span style="color:#8b008b;font-weight:bold">new</span> Dog(<span style="color:#cd5555">&#34;dogname&#34;</span>, <span style="color:#cd5555">&#34;black&#34;</span>);
+        <span style="color:#228b22">/**
+</span><span style="color:#228b22">         * a instanceof Animal这句话的意思是a是一只动物吗？
+</span><span style="color:#228b22">         * a是Animal这个类里面的是一个实例对象，所以a当然是一只动物，其结果为true。
+</span><span style="color:#228b22">         */</span>
+        System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(String.<span style="color:#658b00">format</span>(<span style="color:#cd5555">&#34;a instanceof Animal的结果是%s&#34;</span>,a <span style="color:#8b008b;font-weight:bold">instanceof</span> Animal));<span style="color:#228b22">//true
+</span><span style="color:#228b22"></span>        <span style="color:#228b22">/**
+</span><span style="color:#228b22">         * c是Cat类的实例对象的引用，即c代表的就是这个实例对象，
+</span><span style="color:#228b22">         * 所以“c是一只动物”打印出来的结果也是true。
+</span><span style="color:#228b22">         * d也一样，所以“d是一只动物”打印出来的结果也是true。
+</span><span style="color:#228b22">         */</span>
+        System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(String.<span style="color:#658b00">format</span>(<span style="color:#cd5555">&#34;c instanceof Animal的结果是%s&#34;</span>,c <span style="color:#8b008b;font-weight:bold">instanceof</span> Animal));<span style="color:#228b22">//true
+</span><span style="color:#228b22"></span>        System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(String.<span style="color:#658b00">format</span>(<span style="color:#cd5555">&#34;d instanceof Animal的结果是%s&#34;</span>,d <span style="color:#8b008b;font-weight:bold">instanceof</span> Animal));<span style="color:#228b22">//true
+</span><span style="color:#228b22"></span>        <span style="color:#228b22">/**
+</span><span style="color:#228b22">         * 这里判断说“动物是一只猫”，不符合逻辑，所以打印出来的结果是false。
+</span><span style="color:#228b22">         */</span>
+        System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(String.<span style="color:#658b00">format</span>(<span style="color:#cd5555">&#34;a instanceof Cat的结果是%s&#34;</span>,a <span style="color:#8b008b;font-weight:bold">instanceof</span> Cat));
+        <span style="color:#228b22">/**
+</span><span style="color:#228b22">         * 这句话比较有意思了，a本身是Animal类的实例对象的引用，
+</span><span style="color:#228b22">         * 但现在这个引用不指向Animal类的实例对象了，而是指向了Dog这个类的一个实例对象了，
+</span><span style="color:#228b22">         * 这里也就是父类对象的引用指向了子类的一个实例对象。
+</span><span style="color:#228b22">         */</span>
+        a = <span style="color:#8b008b;font-weight:bold">new</span> Dog(<span style="color:#cd5555">&#34;bigyellow&#34;</span>, <span style="color:#cd5555">&#34;yellow&#34;</span>);
+        System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(a.<span style="color:#658b00">name</span>);<span style="color:#228b22">//bigyellow
+</span><span style="color:#228b22"></span>        <span style="color:#228b22">/**
+</span><span style="color:#228b22">         * 这里的furColor属性是子类在继承父类的基础上新增加的一个属性，是父类没有的。
+</span><span style="color:#228b22">         * 因此这里使用父类的引用对象a去访问子类对象里面新增加的成员变量是不允许的，
+</span><span style="color:#228b22">         * 因为在编译器眼里，你a就是Animal类对象的一个引用对象，你只能去访问Animal类对象里面所具有的name属性，
+</span><span style="color:#228b22">         * 除了Animal类里面的属性可以访问以外，其它类里面的成员变量a都没办法访问。
+</span><span style="color:#228b22">         * 这里furColor属性是Dog类里面的属性，因此你一个Animal类的引用是无法去访问Dog类里面的成员变量的，
+</span><span style="color:#228b22">         * 尽管你a指向的是子类Dog的一个实例对象，但因为子类Dog从父类Animal继承下来，
+</span><span style="color:#228b22">         * 所以new出一个子类对象的时候，这个子类对象里面会包含有一个父类对象，
+</span><span style="color:#228b22">         * 因此这个a指向的正是这个子类对象里面的父类对象，因此尽管a是指向Dog类对象的一个引用，
+</span><span style="color:#228b22">         * 但是在编译器眼里你a就是只是一个Animal类的引用对象，你a就是只能访问Animal类里面所具有的成员变量，
+</span><span style="color:#228b22">         * 别的你都访问不了。
+</span><span style="color:#228b22">         * 因此一个父类(基类)对象的引用是不可以访问其子类对象新增加的成员(属性和方法)的。
+</span><span style="color:#228b22">         */</span>
+        <span style="color:#228b22">//System.out.println(a.furColor);
+</span><span style="color:#228b22"></span>        System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(String.<span style="color:#658b00">format</span>(<span style="color:#cd5555">&#34;a指向了Dog，a instanceof Animal的结果是%s&#34;</span>,a <span style="color:#8b008b;font-weight:bold">instanceof</span> Animal));<span style="color:#228b22">//true
+</span><span style="color:#228b22"></span>        <span style="color:#228b22">/**
+</span><span style="color:#228b22">         * 这里判断说“a是一只Dog”是true。
+</span><span style="color:#228b22">         * 因为instanceof探索的是实际当中你整个对象到底是什么东西，
+</span><span style="color:#228b22">         * 并不是根据你的引用把对象看出什么样来判断的。
+</span><span style="color:#228b22">         */</span>
+        System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(String.<span style="color:#658b00">format</span>(<span style="color:#cd5555">&#34;a instanceof Dog的结果是%s&#34;</span>,a <span style="color:#8b008b;font-weight:bold">instanceof</span> Dog));<span style="color:#228b22">//true
+</span><span style="color:#228b22"></span>        <span style="color:#228b22">/**
+</span><span style="color:#228b22">         * 这里使用强制转换，把指向Animal类的引用对象a转型成指向Dog类对象的引用，
+</span><span style="color:#228b22">         * 这样转型后的引用对象d1就可以直接访问Dog类对象里面的新增的成员了。
+</span><span style="color:#228b22">         */</span>
+        Dog d1 = (Dog)a;
+        System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(d1.<span style="color:#658b00">furColor</span>);<span style="color:#228b22">//yellow
+</span><span style="color:#228b22"></span>    }
+}
+</code></pre></div><p><em><strong>对象转型实例二:</strong></em></p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">TestClassCast</span> {
+
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">void</span>  <span style="color:#008b45">f</span>(Animal a) {
+        System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(a.<span style="color:#658b00">name</span>);
+        <span style="color:#8b008b;font-weight:bold">if</span> (a <span style="color:#8b008b;font-weight:bold">instanceof</span> Cat) {
+            Cat cat = (Cat)a;
+            System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(cat.<span style="color:#658b00">eyeColor</span>+<span style="color:#cd5555">&#34; eye&#34;</span>);
+        }<span style="color:#8b008b;font-weight:bold">else</span> <span style="color:#8b008b;font-weight:bold">if</span> (a <span style="color:#8b008b;font-weight:bold">instanceof</span> Dog) {
+            Dog dog = (Dog)a;
+            System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(dog.<span style="color:#658b00">furColor</span>+<span style="color:#cd5555">&#34; fur&#34;</span>);
+        }
+    }
+    <span style="color:#228b22">/**
+</span><span style="color:#228b22">     * @param args
+</span><span style="color:#228b22">     */</span>
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">static</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">main</span>(String[] args) {
+        Animal a = <span style="color:#8b008b;font-weight:bold">new</span> Animal(<span style="color:#cd5555">&#34;name&#34;</span>);
+        Cat c = <span style="color:#8b008b;font-weight:bold">new</span> Cat(<span style="color:#cd5555">&#34;catname&#34;</span>,<span style="color:#cd5555">&#34;blue&#34;</span>);
+        Dog d = <span style="color:#8b008b;font-weight:bold">new</span> Dog(<span style="color:#cd5555">&#34;dogname&#34;</span>, <span style="color:#cd5555">&#34;black&#34;</span>);
+        TestClassCast testClassCast = <span style="color:#8b008b;font-weight:bold">new</span> TestClassCast();
+        testClassCast.<span style="color:#658b00">f</span>(a);
+        testClassCast.<span style="color:#658b00">f</span>(c);
+        testClassCast.<span style="color:#658b00">f</span>(d);
+    }
+}
+</code></pre></div><p>其中instanceof为我们长空的方法：用于判断一个对象是否属于一个类。例如：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8b008b;font-weight:bold">if</span>(a <span style="color:#8b008b;font-weight:bold">instanceof</span> Cat)        <span style="color:#228b22">//用于判断对象a是否属于猫类。
+</span></code></pre></div><h2 id="八匿名类与包装类">八、匿名类与包装类</h2>
+<h3 id="1匿名类">1.匿名类</h3>
+<pre><code>加入某个对象只使用一次，则可以使用匿名类。如下：
+``` java
+list.add(new Student);
+```
+</code></pre>
+<h3 id="2装箱与拆箱">2.装箱与拆箱</h3>
+<p>案例：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00688b;font-weight:bold">int</span> a=1;
+Integer i = <span style="color:#8b008b;font-weight:bold">new</span> Integer(a);         <span style="color:#228b22">//装箱（向上转型）
+</span><span style="color:#228b22"></span><span style="color:#00688b;font-weight:bold">int</span> b = i.<span style="color:#658b00">value</span>();                  <span style="color:#228b22">//拆箱（向下转型）
+</span></code></pre></div><p><strong>总结:</strong>
+装箱：基本变量-&gt;对象变量；拆箱：对象变量-&gt;基本变量</p>
+<h2 id="九设计模式----单例模式">九、设计模式 &mdash;单例模式</h2>
+<p>单例模式：在JAV应用中，能保证在一个JVM中，该对象只存在一个实例。单例模式分为：饿汉式和懒汉式。
+说明：若一个类的构造函数是私有的(private),那么他就不能被实例化。</p>
+<h3 id="1饿汉式提前实例化一个对象">1.饿汉式（提前实例化一个对象）</h3>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">Singleton3</span> {  
+    <span style="color:#8b008b;font-weight:bold">private</span> <span style="color:#8b008b;font-weight:bold">static</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">SingletonHolder</span> {  
+       <span style="color:#8b008b;font-weight:bold">private</span> <span style="color:#8b008b;font-weight:bold">static</span> <span style="color:#8b008b;font-weight:bold">final</span> Singleton3 INSTANCE = <span style="color:#8b008b;font-weight:bold">new</span> Singleton3();  
+    }  
+    <span style="color:#8b008b;font-weight:bold">private</span> <span style="color:#008b45">Singleton3</span> (){}  
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">static</span> <span style="color:#8b008b;font-weight:bold">final</span> Singleton3 <span style="color:#008b45">getInstance</span>() {  
+        System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#34;singleton创建&#34;</span>);
+       <span style="color:#8b008b;font-weight:bold">return</span> SingletonHolder.<span style="color:#658b00">INSTANCE</span>;  
+    }  
+}
+</code></pre></div><h3 id="2懒汉式在实例化第一个对象是创建对象">2.懒汉式（在实例化第一个对象是创建对象）</h3>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">SingletonTest</span> {
+    <span style="color:#228b22">//懒汉式单例类.在第一次调用的时候实例化自己 
+</span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">private</span> <span style="color:#008b45">SingletonTest</span>() {}
+        <span style="color:#8b008b;font-weight:bold">private</span> <span style="color:#8b008b;font-weight:bold">static</span> SingletonTest single=<span style="color:#8b008b;font-weight:bold">null</span>;
+        <span style="color:#228b22">//静态工厂方法 
+</span><span style="color:#228b22"></span>        <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">static</span> <span style="color:#8b008b;font-weight:bold">synchronized</span> SingletonTest <span style="color:#008b45">getInstance</span>() {
+             <span style="color:#8b008b;font-weight:bold">if</span> (single == <span style="color:#8b008b;font-weight:bold">null</span>) {  
+                 single = <span style="color:#8b008b;font-weight:bold">new</span> SingletonTest();
+                 System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#34;创建一次&#34;</span>);
+             }  
+            <span style="color:#8b008b;font-weight:bold">return</span> single;
+        }
+        
+        <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">show</span>(){
+            System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#34;我是show&#34;</span>);
+        }
+
+}
+</code></pre></div><p>**注意：synchronized表示同一时刻，只有一个线程指向该方法。也可以使用它创建同步块。</p>
+<h2 id="十异常处理">十、异常处理</h2>
+<h3 id="1概念">1.概念</h3>
+<p>异常处理机制能让程序在异常发生时，按照代码的预先设定的异常处理逻辑，针对性地处理异常，让程序尽最大可能恢复正常并继续执行，且保持代码的清晰。</p>
+<h3 id="2捕获和处理异常">2.捕获和处理异常</h3>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> try...catch...finally...
+</code></pre></div><p>3.throw和throws
+throws:表示此处不处理异常，而是交给方法的调用者去处理异常。案例如下：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">   public void foo() throws ExceptionType1 , ExceptionType2 ,ExceptionTypeN{ 
+       //foo内部可以抛出 ExceptionType1 , ExceptionType2 ,ExceptionTypeN 类的异常，或者他们的子类的异常对象。
+   }
+</code></pre></div><p>throw:表示抛出一个异常。案例如下：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">save</span>(User user)
+{
+     <span style="color:#8b008b;font-weight:bold">if</span>(user  == <span style="color:#8b008b;font-weight:bold">null</span>) 
+         <span style="color:#8b008b;font-weight:bold">throw</span> <span style="color:#8b008b;font-weight:bold">new</span> IllegalArgumentException(<span style="color:#cd5555">&#34;User对象为空&#34;</span>);
+     <span style="color:#228b22">//......
+</span><span style="color:#228b22"></span>       
+}
+</code></pre></div><h3 id="3自定义异常">3.自定义异常</h3>
+<p>如果要自定义异常类，则扩展Exception类即可，因此这样的自定义异常都属于检查异常（checked exception）。如果要自定义非检查异常，则扩展自RuntimeException。
+案例如下：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">IOException</span> <span style="color:#8b008b;font-weight:bold">extends</span> Exception
+{
+    <span style="color:#8b008b;font-weight:bold">static</span> <span style="color:#8b008b;font-weight:bold">final</span> <span style="color:#00688b;font-weight:bold">long</span> serialVersionUID = 7818375828146090155L;
+
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#008b45">IOException</span>()
+    {
+        <span style="color:#8b008b;font-weight:bold">super</span>();
+    }
+
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#008b45">IOException</span>(String message)
+    {
+        <span style="color:#8b008b;font-weight:bold">super</span>(message);
+    }
+
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#008b45">IOException</span>(String message, Throwable cause)
+    {
+        <span style="color:#8b008b;font-weight:bold">super</span>(message, cause);
+    }
+
+    
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#008b45">IOException</span>(Throwable cause)
+    {
+        <span style="color:#8b008b;font-weight:bold">super</span>(cause);
+    }
+}
+</code></pre></div><h3 id="4exception和runtimeexception">4.Exception和RuntimeException</h3>
+<p><code>Exception</code>:是检查异常，程序中使用try&hellip;catch&hellip;finally..来捕获
+<code>RuntimaException</code>:是非检查异常，程序中可以不使用try&hellip;catch&hellip;finally..来捕获，大门时如果产生异常，则异常由JVM来处理。</p>
+<h2 id="十一java中常用的类">十一、JAVA中常用的类</h2>
+<h3 id="1日期类-date">1.日期类 Date</h3>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Date date = <span style="color:#8b008b;font-weight:bold">new</span> Date();
+System.<span style="color:#658b00">ou</span>.<span style="color:#658b00">println</span>(date);
+</code></pre></div><h3 id="2calendar类">2.Calendar类</h3>
+<p>获取年、月、日、时、分、秒：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Calendar类
+Calendar calendar = Calendar.<span style="color:#658b00">getInstance</span>();      <span style="color:#228b22">//实例化一个对象
+</span><span style="color:#228b22"></span>calendar.<span style="color:#658b00">get</span>(Calendar.<span style="color:#658b00">YEAR</span>);                     <span style="color:#228b22">//年
+</span><span style="color:#228b22"></span>calendar.<span style="color:#658b00">get</span>(Calendar.<span style="color:#658b00">MONTH</span>);                    <span style="color:#228b22">//月
+</span><span style="color:#228b22"></span>calendar.<span style="color:#658b00">get</span>(Calendar.<span style="color:#658b00">DAY_OF_MONTH</span>);             <span style="color:#228b22">//日
+</span><span style="color:#228b22"></span>calendar.<span style="color:#658b00">get</span>(Calendar.<span style="color:#658b00">HOUR_OF_DAY</span>);              <span style="color:#228b22">//时
+</span><span style="color:#228b22"></span>calendar.<span style="color:#658b00">get</span>(Calendar.<span style="color:#658b00">MINUTE</span>);                   <span style="color:#228b22">//分
+</span><span style="color:#228b22"></span>calendar.<span style="color:#658b00">get</span>(Calendar.<span style="color:#658b00">SECOND</span>);                   <span style="color:#228b22">//秒
+</span></code></pre></div><h3 id="3simpledateformat类">3.SimpleDateFormat类</h3>
+<p>将生成的时间执行成所需要的格式,案例如下：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Date data = <span style="color:#8b008b;font-weight:bold">new</span> Date();
+SimpleDateFormat sdf = <span style="color:#8b008b;font-weight:bold">new</span> SimpleDateFormat(<span style="color:#cd5555">&#34;yyyy-mm-dd HH:mm:ss&#34;</span>);
+System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(sdf.<span style="color:#658b00">format</span>(date));
+</code></pre></div><h3 id="4math类">4.Math类</h3>
+<p>Math类中常用的方法：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Math.<span style="color:#658b00">max</span>(1,2)           <span style="color:#228b22">//最大值
+</span><span style="color:#228b22"></span>Math.<span style="color:#658b00">round</span>(12.<span style="color:#658b00">5</span>);       <span style="color:#228b22">//四舍五入
+</span><span style="color:#228b22"></span>Math.<span style="color:#658b00">pow</span>(3,4);          <span style="color:#228b22">//3的4次方
+</span><span style="color:#228b22"></span>Math.<span style="color:#658b00">squal</span>(9);          <span style="color:#228b22">//根号9
+</span></code></pre></div><h3 id="5array类">5.Array类</h3>
+<p>Array类中常用的方法：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00688b;font-weight:bold">int</span> arr[] = {1 , 7, 6 ,3 , 8};
+System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(arr.<span style="color:#658b00">toString</span>)
+</code></pre></div><h2 id="十二-泛型">十二 泛型</h2>
+<p>使用泛型可以指定任意的数据类型
+需求：可以在方法或者类中传入不同类型的数据
+1.类中指定任意类型的数据</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">Person</span>&lt;T&gt; {
+	<span style="color:#8b008b;font-weight:bold">private</span> T t;
+	<span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">showMsg</span>(T t) {
+		System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(t);
+	}
+}
+</code></pre></div><p>2.方法中指定任意类型的数据</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">Test</span> {
+	<span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">static</span> &lt;T&gt; <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">f</span>(T t){
+		System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#34;T的类型&#34;</span>+t.<span style="color:#658b00">getClass</span>().<span style="color:#658b00">getName</span>());
+	}
+	<span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">static</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">main</span>(String[] args) {
+		Student&lt;Person&gt; p1 = <span style="color:#8b008b;font-weight:bold">new</span> Student&lt;Person&gt;();
+		f(<span style="color:#cd5555">&#34;hello&#34;</span>);
+		<span style="color:#228b22">//p1.showMsg(&#34;name&#34;);
+</span><span style="color:#228b22"></span>	}	
+}
+</code></pre></div><h2 id="十三-集合">十三 集合</h2>
+<p>java单列结合的家族中，collection是根接口，其下有两个继承子类List和Set集合。
+List又有ArrayList，vector，LinkedList三个子类
+Set有Hashset和Treeset两个子类</p>
+<h3 id="1list集合有序元素可以重复">1.List集合（有序，元素可以重复)</h3>
+<pre><code>a.ArrayList集合
+    1）.底层数据结构是数组，查找快，增删慢。
+    2）. 线程不安全，效率高
+b.Vector集合
+    1） 底层数据结构是数组，查询快，增删慢
+    2）线程安全，效率低
+c.LinkedList集合
+    1） 底层数据结构是链表，查询慢，增删快
+    2）线程不安全，效率高
+</code></pre>
+<h3 id="set集合元素不可重复元素唯一">Set集合（元素不可重复，元素唯一）</h3>
+<pre><code>a.Hashset集合
+1） 底层数据结构是哈希表，哈希表依赖两个方法hascode ()和equals（）方法
+</code></pre>
+<p>    2）两个方法的执行顺序：
+                首先判断hascode()值是否相同
+                是：继续执行equals()方法，看其返回值是true：说明元素重复，不添加是false：就直接添加元素
+                否：就直接添加到集合
+b.Treeset集合：
+1）底层数据结构是二叉树</p>
+<h3 id="集合的遍历">集合的遍历</h3>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">Test</span> {
+	<span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">static</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">main</span>(String[] args) {
+		
+		LinkedList&lt;Student&gt; linkedList = <span style="color:#8b008b;font-weight:bold">new</span> LinkedList&lt;Student&gt;();
+		linkedList.<span style="color:#658b00">add</span>(<span style="color:#8b008b;font-weight:bold">new</span> Student(<span style="color:#cd5555">&#34;张三&#34;</span>,13));
+		linkedList.<span style="color:#658b00">add</span>(<span style="color:#8b008b;font-weight:bold">new</span> Student(<span style="color:#cd5555">&#34;李四&#34;</span>,14));
+		linkedList.<span style="color:#658b00">add</span>(<span style="color:#8b008b;font-weight:bold">new</span> Student(<span style="color:#cd5555">&#34;王五&#34;</span>,15));
+		linkedList.<span style="color:#658b00">add</span>(<span style="color:#8b008b;font-weight:bold">new</span> Student(<span style="color:#cd5555">&#34;赵六&#34;</span>,16));
+		<span style="color:#228b22">// 1.集合的遍历
+</span><span style="color:#228b22"></span>		<span style="color:#8b008b;font-weight:bold">for</span>(<span style="color:#00688b;font-weight:bold">int</span> i=0;i&lt;linkedList.<span style="color:#658b00">size</span>();i++) {
+			Student s1 = linkedList.<span style="color:#658b00">get</span>(i);
+			System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#34;姓名:&#34;</span>+s1.<span style="color:#658b00">getName</span>()+<span style="color:#cd5555">&#34;,年龄:&#34;</span>+s1.<span style="color:#658b00">getAge</span>());
+		}
+		System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#34;**************************1***********************&#34;</span>);
+		<span style="color:#228b22">// 2.集合的遍历
+</span><span style="color:#228b22"></span>		Iterator&lt;Student&gt; it = linkedList.<span style="color:#658b00">iterator</span>();
+		<span style="color:#8b008b;font-weight:bold">while</span>(it.<span style="color:#658b00">hasNext</span>()) {
+			Student s2 = (Student)it.<span style="color:#658b00">next</span>();
+			System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#34;姓名:&#34;</span>+s2.<span style="color:#658b00">getName</span>()+<span style="color:#cd5555">&#34;,年龄:&#34;</span>+s2.<span style="color:#658b00">getAge</span>());
+		}
+		System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#34;*************************2************************&#34;</span>);
+		<span style="color:#228b22">// 3.集合的遍历
+</span><span style="color:#228b22"></span>		<span style="color:#8b008b;font-weight:bold">for</span>(Student s3:linkedList) {
+			System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#34;姓名:&#34;</span>+s3.<span style="color:#658b00">getName</span>()+<span style="color:#cd5555">&#34;,年龄:&#34;</span>+s3.<span style="color:#658b00">getAge</span>());
+		}
+	}
+}
+</code></pre></div>
+</article>
+    </div>
+</div>
+
+
+                
+<div id="sidebar" class="pure-u-1 pure-u-md-1-4 pure-u-sm-1">
+    <div class="pad">
+        <a name="about"></a>
+        <h3>关于我</h3>
+        <div style="text-align: center;">
+            <img src="/img/author.jpg" alt="吴继文" class="pure-img" />
+            <p><em>Handsome</em></p>
+        </div>
+
+        <h3>最近文章</h3>
+        <div class="pure-menu pure-menu-open">
+            <ul class="pure-menu-list">
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/mybatis-plus/" class="pure-menu-link">Mybatis-Plus<br>
+                        <small>MyBatis-Plus 的增强工具，在 MyBatis 的基础上只做增强不做改变，为简化开发、提高效率而生。</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/mongodb/" class="pure-menu-link">DBmong数据库<br>
+                        <small>NoSQL 是一项全新的数据库革命性运动，早期就有人提出，发展至2009年趋势越发高涨。NoSQL的拥护者们提倡运用非关系型的数据存储，相对于铺天盖地的关系型数据库运用，这一概念无疑是一种全新的思维的注入。</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/docker/" class="pure-menu-link">Docker容器技术<br>
+                        <small>这一种常用的容器技术，能简化项目的部署</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/go%E8%AF%AD%E8%A8%80/" class="pure-menu-link">Go语言技术知识<br>
+                        <small>主要介绍GO语言的基本语法</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/hexo&#43;github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6/" class="pure-menu-link">hexo&#43;github搭建个人博客<br>
+                        <small>介绍了个人博客搭建的完整步骤</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/idea%E7%9A%84%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="pure-menu-link">IDEA的基本使用<br>
+                        <small>主要介绍了IDEA的基本以用和一些常用的快捷键</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/java%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/" class="pure-menu-link">Java原生代码连接数据库<br>
+                        <small>介绍了在不使用框架的基础上连接MySQL</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/%E5%9F%BA%E4%BA%8Ejava%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="pure-menu-link">Java多线程基础知识<br>
+                        <small>一种提高程序运行效率的技术</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/java%E5%AE%9E%E7%8E%B0%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/" class="pure-menu-link">Java实现串口通信<br>
+                        <small>Java实现窗口通信</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/java%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" class="pure-menu-link">Java的基础知识<br>
+                        <small>介绍了Java的基础知识</small>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <h3>分类</h3>
+        <div style="text-align:center" class="tags">
+            
+            
+            <a href="/tags/%e6%a1%86%e6%9e%b6" class="pure-button"> 框架
+                <small>(6)</small></a>
+            
+            
+            
+            <a href="/tags/%e7%bc%96%e7%a8%8b" class="pure-button"> 编程
+                <small>(5)</small></a>
+            
+            
+            
+            <a href="/tags/%e5%85%b6%e5%ae%83" class="pure-button"> 其它
+                <small>(2)</small></a>
+            
+            
+            
+            <a href="/tags/%e6%95%b0%e6%8d%ae%e5%ba%93" class="pure-button"> 数据库
+                <small>(2)</small></a>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </div>
+    </div> 
+</div> 
+
+                
+            </div>
+<div class="pure-g">
+	<footer class="pure-u-1 pure-u-md-1 pure-u-sm-1">
+		<p>This page and its contents are copyright &copy; 2020,
+			<a href="">吴继文</a>.</p>
+		<p><a href="https://github.com/pravin/hugo-theme-prav">Theme Prav</a> by <a href="https://cto.me.uk">Pravin
+				Paratey</a></p>
+	</footer>
+
+	<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
+		integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+		crossorigin="anonymous"></script>
+</div>
+</div></body>
+</html>

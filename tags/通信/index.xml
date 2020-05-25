@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>通信 on Blog</title>
+    <link>https://example.com/tags/%E9%80%9A%E4%BF%A1/</link>
+    <description>Recent content in 通信 on Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    
+	<atom:link href="https://example.com/tags/%E9%80%9A%E4%BF%A1/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java实现串口通信</title>
+      <link>https://example.com/posts/java%E5%AE%9E%E7%8E%B0%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/java%E5%AE%9E%E7%8E%B0%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/</guid>
+      <description>一、串口通信原理 1.串口通信指串口按位（bit）发送和接收字节。尽管比按字节（byte）的并行通信慢，但是串口可以在使用一根线发送数据的同时用另一根线接收数据。 2.串口是计算机上一种非常通用的设备通信协议（不要与通用串行总线Universal SerialBus或者USB混淆） 3.典型地，串口用于ASCII码字符的传输。通信使用3根线完成：（1）地线，（2）发送，（3）接收。由于串口通信是异步的，端口能够在一根线上发送数据同时在另一根线上接收数据。其他线用于握手，但是不是必须的。串口通信最重要的参数是比特率、数据位、停止位和奇偶校验。对于两个进行通信的端口，这些参数必须匹配 4.RS-232（ANSI/EIA-232标准）是IBM-PC及其兼容机上的串行连接标准、RS-422（EIA RS-422-AStandard）是Apple的Macintosh计算机的串口连接标准。RS-485（EIA-485标准）是RS-422的改进。
+二、安装虚拟串口（方便测试） 由于笔记本或台式机上基本上都没有成对的串口提供给我们调试使用，我们就需要下载虚拟串口软件来实现串口调试。 1.下载虚拟串口软件http://pan.baidu.com/s/1hqhGDbI（这里提供的还是比较好用）。下载安装完成后先不要急着运行，把压缩包中的vspdctl.dll文件复制到安装目录下如：我的目录为–&amp;gt;D:\SoftWareInstall\Virtual Serial Port Driver 7.2 替换原有文件即可成功激活 2.打开软件添加虚拟串口，一般都是成对添加的（添加COM3、COM4） 3.打开串口调试助手，互相发送数据进行测试。
+三、java程序代码编写 开发的环境：IDEA+jdk1.8+maven 由于使用maven来管理工程，所以我们不需要手动的去现在相应的jar包，只需要引入相关的依赖即可。但是需要手动添加所需要的依赖库到指定的位置。 注意：还需要将解压后的rxtxParallel.dll和rxtxSerial.dll两个文件放在%JAVA_HOME%/jre/bin目录下,这样该包才能被正常的加载和调用。(下载的位置：http://pan.baidu.com/s/1o6zLmTc) 目录的结构： 注意：不包括opencv下的内容 pom.xml:
+&amp;lt;!-- https://mvnrepository.com/artifact/org.bidib.jbidib.org.qbang.rxtx/rxtxcomm --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.bidib.jbidib.org.qbang.rxtx&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;rxtxcomm&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.2&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; ContinueRead.java
+package com.mntc.comm;/* @author wujiwen @data 2019/9/1 - 22:25 */ import java.io.*; import java.util.*; import java.util.concurrent.BlockingQueue; import java.util.concurrent.LinkedBlockingQueue; import gnu.io.*; public class ContinueRead extends Thread implements SerialPortEventListener { // SerialPortEventListener  // 监听器,我的理解是独立开辟一个线程监听串口数据  static CommPortIdentifier portId; // 串口通信管理类  static Enumeration&amp;lt;?</description>
+    </item>
+    
+  </channel>
+</rss>

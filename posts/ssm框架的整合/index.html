@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#000" />
+    <title>
+        
+            SSM框架的整合 &middot; Blog Hugo Theme - Prav
+        
+    </title>
+
+    
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"
+        integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    
+    
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:300,300italic,700&display=swap" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:300&display=swap" rel="stylesheet">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="">
+    
+    <meta name="description" content="SSM（Spring&#43;SpringMVC&#43;MyBatis）框架集由Spring、MyBatis两个开源框架整合而成（SpringMVC是Spring中的部分内容）。常作为数据源较简单的web项目的框架。">
+    
+    <meta name="keywords" content="框架">
+    
+    <meta name="author" content="吴继文"></head>
+
+<body>
+        <div class="container">
+<div id="navbar" class="pure-menu pure-menu-open pure-menu-horizontal pure-menu-scrollable">
+    <a href="/" class="pure-menu-heading">
+         
+            Blog 
+         
+    </a>
+    <ul class="pure-menu-list">
+        <li class="pure-menu-item">
+            <a href="/posts" class="pure-menu-link">
+                <i class="fa fa-archive"></i>
+                文章
+            </a>
+        </li>
+        <li class="pure-menu-item">
+            <a href="/tags" class="pure-menu-link">
+                <i class="fas fa-comments"></i>
+                分类
+            </a>
+        </li>
+        <li class="pure-menu-item">
+            <a href="/about" class="pure-menu-link">
+                <i class="fas fa-smile"></i>
+                关于我
+            </a>
+        </li>
+    </ul>
+    <ul class="pure-menu-list pull-right">
+        
+        <li class="pure-menu-item">
+            <a href="https://www.baidu.com" title="Github" class="pure-menu-link">
+                <i class="fab fa-github"></i>
+                <span class="hide">Github</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="http://twitter.com/example" title="@pravin" class="pure-menu-link">
+                <i class="fab fa-twitter-square"></i>
+                <span class="hide">Twitter</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="http://uk.linkedin.com/in/example" title="Linked In" class="pure-menu-link">
+                <i class="fab fa-linkedin"></i>
+                <span class="hide">LinkedIn</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="https://www.medium.com/@example" title="Medium" class="pure-menu-link">
+                <i class="fab fa-medium"></i>
+                <span class="hide">Medium</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="https://www.facebook.com/example" title="Facebook" class="pure-menu-link">
+                <i class="fab fa-facebook"></i>
+                <span class="hide">Facebook</span>
+            </a>
+        </li>
+        
+        <li class="pure-menu-item">
+            <a href="/atom.xml" title="Atom Feed" class="pure-menu-link">
+                <i class="fas fa-rss-square"></i>
+                <span class="hide">RSS Feed</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="pure-u-1">
+    <div class="pad">
+    </div>
+</div>
+<div class="pure-g">
+
+
+<div id="content" class="pure-u-1 pure-u-md-3-4 pure-u-sm-1">
+    <div class="pad">
+
+<div class="date">
+    <time pubdate="0001-01-01">January 1, 0001</time>
+    <span class="author">学习笔记</span>
+</div>
+
+<article>
+    <h1><a href="https://example.com/posts/ssm%E6%A1%86%E6%9E%B6%E7%9A%84%E6%95%B4%E5%90%88/">SSM框架的整合</a></h1>
+    <div class="tags">
+        
+        
+        <a href="/tags/%E6%A1%86%E6%9E%B6" class="pure-button">框架</a>
+        
+    </div>
+    <h1 id="一什么是ssm框架">一、什么是ssm框架</h1>
+<p>SSM（Spring+SpringMVC+MyBatis）框架集由Spring、MyBatis两个开源框架整合而成（SpringMVC是Spring中的部分内容）。常作为数据源较简单的web项目的框架。</p>
+<h1 id="二ssm框架整合之hello-world">二、ssm框架整合之hello world</h1>
+<p>搭建的环境:eclipse+jdk1.8+maven
+基本的步骤:</p>
+<blockquote>
+<p>1.创建maven工程
+2.引入项目所需要的依赖
+3.引入bootstrap前端框架
+4.编写ssm整合的关键配置文件
+5.使用逆向工程
+程序的目录结构:
+<img src="/assets/blogImg/ssm.png" alt="ssm">
+注意：使用逆向工程并不是所有的文件都是需要手动编写的
+pom.xml:</p>
+</blockquote>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">  <span style="color:#8b008b;font-weight:bold">&lt;project</span> <span style="color:#658b00">xmlns=</span><span style="color:#cd5555">&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span style="color:#658b00">xmlns:xsi=</span><span style="color:#cd5555">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span> <span style="color:#658b00">xsi:schemaLocation=</span><span style="color:#cd5555">&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;modelVersion&gt;</span>4.0.0<span style="color:#8b008b;font-weight:bold">&lt;/modelVersion&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>com.mntc.maven<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>ssm-test<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>0.0.1-SNAPSHOT<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;packaging&gt;</span>war<span style="color:#8b008b;font-weight:bold">&lt;/packaging&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;dependencies&gt;</span>
+  <span style="color:#228b22">&lt;!-- 1.引入Springmvc、spring相关的依赖包 --&gt;</span>
+  	<span style="color:#228b22">&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc --&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;dependency&gt;</span>
+	    <span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>org.springframework<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+	    <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>spring-webmvc<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+	    <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>4.3.7.RELEASE<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;/dependency&gt;</span>
+  
+  	<span style="color:#228b22">&lt;!-- 2.spring-jdbc --&gt;</span>
+  	<span style="color:#228b22">&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc --&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;dependency&gt;</span>
+	    <span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>org.springframework<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+	    <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>spring-jdbc<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+	    <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>4.3.7.RELEASE<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;/dependency&gt;</span>
+  
+  
+  
+ 	 <span style="color:#228b22">&lt;!-- spring面向切面编程  --&gt;</span>
+  	<span style="color:#228b22">&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-aspects --&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;dependency&gt;</span>
+	    <span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>org.springframework<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+	    <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>spring-aspects<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+	    <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>4.3.7.RELEASE<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;/dependency&gt;</span>
+  
+ 	 <span style="color:#228b22">&lt;!-- Mybatis --&gt;</span>
+	 <span style="color:#228b22">&lt;!-- https://mvnrepository.com/artifact/org.mybatis/mybatis --&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;dependency&gt;</span>
+	    <span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>org.mybatis<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+	    <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>mybatis<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+	    <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>3.4.2<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;/dependency&gt;</span>
+  
+  
+  	<span style="color:#228b22">&lt;!-- mybatis整合spring的是适配包 --&gt;</span>
+  	<span style="color:#228b22">&lt;!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring --&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;dependency&gt;</span>
+	    <span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>org.mybatis<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+	    <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>mybatis-spring<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+	    <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>1.3.1<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;/dependency&gt;</span>
+  
+  
+  <span style="color:#228b22">&lt;!--数据库连接池  --&gt;</span>
+ 	 <span style="color:#228b22">&lt;!-- https://mvnrepository.com/artifact/c3p0/c3p0 --&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;dependency&gt;</span>
+	    <span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>c3p0<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+	    <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>c3p0<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+	    <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>0.9.1.2<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;/dependency&gt;</span>
+  
+ 	<span style="color:#228b22">&lt;!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java --&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;dependency&gt;</span>
+	    <span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>mysql<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+	    <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>mysql-connector-java<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+	    <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>8.0.11<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;/dependency&gt;</span>
+	
+	<span style="color:#228b22">&lt;!-- 引入jstl、servlet-api、junit --&gt;</span>
+	<span style="color:#228b22">&lt;!-- https://mvnrepository.com/artifact/jstl/jstl --&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;dependency&gt;</span>
+	    <span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>jstl<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+	    <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>jstl<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+	    <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>1.2<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;/dependency&gt;</span>
+
+	<span style="color:#228b22">&lt;!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api --&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;dependency&gt;</span>
+	    <span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>javax.servlet<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+	    <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>servlet-api<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+	    <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>2.5<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+	    <span style="color:#8b008b;font-weight:bold">&lt;scope&gt;</span>provided<span style="color:#8b008b;font-weight:bold">&lt;/scope&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;/dependency&gt;</span>
+	
+	<span style="color:#228b22">&lt;!-- https://mvnrepository.com/artifact/junit/junit --&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;dependency&gt;</span>
+	    <span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>junit<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+	    <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>junit<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+	    <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>4.12<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+	    <span style="color:#8b008b;font-weight:bold">&lt;scope&gt;</span>test<span style="color:#8b008b;font-weight:bold">&lt;/scope&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;/dependency&gt;</span>
+	
+	<span style="color:#228b22">&lt;!-- https://mvnrepository.com/artifact/org.mybatis.generator/mybatis-generator-core --&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;dependency&gt;</span>
+	    <span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>org.mybatis.generator<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+	    <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>mybatis-generator-core<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+	    <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>1.3.5<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;/dependency&gt;</span>
+	
+  <span style="color:#8b008b;font-weight:bold">&lt;/dependencies&gt;</span>
+<span style="color:#8b008b;font-weight:bold">&lt;/project&gt;</span>
+</code></pre></div><p>web.xml:</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#1e889b">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span style="color:#8b008b;font-weight:bold">&lt;web-app</span> <span style="color:#658b00">id=</span><span style="color:#cd5555">&#34;WebApp_ID&#34;</span> <span style="color:#658b00">version=</span><span style="color:#cd5555">&#34;2.5&#34;</span> <span style="color:#658b00">xmlns=</span><span style="color:#cd5555">&#34;http://java.sun.com/xml/ns/javaee&#34;</span> <span style="color:#658b00">xmlns:xsi=</span><span style="color:#cd5555">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span> <span style="color:#658b00">xsi:schemaLocation=</span><span style="color:#cd5555">&#34;http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+	<span style="color:#228b22">&lt;!-- 1.启动spring的容器 --&gt;</span>
+	<span style="color:#228b22">&lt;!-- needed for ContextLoaderListener --&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;context-param&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;param-name&gt;</span>contextConfigLocation<span style="color:#8b008b;font-weight:bold">&lt;/param-name&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;param-value&gt;</span>classpath:applicationContext.xml<span style="color:#8b008b;font-weight:bold">&lt;/param-value&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;/context-param&gt;</span>
+
+	<span style="color:#228b22">&lt;!-- Bootstraps the root web application context before servlet initialization --&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;listener&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;listener-class&gt;</span>org.springframework.web.context.ContextLoaderListener<span style="color:#8b008b;font-weight:bold">&lt;/listener-class&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;/listener&gt;</span>
+
+	<span style="color:#228b22">&lt;!-- 2.配置springmvc的前端控制器，；按揭素有的请求  --&gt;</span>
+	<span style="color:#228b22">&lt;!-- The front controller of this Spring Web application, responsible for handling all application requests --&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;servlet&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;servlet-name&gt;</span>dispatcherServlet<span style="color:#8b008b;font-weight:bold">&lt;/servlet-name&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;servlet-class&gt;</span>org.springframework.web.servlet.DispatcherServlet<span style="color:#8b008b;font-weight:bold">&lt;/servlet-class&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;init-param&gt;</span>
+			<span style="color:#8b008b;font-weight:bold">&lt;param-name&gt;</span>contextConfigLocation<span style="color:#8b008b;font-weight:bold">&lt;/param-name&gt;</span>
+			<span style="color:#8b008b;font-weight:bold">&lt;param-value&gt;</span>classpath:springmvc.xml<span style="color:#8b008b;font-weight:bold">&lt;/param-value&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;/init-param&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;load-on-startup&gt;</span>1<span style="color:#8b008b;font-weight:bold">&lt;/load-on-startup&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;/servlet&gt;</span>
+	<span style="color:#228b22">&lt;!-- Map all requests to the DispatcherServlet for handling --&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;servlet-mapping&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;servlet-name&gt;</span>dispatcherServlet<span style="color:#8b008b;font-weight:bold">&lt;/servlet-name&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;url-pattern&gt;</span>/<span style="color:#8b008b;font-weight:bold">&lt;/url-pattern&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;/servlet-mapping&gt;</span>
+	
+	<span style="color:#228b22">&lt;!-- 3.字符编码过滤器 (当我们有多个过滤器时，字符编码过滤器一定是要放在最前面的)--&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;filter&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;filter-name&gt;</span>characterEncodingFilter<span style="color:#8b008b;font-weight:bold">&lt;/filter-name&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;filter-class&gt;</span>org.springframework.web.filter.CharacterEncodingFilter<span style="color:#8b008b;font-weight:bold">&lt;/filter-class&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;init-param&gt;</span>
+			<span style="color:#8b008b;font-weight:bold">&lt;param-name&gt;</span>encoding<span style="color:#8b008b;font-weight:bold">&lt;/param-name&gt;</span>
+			<span style="color:#8b008b;font-weight:bold">&lt;param-value&gt;</span>utf-8<span style="color:#8b008b;font-weight:bold">&lt;/param-value&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;/init-param&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;init-param&gt;</span>
+			<span style="color:#8b008b;font-weight:bold">&lt;param-name&gt;</span>forceRequestEncoding<span style="color:#8b008b;font-weight:bold">&lt;/param-name&gt;</span>
+			<span style="color:#8b008b;font-weight:bold">&lt;param-value&gt;</span>true<span style="color:#8b008b;font-weight:bold">&lt;/param-value&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;/init-param&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;init-param&gt;</span>
+			<span style="color:#8b008b;font-weight:bold">&lt;param-name&gt;</span>forceResponseEncoding<span style="color:#8b008b;font-weight:bold">&lt;/param-name&gt;</span>
+			<span style="color:#8b008b;font-weight:bold">&lt;param-value&gt;</span>true<span style="color:#8b008b;font-weight:bold">&lt;/param-value&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;/init-param&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;/filter&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;filter-mapping&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;filter-name&gt;</span>characterEncodingFilter<span style="color:#8b008b;font-weight:bold">&lt;/filter-name&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;url-pattern&gt;</span>/*<span style="color:#8b008b;font-weight:bold">&lt;/url-pattern&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;/filter-mapping&gt;</span>
+	
+	
+	<span style="color:#228b22">&lt;!-- 4.使用Rest风格、将页面普通的post请i去转换成指定的delete或者put请求--&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;filter&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;filter-name&gt;</span>hiddenHttpMethodFilter<span style="color:#8b008b;font-weight:bold">&lt;/filter-name&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;filter-class&gt;</span>org.springframework.web.filter.HiddenHttpMethodFilter<span style="color:#8b008b;font-weight:bold">&lt;/filter-class&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;/filter&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;filter-mapping&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;filter-name&gt;</span>hiddenHttpMethodFilter<span style="color:#8b008b;font-weight:bold">&lt;/filter-name&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;url-pattern&gt;</span>/*<span style="color:#8b008b;font-weight:bold">&lt;/url-pattern&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;/filter-mapping&gt;</span>
+<span style="color:#8b008b;font-weight:bold">&lt;/web-app&gt;</span>
+</code></pre></div><p>applicationContext.xml</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#1e889b">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span style="color:#8b008b;font-weight:bold">&lt;beans</span> <span style="color:#658b00">xmlns=</span><span style="color:#cd5555">&#34;http://www.springframework.org/schema/beans&#34;</span>
+	<span style="color:#658b00">xmlns:xsi=</span><span style="color:#cd5555">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+	<span style="color:#658b00">xmlns:context=</span><span style="color:#cd5555">&#34;http://www.springframework.org/schema/context&#34;</span>
+	<span style="color:#658b00">xmlns:p=</span><span style="color:#cd5555">&#34;http://www.springframework.org/schema/p&#34;</span>
+	<span style="color:#658b00">xmlns:aop=</span><span style="color:#cd5555">&#34;http://www.springframework.org/schema/aop&#34;</span>
+	<span style="color:#658b00">xmlns:tx=</span><span style="color:#cd5555">&#34;http://www.springframework.org/schema/tx&#34;</span>
+	<span style="color:#658b00">xsi:schemaLocation=</span><span style="color:#cd5555">&#34;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+</span><span style="color:#cd5555">		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+</span><span style="color:#cd5555">		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+</span><span style="color:#cd5555">		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+	<span style="color:#228b22">&lt;!-- Spring的配置文件，这里主要负责配置和业务逻辑相关的事项--&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;context:component-scan</span> <span style="color:#658b00">base-package=</span><span style="color:#cd5555">&#34;com.atguigu&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;context:exclude-filter</span> <span style="color:#658b00">type=</span><span style="color:#cd5555">&#34;annotation&#34;</span> <span style="color:#658b00">expression=</span><span style="color:#cd5555">&#34;org.springframework.stereotype.Controller&#34;</span><span style="color:#8b008b;font-weight:bold">/&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;/context:component-scan&gt;</span>
+	
+	<span style="color:#228b22">&lt;!-- 引入外部的文件 --&gt;</span>
+	<span style="color:#228b22">&lt;!-- &lt;context:property-placeholder location=&#34;classpath:dbconfig.properties&#34;/&gt; --&gt;</span>
+	<span style="color:#228b22">&lt;!-- 数据源、事务控制 --&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;bean</span> <span style="color:#658b00">id=</span><span style="color:#cd5555">&#34;pooledDataSource&#34;</span> <span style="color:#658b00">class=</span><span style="color:#cd5555">&#34;com.mchange.v2.c3p0.ComboPooledDataSource&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;property</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;jdbcUrl&#34;</span> <span style="color:#658b00">value=</span><span style="color:#cd5555">&#34;jdbc:mysql://127.0.0.1:3306/mybatis?useSSL=false&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;&lt;/property&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;property</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;driverClass&#34;</span> <span style="color:#658b00">value=</span><span style="color:#cd5555">&#34;com.mysql.cj.jdbc.Driver&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;&lt;/property&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;property</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;user&#34;</span> <span style="color:#658b00">value=</span><span style="color:#cd5555">&#34;root&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;&lt;/property&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;property</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;password&#34;</span> <span style="color:#658b00">value=</span><span style="color:#cd5555">&#34;13733433427&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;&lt;/property&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;/bean&gt;</span>
+	
+	<span style="color:#228b22">&lt;!-- 配置和mybatis的整合 --&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;bean</span> <span style="color:#658b00">id=</span><span style="color:#cd5555">&#34;sqlSessionFactory&#34;</span> <span style="color:#658b00">class=</span><span style="color:#cd5555">&#34;org.mybatis.spring.SqlSessionFactoryBean&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+		<span style="color:#228b22">&lt;!-- 指定mybatis全局配置文件的位置 --&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;property</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;configLocation&#34;</span> <span style="color:#658b00">value=</span><span style="color:#cd5555">&#34;classpath:mybatis-config.xml&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;&lt;/property&gt;</span>
+		<span style="color:#228b22">&lt;!-- 数据源 --&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;property</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;dataSource&#34;</span> <span style="color:#658b00">ref=</span><span style="color:#cd5555">&#34;pooledDataSource&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;&lt;/property&gt;</span>
+		<span style="color:#228b22">&lt;!--指定mybatis的Mapper文件 --&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;property</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;mapperLocations&#34;</span> <span style="color:#658b00">value=</span><span style="color:#cd5555">&#34;classpath:mapper/*.xml&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;&lt;/property&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;/bean&gt;</span>
+	
+	<span style="color:#228b22">&lt;!-- 配置扫描器，将mybatis接口的实现扫描到IOC容器中 --&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;bean</span> <span style="color:#658b00">class=</span><span style="color:#cd5555">&#34;org.mybatis.spring.mapper.MapperScannerConfigurer&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+		<span style="color:#228b22">&lt;!-- 扫描所有的dao接口，加入到IOC容器中 --&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;property</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;basePackage&#34;</span> <span style="color:#658b00">value=</span><span style="color:#cd5555">&#34;com.atguigu.crud.dao&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;&lt;/property&gt;</span>
+	
+	<span style="color:#8b008b;font-weight:bold">&lt;/bean&gt;</span>
+	
+	<span style="color:#228b22">&lt;!-- 事务控制的配置 --&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;bean</span> <span style="color:#658b00">id=</span><span style="color:#cd5555">&#34;transactionManager&#34;</span> <span style="color:#658b00">class=</span><span style="color:#cd5555">&#34;org.springframework.jdbc.datasource.DataSourceTransactionManager&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;property</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;dataSource&#34;</span> <span style="color:#658b00">ref=</span><span style="color:#cd5555">&#34;pooledDataSource&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;&lt;/property&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;/bean&gt;</span>
+	
+	<span style="color:#228b22">&lt;!-- 开启基于注解的事务，使用xml配置形式的事务(主要的时都是使用配置式) --&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;aop:config&gt;</span>
+		<span style="color:#228b22">&lt;!-- 切入点表达式 --&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;aop:pointcut</span> <span style="color:#658b00">expression=</span><span style="color:#cd5555">&#34;(* com.auguigu.crud.service..*(..))&#34;</span> <span style="color:#658b00">id=</span><span style="color:#cd5555">&#34;txPoint&#34;</span><span style="color:#8b008b;font-weight:bold">/&gt;</span>
+		<span style="color:#228b22">&lt;!-- 配置事务增强 --&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;aop:advisor</span> <span style="color:#658b00">advice-ref=</span><span style="color:#cd5555">&#34;txAdvice&#34;</span> <span style="color:#658b00">pointcut-ref=</span><span style="color:#cd5555">&#34;txPoint&#34;</span> <span style="color:#8b008b;font-weight:bold">/&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;/aop:config&gt;</span>
+	<span style="color:#228b22">&lt;!-- 配置事务增强 ,事务如何启动--&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;tx:advice</span> <span style="color:#658b00">id=</span><span style="color:#cd5555">&#34;txAdvice&#34;</span> <span style="color:#658b00">transaction-manager=</span><span style="color:#cd5555">&#34;transactionManager&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;tx:attributes&gt;</span>
+		<span style="color:#228b22">&lt;!-- 所有的方法都是事务 --&gt;</span>
+			<span style="color:#8b008b;font-weight:bold">&lt;tx:method</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;*&#34;</span><span style="color:#8b008b;font-weight:bold">/&gt;</span>
+			<span style="color:#8b008b;font-weight:bold">&lt;tx:method</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;get*&#34;</span> <span style="color:#658b00">read-only=</span><span style="color:#cd5555">&#34;true&#34;</span> <span style="color:#8b008b;font-weight:bold">/&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;/tx:attributes&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;/tx:advice&gt;</span>
+	
+<span style="color:#8b008b;font-weight:bold">&lt;/beans&gt;</span>
+</code></pre></div><p>mybatis-config.xml:</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#1e889b">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; ?&gt;</span>
+<span style="color:#1e889b">&lt;!DOCTYPE configuration
+</span><span style="color:#1e889b">        PUBLIC &#34;-//mybatis.org//DTD Config 3.0//EN&#34;
+</span><span style="color:#1e889b">        &#34;http://mybatis.org/dtd/mybatis-3-config.dtd&#34;&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;configuration&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;settings&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;setting</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;mapUnderscoreToCamelCase&#34;</span> <span style="color:#658b00">value=</span><span style="color:#cd5555">&#34;true&#34;</span><span style="color:#8b008b;font-weight:bold">/&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;/settings&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;typeAliases&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;package</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;com.atguigu.crud.bean&#34;</span> <span style="color:#8b008b;font-weight:bold">/&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;/typeAliases&gt;</span>
+<span style="color:#8b008b;font-weight:bold">&lt;/configuration&gt;</span>
+</code></pre></div><p>springmvc.xml:</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#1e889b">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span style="color:#8b008b;font-weight:bold">&lt;beans</span> <span style="color:#658b00">xmlns=</span><span style="color:#cd5555">&#34;http://www.springframework.org/schema/beans&#34;</span>
+	<span style="color:#658b00">xmlns:xsi=</span><span style="color:#cd5555">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+	<span style="color:#658b00">xmlns:context=</span><span style="color:#cd5555">&#34;http://www.springframework.org/schema/context&#34;</span>
+	<span style="color:#658b00">xmlns:mvc=</span><span style="color:#cd5555">&#34;http://www.springframework.org/schema/mvc&#34;</span>
+	<span style="color:#658b00">xsi:schemaLocation=</span><span style="color:#cd5555">&#34;http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+</span><span style="color:#cd5555">		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+</span><span style="color:#cd5555">		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+	<span style="color:#228b22">&lt;!-- springmvc的配置文件 ，主要是包含跳转逻辑控制  --&gt;</span>
+	
+	
+	<span style="color:#8b008b;font-weight:bold">&lt;context:component-scan</span> <span style="color:#658b00">base-package=</span><span style="color:#cd5555">&#34;com.atguigu.crud&#34;</span> <span style="color:#658b00">use-default-filters=</span><span style="color:#cd5555">&#34;false&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+		<span style="color:#228b22">&lt;!--只扫描控制器--&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;context:include-filter</span> <span style="color:#658b00">type=</span><span style="color:#cd5555">&#34;annotation&#34;</span> <span style="color:#658b00">expression=</span><span style="color:#cd5555">&#34;org.springframework.stereotype.Controller&#34;</span><span style="color:#8b008b;font-weight:bold">/&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;/context:component-scan&gt;</span>
+	
+	
+	<span style="color:#228b22">&lt;!-- 配置视图解析器 --&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;bean</span> <span style="color:#658b00">id=</span><span style="color:#cd5555">&#34;internalResourceView&#34;</span> <span style="color:#658b00">class=</span><span style="color:#cd5555">&#34;org.springframework.web.servlet.view.InternalResourceViewResolver&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;property</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;prefix&#34;</span> <span style="color:#658b00">value=</span><span style="color:#cd5555">&#34;/WEB-INF/views/&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;&lt;/property&gt;</span>
+		<span style="color:#8b008b;font-weight:bold">&lt;property</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;suffix&#34;</span> <span style="color:#658b00">value=</span><span style="color:#cd5555">&#34;.jsp&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;&lt;/property&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;/bean&gt;</span>
+	
+	<span style="color:#228b22">&lt;!-- 能支持springmvc一些更高级的功能--&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;mvc:annotation-driven</span> <span style="color:#8b008b;font-weight:bold">/&gt;</span>
+	<span style="color:#228b22">&lt;!-- 将springmvc不能处理的资源交给tomcat --&gt;</span>
+	<span style="color:#8b008b;font-weight:bold">&lt;mvc:default-servlet-handler</span> <span style="color:#8b008b;font-weight:bold">/&gt;</span>
+	
+<span style="color:#8b008b;font-weight:bold">&lt;/beans&gt;</span>
+</code></pre></div><p>mbg.xml</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#1e889b">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span style="color:#1e889b">&lt;!DOCTYPE generatorConfiguration
+</span><span style="color:#1e889b">  PUBLIC &#34;-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN&#34;
+</span><span style="color:#1e889b">  &#34;http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd&#34;&gt;</span>
+<span style="color:#8b008b;font-weight:bold">&lt;generatorConfiguration&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;context</span> <span style="color:#658b00">id=</span><span style="color:#cd5555">&#34;DB2Tables&#34;</span> <span style="color:#658b00">targetRuntime=</span><span style="color:#cd5555">&#34;MyBatis3&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+  <span style="color:#228b22">&lt;!-- 阻止生成注释 --&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;commentGenerator&gt;</span>
+  	<span style="color:#8b008b;font-weight:bold">&lt;property</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;suppressAllComments&#34;</span> <span style="color:#658b00">value=</span><span style="color:#cd5555">&#34;true&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;&lt;/property&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;/commentGenerator&gt;</span>
+  	<span style="color:#228b22">&lt;!-- 配置数据库的连接信息  --&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;jdbcConnection</span> <span style="color:#658b00">driverClass=</span><span style="color:#cd5555">&#34;com.mysql.cj.jdbc.Driver&#34;</span>
+        <span style="color:#658b00">connectionURL=</span><span style="color:#cd5555">&#34;jdbc:mysql://127.0.0.1:3306/mybatis?useSSL=false&#34;</span>
+        <span style="color:#658b00">userId=</span><span style="color:#cd5555">&#34;root&#34;</span>
+        <span style="color:#658b00">password=</span><span style="color:#cd5555">&#34;13733433427&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;/jdbcConnection&gt;</span>
+
+    <span style="color:#8b008b;font-weight:bold">&lt;javaTypeResolver</span> <span style="color:#8b008b;font-weight:bold">&gt;</span>
+      <span style="color:#8b008b;font-weight:bold">&lt;property</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;forceBigDecimals&#34;</span> <span style="color:#658b00">value=</span><span style="color:#cd5555">&#34;false&#34;</span> <span style="color:#8b008b;font-weight:bold">/&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;/javaTypeResolver&gt;</span>
+
+	<span style="color:#228b22">&lt;!-- 指定javaBean生成的位置 --&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;javaModelGenerator</span> <span style="color:#658b00">targetPackage=</span><span style="color:#cd5555">&#34;com.atguigu.crud.bean&#34;</span> <span style="color:#658b00">targetProject=</span><span style="color:#cd5555">&#34;.\src\main\java&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+      <span style="color:#8b008b;font-weight:bold">&lt;property</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;enableSubPackages&#34;</span> <span style="color:#658b00">value=</span><span style="color:#cd5555">&#34;true&#34;</span> <span style="color:#8b008b;font-weight:bold">/&gt;</span>
+      <span style="color:#8b008b;font-weight:bold">&lt;property</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;trimStrings&#34;</span> <span style="color:#658b00">value=</span><span style="color:#cd5555">&#34;true&#34;</span> <span style="color:#8b008b;font-weight:bold">/&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;/javaModelGenerator&gt;</span>
+
+	<span style="color:#228b22">&lt;!-- 指定sql映射文件生成的位置 --&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;sqlMapGenerator</span> <span style="color:#658b00">targetPackage=</span><span style="color:#cd5555">&#34;mapper&#34;</span>  <span style="color:#658b00">targetProject=</span><span style="color:#cd5555">&#34;.\src\main\resources&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+      <span style="color:#8b008b;font-weight:bold">&lt;property</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;enableSubPackages&#34;</span> <span style="color:#658b00">value=</span><span style="color:#cd5555">&#34;true&#34;</span> <span style="color:#8b008b;font-weight:bold">/&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;/sqlMapGenerator&gt;</span>
+
+	<span style="color:#228b22">&lt;!-- 指定dao的接口生成的位置 ，mapper接口--&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;javaClientGenerator</span> <span style="color:#658b00">type=</span><span style="color:#cd5555">&#34;XMLMAPPER&#34;</span> <span style="color:#658b00">targetPackage=</span><span style="color:#cd5555">&#34;com.atguigu.crud.dao&#34;</span>  <span style="color:#658b00">targetProject=</span><span style="color:#cd5555">&#34;.\src\main\java&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+      <span style="color:#8b008b;font-weight:bold">&lt;property</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;enableSubPackages&#34;</span> <span style="color:#658b00">value=</span><span style="color:#cd5555">&#34;true&#34;</span> <span style="color:#8b008b;font-weight:bold">/&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;/javaClientGenerator&gt;</span>
+
+	<span style="color:#228b22">&lt;!-- 指定每个表的生成策略,其中每个table标签对应于一张表--&gt;</span>
+	<span style="color:#228b22">&lt;!-- 连接上数据库上后对应于数据库中的users表 ，这张表对应的类--&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;table</span> <span style="color:#658b00">tableName=</span><span style="color:#cd5555">&#34;users&#34;</span> <span style="color:#658b00">domainObjectName=</span><span style="color:#cd5555">&#34;Employee&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;&lt;/table&gt;</span>
+  <span style="color:#8b008b;font-weight:bold">&lt;/context&gt;</span>
+<span style="color:#8b008b;font-weight:bold">&lt;/generatorConfiguration&gt;</span>
+</code></pre></div><p>MBGTest.java:</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8b008b;font-weight:bold">package</span> <span style="color:#008b45;text-decoration:underline">com.atguigu.crud.test</span>;
+
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">java.io.File</span>;
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">java.io.IOException</span>;
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">java.util.ArrayList</span>;
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">java.util.List</span>;
+
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">org.mybatis.generator.api.MyBatisGenerator</span>;
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">org.mybatis.generator.config.Configuration</span>;
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">org.mybatis.generator.config.xml.ConfigurationParser</span>;
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">org.mybatis.generator.exception.XMLParserException</span>;
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">org.mybatis.generator.internal.DefaultShellCallback</span>;
+
+<span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">MBGTest</span> {
+	<span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">static</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">main</span>(String[] args) <span style="color:#8b008b;font-weight:bold">throws</span> Exception {
+		   List&lt;String&gt; warnings = <span style="color:#8b008b;font-weight:bold">new</span> ArrayList&lt;String&gt;();
+		   <span style="color:#00688b;font-weight:bold">boolean</span> overwrite = <span style="color:#8b008b;font-weight:bold">true</span>;
+		   File configFile = <span style="color:#8b008b;font-weight:bold">new</span> File(<span style="color:#cd5555">&#34;mbg.xml&#34;</span>);
+		   ConfigurationParser cp = <span style="color:#8b008b;font-weight:bold">new</span> ConfigurationParser(warnings);
+		   Configuration config = cp.<span style="color:#658b00">parseConfiguration</span>(configFile);
+		   DefaultShellCallback callback = <span style="color:#8b008b;font-weight:bold">new</span> DefaultShellCallback(overwrite);
+		   MyBatisGenerator myBatisGenerator = <span style="color:#8b008b;font-weight:bold">new</span> MyBatisGenerator(config, callback, warnings);
+		   myBatisGenerator.<span style="color:#658b00">generate</span>(<span style="color:#8b008b;font-weight:bold">null</span>);
+		   
+		System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#34;hello&#34;</span>);
+	}
+}
+</code></pre></div><p>注意：其中static文件夹中是Bootstrap相关的文件
+view：是跳转的页面</p>
+
+</article>
+    </div>
+</div>
+
+
+                
+<div id="sidebar" class="pure-u-1 pure-u-md-1-4 pure-u-sm-1">
+    <div class="pad">
+        <a name="about"></a>
+        <h3>关于我</h3>
+        <div style="text-align: center;">
+            <img src="/img/author.jpg" alt="吴继文" class="pure-img" />
+            <p><em>Handsome</em></p>
+        </div>
+
+        <h3>最近文章</h3>
+        <div class="pure-menu pure-menu-open">
+            <ul class="pure-menu-list">
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/mybatis-plus/" class="pure-menu-link">Mybatis-Plus<br>
+                        <small>MyBatis-Plus 的增强工具，在 MyBatis 的基础上只做增强不做改变，为简化开发、提高效率而生。</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/mongodb/" class="pure-menu-link">DBmong数据库<br>
+                        <small>NoSQL 是一项全新的数据库革命性运动，早期就有人提出，发展至2009年趋势越发高涨。NoSQL的拥护者们提倡运用非关系型的数据存储，相对于铺天盖地的关系型数据库运用，这一概念无疑是一种全新的思维的注入。</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/docker/" class="pure-menu-link">Docker容器技术<br>
+                        <small>这一种常用的容器技术，能简化项目的部署</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/go%E8%AF%AD%E8%A8%80/" class="pure-menu-link">Go语言技术知识<br>
+                        <small>主要介绍GO语言的基本语法</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/hexo&#43;github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6/" class="pure-menu-link">hexo&#43;github搭建个人博客<br>
+                        <small>介绍了个人博客搭建的完整步骤</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/idea%E7%9A%84%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="pure-menu-link">IDEA的基本使用<br>
+                        <small>主要介绍了IDEA的基本以用和一些常用的快捷键</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/java%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/" class="pure-menu-link">Java原生代码连接数据库<br>
+                        <small>介绍了在不使用框架的基础上连接MySQL</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/%E5%9F%BA%E4%BA%8Ejava%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="pure-menu-link">Java多线程基础知识<br>
+                        <small>一种提高程序运行效率的技术</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/java%E5%AE%9E%E7%8E%B0%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/" class="pure-menu-link">Java实现串口通信<br>
+                        <small>Java实现窗口通信</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/java%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" class="pure-menu-link">Java的基础知识<br>
+                        <small>介绍了Java的基础知识</small>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <h3>分类</h3>
+        <div style="text-align:center" class="tags">
+            
+            
+            <a href="/tags/%e6%a1%86%e6%9e%b6" class="pure-button"> 框架
+                <small>(6)</small></a>
+            
+            
+            
+            <a href="/tags/%e7%bc%96%e7%a8%8b" class="pure-button"> 编程
+                <small>(5)</small></a>
+            
+            
+            
+            <a href="/tags/%e5%85%b6%e5%ae%83" class="pure-button"> 其它
+                <small>(2)</small></a>
+            
+            
+            
+            <a href="/tags/%e6%95%b0%e6%8d%ae%e5%ba%93" class="pure-button"> 数据库
+                <small>(2)</small></a>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </div>
+    </div> 
+</div> 
+
+                
+            </div>
+<div class="pure-g">
+	<footer class="pure-u-1 pure-u-md-1 pure-u-sm-1">
+		<p>This page and its contents are copyright &copy; 2020,
+			<a href="">吴继文</a>.</p>
+		<p><a href="https://github.com/pravin/hugo-theme-prav">Theme Prav</a> by <a href="https://cto.me.uk">Pravin
+				Paratey</a></p>
+	</footer>
+
+	<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
+		integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+		crossorigin="anonymous"></script>
+</div>
+</div></body>
+</html>

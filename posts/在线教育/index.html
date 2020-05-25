@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#000" />
+    <title>
+        
+            在线教育 &middot; Blog Hugo Theme - Prav
+        
+    </title>
+
+    
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"
+        integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    
+    
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:300,300italic,700&display=swap" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:300&display=swap" rel="stylesheet">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/atom.xml" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="">
+    
+    <meta name="description" content="这是一个关于在线教育的系统，采用的时前后端分离的方式">
+    
+    <meta name="keywords" content="项目实战,SpringBoot,SpringCloud,Vue">
+    
+    <meta name="author" content="吴继文"></head>
+
+<body>
+        <div class="container">
+<div id="navbar" class="pure-menu pure-menu-open pure-menu-horizontal pure-menu-scrollable">
+    <a href="/" class="pure-menu-heading">
+         
+            Blog 
+         
+    </a>
+    <ul class="pure-menu-list">
+        <li class="pure-menu-item">
+            <a href="/posts" class="pure-menu-link">
+                <i class="fa fa-archive"></i>
+                文章
+            </a>
+        </li>
+        <li class="pure-menu-item">
+            <a href="/tags" class="pure-menu-link">
+                <i class="fas fa-comments"></i>
+                分类
+            </a>
+        </li>
+        <li class="pure-menu-item">
+            <a href="/about" class="pure-menu-link">
+                <i class="fas fa-smile"></i>
+                关于我
+            </a>
+        </li>
+    </ul>
+    <ul class="pure-menu-list pull-right">
+        
+        <li class="pure-menu-item">
+            <a href="https://www.baidu.com" title="Github" class="pure-menu-link">
+                <i class="fab fa-github"></i>
+                <span class="hide">Github</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="http://twitter.com/example" title="@pravin" class="pure-menu-link">
+                <i class="fab fa-twitter-square"></i>
+                <span class="hide">Twitter</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="http://uk.linkedin.com/in/example" title="Linked In" class="pure-menu-link">
+                <i class="fab fa-linkedin"></i>
+                <span class="hide">LinkedIn</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="https://www.medium.com/@example" title="Medium" class="pure-menu-link">
+                <i class="fab fa-medium"></i>
+                <span class="hide">Medium</span>
+            </a>
+        </li>
+        
+        
+        <li class="pure-menu-item">
+            <a href="https://www.facebook.com/example" title="Facebook" class="pure-menu-link">
+                <i class="fab fa-facebook"></i>
+                <span class="hide">Facebook</span>
+            </a>
+        </li>
+        
+        <li class="pure-menu-item">
+            <a href="/atom.xml" title="Atom Feed" class="pure-menu-link">
+                <i class="fas fa-rss-square"></i>
+                <span class="hide">RSS Feed</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="pure-u-1">
+    <div class="pad">
+    </div>
+</div>
+<div class="pure-g">
+
+
+<div id="content" class="pure-u-1 pure-u-md-3-4 pure-u-sm-1">
+    <div class="pad">
+
+<div class="date">
+    <time pubdate="0001-01-01">January 1, 0001</time>
+    <span class="author">学习笔记</span>
+</div>
+
+<article>
+    <h1><a href="https://example.com/posts/%E5%9C%A8%E7%BA%BF%E6%95%99%E8%82%B2/">在线教育</a></h1>
+    <div class="tags">
+        
+        
+        <a href="/tags/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98" class="pure-button">项目实战</a>
+        
+        
+        <a href="/tags/springboot" class="pure-button">SpringBoot</a>
+        
+        
+        <a href="/tags/springcloud" class="pure-button">SpringCloud</a>
+        
+        
+        <a href="/tags/vue" class="pure-button">Vue</a>
+        
+    </div>
+    <h2 id="一创建父工程">一、创建父工程</h2>
+<h3 id="1使用springboot初始化项目">1.使用SpringBoot初始化项目</h3>
+<h3 id="2修改pom文件">2.修改pom文件</h3>
+<pre><code class="language-pom" data-lang="pom">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+    &lt;parent&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
+        &lt;version&gt;2.2.7.RELEASE&lt;/version&gt;
+        &lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt;
+    &lt;/parent&gt;
+    &lt;groupId&gt;com.mntc&lt;/groupId&gt;
+    &lt;artifactId&gt;guli-demo&lt;/artifactId&gt;
+    &lt;packaging&gt;pom&lt;/packaging&gt;
+    &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+    &lt;name&gt;guli-demo&lt;/name&gt;
+    &lt;description&gt;这是父工程&lt;/description&gt;
+
+    &lt;properties&gt;
+        &lt;java.version&gt;1.8&lt;/java.version&gt;
+        &lt;guli.version&gt;0.0.1-SNAPSHOT&lt;/guli.version&gt;
+        &lt;mybatis-plus.version&gt;3.0.5&lt;/mybatis-plus.version&gt;
+        &lt;velocity.version&gt;2.0&lt;/velocity.version&gt;
+        &lt;swagger.version&gt;2.7.0&lt;/swagger.version&gt;
+        &lt;aliyun.oss.version&gt;2.8.3&lt;/aliyun.oss.version&gt;
+        &lt;jodatime.version&gt;2.10.1&lt;/jodatime.version&gt;
+        &lt;poi.version&gt;3.17&lt;/poi.version&gt;
+        &lt;commons-fileupload.version&gt;1.3.1&lt;/commons-fileupload.version&gt;
+        &lt;commons-io.version&gt;2.6&lt;/commons-io.version&gt;
+        &lt;httpclient.version&gt;4.5.1&lt;/httpclient.version&gt;
+        &lt;jwt.version&gt;0.7.0&lt;/jwt.version&gt;
+        &lt;aliyun-java-sdk-core.version&gt;4.3.3&lt;/aliyun-java-sdk-core.version&gt;
+        &lt;aliyun-sdk-oss.version&gt;3.1.0&lt;/aliyun-sdk-oss.version&gt;
+        &lt;aliyun-java-sdk-vod.version&gt;2.15.2&lt;/aliyun-java-sdk-vod.version&gt;
+        &lt;aliyun-java-vod-upload.version&gt;1.4.11&lt;/aliyun-java-vod-upload.version&gt;
+        &lt;aliyun-sdk-vod-upload.version&gt;1.4.11&lt;/aliyun-sdk-vod-upload.version&gt;
+        &lt;fastjson.version&gt;1.2.28&lt;/fastjson.version&gt;
+        &lt;gson.version&gt;2.8.2&lt;/gson.version&gt;
+        &lt;json.version&gt;20170516&lt;/json.version&gt;
+        &lt;commons-dbutils.version&gt;1.7&lt;/commons-dbutils.version&gt;
+        &lt;canal.client.version&gt;1.1.0&lt;/canal.client.version&gt;
+        &lt;docker.image.prefix&gt;zx&lt;/docker.image.prefix&gt;
+        &lt;cloud-alibaba.version&gt;0.2.2.RELEASE&lt;/cloud-alibaba.version&gt;
+    &lt;/properties&gt;
+
+    &lt;dependencyManagement&gt;
+        &lt;dependencies&gt;
+            &lt;!--Spring Cloud--&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-cloud-dependencies&lt;/artifactId&gt;
+                &lt;version&gt;Hoxton.RELEASE&lt;/version&gt;
+                &lt;type&gt;pom&lt;/type&gt;
+                &lt;scope&gt;import&lt;/scope&gt;
+            &lt;/dependency&gt;
+
+            &lt;dependency&gt;
+                &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-cloud-alibaba-dependencies&lt;/artifactId&gt;
+                &lt;version&gt;${cloud-alibaba.version}&lt;/version&gt;
+                &lt;type&gt;pom&lt;/type&gt;
+                &lt;scope&gt;import&lt;/scope&gt;
+            &lt;/dependency&gt;
+            &lt;!--mybatis-plus 持久层--&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;com.baomidou&lt;/groupId&gt;
+                &lt;artifactId&gt;mybatis-plus-boot-starter&lt;/artifactId&gt;
+                &lt;version&gt;${mybatis-plus.version}&lt;/version&gt;
+            &lt;/dependency&gt;
+
+            &lt;!-- velocity 模板引擎, Mybatis Plus 代码生成器需要 --&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;org.apache.velocity&lt;/groupId&gt;
+                &lt;artifactId&gt;velocity-engine-core&lt;/artifactId&gt;
+                &lt;version&gt;${velocity.version}&lt;/version&gt;
+            &lt;/dependency&gt;
+
+            &lt;!--swagger--&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;io.springfox&lt;/groupId&gt;
+                &lt;artifactId&gt;springfox-swagger2&lt;/artifactId&gt;
+                &lt;version&gt;${swagger.version}&lt;/version&gt;
+            &lt;/dependency&gt;
+            &lt;!--swagger ui--&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;io.springfox&lt;/groupId&gt;
+                &lt;artifactId&gt;springfox-swagger-ui&lt;/artifactId&gt;
+                &lt;version&gt;${swagger.version}&lt;/version&gt;
+            &lt;/dependency&gt;
+
+            &lt;!--aliyunOSS--&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;com.aliyun.oss&lt;/groupId&gt;
+                &lt;artifactId&gt;aliyun-sdk-oss&lt;/artifactId&gt;
+                &lt;version&gt;${aliyun.oss.version}&lt;/version&gt;
+            &lt;/dependency&gt;
+
+            &lt;!--日期时间工具--&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;joda-time&lt;/groupId&gt;
+                &lt;artifactId&gt;joda-time&lt;/artifactId&gt;
+                &lt;version&gt;${jodatime.version}&lt;/version&gt;
+            &lt;/dependency&gt;
+
+            &lt;!--xls--&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;org.apache.poi&lt;/groupId&gt;
+                &lt;artifactId&gt;poi&lt;/artifactId&gt;
+                &lt;version&gt;${poi.version}&lt;/version&gt;
+            &lt;/dependency&gt;
+            &lt;!--xlsx--&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;org.apache.poi&lt;/groupId&gt;
+                &lt;artifactId&gt;poi-ooxml&lt;/artifactId&gt;
+                &lt;version&gt;${poi.version}&lt;/version&gt;
+            &lt;/dependency&gt;
+
+            &lt;!--文件上传--&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;commons-fileupload&lt;/groupId&gt;
+                &lt;artifactId&gt;commons-fileupload&lt;/artifactId&gt;
+                &lt;version&gt;${commons-fileupload.version}&lt;/version&gt;
+            &lt;/dependency&gt;
+
+            &lt;!--commons-io--&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;commons-io&lt;/groupId&gt;
+                &lt;artifactId&gt;commons-io&lt;/artifactId&gt;
+                &lt;version&gt;${commons-io.version}&lt;/version&gt;
+            &lt;/dependency&gt;
+
+            &lt;!--httpclient--&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;org.apache.httpcomponents&lt;/groupId&gt;
+                &lt;artifactId&gt;httpclient&lt;/artifactId&gt;
+                &lt;version&gt;${httpclient.version}&lt;/version&gt;
+            &lt;/dependency&gt;
+
+            &lt;dependency&gt;
+                &lt;groupId&gt;com.google.code.gson&lt;/groupId&gt;
+                &lt;artifactId&gt;gson&lt;/artifactId&gt;
+                &lt;version&gt;${gson.version}&lt;/version&gt;
+            &lt;/dependency&gt;
+
+            &lt;!-- JWT --&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;io.jsonwebtoken&lt;/groupId&gt;
+                &lt;artifactId&gt;jjwt&lt;/artifactId&gt;
+                &lt;version&gt;${jwt.version}&lt;/version&gt;
+            &lt;/dependency&gt;
+
+            &lt;!--aliyun--&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;com.aliyun&lt;/groupId&gt;
+                &lt;artifactId&gt;aliyun-java-sdk-core&lt;/artifactId&gt;
+                &lt;version&gt;${aliyun-java-sdk-core.version}&lt;/version&gt;
+            &lt;/dependency&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;com.aliyun.oss&lt;/groupId&gt;
+                &lt;artifactId&gt;aliyun-sdk-oss&lt;/artifactId&gt;
+                &lt;version&gt;${aliyun-sdk-oss.version}&lt;/version&gt;
+            &lt;/dependency&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;com.aliyun&lt;/groupId&gt;
+                &lt;artifactId&gt;aliyun-java-sdk-vod&lt;/artifactId&gt;
+                &lt;version&gt;${aliyun-java-sdk-vod.version}&lt;/version&gt;
+            &lt;/dependency&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;com.aliyun&lt;/groupId&gt;
+                &lt;artifactId&gt;aliyun-java-vod-upload&lt;/artifactId&gt;
+                &lt;version&gt;${aliyun-java-vod-upload.version}&lt;/version&gt;
+            &lt;/dependency&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;com.aliyun&lt;/groupId&gt;
+                &lt;artifactId&gt;aliyun-sdk-vod-upload&lt;/artifactId&gt;
+                &lt;version&gt;${aliyun-sdk-vod-upload.version}&lt;/version&gt;
+            &lt;/dependency&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;com.alibaba&lt;/groupId&gt;
+                &lt;artifactId&gt;fastjson&lt;/artifactId&gt;
+                &lt;version&gt;${fastjson.version}&lt;/version&gt;
+            &lt;/dependency&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;org.json&lt;/groupId&gt;
+                &lt;artifactId&gt;json&lt;/artifactId&gt;
+                &lt;version&gt;${json.version}&lt;/version&gt;
+            &lt;/dependency&gt;
+
+            &lt;dependency&gt;
+                &lt;groupId&gt;commons-dbutils&lt;/groupId&gt;
+                &lt;artifactId&gt;commons-dbutils&lt;/artifactId&gt;
+                &lt;version&gt;${commons-dbutils.version}&lt;/version&gt;
+            &lt;/dependency&gt;
+
+            &lt;dependency&gt;
+                &lt;groupId&gt;com.alibaba.otter&lt;/groupId&gt;
+                &lt;artifactId&gt;canal.client&lt;/artifactId&gt;
+                &lt;version&gt;${canal.client.version}&lt;/version&gt;
+            &lt;/dependency&gt;
+        &lt;/dependencies&gt;
+    &lt;/dependencyManagement&gt;
+    &lt;build&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+
+&lt;/project&gt;
+</code></pre><h3 id="3删除src文件夹">3.删除<strong>src</strong>文件夹</h3>
+<h2 id="二使用mybatis-plus逆向生成">二、使用Mybatis-plus逆向生成</h2>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#707a7c">@Test</span>
+<span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">run</span>() {
+
+    <span style="color:#228b22">// 1、创建代码生成器
+</span><span style="color:#228b22"></span>    AutoGenerator mpg = <span style="color:#8b008b;font-weight:bold">new</span> AutoGenerator();
+
+    <span style="color:#228b22">// 2、全局配置
+</span><span style="color:#228b22"></span>    GlobalConfig gc = <span style="color:#8b008b;font-weight:bold">new</span> GlobalConfig();
+    String projectPath = System.<span style="color:#658b00">getProperty</span>(<span style="color:#cd5555">&#34;user.dir&#34;</span>);
+    gc.<span style="color:#658b00">setOutputDir</span>(<span style="color:#cd5555">&#34;E:\\Users\\admin\\IdeaProjects\\guli-demo\\service-edu&#34;</span> + <span style="color:#cd5555">&#34;/src/main/java&#34;</span>);
+
+    gc.<span style="color:#658b00">setAuthor</span>(<span style="color:#cd5555">&#34;testjava&#34;</span>);
+    gc.<span style="color:#658b00">setOpen</span>(<span style="color:#8b008b;font-weight:bold">false</span>); <span style="color:#228b22">//生成后是否打开资源管理器
+</span><span style="color:#228b22"></span>    gc.<span style="color:#658b00">setFileOverride</span>(<span style="color:#8b008b;font-weight:bold">false</span>); <span style="color:#228b22">//重新生成时文件是否覆盖
+</span><span style="color:#228b22"></span>
+    <span style="color:#228b22">//UserServie
+</span><span style="color:#228b22"></span>    gc.<span style="color:#658b00">setServiceName</span>(<span style="color:#cd5555">&#34;%sService&#34;</span>);    <span style="color:#228b22">//去掉Service接口的首字母I
+</span><span style="color:#228b22"></span>
+    gc.<span style="color:#658b00">setIdType</span>(IdType.<span style="color:#658b00">AUTO</span>); <span style="color:#228b22">//主键策略
+</span><span style="color:#228b22"></span>    gc.<span style="color:#658b00">setDateType</span>(DateType.<span style="color:#658b00">ONLY_DATE</span>);<span style="color:#228b22">//定义生成的实体类中日期类型
+</span><span style="color:#228b22"></span>    <span style="color:#228b22">//gc.setSwagger2(true);//开启Swagger2模式
+</span><span style="color:#228b22"></span>
+    mpg.<span style="color:#658b00">setGlobalConfig</span>(gc);
+
+    <span style="color:#228b22">// 3、数据源配置
+</span><span style="color:#228b22"></span>    DataSourceConfig dsc = <span style="color:#8b008b;font-weight:bold">new</span> DataSourceConfig();
+    dsc.<span style="color:#658b00">setUrl</span>(<span style="color:#cd5555">&#34;jdbc:mysql://localhost:3306/mybatis-plus?serverTimezone=GMT%2B8&#34;</span>);
+    dsc.<span style="color:#658b00">setDriverName</span>(<span style="color:#cd5555">&#34;com.mysql.cj.jdbc.Driver&#34;</span>);
+    dsc.<span style="color:#658b00">setUsername</span>(<span style="color:#cd5555">&#34;root&#34;</span>);
+    dsc.<span style="color:#658b00">setPassword</span>(<span style="color:#cd5555">&#34;13733433427&#34;</span>);
+    dsc.<span style="color:#658b00">setDbType</span>(DbType.<span style="color:#658b00">MYSQL</span>);
+    mpg.<span style="color:#658b00">setDataSource</span>(dsc);
+
+    <span style="color:#228b22">// 4、包配置
+</span><span style="color:#228b22"></span>    PackageConfig pc = <span style="color:#8b008b;font-weight:bold">new</span> PackageConfig();
+    pc.<span style="color:#658b00">setModuleName</span>(<span style="color:#cd5555">&#34;eduservice&#34;</span>); <span style="color:#228b22">//模块名
+</span><span style="color:#228b22"></span>    <span style="color:#228b22">//包  com.atguigu.eduservice
+</span><span style="color:#228b22"></span>    pc.<span style="color:#658b00">setParent</span>(<span style="color:#cd5555">&#34;com.mntc&#34;</span>);
+    <span style="color:#228b22">//包  com.atguigu.eduservice.controller
+</span><span style="color:#228b22"></span>    pc.<span style="color:#658b00">setController</span>(<span style="color:#cd5555">&#34;controller&#34;</span>);
+    pc.<span style="color:#658b00">setEntity</span>(<span style="color:#cd5555">&#34;entity&#34;</span>);
+    pc.<span style="color:#658b00">setService</span>(<span style="color:#cd5555">&#34;service&#34;</span>);
+    pc.<span style="color:#658b00">setMapper</span>(<span style="color:#cd5555">&#34;mapper&#34;</span>);
+    mpg.<span style="color:#658b00">setPackageInfo</span>(pc);
+
+    <span style="color:#228b22">// 5、策略配置
+</span><span style="color:#228b22"></span>    StrategyConfig strategy = <span style="color:#8b008b;font-weight:bold">new</span> StrategyConfig();
+
+    strategy.<span style="color:#658b00">setInclude</span>(<span style="color:#cd5555">&#34;t_user&#34;</span>);
+    strategy.<span style="color:#658b00">setTablePrefix</span>(<span style="color:#cd5555">&#34;t_&#34;</span>);
+    strategy.<span style="color:#658b00">setNaming</span>(NamingStrategy.<span style="color:#658b00">underline_to_camel</span>);<span style="color:#228b22">//数据库表映射到实体的命名策略
+</span><span style="color:#228b22"></span>    strategy.<span style="color:#658b00">setTablePrefix</span>(pc.<span style="color:#658b00">getModuleName</span>() + <span style="color:#cd5555">&#34;_&#34;</span>); <span style="color:#228b22">//生成实体时去掉表前缀
+</span><span style="color:#228b22"></span>
+    strategy.<span style="color:#658b00">setColumnNaming</span>(NamingStrategy.<span style="color:#658b00">underline_to_camel</span>);<span style="color:#228b22">//数据库表字段映射到实体的命名策略
+</span><span style="color:#228b22"></span>    strategy.<span style="color:#658b00">setEntityLombokModel</span>(<span style="color:#8b008b;font-weight:bold">true</span>); <span style="color:#228b22">// lombok 模型 @Accessors(chain = true) setter链式操作
+</span><span style="color:#228b22"></span>
+    strategy.<span style="color:#658b00">setRestControllerStyle</span>(<span style="color:#8b008b;font-weight:bold">true</span>); <span style="color:#228b22">//restful api风格控制器
+</span><span style="color:#228b22"></span>    strategy.<span style="color:#658b00">setControllerMappingHyphenStyle</span>(<span style="color:#8b008b;font-weight:bold">true</span>); <span style="color:#228b22">//url中驼峰转连字符
+</span><span style="color:#228b22"></span>
+    mpg.<span style="color:#658b00">setStrategy</span>(strategy);
+
+
+    <span style="color:#228b22">// 6、执行
+</span><span style="color:#228b22"></span>    mpg.<span style="color:#658b00">execute</span>();
+}
+</code></pre></div><h2 id="三swagger">三、swagger</h2>
+<h3 id="1引入依赖">1.引入依赖</h3>
+<pre><code>&lt;!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;io.springfox&lt;/groupId&gt;
+    &lt;artifactId&gt;springfox-swagger2&lt;/artifactId&gt;
+    &lt;version&gt;2.7.0&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;io.springfox&lt;/groupId&gt;
+    &lt;artifactId&gt;springfox-swagger-ui&lt;/artifactId&gt;
+    &lt;version&gt;2.7.0&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre><h3 id="2引入相关的配置">2.引入相关的配置</h3>
+<pre><code>@Configuration
+@MapperScan(&quot;com.mntc.eduservice.mapper&quot;)
+@EnableSwagger2
+public class MyConfig {
+    @Bean
+    public Docket petApi() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .apiInfo(apiInfo())
+                .select()
+                .apis(RequestHandlerSelectors.basePackage(&quot;com.mntc.eduservice.controller&quot;)) //指定提供接口所在的基包
+                .build();
+    }
+    /**
+     * 该套 API 说明，包含作者、简介、版本、host、服务URL
+     * @return
+     */
+    private ApiInfo apiInfo() {
+        return new ApiInfoBuilder()
+                .title(&quot;demo api 说明&quot;)
+                .contact(new Contact(&quot;allen&quot;,&quot;null&quot;,&quot;name@example.com&quot;))
+                .version(&quot;0.1&quot;)
+                .termsOfServiceUrl(&quot;localhost:8089/eduService/&quot;)
+                .description(&quot;demo api&quot;)
+                .build();
+    }
+
+}
+</code></pre><h3 id="3测试">3.测试</h3>
+<blockquote>
+<p>http://localhost:8089/swagger-ui.html</p>
+</blockquote>
+<h2 id="四项目中日志和日期格式化问题">四、项目中日志和日期格式化问题</h2>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#228b22">#返回json的全局时间格式</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">spring</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#8b008b;font-weight:bold">jackson</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#8b008b;font-weight:bold">date-format</span>:<span style="color:#bbb"> </span>yyyy-MM-dd<span style="color:#bbb"> </span>HH:mm:ss<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#8b008b;font-weight:bold">time-zone</span>:<span style="color:#bbb"> </span>GMT<span style="color:#b452cd">+8</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#228b22">#mybatis日志</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#8b008b;font-weight:bold">mybatis-plus</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#8b008b;font-weight:bold">configuration</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#8b008b;font-weight:bold">log-impl</span>:<span style="color:#bbb"> </span>org.apache.ibatis.logging.stdout.StdOutImpl<span style="color:#bbb">
+</span></code></pre></div><h2 id="五配置分页查询">五、配置分页查询</h2>
+<h3 id="1添加插件">1.添加插件</h3>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#228b22">//Spring boot方式
+</span><span style="color:#228b22"></span><span style="color:#707a7c">@EnableTransactionManagement</span>
+<span style="color:#707a7c">@Configuration</span>
+<span style="color:#707a7c">@MapperScan</span>(<span style="color:#cd5555">&#34;com.baomidou.cloud.service.*.mapper*&#34;</span>)
+<span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">MybatisPlusConfig</span> {
+
+    <span style="color:#228b22">/**
+</span><span style="color:#228b22">     * 配置分页查询插件
+</span><span style="color:#228b22">     * @return
+</span><span style="color:#228b22">     */</span>
+    <span style="color:#707a7c">@Bean</span>
+    <span style="color:#8b008b;font-weight:bold">public</span> PaginationInterceptor <span style="color:#008b45">paginationInterceptor</span>() {
+        <span style="color:#8b008b;font-weight:bold">return</span>  <span style="color:#8b008b;font-weight:bold">new</span> PaginationInterceptor();
+    }
+}
+</code></pre></div><h3 id="2实现分页查询">2.实现分页查询</h3>
+<pre><code>/**
+ * 分页查询
+ * @param current
+ * @param limit
+ * @return
+ */
+@ApiOperation(value=&quot;分页查询&quot;)
+@GetMapping(&quot;pageListTeacher/{current}/{limit}&quot;)
+public CommonResult&lt;List&lt;User&gt;&gt; pageListTeacher(@PathVariable Integer current,@PathVariable Integer limit){
+    limit=limit==null?1:limit;
+    limit=limit==null?3:limit;
+    IPage&lt;User&gt; page = userService.page(new Page&lt;User&gt;(current, limit), null);
+    List&lt;User&gt; records = page.getRecords();
+    if(records==null){
+        return new CommonResult&lt;&gt;(false,&quot;分页查询失败&quot;);
+    }
+    return new CommonResult&lt;&gt;(true,&quot;分页查询成功&quot;,records);
+}
+</code></pre><h2 id="六多条件组合带分页查询">六、多条件组合带分页查询</h2>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#707a7c">@PostMapping</span>(<span style="color:#cd5555">&#34;pageUserCondition/{current}/{limit}&#34;</span>)
+    <span style="color:#8b008b;font-weight:bold">public</span> CommonResult&lt;List&lt;User&gt;&gt; <span style="color:#008b45">pageUserCondition</span>(<span style="color:#707a7c">@PathVariable</span> Integer current, <span style="color:#707a7c">@PathVariable</span> Integer limit,<span style="color:#707a7c">@RequestBody</span>(required = <span style="color:#8b008b;font-weight:bold">false</span>) UserQuery userQuery){
+        current = current==<span style="color:#8b008b;font-weight:bold">null</span>?1:current;
+        limit = limit==<span style="color:#8b008b;font-weight:bold">null</span>?3:limit;
+
+        QueryWrapper&lt;User&gt; wrapper = <span style="color:#8b008b;font-weight:bold">new</span> QueryWrapper();
+        String name = userQuery.<span style="color:#658b00">getName</span>();
+        Integer age = userQuery.<span style="color:#658b00">getAge</span>();
+        String email = userQuery.<span style="color:#658b00">getEmail</span>();
+       <span style="color:#8b008b;font-weight:bold">if</span>(!StringUtils.<span style="color:#658b00">isEmpty</span>(name)){
+           wrapper.<span style="color:#658b00">like</span>(<span style="color:#cd5555">&#34;name&#34;</span>,name);
+       }
+
+        <span style="color:#8b008b;font-weight:bold">if</span>(!StringUtils.<span style="color:#658b00">isEmpty</span>(age)){
+            wrapper.<span style="color:#658b00">eq</span>(<span style="color:#cd5555">&#34;age&#34;</span>,age);
+        }
+
+        <span style="color:#8b008b;font-weight:bold">if</span>(!StringUtils.<span style="color:#658b00">isEmpty</span>(email)){
+            wrapper.<span style="color:#658b00">eq</span>(<span style="color:#cd5555">&#34;email&#34;</span>,email);
+        }
+
+        IPage&lt;User&gt; page = userService.<span style="color:#658b00">page</span>(<span style="color:#8b008b;font-weight:bold">new</span> Page&lt;User&gt;(current, limit), wrapper);
+        List&lt;User&gt; records = page.<span style="color:#658b00">getRecords</span>();
+
+        <span style="color:#8b008b;font-weight:bold">if</span>(records==<span style="color:#8b008b;font-weight:bold">null</span>){
+            <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#8b008b;font-weight:bold">new</span> CommonResult&lt;&gt;(<span style="color:#8b008b;font-weight:bold">false</span>,<span style="color:#cd5555">&#34;分页查询失败&#34;</span>);
+        }
+        <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#8b008b;font-weight:bold">new</span> CommonResult&lt;&gt;(<span style="color:#8b008b;font-weight:bold">true</span>,<span style="color:#cd5555">&#34;分页查询成功&#34;</span>,records);
+    }
+</code></pre></div><h2 id="七数据的自动填充">七、数据的自动填充</h2>
+<h3 id="1编写一个配置类">1.编写一个配置类</h3>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8b008b;font-weight:bold">package</span> <span style="color:#008b45;text-decoration:underline">com.mntc.eduservice.handle</span>;
+
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">com.baomidou.mybatisplus.core.handlers.MetaObjectHandler</span>;
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">lombok.extern.slf4j.Slf4j</span>;
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">org.apache.ibatis.reflection.MetaObject</span>;
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">org.springframework.stereotype.Component</span>;
+
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">java.util.Date</span>;
+
+<span style="color:#228b22">/**
+</span><span style="color:#228b22"> * 自动填充
+</span><span style="color:#228b22"> */</span>
+<span style="color:#707a7c">@Slf4j</span>
+<span style="color:#707a7c">@Component</span>
+<span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">MyMetaObjectHandler</span> <span style="color:#8b008b;font-weight:bold">implements</span> MetaObjectHandler {
+    <span style="color:#707a7c">@Override</span>
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">insertFill</span>(MetaObject metaObject) {
+        <span style="color:#8b008b;font-weight:bold">this</span>.<span style="color:#658b00">setFieldValByName</span>(<span style="color:#cd5555">&#34;createTime&#34;</span>,<span style="color:#8b008b;font-weight:bold">new</span> Date(),metaObject);
+        <span style="color:#8b008b;font-weight:bold">this</span>.<span style="color:#658b00">setFieldValByName</span>(<span style="color:#cd5555">&#34;updateTime&#34;</span>,<span style="color:#8b008b;font-weight:bold">new</span> Date(),metaObject);
+    }
+    <span style="color:#707a7c">@Override</span>
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">updateFill</span>(MetaObject metaObject) {
+        <span style="color:#8b008b;font-weight:bold">this</span>.<span style="color:#658b00">setFieldValByName</span>(<span style="color:#cd5555">&#34;updateTime&#34;</span>,<span style="color:#8b008b;font-weight:bold">new</span> Date(),metaObject);
+    }
+}
+</code></pre></div><h3 id="2在实体类上添加注解">2.在实体类上添加注解</h3>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#707a7c">@TableField</span>(fill = FieldFill.<span style="color:#658b00">INSERT</span>)
+<span style="color:#8b008b;font-weight:bold">private</span> Date createTime;
+
+<span style="color:#707a7c">@TableField</span>(fill = FieldFill.<span style="color:#658b00">INSERT_UPDATE</span>)
+<span style="color:#8b008b;font-weight:bold">private</span> Date updateTime;
+</code></pre></div><h2 id="八逻辑删除">八、逻辑删除</h2>
+<p>1.全局配置文件<code>application.yml</code>中天界配置</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#8b008b;font-weight:bold">mybatis-plus</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#8b008b;font-weight:bold">global-config</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#8b008b;font-weight:bold">db-config</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">            </span><span style="color:#8b008b;font-weight:bold">logic-delete-field</span>:<span style="color:#bbb"> </span>deleted<span style="color:#bbb">  </span><span style="color:#228b22">#全局逻辑删除字段值 3.3.0开始支持，详情看下面。</span><span style="color:#bbb">
+</span><span style="color:#bbb">            </span><span style="color:#8b008b;font-weight:bold">logic-delete-value</span>:<span style="color:#bbb"> </span><span style="color:#b452cd">1</span><span style="color:#bbb"> </span><span style="color:#228b22"># 逻辑已删除值(默认为 1)</span><span style="color:#bbb">
+</span><span style="color:#bbb">            </span><span style="color:#8b008b;font-weight:bold">logic-not-delete-value</span>:<span style="color:#bbb"> </span><span style="color:#b452cd">0</span><span style="color:#bbb"> </span><span style="color:#228b22"># 逻辑未删除值(默认为 0)</span><span style="color:#bbb">
+</span></code></pre></div><p>2.添加插件(高版本中不需要)</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#228b22">/**
+</span><span style="color:#228b22"> * 逻辑删除
+</span><span style="color:#228b22"> */</span>
+<span style="color:#707a7c">@Bean</span>
+<span style="color:#8b008b;font-weight:bold">public</span> ISqlInjector <span style="color:#008b45">sqlInjector</span>(){
+    <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#8b008b;font-weight:bold">new</span> LogicSqlInjector();
+}
+</code></pre></div><p>3.实体类上添加注解</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#707a7c">@TableLogic</span>
+<span style="color:#8b008b;font-weight:bold">private</span> Integer deleted;
+</code></pre></div><p><code>注意低版本中会存在Bug：无论删除是否成功，返回的都是true</code></p>
+<h2 id="九统一结果返回">九、统一结果返回</h2>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8b008b;font-weight:bold">package</span> <span style="color:#008b45;text-decoration:underline">com.mntc.eduservice.entity</span>;
+
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">lombok.AllArgsConstructor</span>;
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">lombok.Data</span>;
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">lombok.NoArgsConstructor</span>;
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">lombok.ToString</span>;
+
+<span style="color:#707a7c">@Data</span>
+<span style="color:#707a7c">@AllArgsConstructor</span>
+<span style="color:#707a7c">@NoArgsConstructor</span>
+<span style="color:#707a7c">@ToString</span>
+<span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">CommonResult</span>&lt;T&gt; {
+    <span style="color:#8b008b;font-weight:bold">private</span> <span style="color:#00688b;font-weight:bold">boolean</span> status;
+    <span style="color:#8b008b;font-weight:bold">private</span> String message;
+    <span style="color:#8b008b;font-weight:bold">private</span> T data;
+
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#008b45">CommonResult</span>(<span style="color:#00688b;font-weight:bold">boolean</span> status, String message) {
+        <span style="color:#8b008b;font-weight:bold">this</span>.<span style="color:#658b00">status</span> = status;
+        <span style="color:#8b008b;font-weight:bold">this</span>.<span style="color:#658b00">message</span> = message;
+    }
+}
+</code></pre></div><h2 id="十异常处理类">十、异常处理类</h2>
+<h3 id="1全局异常处理">1.全局异常处理</h3>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8b008b;font-weight:bold">package</span> <span style="color:#008b45;text-decoration:underline">com.mntc.eduservice.exceptionHandler</span>;
+
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">com.mntc.eduservice.entity.CommonResult</span>;
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">org.springframework.web.bind.annotation.ControllerAdvice</span>;
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">org.springframework.web.bind.annotation.ExceptionHandler</span>;
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">org.springframework.web.bind.annotation.ResponseBody</span>;
+
+<span style="color:#707a7c">@ControllerAdvice</span>
+<span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">GlobalExceptionHandler</span> {
+
+    <span style="color:#228b22">/**
+</span><span style="color:#228b22">     * 指定出现什么异常时会执行这个方法（Exception:表示会拦截所有的异常）
+</span><span style="color:#228b22">     * @param e
+</span><span style="color:#228b22">     * @return
+</span><span style="color:#228b22">     */</span>
+    <span style="color:#707a7c">@ExceptionHandler</span>(Exception.<span style="color:#658b00">class</span>)
+    <span style="color:#707a7c">@ResponseBody</span>
+    <span style="color:#8b008b;font-weight:bold">public</span> CommonResult&lt;Object&gt; <span style="color:#008b45">error</span>(Exception e){
+        e.<span style="color:#658b00">printStackTrace</span>();
+        <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#8b008b;font-weight:bold">new</span> CommonResult&lt;&gt;(<span style="color:#8b008b;font-weight:bold">false</span>,<span style="color:#cd5555">&#34;程序中出现异常&#34;</span>);
+    }
+}
+</code></pre></div><h3 id="2特殊异常处理">2.特殊异常处理</h3>
+<pre><code>/**
+ * 指定出现什么异常时会执行这个方法（Exception:表示会拦截所有的异常）
+ * @param e
+ * @return
+ */
+@ExceptionHandler(ArithmeticException.class)
+@ResponseBody
+public CommonResult&lt;Object&gt; error1(Exception e){
+    e.printStackTrace();
+    return new CommonResult&lt;&gt;(false,&quot;程序中出现异常&quot;);
+}
+</code></pre><h3 id="3自定义异常处理">3.自定义异常处理</h3>
+<p>编写自定义异常处理类</p>
+<pre><code>package com.mntc.eduservice.exception;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+public class UserException extends  RuntimeException{
+    private Integer code;
+    private String msg;
+
+}
+</code></pre><p>在程序中抛出异常</p>
+<pre><code>/**
+ * 查询所有
+ * @return
+ */
+@ApiOperation(value=&quot;查询所有&quot;)
+@GetMapping(&quot;getAll&quot;)
+public CommonResult&lt;List&lt;User&gt;&gt; get(){
+
+    List&lt;User&gt; users = userService.list(null);
+    if(users==null){
+
+        return new CommonResult&lt;&gt;(false,&quot;查询失败&quot;);
+    }
+    throw new UserException(404,&quot;自动逸异常&quot;);
+    //return new CommonResult&lt;&gt;(true,&quot;查询成功&quot;,users);
+}
+</code></pre><p>拦截异常</p>
+<pre><code>/**
+ * 指定出现什么异常时会执行这个方法（Exception:表示会拦截所有的异常）
+ * @param e
+ * @return
+ */
+@ExceptionHandler(UserException.class)
+@ResponseBody
+public CommonResult&lt;Object&gt; error2(Exception e){
+    e.printStackTrace();
+    return new CommonResult&lt;&gt;(false,&quot;这是自定义异常&quot;);
+}
+</code></pre><h2 id="十一日志处理">十一、日志处理</h2>
+<p>1.主配置文件中关于日志的配置</p>
+<p>2.在resource中配置文件<code>logback-spring.xml</code></p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#1e889b">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span style="color:#8b008b;font-weight:bold">&lt;configuration</span>  <span style="color:#658b00">scan=</span><span style="color:#cd5555">&#34;true&#34;</span> <span style="color:#658b00">scanPeriod=</span><span style="color:#cd5555">&#34;10 seconds&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+    <span style="color:#228b22">&lt;!-- 日志级别从低到高分为TRACE &lt; DEBUG &lt; INFO &lt; WARN &lt; ERROR &lt; FATAL，如果设置为WARN，则低于WARN的信息都不会输出 --&gt;</span>
+    <span style="color:#228b22">&lt;!-- scan:当此属性设置为true时，配置文件如果发生改变，将会被重新加载，默认值为true --&gt;</span>
+    <span style="color:#228b22">&lt;!-- scanPeriod:设置监测配置文件是否有修改的时间间隔，如果没有给出时间单位，默认单位是毫秒。当scan为true时，此属性生效。默认的时间间隔为1分钟。 --&gt;</span>
+    <span style="color:#228b22">&lt;!-- debug:当此属性设置为true时，将打印出logback内部日志信息，实时查看logback运行状态。默认值为false。 --&gt;</span>
+
+    <span style="color:#8b008b;font-weight:bold">&lt;contextName&gt;</span>logback<span style="color:#8b008b;font-weight:bold">&lt;/contextName&gt;</span>
+    <span style="color:#228b22">&lt;!-- name的值是变量的名称，value的值时变量定义的值。通过定义的值会被插入到logger上下文中。定义变量后，可以使“${}”来使用变量。 --&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;property</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;log.path&#34;</span> <span style="color:#658b00">value=</span><span style="color:#cd5555">&#34;D:/guli_1010/edu&#34;</span> <span style="color:#8b008b;font-weight:bold">/&gt;</span>
+
+    <span style="color:#228b22">&lt;!-- 彩色日志 --&gt;</span>
+    <span style="color:#228b22">&lt;!-- 配置格式变量：CONSOLE_LOG_PATTERN 彩色日志格式 --&gt;</span>
+    <span style="color:#228b22">&lt;!-- magenta:洋红 --&gt;</span>
+    <span style="color:#228b22">&lt;!-- boldMagenta:粗红--&gt;</span>
+    <span style="color:#228b22">&lt;!-- cyan:青色 --&gt;</span>
+    <span style="color:#228b22">&lt;!-- white:白色 --&gt;</span>
+    <span style="color:#228b22">&lt;!-- magenta:洋红 --&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;property</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;CONSOLE_LOG_PATTERN&#34;</span>
+              <span style="color:#658b00">value=</span><span style="color:#cd5555">&#34;%yellow(%date{yyyy-MM-dd HH:mm:ss}) |%highlight(%-5level) |%blue(%thread) |%blue(%file:%line) |%green(%logger) |%cyan(%msg%n)&#34;</span><span style="color:#8b008b;font-weight:bold">/&gt;</span>
+
+
+    <span style="color:#228b22">&lt;!--输出到控制台--&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;appender</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;CONSOLE&#34;</span> <span style="color:#658b00">class=</span><span style="color:#cd5555">&#34;ch.qos.logback.core.ConsoleAppender&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+        <span style="color:#228b22">&lt;!--此日志appender是为开发使用，只配置最底级别，控制台输出的日志级别是大于或等于此级别的日志信息--&gt;</span>
+        <span style="color:#228b22">&lt;!-- 例如：如果此处配置了INFO级别，则后面其他位置即使配置了DEBUG级别的日志，也不会被输出 --&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;filter</span> <span style="color:#658b00">class=</span><span style="color:#cd5555">&#34;ch.qos.logback.classic.filter.ThresholdFilter&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;level&gt;</span>INFO<span style="color:#8b008b;font-weight:bold">&lt;/level&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;/filter&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;encoder&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;Pattern&gt;</span>${CONSOLE_LOG_PATTERN}<span style="color:#8b008b;font-weight:bold">&lt;/Pattern&gt;</span>
+            <span style="color:#228b22">&lt;!-- 设置字符集 --&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;charset&gt;</span>UTF-8<span style="color:#8b008b;font-weight:bold">&lt;/charset&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;/encoder&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;/appender&gt;</span>
+
+
+    <span style="color:#228b22">&lt;!--输出到文件--&gt;</span>
+
+    <span style="color:#228b22">&lt;!-- 时间滚动输出 level为 INFO 日志 --&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;appender</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;INFO_FILE&#34;</span> <span style="color:#658b00">class=</span><span style="color:#cd5555">&#34;ch.qos.logback.core.rolling.RollingFileAppender&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+        <span style="color:#228b22">&lt;!-- 正在记录的日志文件的路径及文件名 --&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;file&gt;</span>${log.path}/log_info.log<span style="color:#8b008b;font-weight:bold">&lt;/file&gt;</span>
+        <span style="color:#228b22">&lt;!--日志文件输出格式--&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;encoder&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;pattern&gt;</span>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n<span style="color:#8b008b;font-weight:bold">&lt;/pattern&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;charset&gt;</span>UTF-8<span style="color:#8b008b;font-weight:bold">&lt;/charset&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;/encoder&gt;</span>
+        <span style="color:#228b22">&lt;!-- 日志记录器的滚动策略，按日期，按大小记录 --&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;rollingPolicy</span> <span style="color:#658b00">class=</span><span style="color:#cd5555">&#34;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+            <span style="color:#228b22">&lt;!-- 每天日志归档路径以及格式 --&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;fileNamePattern&gt;</span>${log.path}/info/log-info-%d{yyyy-MM-dd}.%i.log<span style="color:#8b008b;font-weight:bold">&lt;/fileNamePattern&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;timeBasedFileNamingAndTriggeringPolicy</span> <span style="color:#658b00">class=</span><span style="color:#cd5555">&#34;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+                <span style="color:#8b008b;font-weight:bold">&lt;maxFileSize&gt;</span>100MB<span style="color:#8b008b;font-weight:bold">&lt;/maxFileSize&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;/timeBasedFileNamingAndTriggeringPolicy&gt;</span>
+            <span style="color:#228b22">&lt;!--日志文件保留天数--&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;maxHistory&gt;</span>15<span style="color:#8b008b;font-weight:bold">&lt;/maxHistory&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;/rollingPolicy&gt;</span>
+        <span style="color:#228b22">&lt;!-- 此日志文件只记录info级别的 --&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;filter</span> <span style="color:#658b00">class=</span><span style="color:#cd5555">&#34;ch.qos.logback.classic.filter.LevelFilter&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;level&gt;</span>INFO<span style="color:#8b008b;font-weight:bold">&lt;/level&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;onMatch&gt;</span>ACCEPT<span style="color:#8b008b;font-weight:bold">&lt;/onMatch&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;onMismatch&gt;</span>DENY<span style="color:#8b008b;font-weight:bold">&lt;/onMismatch&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;/filter&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;/appender&gt;</span>
+
+    <span style="color:#228b22">&lt;!-- 时间滚动输出 level为 WARN 日志 --&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;appender</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;WARN_FILE&#34;</span> <span style="color:#658b00">class=</span><span style="color:#cd5555">&#34;ch.qos.logback.core.rolling.RollingFileAppender&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+        <span style="color:#228b22">&lt;!-- 正在记录的日志文件的路径及文件名 --&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;file&gt;</span>${log.path}/log_warn.log<span style="color:#8b008b;font-weight:bold">&lt;/file&gt;</span>
+        <span style="color:#228b22">&lt;!--日志文件输出格式--&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;encoder&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;pattern&gt;</span>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n<span style="color:#8b008b;font-weight:bold">&lt;/pattern&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;charset&gt;</span>UTF-8<span style="color:#8b008b;font-weight:bold">&lt;/charset&gt;</span> <span style="color:#228b22">&lt;!-- 此处设置字符集 --&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;/encoder&gt;</span>
+        <span style="color:#228b22">&lt;!-- 日志记录器的滚动策略，按日期，按大小记录 --&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;rollingPolicy</span> <span style="color:#658b00">class=</span><span style="color:#cd5555">&#34;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;fileNamePattern&gt;</span>${log.path}/warn/log-warn-%d{yyyy-MM-dd}.%i.log<span style="color:#8b008b;font-weight:bold">&lt;/fileNamePattern&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;timeBasedFileNamingAndTriggeringPolicy</span> <span style="color:#658b00">class=</span><span style="color:#cd5555">&#34;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+                <span style="color:#8b008b;font-weight:bold">&lt;maxFileSize&gt;</span>100MB<span style="color:#8b008b;font-weight:bold">&lt;/maxFileSize&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;/timeBasedFileNamingAndTriggeringPolicy&gt;</span>
+            <span style="color:#228b22">&lt;!--日志文件保留天数--&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;maxHistory&gt;</span>15<span style="color:#8b008b;font-weight:bold">&lt;/maxHistory&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;/rollingPolicy&gt;</span>
+        <span style="color:#228b22">&lt;!-- 此日志文件只记录warn级别的 --&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;filter</span> <span style="color:#658b00">class=</span><span style="color:#cd5555">&#34;ch.qos.logback.classic.filter.LevelFilter&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;level&gt;</span>warn<span style="color:#8b008b;font-weight:bold">&lt;/level&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;onMatch&gt;</span>ACCEPT<span style="color:#8b008b;font-weight:bold">&lt;/onMatch&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;onMismatch&gt;</span>DENY<span style="color:#8b008b;font-weight:bold">&lt;/onMismatch&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;/filter&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;/appender&gt;</span>
+
+
+    <span style="color:#228b22">&lt;!-- 时间滚动输出 level为 ERROR 日志 --&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;appender</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;ERROR_FILE&#34;</span> <span style="color:#658b00">class=</span><span style="color:#cd5555">&#34;ch.qos.logback.core.rolling.RollingFileAppender&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+        <span style="color:#228b22">&lt;!-- 正在记录的日志文件的路径及文件名 --&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;file&gt;</span>${log.path}/log_error.log<span style="color:#8b008b;font-weight:bold">&lt;/file&gt;</span>
+        <span style="color:#228b22">&lt;!--日志文件输出格式--&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;encoder&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;pattern&gt;</span>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n<span style="color:#8b008b;font-weight:bold">&lt;/pattern&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;charset&gt;</span>UTF-8<span style="color:#8b008b;font-weight:bold">&lt;/charset&gt;</span> <span style="color:#228b22">&lt;!-- 此处设置字符集 --&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;/encoder&gt;</span>
+        <span style="color:#228b22">&lt;!-- 日志记录器的滚动策略，按日期，按大小记录 --&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;rollingPolicy</span> <span style="color:#658b00">class=</span><span style="color:#cd5555">&#34;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;fileNamePattern&gt;</span>${log.path}/error/log-error-%d{yyyy-MM-dd}.%i.log<span style="color:#8b008b;font-weight:bold">&lt;/fileNamePattern&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;timeBasedFileNamingAndTriggeringPolicy</span> <span style="color:#658b00">class=</span><span style="color:#cd5555">&#34;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+                <span style="color:#8b008b;font-weight:bold">&lt;maxFileSize&gt;</span>100MB<span style="color:#8b008b;font-weight:bold">&lt;/maxFileSize&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;/timeBasedFileNamingAndTriggeringPolicy&gt;</span>
+            <span style="color:#228b22">&lt;!--日志文件保留天数--&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;maxHistory&gt;</span>15<span style="color:#8b008b;font-weight:bold">&lt;/maxHistory&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;/rollingPolicy&gt;</span>
+        <span style="color:#228b22">&lt;!-- 此日志文件只记录ERROR级别的 --&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;filter</span> <span style="color:#658b00">class=</span><span style="color:#cd5555">&#34;ch.qos.logback.classic.filter.LevelFilter&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;level&gt;</span>ERROR<span style="color:#8b008b;font-weight:bold">&lt;/level&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;onMatch&gt;</span>ACCEPT<span style="color:#8b008b;font-weight:bold">&lt;/onMatch&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;onMismatch&gt;</span>DENY<span style="color:#8b008b;font-weight:bold">&lt;/onMismatch&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;/filter&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;/appender&gt;</span>
+
+    <span style="color:#228b22">&lt;!--
+</span><span style="color:#228b22">        &lt;logger&gt;用来设置某一个包或者具体的某一个类的日志打印级别、以及指定&lt;appender&gt;。
+</span><span style="color:#228b22">        &lt;logger&gt;仅有一个name属性，
+</span><span style="color:#228b22">        一个可选的level和一个可选的addtivity属性。
+</span><span style="color:#228b22">        name:用来指定受此logger约束的某一个包或者具体的某一个类。
+</span><span style="color:#228b22">        level:用来设置打印级别，大小写无关：TRACE, DEBUG, INFO, WARN, ERROR, ALL 和 OFF，
+</span><span style="color:#228b22">              如果未设置此属性，那么当前logger将会继承上级的级别。
+</span><span style="color:#228b22">    --&gt;</span>
+    <span style="color:#228b22">&lt;!--
+</span><span style="color:#228b22">        使用mybatis的时候，sql语句是debug下才会打印，而这里我们只配置了info，所以想要查看sql语句的话，有以下两种操作：
+</span><span style="color:#228b22">        第一种把&lt;root level=&#34;INFO&#34;&gt;改成&lt;root level=&#34;DEBUG&#34;&gt;这样就会打印sql，不过这样日志那边会出现很多其他消息
+</span><span style="color:#228b22">        第二种就是单独给mapper下目录配置DEBUG模式，代码如下，这样配置sql语句会打印，其他还是正常DEBUG级别：
+</span><span style="color:#228b22">     --&gt;</span>
+    <span style="color:#228b22">&lt;!--开发环境:打印控制台--&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;springProfile</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;dev&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+        <span style="color:#228b22">&lt;!--可以输出项目中的debug日志，包括mybatis的sql日志--&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;logger</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;com.guli&#34;</span> <span style="color:#658b00">level=</span><span style="color:#cd5555">&#34;INFO&#34;</span> <span style="color:#8b008b;font-weight:bold">/&gt;</span>
+
+        <span style="color:#228b22">&lt;!--
+</span><span style="color:#228b22">            root节点是必选节点，用来指定最基础的日志输出级别，只有一个level属性
+</span><span style="color:#228b22">            level:用来设置打印级别，大小写无关：TRACE, DEBUG, INFO, WARN, ERROR, ALL 和 OFF，默认是DEBUG
+</span><span style="color:#228b22">            可以包含零个或多个appender元素。
+</span><span style="color:#228b22">        --&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;root</span> <span style="color:#658b00">level=</span><span style="color:#cd5555">&#34;INFO&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;appender-ref</span> <span style="color:#658b00">ref=</span><span style="color:#cd5555">&#34;CONSOLE&#34;</span> <span style="color:#8b008b;font-weight:bold">/&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;appender-ref</span> <span style="color:#658b00">ref=</span><span style="color:#cd5555">&#34;INFO_FILE&#34;</span> <span style="color:#8b008b;font-weight:bold">/&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;appender-ref</span> <span style="color:#658b00">ref=</span><span style="color:#cd5555">&#34;WARN_FILE&#34;</span> <span style="color:#8b008b;font-weight:bold">/&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;appender-ref</span> <span style="color:#658b00">ref=</span><span style="color:#cd5555">&#34;ERROR_FILE&#34;</span> <span style="color:#8b008b;font-weight:bold">/&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;/root&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;/springProfile&gt;</span>
+
+
+    <span style="color:#228b22">&lt;!--生产环境:输出到文件--&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;springProfile</span> <span style="color:#658b00">name=</span><span style="color:#cd5555">&#34;pro&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+
+        <span style="color:#8b008b;font-weight:bold">&lt;root</span> <span style="color:#658b00">level=</span><span style="color:#cd5555">&#34;INFO&#34;</span><span style="color:#8b008b;font-weight:bold">&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;appender-ref</span> <span style="color:#658b00">ref=</span><span style="color:#cd5555">&#34;CONSOLE&#34;</span> <span style="color:#8b008b;font-weight:bold">/&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;appender-ref</span> <span style="color:#658b00">ref=</span><span style="color:#cd5555">&#34;DEBUG_FILE&#34;</span> <span style="color:#8b008b;font-weight:bold">/&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;appender-ref</span> <span style="color:#658b00">ref=</span><span style="color:#cd5555">&#34;INFO_FILE&#34;</span> <span style="color:#8b008b;font-weight:bold">/&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;appender-ref</span> <span style="color:#658b00">ref=</span><span style="color:#cd5555">&#34;ERROR_FILE&#34;</span> <span style="color:#8b008b;font-weight:bold">/&gt;</span>
+            <span style="color:#8b008b;font-weight:bold">&lt;appender-ref</span> <span style="color:#658b00">ref=</span><span style="color:#cd5555">&#34;WARN_FILE&#34;</span> <span style="color:#8b008b;font-weight:bold">/&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;/root&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;/springProfile&gt;</span>
+
+<span style="color:#8b008b;font-weight:bold">&lt;/configuration&gt;</span>
+
+</code></pre></div><h2 id="十二跨域问题">十二、跨域问题</h2>
+<p>什么是跨域？
+浏览器从一个域名的网页去请求另一个域名的资源时，域名、端口、协议任一不同，都是跨域
+域名：
+　主域名不同 <a href="http://www.baidu.com/index.html">http://www.baidu.com/index.html</a> &ndash;&gt;http://www.sina.com/test.js
+　子域名不同 <a href="http://www.666.baidu.com/index.html">http://www.666.baidu.com/index.html</a> &ndash;&gt;http://www.555.baidu.com/test.js
+　域名和域名ip <a href="http://www.baidu.com/index.html">http://www.baidu.com/index.html</a> &ndash;&gt;http://180.149.132.47/test.js
+端口：
+　http://www.baidu.com:8080/index.html–&gt; <a href="http://www.baidu.com">http://www.baidu.com</a>:8081/test.js
+协议：
+　http://www.baidu.com:8080/index.html–&gt; <a href="https://www.baidu.com">https://www.baidu.com</a>:8080/test.js
+备注：
+　1、端口和协议的不同，只能通过后台来解决
+　2、localhost和127.0.0.1虽然都指向本机，但也属于跨域</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">org.springframework.context.annotation.Configuration</span>;  
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">org.springframework.web.servlet.config.annotation.CorsRegistry</span>;  
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#008b45;text-decoration:underline">org.springframework.web.servlet.config.annotation.WebMvcConfigurer</span>;  
+<span style="color:#707a7c">@Configuration</span>  
+<span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">CorsConfig</span> <span style="color:#8b008b;font-weight:bold">implements</span> WebMvcConfigurer {  
+
+    <span style="color:#707a7c">@Override</span>  
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">addCorsMappings</span>(CorsRegistry registry) {  
+        registry.<span style="color:#658b00">addMapping</span>(<span style="color:#cd5555">&#34;/**&#34;</span>)  
+                .<span style="color:#658b00">allowedOrigins</span>(<span style="color:#cd5555">&#34;*&#34;</span>)  
+                .<span style="color:#658b00">allowCredentials</span>(<span style="color:#8b008b;font-weight:bold">true</span>)  
+                .<span style="color:#658b00">allowedMethods</span>(<span style="color:#cd5555">&#34;GET&#34;</span>, <span style="color:#cd5555">&#34;POST&#34;</span>, <span style="color:#cd5555">&#34;DELETE&#34;</span>, <span style="color:#cd5555">&#34;PUT&#34;</span>,<span style="color:#cd5555">&#34;PATCH&#34;</span>)  
+                .<span style="color:#658b00">maxAge</span>(3600);  
+    }  
+}  
+
+</code></pre></div><p>也可以通过注解的方式：</p>
+<h2 id="十三easyexcel">十三、EasyExcel</h2>
+<h3 id="1pom中引入xml相关依赖">1.pom中引入xml相关依赖</h3>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#8b008b;font-weight:bold">&lt;dependencies&gt;</span>
+    <span style="color:#228b22">&lt;!-- https://mvnrepository.com/artifact/com.alibaba/easyexcel --&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;dependency&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>com.alibaba<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>easyexcel<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;version&gt;</span>2.1.1<span style="color:#8b008b;font-weight:bold">&lt;/version&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;/dependency&gt;</span>
+    <span style="color:#228b22">&lt;!--xls--&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;dependency&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>org.apache.poi<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>poi<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;/dependency&gt;</span>
+
+    <span style="color:#8b008b;font-weight:bold">&lt;dependency&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;groupId&gt;</span>org.apache.poi<span style="color:#8b008b;font-weight:bold">&lt;/groupId&gt;</span>
+        <span style="color:#8b008b;font-weight:bold">&lt;artifactId&gt;</span>poi-ooxml<span style="color:#8b008b;font-weight:bold">&lt;/artifactId&gt;</span>
+    <span style="color:#8b008b;font-weight:bold">&lt;/dependency&gt;</span>
+<span style="color:#8b008b;font-weight:bold">&lt;/dependencies&gt;</span>
+</code></pre></div><h3 id="2创建实体类">2.创建实体类</h3>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#228b22">//设置表头和添加的数据字段
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">DemoData</span> {
+    <span style="color:#228b22">//设置表头名称
+</span><span style="color:#228b22"></span>    <span style="color:#707a7c">@ExcelProperty</span>(<span style="color:#cd5555">&#34;学生编号&#34;</span>)
+    <span style="color:#8b008b;font-weight:bold">private</span> <span style="color:#00688b;font-weight:bold">int</span> sno;
+    
+	<span style="color:#228b22">//设置表头名称
+</span><span style="color:#228b22"></span>    <span style="color:#707a7c">@ExcelProperty</span>(<span style="color:#cd5555">&#34;学生姓名&#34;</span>)
+    <span style="color:#8b008b;font-weight:bold">private</span> String sname;
+
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">int</span> <span style="color:#008b45">getSno</span>() {
+        <span style="color:#8b008b;font-weight:bold">return</span> sno;
+    }
+
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">setSno</span>(<span style="color:#00688b;font-weight:bold">int</span> sno) {
+        <span style="color:#8b008b;font-weight:bold">this</span>.<span style="color:#658b00">sno</span> = sno;
+    }
+
+    <span style="color:#8b008b;font-weight:bold">public</span> String <span style="color:#008b45">getSname</span>() {
+        <span style="color:#8b008b;font-weight:bold">return</span> sname;
+    }
+
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">setSname</span>(String sname) {
+        <span style="color:#8b008b;font-weight:bold">this</span>.<span style="color:#658b00">sname</span> = sname;
+    }
+
+    <span style="color:#707a7c">@Override</span>
+    <span style="color:#8b008b;font-weight:bold">public</span> String <span style="color:#008b45">toString</span>() {
+        <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#cd5555">&#34;DemoData{&#34;</span> +
+                <span style="color:#cd5555">&#34;sno=&#34;</span> + sno +
+                <span style="color:#cd5555">&#34;, sname=&#39;&#34;</span> + sname + <span style="color:#cd5555">&#39;\&#39;&#39;</span> +
+                <span style="color:#cd5555">&#39;}&#39;</span>;
+    }
+}
+</code></pre></div><h3 id="3实现写操作">3.实现写操作</h3>
+<p><code>创建方法循环设置要添加到Excel的数据</code></p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#228b22">//循环设置要添加的数据，最终封装到list集合中
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">private</span> <span style="color:#8b008b;font-weight:bold">static</span> List&lt;DemoData&gt; <span style="color:#008b45">data</span>() {
+    List&lt;DemoData&gt; list = <span style="color:#8b008b;font-weight:bold">new</span> ArrayList&lt;DemoData&gt;();
+    <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> i = 0; i &lt; 10; i++) {
+        DemoData data = <span style="color:#8b008b;font-weight:bold">new</span> DemoData();
+        data.<span style="color:#658b00">setSno</span>(i);
+        data.<span style="color:#658b00">setSname</span>(<span style="color:#cd5555">&#34;张三&#34;</span>+i);
+        list.<span style="color:#658b00">add</span>(data);
+    }
+    <span style="color:#8b008b;font-weight:bold">return</span> list;
+}
+</code></pre></div><p><code>实现最终的添加操作（写法一）</code></p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">static</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">main</span>(String[] args) <span style="color:#8b008b;font-weight:bold">throws</span> Exception {
+    <span style="color:#228b22">// 写法1
+</span><span style="color:#228b22"></span>    String fileName = <span style="color:#cd5555">&#34;F:\\11.xlsx&#34;</span>;
+    <span style="color:#228b22">// 这里 需要指定写用哪个class去写，然后写到第一个sheet，名字为模板 然后文件流会自动关闭
+</span><span style="color:#228b22"></span>    <span style="color:#228b22">// 如果这里想使用03 则 传入excelType参数即可
+</span><span style="color:#228b22"></span>    EasyExcel.<span style="color:#658b00">write</span>(fileName, DemoData.<span style="color:#658b00">class</span>).<span style="color:#658b00">sheet</span>(<span style="color:#cd5555">&#34;写入方法一&#34;</span>).<span style="color:#658b00">doWrite</span>(data());
+}
+</code></pre></div><p><code>实现最终的添加操作（写法二）</code></p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">static</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">main</span>(String[] args) <span style="color:#8b008b;font-weight:bold">throws</span> Exception {
+    <span style="color:#228b22">// 写法2，方法二需要手动关闭流
+</span><span style="color:#228b22"></span>    String fileName = <span style="color:#cd5555">&#34;F:\\112.xlsx&#34;</span>;
+    <span style="color:#228b22">// 这里 需要指定写用哪个class去写
+</span><span style="color:#228b22"></span>    ExcelWriter excelWriter = EasyExcel.<span style="color:#658b00">write</span>(fileName, DemoData.<span style="color:#658b00">class</span>).<span style="color:#658b00">build</span>();
+    WriteSheet writeSheet = EasyExcel.<span style="color:#658b00">writerSheet</span>(<span style="color:#cd5555">&#34;写入方法二&#34;</span>).<span style="color:#658b00">build</span>();
+    excelWriter.<span style="color:#658b00">write</span>(data(), writeSheet);
+    <span style="color:#228b22">/// 千万别忘记finish 会帮忙关闭流
+</span><span style="color:#228b22"></span>    excelWriter.<span style="color:#658b00">finish</span>();
+}
+</code></pre></div><h3 id="4实现读操作">4.实现读操作</h3>
+<p><code>创建实体类</code></p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">ReadData</span> {
+    <span style="color:#228b22">//设置列对应的属性
+</span><span style="color:#228b22"></span>    <span style="color:#707a7c">@ExcelProperty</span>(index = 0)
+    <span style="color:#8b008b;font-weight:bold">private</span> <span style="color:#00688b;font-weight:bold">int</span> sid;
+    
+    <span style="color:#228b22">//设置列对应的属性
+</span><span style="color:#228b22"></span>    <span style="color:#707a7c">@ExcelProperty</span>(index = 1)
+    <span style="color:#8b008b;font-weight:bold">private</span> String sname;
+
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">int</span> <span style="color:#008b45">getSid</span>() {
+        <span style="color:#8b008b;font-weight:bold">return</span> sid;
+    }
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">setSid</span>(<span style="color:#00688b;font-weight:bold">int</span> sid) {
+        <span style="color:#8b008b;font-weight:bold">this</span>.<span style="color:#658b00">sid</span> = sid;
+    }
+    <span style="color:#8b008b;font-weight:bold">public</span> String <span style="color:#008b45">getSname</span>() {
+        <span style="color:#8b008b;font-weight:bold">return</span> sname;
+    }
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">setSname</span>(String sname) {
+        <span style="color:#8b008b;font-weight:bold">this</span>.<span style="color:#658b00">sname</span> = sname;
+    }
+    <span style="color:#707a7c">@Override</span>
+    <span style="color:#8b008b;font-weight:bold">public</span> String <span style="color:#008b45">toString</span>() {
+        <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#cd5555">&#34;ReadData{&#34;</span> +
+                <span style="color:#cd5555">&#34;sid=&#34;</span> + sid +
+                <span style="color:#cd5555">&#34;, sname=&#39;&#34;</span> + sname + <span style="color:#cd5555">&#39;\&#39;&#39;</span> +
+                <span style="color:#cd5555">&#39;}&#39;</span>;
+    }
+}
+</code></pre></div><p><code>创建读取操作的监听器</code></p>
+<pre><code>//创建读取excel监听器
+public class ExcelListener extends AnalysisEventListener&lt;ReadData&gt; {
+    //创建list集合封装最终的数据
+    List&lt;ReadData&gt; list = new ArrayList&lt;ReadData&gt;();
+
+    //一行一行去读取excle内容
+    @Override
+    public void invoke(ReadData user, AnalysisContext analysisContext) {
+       System.out.println(&quot;***&quot;+user);
+        list.add(user);
+    }
+
+    //读取excel表头信息
+    @Override
+    public void invokeHeadMap(Map&lt;Integer, String&gt; headMap, AnalysisContext context) {
+        System.out.println(&quot;表头信息：&quot;+headMap);
+    }
+
+    //读取完成后执行
+    @Override
+    public void doAfterAllAnalysed(AnalysisContext analysisContext) {
+    }
+}
+</code></pre>
+<p><code>调用实现最终的读取</code></p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">static</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">main</span>(String[] args) <span style="color:#8b008b;font-weight:bold">throws</span> Exception {
+
+        <span style="color:#228b22">// 写法1：
+</span><span style="color:#228b22"></span>        String fileName = <span style="color:#cd5555">&#34;F:\\01.xlsx&#34;</span>;
+        <span style="color:#228b22">// 这里 需要指定读用哪个class去读，然后读取第一个sheet 文件流会自动关闭
+</span><span style="color:#228b22"></span>        EasyExcel.<span style="color:#658b00">read</span>(fileName, ReadData.<span style="color:#658b00">class</span>, <span style="color:#8b008b;font-weight:bold">new</span> ExcelListener()).<span style="color:#658b00">sheet</span>().<span style="color:#658b00">doRead</span>();
+
+        <span style="color:#228b22">// 写法2：
+</span><span style="color:#228b22"></span>        InputStream in = <span style="color:#8b008b;font-weight:bold">new</span> BufferedInputStream(<span style="color:#8b008b;font-weight:bold">new</span> FileInputStream(<span style="color:#cd5555">&#34;F:\\01.xlsx&#34;</span>));
+        ExcelReader excelReader = EasyExcel.<span style="color:#658b00">read</span>(in, ReadData.<span style="color:#658b00">class</span>, <span style="color:#8b008b;font-weight:bold">new</span> ExcelListener()).<span style="color:#658b00">build</span>();
+        ReadSheet readSheet = EasyExcel.<span style="color:#658b00">readSheet</span>(0).<span style="color:#658b00">build</span>();
+        excelReader.<span style="color:#658b00">read</span>(readSheet);
+        <span style="color:#228b22">// 这里千万别忘记关闭，读的时候会创建临时文件，到时磁盘会崩的
+</span><span style="color:#228b22"></span>        excelReader.<span style="color:#658b00">finish</span>();
+}
+</code></pre></div>
+</article>
+    </div>
+</div>
+
+
+                
+<div id="sidebar" class="pure-u-1 pure-u-md-1-4 pure-u-sm-1">
+    <div class="pad">
+        <a name="about"></a>
+        <h3>关于我</h3>
+        <div style="text-align: center;">
+            <img src="/img/author.jpg" alt="吴继文" class="pure-img" />
+            <p><em>Handsome</em></p>
+        </div>
+
+        <h3>最近文章</h3>
+        <div class="pure-menu pure-menu-open">
+            <ul class="pure-menu-list">
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/mybatis-plus/" class="pure-menu-link">Mybatis-Plus<br>
+                        <small>MyBatis-Plus 的增强工具，在 MyBatis 的基础上只做增强不做改变，为简化开发、提高效率而生。</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/mongodb/" class="pure-menu-link">DBmong数据库<br>
+                        <small>NoSQL 是一项全新的数据库革命性运动，早期就有人提出，发展至2009年趋势越发高涨。NoSQL的拥护者们提倡运用非关系型的数据存储，相对于铺天盖地的关系型数据库运用，这一概念无疑是一种全新的思维的注入。</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/docker/" class="pure-menu-link">Docker容器技术<br>
+                        <small>这一种常用的容器技术，能简化项目的部署</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/go%E8%AF%AD%E8%A8%80/" class="pure-menu-link">Go语言技术知识<br>
+                        <small>主要介绍GO语言的基本语法</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/hexo&#43;github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6/" class="pure-menu-link">hexo&#43;github搭建个人博客<br>
+                        <small>介绍了个人博客搭建的完整步骤</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/idea%E7%9A%84%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="pure-menu-link">IDEA的基本使用<br>
+                        <small>主要介绍了IDEA的基本以用和一些常用的快捷键</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/java%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/" class="pure-menu-link">Java原生代码连接数据库<br>
+                        <small>介绍了在不使用框架的基础上连接MySQL</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/%E5%9F%BA%E4%BA%8Ejava%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="pure-menu-link">Java多线程基础知识<br>
+                        <small>一种提高程序运行效率的技术</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/java%E5%AE%9E%E7%8E%B0%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/" class="pure-menu-link">Java实现串口通信<br>
+                        <small>Java实现窗口通信</small>
+                    </a>
+                </li>
+                
+                <li class="pure-menu-item">
+                    <a href="https://example.com/posts/java%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" class="pure-menu-link">Java的基础知识<br>
+                        <small>介绍了Java的基础知识</small>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+        <h3>分类</h3>
+        <div style="text-align:center" class="tags">
+            
+            
+            <a href="/tags/%e6%a1%86%e6%9e%b6" class="pure-button"> 框架
+                <small>(6)</small></a>
+            
+            
+            
+            <a href="/tags/%e7%bc%96%e7%a8%8b" class="pure-button"> 编程
+                <small>(5)</small></a>
+            
+            
+            
+            <a href="/tags/%e5%85%b6%e5%ae%83" class="pure-button"> 其它
+                <small>(2)</small></a>
+            
+            
+            
+            <a href="/tags/%e6%95%b0%e6%8d%ae%e5%ba%93" class="pure-button"> 数据库
+                <small>(2)</small></a>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </div>
+    </div> 
+</div> 
+
+                
+            </div>
+<div class="pure-g">
+	<footer class="pure-u-1 pure-u-md-1 pure-u-sm-1">
+		<p>This page and its contents are copyright &copy; 2020,
+			<a href="">吴继文</a>.</p>
+		<p><a href="https://github.com/pravin/hugo-theme-prav">Theme Prav</a> by <a href="https://cto.me.uk">Pravin
+				Paratey</a></p>
+	</footer>
+
+	<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
+		integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+		crossorigin="anonymous"></script>
+</div>
+</div></body>
+</html>

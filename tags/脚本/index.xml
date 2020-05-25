@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>脚本 on Blog</title>
+    <link>https://example.com/tags/%E8%84%9A%E6%9C%AC/</link>
+    <description>Recent content in 脚本 on Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    
+	<atom:link href="https://example.com/tags/%E8%84%9A%E6%9C%AC/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>常用的CMD指令</title>
+      <link>https://example.com/posts/%E5%B8%B8%E7%94%A8%E7%9A%84cmd%E6%8C%87%E4%BB%A4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/%E5%B8%B8%E7%94%A8%E7%9A%84cmd%E6%8C%87%E4%BB%A4/</guid>
+      <description>一、打开相应的应用程序 shutdown 关机； mspaint 打开画图工具； clac 打开计算器工具； osk 打开虚拟键盘工具； notepad 打开记事本工具； regedit 注册表界面； taskmgr 任务管理器界面，里面有程序进程； services.msc 打开服务界面； control.exe 打开控制面板界面； appwiz.cpl 打开添加删除程序项界面； ipconfig 获取IP配置详情； winver 检查windows版本信息； dxdiag 可以看到系统信息、显卡声卡信息； msconfig 再这里可以关闭随机启动的后台程序； lusrmgr.msc 管理计算机用户； cleanmgr 清理磁盘； devmgmt.msc 设备管理器； diskmgmt.msc 磁盘管理器； compmgmt.msc 计算机管理； dvdplay DVD播放器； odbcad32 ODBC数据源管理器； 二、文件类的CMD命令 c: 切换到C盘，其他盘类似 cd 目录名，如cd test，进入test目录 cd / 返回根目录 cd .. 返回上一层目录 cd.&amp;gt; 文件名，如cd.&amp;gt;js.js 创建一个js.js空文件 md 目录名，如md test，建立一个test目录 mkdir 目录名，如mkdir test，建立一个test目录，功能同上 type 文件名，如type index.html，显示文本文件的内容 tree 以树形结果显示出目录 dir 列出目录中的所有文件 三、操作命令 cls 清屏 exit 退出当前程序 ctrl+c 使用ctrl+c快捷键中止当前命令 help 列出所有支持的指令以及说明 Help+命令 说明命令所有的用法，如help+REN列出重命令的详细用法 四、网络连接 Ping +ip地址 判断主机和该ip网络是否联通 netstat -ano 可以获取端口对应程序的运行PID，通过PID在任务管理器可以找到占用该接口的运行程序</description>
+    </item>
+    
+  </channel>
+</rss>

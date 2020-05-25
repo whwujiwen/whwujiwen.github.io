@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>容器 on Blog</title>
+    <link>https://example.com/tags/%E5%AE%B9%E5%99%A8/</link>
+    <description>Recent content in 容器 on Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    
+	<atom:link href="https://example.com/tags/%E5%AE%B9%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Docker容器技术</title>
+      <link>https://example.com/posts/docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/docker/</guid>
+      <description>##前提知识 1.熟悉Linux命令和相关的知识背景 2.建议学习：maven和git相关的知识（http://www.atguigu.com/download.shtml#linux） java的理念的是：一次编译到处运行； Docker的理念是：一次构建处处运行。
+一.Docker是什么？ Docker解决了开发者与运维人员之间的矛盾。以前是向运维人员提交代码，现在是向运维人员提交镜像（代码+代码运行的环境）。 &amp;mdash;开发自运维 Docker是基于go语言实现的云开源项目。 Docker解决了运行环境和配置问题的软件容器，方便做持续集成并有助于整体发布的容器虚拟化技术。 Docker的三要素：仓库、镜像、容器。
+二、虚拟机与DOcker的区别 1、虚拟机（Virtual machine）就是带环境安装的一种解决方案。 它可以在一种操作系统里面运行另外的一种操作系统，比如windows系统里面运行Linux系统。系统程序对此毫无感知，因为虚拟机看上去跟真实的系统一摸一样，二对于底层来说，虚拟机就是一个普通的文件，不需要九删除，对其他部分毫无影响。这类虚拟机完美的运行了另外的一套系统，能都使应用程序，操作系统，硬件三者之间的逻辑不变。 虚拟机的特点： a.占用资源多 b.冗余步骤多 c.启动慢 2、Linux容器不是模拟一个完成的操作系统，而是对进程进行隔离。有了容器，就可以将软件所运行的所有资源打包到一个隔离的容器中。容器与虚拟机不同，不需要捆绑一整套操作系统，只需要软件所需要的库资源和设置。系统因此变得高效轻量并保证部署在任何的环境中的软件都能时钟如一的运行。 不同之处： 传统的虚拟技术虚拟出的是一整套硬件后，在其上运行一个完整的操作系统，在该系统上在运行所需要的进程。 而容器内的应用程序直接运行于宿主机的内核，容器内没有自己的内核，而且没有进行硬件的虚拟。因此容器要比虚拟机更加的轻便。 每个容器之间相互隔离，每个容器都有自己的文件系统，容器之间的进程不会相互影响，能区分计算机资源。 其实，Docker就是一个告诉浓缩版的Linux操作系统。
+三、docker的简介 容器(image)&amp;mdash;&amp;ndash;就是模板（类似于java的类）。 容器（container）&amp;mdash;&amp;ndash;就是一个实力（类似于java中实例）。 Docker镜像就是一个只读模板。镜像可以用来创建Docker容器，一个镜像就可以创建很多容器。 Docker利用容器独立运行一个或者一组应用。容器使用镜像创建的运行实例。 它可以被启动、开始、停止、删除。每个让其都是相互隔离的，保证安全的平台。 容器可以看作是一个简易版的Linux环境和运行在其中的应用程序。容器的定义几乎和镜像一模一样，也是一堆层的统一视角，唯一不同的是容器的上面是一层可读可写的。 仓库是存放镜像文件的场所。最大的仓库（https://docker.com/）;国内公开的仓库包括：阿里云、网易云等
+四、Docker的安装 1.centenOS的安装 a.安装的docker的依赖库:
+yum install -y epel-release b.正式的安装Docker
+yum install -y docker-io c.安装配置文件:/etc/sysconfig/docker d.启动Docker
+service docker start e.检测是否安装成功：
+docker version 2.基于ubuntu18.04的安装 a.从Ubuntu的仓库直接下载安装： 安装比较简单，这种安装的Docker不是最新版本，不过对于学习够用了，依次执行下面命令进行安装。
+sudo apt install docker.io sudo systemctl start docker sudo systemctl enable docker 检查是否安装成功。docker -v b.</description>
+    </item>
+    
+  </channel>
+</rss>
